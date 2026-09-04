@@ -13,7 +13,7 @@
   h1 { font-size:18px; margin:0; letter-spacing:.02em; }
   .meta { color:var(--muted); font-size:12px; }
   .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:12px; padding:12px 24px; }
-  .card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:14px 16px; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:14px 16px; cursor:help; }
   .label { color:var(--muted); font-size:11px; text-transform:uppercase; letter-spacing:.06em; }
   .value { font-size:22px; font-weight:600; margin-top:4px; font-variant-numeric:tabular-nums; }
   .ok { color:var(--ok); } .bad { color:var(--bad); }
@@ -21,41 +21,42 @@
   h2 { font-size:13px; color:var(--muted); text-transform:uppercase; letter-spacing:.06em; margin:16px 0 8px; }
   table { width:100%; border-collapse:collapse; background:var(--card); border:1px solid var(--line); border-radius:12px; overflow:hidden; }
   th,td { text-align:left; padding:8px 10px; border-bottom:1px solid var(--line); font-variant-numeric:tabular-nums; }
-  th { color:var(--muted); font-weight:500; font-size:11px; text-transform:uppercase; letter-spacing:.05em; }
+  th { color:var(--muted); font-weight:500; font-size:11px; text-transform:uppercase; letter-spacing:.05em; cursor:help; }
   tr:last-child td { border-bottom:none; }
   .chips { display:flex; flex-wrap:wrap; gap:6px; }
-  .chip { background:#1b2430; border:1px solid var(--line); border-radius:999px; padding:4px 10px; font-size:12px; color:var(--accent); }
+  .chip { background:#1b2430; border:1px solid var(--line); border-radius:999px; padding:4px 10px; font-size:12px; color:var(--accent); cursor:help; }
   #err { color:var(--bad); padding:0 24px; min-height:1.2em; }
   code { font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; font-size:12px; }
-  .chart-wrap { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:12px; height:280px; }
-  .formula { color:var(--muted); font-size:12px; margin:8px 24px 0; }
+  .chart-wrap { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:12px; height:280px; cursor:help; }
+  .formula { color:var(--muted); font-size:12px; margin:8px 24px 0; cursor:help; }
 </style>
 </head>
 <body>
 <header>
-  <h1>Markets Lab</h1>
-  <div class="meta">poll status + equity · 20s · no secrets</div>
-  <div class="meta" id="fetchAge">—</div>
+  <h1 title="Live read-only view of the Kalshi lab trader. No secrets on this page.">Markets Lab</h1>
+  <div class="meta" title="This page refreshes status every 20 seconds from public JSON files.">poll status + equity · 20s · no secrets</div>
+  <div class="meta" id="fetchAge" title="When the dashboard last successfully loaded fresh data.">—</div>
 </header>
 <div id="err"></div>
 <div class="grid">
-  <div class="card"><div class="label">Equity</div><div class="value" id="equity">—</div></div>
-  <div class="card"><div class="label">Δ vs $200</div><div class="value" id="delta">—</div></div>
-  <div class="card"><div class="label">Today PnL</div><div class="value" id="today">—</div></div>
-  <div class="card"><div class="label">Open USD</div><div class="value" id="openUsd">—</div></div>
-  <div class="card"><div class="label">Remaining Cap</div><div class="value" id="remainUsd">—</div></div>
-  <div class="card"><div class="label">Daemon</div><div class="value" id="daemon" style="font-size:16px">—</div></div>
+  <div class="card" title="Equity = starting $200 plus realized gains/losses and mark-to-market on allowlisted lab markets only."><div class="label">Equity</div><div class="value" id="equity">—</div></div>
+  <div class="card" title="How far lab equity is above or below the $200 starting bankroll."><div class="label">Δ vs $200</div><div class="value" id="delta">—</div></div>
+  <div class="card" title="Change in equity since midnight Central Time today."><div class="label">Today PnL</div><div class="value" id="today">—</div></div>
+  <div class="card" title="Open USD = money currently tied up in resting orders + positions for this lab."><div class="label">Open USD</div><div class="value" id="openUsd">—</div></div>
+  <div class="card" title="How much of the lab open-risk cap is still unused (max minus open)."><div class="label">Remaining Cap</div><div class="value" id="remainUsd">—</div></div>
+  <div class="card" title="Hard ceiling on total open lab risk. New entries stop when open approaches this."><div class="label">Max Cap</div><div class="value" id="maxUsd">—</div></div>
+  <div class="card" title="Whether the live trader is healthy. Mode shark_pack_only means it follows Markets edge packs instead of blind bids."><div class="label">Daemon</div><div class="value" id="daemon" style="font-size:16px">—</div></div>
 </div>
-<p class="formula" id="formula">equity = 200 + realized_lab_pnl + unrealized_lab_mtm (allowlisted only)</p>
+<p class="formula" id="formula" title="Start with $200, add settled P&amp;L, then add paper gains/losses on open allowlisted positions.">equity = 200 + realized_lab_pnl + unrealized_lab_mtm (allowlisted only)</p>
 <section>
-  <h2>Equity curve</h2>
-  <div class="chart-wrap"><canvas id="eqChart"></canvas></div>
-  <h2>Allowlist</h2>
+  <h2 title="History of lab equity over time. Each point is a published snapshot from the box.">Equity curve</h2>
+  <div class="chart-wrap" title="Line chart of lab equity vs time. Hover the line for point values."><canvas id="eqChart"></canvas></div>
+  <h2 title="Market series the lab is allowed to trade. Anything else is ignored.">Allowlist</h2>
   <div class="chips" id="allow"></div>
-  <h2>Resting orders</h2>
-  <table><thead><tr><th>Ticker</th><th>Side</th><th>Px¢</th><th>Qty</th><th>Oid</th></tr></thead><tbody id="resting"></tbody></table>
-  <h2>Recent fills (allowlisted)</h2>
-  <table><thead><tr><th>Ticker</th><th>Side</th><th>Px¢</th><th>Qty</th><th>Ts</th></tr></thead><tbody id="fills"></tbody></table>
+  <h2 title="Open limit orders still sitting on the book for allowlisted markets.">Resting orders</h2>
+  <table><thead><tr><th title="Kalshi market symbol for this order.">Ticker</th><th title="Buy or sell side (YES/NO or sell-to-exit).">Side</th><th title="Limit price in cents.">Px¢</th><th title="How many contracts are still resting.">Qty</th><th title="Short order id from the exchange.">Oid</th></tr></thead><tbody id="resting"></tbody></table>
+  <h2 title="Recent trades that filled on allowlisted series only (junk fills filtered out).">Recent fills (allowlisted)</h2>
+  <table><thead><tr><th title="Kalshi market symbol for this fill.">Ticker</th><th title="Which side of the market was filled.">Side</th><th title="Fill price in cents.">Px¢</th><th title="Contracts filled in this trade.">Qty</th><th title="When the fill happened (UTC).">Ts</th></tr></thead><tbody id="fills"></tbody></table>
 </section>
 <script>
 const $ = (id) => document.getElementById(id);
@@ -75,7 +76,7 @@ function upsertChart(points){
     chart=new Chart(ctx,{
       type:'line',
       data:{labels, datasets:[{label:'Equity $', data, borderColor:'#6ea8fe', backgroundColor:'rgba(110,168,254,.15)', fill:true, tension:.25, pointRadius:0, borderWidth:2}]},
-      options:{responsive:true, maintainAspectRatio:false, plugins:{legend:{display:false}},
+      options:{responsive:true, maintainAspectRatio:false, plugins:{legend:{display:false}, tooltip:{callbacks:{label:(c)=>' Equity $'+Number(c.raw).toFixed(2)}}},
         scales:{x:{ticks:{color:'#8b9bb0', maxTicksLimit:8}, grid:{color:'#243041'}},
                 y:{ticks:{color:'#8b9bb0'}, grid:{color:'#243041'}}}}
     });
@@ -100,12 +101,17 @@ async function tick(){
     $('today').innerHTML = signed(d.today_pnl_usd);
     $('openUsd').textContent = money(d.open_usd);
     $('remainUsd').textContent = money(d.remaining_usd);
+    if ($('maxUsd')) $('maxUsd').textContent = money(d.max_open_usd);
     if(d.equity_formula) $('formula').textContent = d.equity_formula;
     const dm = d.daemon||{};
     const age = dm.heartbeat_age_sec;
     const alive = !!dm.alive;
-    $('daemon').innerHTML = `<span class="${alive?'ok':'bad'}">${alive?'alive':'down'}</span> · ${dm.mode||'?'} · hb ${age==null?'?':age+'s'}`;
-    $('allow').innerHTML = (d.allowlist||[]).map(s=>`<span class="chip">${s}</span>`).join('') || '<span class="meta">—</span>';
+    const mode = dm.mode || '?';
+    const modeTip = mode === 'shark_pack_only'
+      ? 'shark_pack_only: trader follows Markets edge packs and skips blind join-the-bid entries.'
+      : ('Daemon mode: ' + mode);
+    $('daemon').innerHTML = `<span class="${alive?'ok':'bad'}" title="${alive?'Trader process looks healthy.':'Trader heartbeat is stale or missing.'}">${alive?'alive':'down'}</span> · <span title="${modeTip}">${mode}</span> · <span title="Seconds since the trader last wrote a heartbeat.">hb ${age==null?'?':age+'s'}</span>`;
+    $('allow').innerHTML = (d.allowlist||[]).map(s=>`<span class="chip" title="Allowlisted series ${s}: the lab may trade markets that start with this code.">${s}</span>`).join('') || '<span class="meta">—</span>';
     $('resting').innerHTML = (d.resting_orders||[]).map(o=>row([
       `<code>${o.ticker||''}</code>`, o.side||'', o.price_cents??'—', o.qty??'—', `<code>${o.order_id_short||''}</code>`
     ])).join('') || row(['—','','','','']);
