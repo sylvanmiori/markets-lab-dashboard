@@ -1,11 +1,11 @@
 {
-  "updated_at": "2026-09-04T04:19:09Z",
+  "updated_at": "2026-09-04T04:22:12Z",
   "open_usd": 25.3,
   "max_open_usd": 50.0,
   "remaining_usd": 24.7,
   "daemon": {
     "alive": true,
-    "heartbeat_age_sec": 542.1,
+    "heartbeat_age_sec": 124.5,
     "pid": 2894415,
     "mode": "shark_pack_only",
     "kill_file": false
@@ -37,7 +37,7 @@
       "ticker": "KXHIGHNY-26SEP04-B84.5",
       "side": "yes",
       "price_cents": 58,
-      "qty": 7.0,
+      "qty": 5.33,
       "order_id_short": "01a06a4c-6e48-7ab9"
     },
     {
@@ -56,6 +56,13 @@
     }
   ],
   "recent_fills": [
+    {
+      "ticker": "KXHIGHNY-26SEP04-B84.5",
+      "side": "no",
+      "price_cents": 1,
+      "qty": 1.67,
+      "ts": "2026-09-04T04:20:22.717711Z"
+    },
     {
       "ticker": "KXHIGHNY-26SEP04-B84.5",
       "side": "no",
@@ -188,13 +195,6 @@
       "price_cents": 0,
       "qty": 19.7,
       "ts": "2026-08-13T23:22:16.796027Z"
-    },
-    {
-      "ticker": "KXWCADVANCE-26JUL06USABEL-USA",
-      "side": "yes",
-      "price_cents": 1,
-      "qty": 17.94,
-      "ts": "2026-07-06T23:07:22.923403Z"
     }
   ],
   "notes": "shark_pack_only"
