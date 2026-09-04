@@ -1,11 +1,11 @@
 {
-  "updated_at": "2026-09-04T03:57:52Z",
-  "open_usd": 25.9566,
+  "updated_at": "2026-09-04T04:00:54Z",
+  "open_usd": 26.5866,
   "max_open_usd": 50.0,
-  "remaining_usd": 24.0434,
+  "remaining_usd": 23.4134,
   "daemon": {
     "alive": true,
-    "heartbeat_age_sec": 464.6,
+    "heartbeat_age_sec": 47.0,
     "pid": 2894415,
     "mode": "shark_pack_only",
     "kill_file": false
@@ -55,13 +55,6 @@
       "order_id_short": "01a06a47-74d8-79fc"
     },
     {
-      "ticker": "KXHIGHLAX-26SEP04-B75.5",
-      "side": "no",
-      "price_cents": 79,
-      "qty": 4.54,
-      "order_id_short": "01a06a40-73e0-7fa8"
-    },
-    {
       "ticker": "KXHIGHNY-26SEP04-B86.5",
       "side": "no",
       "price_cents": 92,
@@ -70,6 +63,13 @@
     }
   ],
   "recent_fills": [
+    {
+      "ticker": "KXHIGHLAX-26SEP04-B75.5",
+      "side": "yes",
+      "price_cents": 0,
+      "qty": 4.54,
+      "ts": "2026-09-04T04:00:13.559879Z"
+    },
     {
       "ticker": "KXHIGHLAX-26SEP04-B75.5",
       "side": "yes",
@@ -202,13 +202,6 @@
       "price_cents": 0,
       "qty": 6.31,
       "ts": "2026-06-30T01:29:37.80042Z"
-    },
-    {
-      "ticker": "KXWCGOAL-26JUN29BRAJPN-BRANEYM10-1",
-      "side": "no",
-      "price_cents": 0,
-      "qty": 6.09,
-      "ts": "2026-06-29T16:53:48.158338Z"
     }
   ],
   "notes": "shark_pack_only"
