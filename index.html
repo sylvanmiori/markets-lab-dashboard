@@ -4,6 +4,7 @@
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Markets Lab</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 <style>
   :root { --bg:#0b0f14; --card:#141a22; --text:#e7eef7; --muted:#8b9bb0; --ok:#3dd68c; --bad:#ff6b6b; --line:#243041; --accent:#6ea8fe; }
   * { box-sizing: border-box; }
@@ -11,7 +12,7 @@
   header { padding:20px 24px 8px; display:flex; gap:16px; align-items:baseline; flex-wrap:wrap; }
   h1 { font-size:18px; margin:0; letter-spacing:.02em; }
   .meta { color:var(--muted); font-size:12px; }
-  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:12px; padding:12px 24px; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:12px; padding:12px 24px; }
   .card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:14px 16px; }
   .label { color:var(--muted); font-size:11px; text-transform:uppercase; letter-spacing:.06em; }
   .value { font-size:22px; font-weight:600; margin-top:4px; font-variant-numeric:tabular-nums; }
@@ -26,44 +27,80 @@
   .chip { background:#1b2430; border:1px solid var(--line); border-radius:999px; padding:4px 10px; font-size:12px; color:var(--accent); }
   #err { color:var(--bad); padding:0 24px; min-height:1.2em; }
   code { font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; font-size:12px; }
+  .chart-wrap { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:12px; height:280px; }
+  .formula { color:var(--muted); font-size:12px; margin:8px 24px 0; }
 </style>
 </head>
 <body>
 <header>
   <h1>Markets Lab</h1>
-  <div class="meta">poll <code>status.json</code> · every 20s · no secrets</div>
+  <div class="meta">poll status + equity · 20s · no secrets</div>
   <div class="meta" id="fetchAge">—</div>
 </header>
 <div id="err"></div>
 <div class="grid">
+  <div class="card"><div class="label">Equity</div><div class="value" id="equity">—</div></div>
+  <div class="card"><div class="label">Δ vs $200</div><div class="value" id="delta">—</div></div>
+  <div class="card"><div class="label">Today PnL</div><div class="value" id="today">—</div></div>
   <div class="card"><div class="label">Open USD</div><div class="value" id="openUsd">—</div></div>
   <div class="card"><div class="label">Remaining Cap</div><div class="value" id="remainUsd">—</div></div>
-  <div class="card"><div class="label">Max Cap</div><div class="value" id="maxUsd">—</div></div>
-  <div class="card"><div class="label">Daemon</div><div class="value" id="daemon">—</div></div>
+  <div class="card"><div class="label">Daemon</div><div class="value" id="daemon" style="font-size:16px">—</div></div>
 </div>
+<p class="formula" id="formula">equity = 200 + realized_lab_pnl + unrealized_lab_mtm (allowlisted only)</p>
 <section>
+  <h2>Equity curve</h2>
+  <div class="chart-wrap"><canvas id="eqChart"></canvas></div>
   <h2>Allowlist</h2>
   <div class="chips" id="allow"></div>
   <h2>Resting orders</h2>
   <table><thead><tr><th>Ticker</th><th>Side</th><th>Px¢</th><th>Qty</th><th>Oid</th></tr></thead><tbody id="resting"></tbody></table>
-  <h2>Recent fills</h2>
+  <h2>Recent fills (allowlisted)</h2>
   <table><thead><tr><th>Ticker</th><th>Side</th><th>Px¢</th><th>Qty</th><th>Ts</th></tr></thead><tbody id="fills"></tbody></table>
 </section>
 <script>
 const $ = (id) => document.getElementById(id);
-let lastOk = 0;
+let lastOk = 0, chart;
 function money(n){ return (n==null||n==='')?'—':Number(n).toFixed(2); }
+function signed(n){
+  if(n==null||n==='') return '—';
+  const v=Number(n), cls=v>=0?'ok':'bad', s=(v>=0?'+':'')+v.toFixed(2);
+  return `<span class="${cls}">${s}</span>`;
+}
 function row(cells){ return '<tr>'+cells.map(c=>'<td>'+c+'</td>').join('')+'</tr>'; }
+function upsertChart(points){
+  const labels=(points||[]).map(p=>(p.t||'').slice(5,16).replace('T',' '));
+  const data=(points||[]).map(p=>Number(p.equity_usd));
+  const ctx=$('eqChart').getContext('2d');
+  if(!chart){
+    chart=new Chart(ctx,{
+      type:'line',
+      data:{labels, datasets:[{label:'Equity $', data, borderColor:'#6ea8fe', backgroundColor:'rgba(110,168,254,.15)', fill:true, tension:.25, pointRadius:0, borderWidth:2}]},
+      options:{responsive:true, maintainAspectRatio:false, plugins:{legend:{display:false}},
+        scales:{x:{ticks:{color:'#8b9bb0', maxTicksLimit:8}, grid:{color:'#243041'}},
+                y:{ticks:{color:'#8b9bb0'}, grid:{color:'#243041'}}}}
+    });
+  } else {
+    chart.data.labels=labels; chart.data.datasets[0].data=data; chart.update('none');
+  }
+}
 async function tick(){
   try{
-    const r = await fetch('./status.json?t='+Date.now(), {cache:'no-store'});
-    if(!r.ok) throw new Error('HTTP '+r.status);
-    const d = await r.json();
+    const [rs, rh] = await Promise.all([
+      fetch('./status.json?t='+Date.now(), {cache:'no-store'}),
+      fetch('./equity_history.json?t='+Date.now(), {cache:'no-store'})
+    ]);
+    if(!rs.ok) throw new Error('status HTTP '+rs.status);
+    const d = await rs.json();
+    let hist=[];
+    if(rh.ok){ try{ hist=await rh.json(); }catch(e){ hist=[]; } }
     lastOk = Date.now();
     $('err').textContent = '';
+    $('equity').textContent = money(d.equity_usd);
+    $('delta').innerHTML = signed(d.delta_vs_start_usd);
+    $('today').innerHTML = signed(d.today_pnl_usd);
     $('openUsd').textContent = money(d.open_usd);
     $('remainUsd').textContent = money(d.remaining_usd);
-    $('maxUsd').textContent = money(d.max_open_usd);
+    if(d.equity_formula) $('formula').textContent = d.equity_formula;
     const dm = d.daemon||{};
     const age = dm.heartbeat_age_sec;
     const alive = !!dm.alive;
@@ -75,6 +112,7 @@ async function tick(){
     $('fills').innerHTML = (d.recent_fills||[]).map(f=>row([
       `<code>${f.ticker||''}</code>`, f.side||'', f.price_cents??'—', f.qty??'—', `<code>${(f.ts||'').slice(0,19)}</code>`
     ])).join('') || row(['—','','','','']);
+    upsertChart(Array.isArray(hist)?hist:[]);
     $('fetchAge').textContent = 'updated '+(d.updated_at||'?')+' · fetched ok';
   }catch(e){
     $('err').textContent = 'fetch failed: '+e.message;
