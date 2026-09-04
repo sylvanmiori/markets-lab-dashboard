@@ -104,6 +104,27 @@
 const $ = (id) => document.getElementById(id);
 let lastOk = 0, chart;
 function money(n){ return (n==null||n==="")?"—":Number(n).toFixed(2); }
+
+function pnlCell(f){
+  const st = String(f.pnl_status||"flat");
+  const label = String(f.pnl_label||st);
+  const v = f.pnl_usd;
+  const cls = st==="win"?"pnl-win":(st==="lose"?"pnl-lose":"pnl-open");
+  const tip = label==="open"
+    ? "Still open — paper P&L vs current mid."
+    : (st==="win" ? "Closed or marked up — made money on this lot."
+    : (st==="lose" ? "Closed or marked down — lost money on this lot."
+    : "Flat or not enough info to score this fill."));
+  const txt = (v==null||v==="") ? "—" : ((Number(v)>=0?"+":"")+Number(v).toFixed(2));
+  return cell(`<span class="${cls}">${txt}</span>`, tip);
+}
+function pnlDot(f){
+  const st = String(f.pnl_status||"flat");
+  const dcls = st==="win"?"dot-win":(st==="lose"?"dot-lose":"dot-open");
+  const tip = st==="win"?"Win":(st==="lose"?"Lose":(String(f.pnl_label||st)==="open"?"Still open":"Flat / uncertain"));
+  return cell(`<span class="dot ${dcls}"></span>`, tip);
+}
+
 function signed(n){
   if(n==null||n==="") return "—";
   const v=Number(n), cls=v>=0?"ok":"bad", s=(v>=0?"+":"")+v.toFixed(2);
