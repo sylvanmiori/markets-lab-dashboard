@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-09-04T15:19:18Z",
+  "updated_at": "2026-09-04T15:22:31Z",
   "starting_bankroll_usd": 200.0,
-  "equity_usd": 200.785,
-  "delta_vs_start_usd": 0.785,
-  "today_pnl_usd": 0.3,
+  "equity_usd": 201.21,
+  "delta_vs_start_usd": 1.21,
+  "today_pnl_usd": 0.725,
   "realized_lab_pnl_usd": 4.5,
-  "unrealized_lab_mtm_usd": -3.715,
+  "unrealized_lab_mtm_usd": -3.29,
   "equity_formula": "equity_usd = 200 + realized_lab_pnl + unrealized_lab_mtm (allowlisted series only)",
-  "open_usd": 48.1742,
+  "open_usd": 55.61,
   "max_open_usd": 50.0,
-  "remaining_usd": 0.4658,
+  "remaining_usd": -5.61,
   "daemon": {
     "alive": true,
-    "heartbeat_age_sec": 63.3,
+    "heartbeat_age_sec": 79.0,
     "pid": 3167888,
-    "mode": "unknown",
+    "mode": "no remaining open room",
     "kill_file": false
   },
   "allowlist": [
@@ -190,5 +190,5 @@
       "ts": "2026-09-04T06:38:44.459139Z"
     }
   ],
-  "notes": ""
+  "notes": "no remaining open room"
 }
