@@ -1,18 +1,18 @@
 {
-  "updated_at": "2026-09-04T13:43:50Z",
+  "updated_at": "2026-09-04T13:47:01Z",
   "starting_bankroll_usd": 200.0,
-  "equity_usd": 198.0,
-  "delta_vs_start_usd": -2.0,
-  "today_pnl_usd": -2.485,
+  "equity_usd": 198.28,
+  "delta_vs_start_usd": -1.72,
+  "today_pnl_usd": -2.205,
   "realized_lab_pnl_usd": 3.18,
-  "unrealized_lab_mtm_usd": -5.18,
+  "unrealized_lab_mtm_usd": -4.9,
   "equity_formula": "equity_usd = 200 + realized_lab_pnl + unrealized_lab_mtm (allowlisted series only)",
-  "open_usd": 22.59,
+  "open_usd": 23.02,
   "max_open_usd": 50.0,
-  "remaining_usd": 17.88,
+  "remaining_usd": 22.43,
   "daemon": {
     "alive": true,
-    "heartbeat_age_sec": 98.0,
+    "heartbeat_age_sec": 108.0,
     "pid": 2894415,
     "mode": "unknown",
     "kill_file": false
@@ -26,6 +26,13 @@
     "KXAAAGASD"
   ],
   "resting_orders": [
+    {
+      "ticker": "KXHIGHCHI-26SEP04-B95.5",
+      "side": "buy_no",
+      "price_cents": 65,
+      "qty": 7.0,
+      "order_id_short": "01a06caa-7ab8-741f"
+    },
     {
       "ticker": "KXHIGHNY-26SEP04-B84.5",
       "side": "buy_yes",
