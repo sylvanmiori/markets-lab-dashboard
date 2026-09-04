@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-09-04T14:15:36Z",
+  "updated_at": "2026-09-04T14:18:45Z",
   "starting_bankroll_usd": 200.0,
-  "equity_usd": 197.805,
-  "delta_vs_start_usd": -2.195,
-  "today_pnl_usd": -2.68,
+  "equity_usd": 196.145,
+  "delta_vs_start_usd": -3.855,
+  "today_pnl_usd": -4.34,
   "realized_lab_pnl_usd": 3.18,
-  "unrealized_lab_mtm_usd": -5.375,
+  "unrealized_lab_mtm_usd": -7.035,
   "equity_formula": "equity_usd = 200 + realized_lab_pnl + unrealized_lab_mtm (allowlisted series only)",
-  "open_usd": 36.6,
+  "open_usd": 41.15,
   "max_open_usd": 50.0,
   "remaining_usd": 8.85,
   "daemon": {
     "alive": true,
-    "heartbeat_age_sec": 24.3,
+    "heartbeat_age_sec": 34.8,
     "pid": 2894415,
-    "mode": "unknown",
+    "mode": "shark_pack_only",
     "kill_file": false
   },
   "allowlist": [
@@ -26,13 +26,6 @@
     "KXAAAGASD"
   ],
   "resting_orders": [
-    {
-      "ticker": "KXHIGHCHI-26SEP04-B95.5",
-      "side": "buy_no",
-      "price_cents": 65,
-      "qty": 7.0,
-      "order_id_short": "01a06cc5-ea28-76ff"
-    },
     {
       "ticker": "KXHIGHLAX-26SEP04-B77.5",
       "side": "buy_yes",
@@ -70,6 +63,20 @@
     }
   ],
   "recent_fills": [
+    {
+      "ticker": "KXHIGHCHI-26SEP04-B95.5",
+      "side": "sell_no",
+      "price_cents": 65,
+      "qty": 0.01,
+      "ts": "2026-09-04T14:17:26.190747Z"
+    },
+    {
+      "ticker": "KXHIGHCHI-26SEP04-B95.5",
+      "side": "sell_no",
+      "price_cents": 65,
+      "qty": 6.99,
+      "ts": "2026-09-04T14:17:20.231671Z"
+    },
     {
       "ticker": "KXHIGHCHI-26SEP04-B95.5",
       "side": "sell_no",
@@ -195,21 +202,7 @@
       "price_cents": 79,
       "qty": 4.54,
       "ts": "2026-09-04T04:00:13.559879Z"
-    },
-    {
-      "ticker": "KXHIGHLAX-26SEP04-B75.5",
-      "side": "buy_no",
-      "price_cents": 79,
-      "qty": 3.0,
-      "ts": "2026-09-04T03:56:25.842071Z"
-    },
-    {
-      "ticker": "KXHIGHLAX-26SEP04-T78",
-      "side": "buy_no",
-      "price_cents": 84,
-      "qty": 16.0,
-      "ts": "2026-09-04T03:11:11.134641Z"
     }
   ],
-  "notes": ""
+  "notes": "shark_pack_only"
 }
