@@ -64,29 +64,29 @@
 </div>
 <p class="formula tip" id="formula" title="How equity is built: bankroll plus realized PnL plus mark-to-market on allowlisted series only.">equity = 200 + realized_lab_pnl + unrealized_lab_mtm (allowlisted only)</p>
 <section>
-  <h2 class="tip" title="Running lab equity over time from the public history file.">Equity curve</h2>
-  <div class="chart-wrap tip" title="Hover the line for exact equity and timestamp at each point."><canvas id="eqChart"></canvas></div>
-  <h2 class="tip" title="Only these market series count toward equity, open risk, and fills on this page.">Allowlist</h2>
+  <h2 class="tip">Equity curve</h2>
+  <div class="chart-wrap tip"><canvas id="eqChart"></canvas></div>
+  <h2 class="tip">Allowlist</h2>
   <div class="chips" id="allow"></div>
-  <h2 class="tip" title="Open limit orders still waiting to fill for this lab.">Resting orders</h2>
+  <h2 class="tip">Resting orders</h2>
   <table>
     <thead><tr>
-      <th class="tip" title="Market contract identifier.">Ticker</th>
-      <th class="tip" title="Buy or sell the yes/no side of the contract.">Side</th>
-      <th class="tip" title="Limit price in cents.">Px¢</th>
-      <th class="tip" title="Number of contracts in the resting order.">Qty</th>
-      <th class="tip" title="Short order id for the resting order.">Oid</th>
+      <th class="tip">Ticker</th>
+      <th class="tip">Side</th>
+      <th class="tip">Px¢</th>
+      <th class="tip">Qty</th>
+      <th class="tip">Oid</th>
     </tr></thead>
     <tbody id="resting"></tbody>
   </table>
-  <h2 class="tip" title="Latest fills that match the allowlisted series.">Recent fills (allowlisted)</h2>
+  <h2 class="tip">Recent fills (allowlisted)</h2>
   <table>
     <thead><tr>
-      <th class="tip" title="Market contract that filled.">Ticker</th>
-      <th class="tip" title="Buy or sell the yes/no side of the contract.">Side</th>
-      <th class="tip" title="Fill price in cents.">Px¢</th>
-      <th class="tip" title="Number of contracts filled.">Qty</th>
-      <th class="tip" title="When the fill happened (UTC).">Ts</th>
+      <th class="tip">Ticker</th>
+      <th class="tip">Side</th>
+      <th class="tip">Px¢</th>
+      <th class="tip">Qty</th>
+      <th class="tip">Ts</th>
     </tr></thead>
     <tbody id="fills"></tbody>
   </table>
@@ -104,7 +104,7 @@ function esc(s){
   return String(s??"").replace(/&/g,"&amp;").replace(/"/g,"&quot;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
 }
 function cell(text, title){
-  return `<td class="tip" title="${esc(title)}">${text}</td>`;
+  return `<td class="tip">${text}</td>`;
 }
 function row(cells){ return "<tr>"+cells.join("")+"</tr>"; }
 function upsertChart(points){
@@ -170,7 +170,7 @@ async function tick(){
       ? "Mode shark_pack_only: places curated pack bids only — not blind one-off bids."
       : "Background trader health. If mode is shark_pack_only, it places curated pack bids only — not blind one-off bids.";
     $("daemonCard").title = `${alive?"Alive":"Down"} · ${mode} · heartbeat ${age==null?"?":age+"s"}. ${packNote}`;
-    $("allow").innerHTML = (d.allowlist||[]).map(s=>`<span class="chip tip" title="Allowlisted series ${esc(s)}: only these tickers count on this dashboard.">${esc(s)}</span>`).join("") || "<span class=\"meta\">—</span>";
+    $("allow").innerHTML = (d.allowlist||[]).map(s=>`<span class="chip tip">${esc(s)}</span>`).join("") || "<span class=\"meta\">—</span>";
     $("resting").innerHTML = (d.resting_orders||[]).map(o=>row([
       cell(`<code>${esc(o.ticker||"")}</code>`, `Resting order on ${o.ticker||"—"}`),
       cell(esc(o.side||""), `Side: ${o.side||"—"}`),
