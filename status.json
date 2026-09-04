@@ -1,18 +1,18 @@
 {
-  "updated_at": "2026-09-04T13:53:22Z",
+  "updated_at": "2026-09-04T13:56:32Z",
   "starting_bankroll_usd": 200.0,
-  "equity_usd": 197.84,
-  "delta_vs_start_usd": -2.16,
-  "today_pnl_usd": -2.645,
+  "equity_usd": 198.125,
+  "delta_vs_start_usd": -1.875,
+  "today_pnl_usd": -2.36,
   "realized_lab_pnl_usd": 3.18,
-  "unrealized_lab_mtm_usd": -5.34,
+  "unrealized_lab_mtm_usd": -5.055,
   "equity_formula": "equity_usd = 200 + realized_lab_pnl + unrealized_lab_mtm (allowlisted series only)",
   "open_usd": 23.02,
   "max_open_usd": 50.0,
   "remaining_usd": 26.98,
   "daemon": {
     "alive": true,
-    "heartbeat_age_sec": 130.4,
+    "heartbeat_age_sec": 142.1,
     "pid": 2894415,
     "mode": "shark_pack_only",
     "kill_file": false
@@ -32,13 +32,6 @@
       "price_cents": 65,
       "qty": 7.0,
       "order_id_short": "01a06caa-7ab8-741f"
-    },
-    {
-      "ticker": "KXHIGHNY-26SEP04-B84.5",
-      "side": "buy_yes",
-      "price_cents": 57,
-      "qty": 10.0,
-      "order_id_short": "01a06ca7-bb98-77db"
     },
     {
       "ticker": "KXHIGHLAX-26SEP04-B77.5",
@@ -70,6 +63,20 @@
     }
   ],
   "recent_fills": [
+    {
+      "ticker": "KXHIGHNY-26SEP04-B84.5",
+      "side": "sell_no",
+      "price_cents": 43,
+      "qty": 1.49,
+      "ts": "2026-09-04T13:55:19.36665Z"
+    },
+    {
+      "ticker": "KXHIGHNY-26SEP04-B84.5",
+      "side": "sell_no",
+      "price_cents": 43,
+      "qty": 8.51,
+      "ts": "2026-09-04T13:54:35.91751Z"
+    },
     {
       "ticker": "KXHIGHNY-26SEP04-B84.5",
       "side": "sell_no",
@@ -195,20 +202,6 @@
       "price_cents": 84,
       "qty": 2.0,
       "ts": "2026-09-04T03:03:19.0949Z"
-    },
-    {
-      "ticker": "KXHIGHLAX-26SEP04-T78",
-      "side": "buy_no",
-      "price_cents": 84,
-      "qty": 2.0,
-      "ts": "2026-09-04T02:50:12.890618Z"
-    },
-    {
-      "ticker": "KXHIGHNY-26SEP04-B82.5",
-      "side": "buy_no",
-      "price_cents": 67,
-      "qty": 0.42,
-      "ts": "2026-09-04T02:45:32.934052Z"
     }
   ],
   "notes": "shark_pack_only"
