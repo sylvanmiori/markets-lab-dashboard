@@ -1,11 +1,11 @@
 {
-  "updated_at": "2026-09-04T03:54:49Z",
+  "updated_at": "2026-09-04T03:57:52Z",
   "open_usd": 25.9566,
   "max_open_usd": 50.0,
   "remaining_usd": 24.0434,
   "daemon": {
     "alive": true,
-    "heartbeat_age_sec": 282.2,
+    "heartbeat_age_sec": 464.6,
     "pid": 2894415,
     "mode": "shark_pack_only",
     "kill_file": false
@@ -58,7 +58,7 @@
       "ticker": "KXHIGHLAX-26SEP04-B75.5",
       "side": "no",
       "price_cents": 79,
-      "qty": 7.54,
+      "qty": 4.54,
       "order_id_short": "01a06a40-73e0-7fa8"
     },
     {
@@ -70,6 +70,13 @@
     }
   ],
   "recent_fills": [
+    {
+      "ticker": "KXHIGHLAX-26SEP04-B75.5",
+      "side": "yes",
+      "price_cents": 0,
+      "qty": 3.0,
+      "ts": "2026-09-04T03:56:25.842071Z"
+    },
     {
       "ticker": "KXHIGHLAX-26SEP04-T78",
       "side": "yes",
