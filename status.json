@@ -1,0 +1,208 @@
+{
+  "updated_at": "2026-09-04T03:27:29Z",
+  "open_usd": 25.9566,
+  "max_open_usd": 50.0,
+  "remaining_usd": 24.0434,
+  "daemon": {
+    "alive": true,
+    "heartbeat_age_sec": 441.4,
+    "pid": 2894415,
+    "mode": "shark_pack_only",
+    "kill_file": false
+  },
+  "allowlist": [
+    "KXHIGHCHI",
+    "KXHIGHNY",
+    "KXHIGHLAX",
+    "KXBTCD",
+    "KXFEDDECISION",
+    "KXAAAGASD"
+  ],
+  "resting_orders": [
+    {
+      "ticker": "KXHIGHCHI-26SEP04-B93.5",
+      "side": "no",
+      "price_cents": 60,
+      "qty": 14.0,
+      "order_id_short": "01a06a5b-f2f0-79e9"
+    },
+    {
+      "ticker": "KXHIGHCHI-26SEP04-B93.5",
+      "side": "no",
+      "price_cents": 60,
+      "qty": 14.0,
+      "order_id_short": "01a06a59-33d0-7089"
+    },
+    {
+      "ticker": "KXHIGHNY-26SEP04-B84.5",
+      "side": "yes",
+      "price_cents": 58,
+      "qty": 7.0,
+      "order_id_short": "01a06a4c-6e48-7ab9"
+    },
+    {
+      "ticker": "KXHIGHCHI-26SEP04-B95.5",
+      "side": "no",
+      "price_cents": 68,
+      "qty": 1.0,
+      "order_id_short": "01a06a49-4d80-7ca1"
+    },
+    {
+      "ticker": "KXHIGHNY-26SEP04-B84.5",
+      "side": "yes",
+      "price_cents": 58,
+      "qty": 4.0,
+      "order_id_short": "01a06a47-74d8-79fc"
+    },
+    {
+      "ticker": "KXHIGHLAX-26SEP04-B75.5",
+      "side": "no",
+      "price_cents": 79,
+      "qty": 7.54,
+      "order_id_short": "01a06a40-73e0-7fa8"
+    },
+    {
+      "ticker": "KXHIGHNY-26SEP04-B86.5",
+      "side": "no",
+      "price_cents": 92,
+      "qty": 20.0,
+      "order_id_short": "01a06a3d-2c08-706e"
+    }
+  ],
+  "recent_fills": [
+    {
+      "ticker": "KXHIGHLAX-26SEP04-T78",
+      "side": "yes",
+      "price_cents": 0,
+      "qty": 16.0,
+      "ts": "2026-09-04T03:11:11.134641Z"
+    },
+    {
+      "ticker": "KXHIGHCHI-26SEP04-B95.5",
+      "side": "no",
+      "price_cents": 0,
+      "qty": 16.0,
+      "ts": "2026-09-04T03:10:49.66937Z"
+    },
+    {
+      "ticker": "KXHIGHLAX-26SEP04-T78",
+      "side": "yes",
+      "price_cents": 0,
+      "qty": 2.0,
+      "ts": "2026-09-04T03:03:19.0949Z"
+    },
+    {
+      "ticker": "KXHIGHLAX-26SEP04-T78",
+      "side": "yes",
+      "price_cents": 0,
+      "qty": 2.0,
+      "ts": "2026-09-04T02:50:12.890618Z"
+    },
+    {
+      "ticker": "KXHIGHNY-26SEP04-B82.5",
+      "side": "yes",
+      "price_cents": 0,
+      "qty": 0.42,
+      "ts": "2026-09-04T02:45:32.934052Z"
+    },
+    {
+      "ticker": "KXHIGHLAX-26SEP04-B77.5",
+      "side": "no",
+      "price_cents": 1,
+      "qty": 5.0,
+      "ts": "2026-09-04T02:42:32.673862Z"
+    },
+    {
+      "ticker": "KXHIGHLAX-26SEP04-B75.5",
+      "side": "yes",
+      "price_cents": 0,
+      "qty": 12.46,
+      "ts": "2026-09-04T02:39:39.237553Z"
+    },
+    {
+      "ticker": "KXHIGHNY-26SEP04-B82.5",
+      "side": "yes",
+      "price_cents": 0,
+      "qty": 14.58,
+      "ts": "2026-09-04T02:38:34.284809Z"
+    },
+    {
+      "ticker": "KXHIGHCHI-26SEP04-B95.5",
+      "side": "yes",
+      "price_cents": 0,
+      "qty": 16.0,
+      "ts": "2026-09-04T02:33:36.765392Z"
+    },
+    {
+      "ticker": "KXHIGHCHI-26SEP04-B93.5",
+      "side": "yes",
+      "price_cents": 0,
+      "qty": 13.0,
+      "ts": "2026-09-04T02:33:36.762867Z"
+    },
+    {
+      "ticker": "KXHIGHCHI-26SEP04-B91.5",
+      "side": "yes",
+      "price_cents": 0,
+      "qty": 20.0,
+      "ts": "2026-09-04T02:33:36.760558Z"
+    },
+    {
+      "ticker": "KXHIGHNY-26SEP04-B84.5",
+      "side": "yes",
+      "price_cents": 1,
+      "qty": 7.0,
+      "ts": "2026-09-04T02:28:31.724109Z"
+    },
+    {
+      "ticker": "KXHIGHCHI-26SEP04-B93.5",
+      "side": "yes",
+      "price_cents": 0,
+      "qty": 1.0,
+      "ts": "2026-09-03T23:53:16.64101Z"
+    },
+    {
+      "ticker": "KXSB-27-HOU",
+      "side": "yes",
+      "price_cents": 0,
+      "qty": 187.52,
+      "ts": "2026-08-26T23:47:30.581817Z"
+    },
+    {
+      "ticker": "KXNFLGAME-26AUG13LACHOU-HOU",
+      "side": "no",
+      "price_cents": 0,
+      "qty": 19.7,
+      "ts": "2026-08-14T02:17:02.68189Z"
+    },
+    {
+      "ticker": "KXNFLGAME-26AUG13LACHOU-HOU",
+      "side": "yes",
+      "price_cents": 0,
+      "qty": 19.7,
+      "ts": "2026-08-13T23:22:16.796027Z"
+    },
+    {
+      "ticker": "KXWCADVANCE-26JUL06USABEL-USA",
+      "side": "yes",
+      "price_cents": 1,
+      "qty": 17.94,
+      "ts": "2026-07-06T23:07:22.923403Z"
+    },
+    {
+      "ticker": "KXWCGOAL-26JUN29NEDMAR-MARISAIBA34-1",
+      "side": "no",
+      "price_cents": 0,
+      "qty": 6.31,
+      "ts": "2026-06-30T01:29:37.80042Z"
+    },
+    {
+      "ticker": "KXWCGOAL-26JUN29BRAJPN-BRANEYM10-1",
+      "side": "no",
+      "price_cents": 0,
+      "qty": 6.09,
+      "ts": "2026-06-29T16:53:48.158338Z"
+    }
+  ],
+  "notes": "shark_pack_only"
+}
