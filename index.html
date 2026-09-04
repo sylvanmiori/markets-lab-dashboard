@@ -17,6 +17,13 @@
   .label { color:var(--muted); font-size:11px; text-transform:uppercase; letter-spacing:.06em; }
   .value { font-size:22px; font-weight:600; margin-top:4px; font-variant-numeric:tabular-nums; }
   .ok { color:var(--ok); } .bad { color:var(--bad); }
+  .pnl-win { color:var(--ok); font-weight:600; }
+  .pnl-lose { color:var(--bad); font-weight:600; }
+  .pnl-open, .pnl-flat { color:#e6c35c; font-weight:600; }
+  .dot { display:inline-block; width:8px; height:8px; border-radius:50%; margin-right:6px; vertical-align:middle; }
+  .dot-win { background:var(--ok); }
+  .dot-lose { background:var(--bad); }
+  .dot-open, .dot-flat { background:#e6c35c; }
   section { padding:8px 24px 24px; }
   h2 { font-size:13px; color:var(--muted); text-transform:uppercase; letter-spacing:.06em; margin:16px 0 8px; }
   table { width:100%; border-collapse:collapse; background:var(--card); border:1px solid var(--line); border-radius:12px; overflow:hidden; }
@@ -86,6 +93,8 @@
       <th class="tip">Side</th>
       <th class="tip">Px¢</th>
       <th class="tip">Qty</th>
+      <th title="Estimated dollars made or lost on this fill (matched round-trip or open mark).">P&amp;L $</th>
+      <th title="Green = made money, red = lost money, yellow = still open / flat / uncertain.">●</th>
       <th class="tip">Ts</th>
     </tr></thead>
     <tbody id="fills"></tbody>
@@ -183,8 +192,10 @@ async function tick(){
       cell(esc(f.side||""), `Side: ${f.side||"—"}`),
       cell(f.price_cents??"—", `Fill price ${f.price_cents??"—"}¢`),
       cell(f.qty??"—", `Quantity ${f.qty??"—"}`),
+      pnlCell(f),
+      pnlDot(f),
       cell(`<code>${esc((f.ts||"").slice(0,19))}</code>`, `Fill time ${(f.ts||"").slice(0,19) || "—"} UTC`)
-    ])).join("") || row([cell("—","No recent fills"),cell("",""),cell("",""),cell("",""),cell("","")]);
+    ])).join("") || row([cell("—","No recent fills"),cell("",""),cell("",""),cell("",""),cell("",""),cell("",""),cell("","")]);
     upsertChart(Array.isArray(hist)?hist:[]);
     $("fetchAge").textContent = "updated "+(d.updated_at||"?")+" · fetched ok";
   }catch(e){
