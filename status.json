@@ -1,11 +1,11 @@
 {
-  "updated_at": "2026-09-04T04:03:57Z",
+  "updated_at": "2026-09-04T04:06:59Z",
   "open_usd": 26.5866,
   "max_open_usd": 50.0,
   "remaining_usd": 23.4134,
   "daemon": {
     "alive": true,
-    "heartbeat_age_sec": 229.4,
+    "heartbeat_age_sec": 412.2,
     "pid": 2894415,
     "mode": "shark_pack_only",
     "kill_file": false
