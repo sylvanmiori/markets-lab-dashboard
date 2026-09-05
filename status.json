@@ -1,18 +1,18 @@
 {
-  "updated_at": "2026-09-05T15:34:40Z",
+  "updated_at": "2026-09-05T15:37:58Z",
   "starting_bankroll_usd": 200.0,
-  "equity_usd": 198.55,
-  "delta_vs_start_usd": -1.45,
-  "today_pnl_usd": 4.115,
+  "equity_usd": 197.77,
+  "delta_vs_start_usd": -2.23,
+  "today_pnl_usd": 3.335,
   "realized_lab_pnl_usd": 0.77,
-  "unrealized_lab_mtm_usd": -2.22,
+  "unrealized_lab_mtm_usd": -3.0,
   "equity_formula": "equity_usd = 200 + realized_lab_pnl + unrealized_lab_mtm (allowlisted series only)",
   "open_usd": 12.76,
   "max_open_usd": 50.0,
   "remaining_usd": 37.24,
   "daemon": {
     "alive": true,
-    "heartbeat_age_sec": 80.8,
+    "heartbeat_age_sec": 99.8,
     "pid": 3220135,
     "mode": "shark_pack_only",
     "kill_file": false
@@ -33,8 +33,8 @@
       "price_cents": 75,
       "qty": 3.02,
       "ts": "2026-09-05T11:15:47.602677Z",
-      "pnl_usd": -0.0302,
-      "pnl_status": "open",
+      "pnl_usd": 0.151,
+      "pnl_status": "win",
       "pnl_label": "open"
     },
     {
@@ -43,8 +43,8 @@
       "price_cents": 75,
       "qty": 3.98,
       "ts": "2026-09-05T11:15:43.973222Z",
-      "pnl_usd": -0.0398,
-      "pnl_status": "open",
+      "pnl_usd": 0.199,
+      "pnl_status": "win",
       "pnl_label": "open"
     },
     {
@@ -53,8 +53,8 @@
       "price_cents": 75,
       "qty": 7.0,
       "ts": "2026-09-05T11:15:43.973222Z",
-      "pnl_usd": -0.07,
-      "pnl_status": "lose",
+      "pnl_usd": 0.35,
+      "pnl_status": "win",
       "pnl_label": "open"
     },
     {
@@ -63,8 +63,8 @@
       "price_cents": 75,
       "qty": 5.0,
       "ts": "2026-09-05T11:15:43.973222Z",
-      "pnl_usd": -0.05,
-      "pnl_status": "lose",
+      "pnl_usd": 0.25,
+      "pnl_status": "win",
       "pnl_label": "open"
     },
     {
@@ -173,8 +173,8 @@
       "price_cents": 75,
       "qty": 2.0,
       "ts": "2026-09-04T17:15:10.122495Z",
-      "pnl_usd": -0.02,
-      "pnl_status": "open",
+      "pnl_usd": 0.1,
+      "pnl_status": "win",
       "pnl_label": "open"
     },
     {
