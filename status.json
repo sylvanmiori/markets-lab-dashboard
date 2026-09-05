@@ -1,18 +1,18 @@
 {
-  "updated_at": "2026-09-05T13:01:38Z",
+  "updated_at": "2026-09-05T13:04:58Z",
   "starting_bankroll_usd": 200.0,
-  "equity_usd": 207.36,
-  "delta_vs_start_usd": 7.36,
-  "today_pnl_usd": 12.925,
+  "equity_usd": 207.55,
+  "delta_vs_start_usd": 7.55,
+  "today_pnl_usd": 13.115,
   "realized_lab_pnl_usd": 2.07,
-  "unrealized_lab_mtm_usd": 5.29,
+  "unrealized_lab_mtm_usd": 5.48,
   "equity_formula": "equity_usd = 200 + realized_lab_pnl + unrealized_lab_mtm (allowlisted series only)",
   "open_usd": 18.91,
   "max_open_usd": 50.0,
   "remaining_usd": 31.09,
   "daemon": {
     "alive": true,
-    "heartbeat_age_sec": 77.1,
+    "heartbeat_age_sec": 96.8,
     "pid": 3220135,
     "mode": "shark_pack_only",
     "kill_file": false
@@ -33,7 +33,7 @@
       "price_cents": 75,
       "qty": 3.02,
       "ts": "2026-09-05T11:15:47.602677Z",
-      "pnl_usd": -0.2567,
+      "pnl_usd": -0.3322,
       "pnl_status": "lose",
       "pnl_label": "open"
     },
@@ -43,7 +43,7 @@
       "price_cents": 75,
       "qty": 3.98,
       "ts": "2026-09-05T11:15:43.973222Z",
-      "pnl_usd": -0.3383,
+      "pnl_usd": -0.4378,
       "pnl_status": "lose",
       "pnl_label": "open"
     },
@@ -53,7 +53,7 @@
       "price_cents": 75,
       "qty": 7.0,
       "ts": "2026-09-05T11:15:43.973222Z",
-      "pnl_usd": -0.595,
+      "pnl_usd": -0.77,
       "pnl_status": "lose",
       "pnl_label": "open"
     },
@@ -63,7 +63,7 @@
       "price_cents": 75,
       "qty": 5.0,
       "ts": "2026-09-05T11:15:43.973222Z",
-      "pnl_usd": -0.425,
+      "pnl_usd": -0.55,
       "pnl_status": "lose",
       "pnl_label": "open"
     },
@@ -73,7 +73,7 @@
       "price_cents": 60,
       "qty": 7.0,
       "ts": "2026-09-05T06:32:20.126465Z",
-      "pnl_usd": -0.14,
+      "pnl_usd": -0.105,
       "pnl_status": "lose",
       "pnl_label": "open"
     },
@@ -83,7 +83,7 @@
       "price_cents": 60,
       "qty": 3.76,
       "ts": "2026-09-04T21:36:04.665052Z",
-      "pnl_usd": -0.0752,
+      "pnl_usd": -0.0564,
       "pnl_status": "lose",
       "pnl_label": "open"
     },
@@ -93,7 +93,7 @@
       "price_cents": 60,
       "qty": 7.0,
       "ts": "2026-09-04T21:36:04.665052Z",
-      "pnl_usd": -0.14,
+      "pnl_usd": -0.105,
       "pnl_status": "lose",
       "pnl_label": "open"
     },
@@ -103,8 +103,8 @@
       "price_cents": 60,
       "qty": 3.24,
       "ts": "2026-09-04T21:19:48.293256Z",
-      "pnl_usd": -0.0648,
-      "pnl_status": "lose",
+      "pnl_usd": -0.0486,
+      "pnl_status": "open",
       "pnl_label": "open"
     },
     {
@@ -173,7 +173,7 @@
       "price_cents": 75,
       "qty": 2.0,
       "ts": "2026-09-04T17:15:10.122495Z",
-      "pnl_usd": -0.17,
+      "pnl_usd": -0.22,
       "pnl_status": "lose",
       "pnl_label": "open"
     },
