@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-05T07:40:46Z",
+  "updated_at": "2026-09-05T07:44:09Z",
   "starting_bankroll_usd": 200.0,
   "equity_usd": 209.16,
   "delta_vs_start_usd": 9.16,
@@ -12,7 +12,7 @@
   "remaining_usd": -10.73,
   "daemon": {
     "alive": true,
-    "heartbeat_age_sec": 18.0,
+    "heartbeat_age_sec": 221.0,
     "pid": 3220135,
     "mode": "no remaining open room",
     "kill_file": false
@@ -155,7 +155,7 @@
       "price_cents": 75,
       "qty": 2.0,
       "ts": "2026-09-04T17:15:10.122495Z",
-      "pnl_usd": -0.46,
+      "pnl_usd": -0.45,
       "pnl_status": "lose",
       "pnl_label": "open"
     },
