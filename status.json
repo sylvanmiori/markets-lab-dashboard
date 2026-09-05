@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-05T15:31:21Z",
+  "updated_at": "2026-09-05T15:34:40Z",
   "starting_bankroll_usd": 200.0,
   "equity_usd": 198.55,
   "delta_vs_start_usd": -1.45,
@@ -12,7 +12,7 @@
   "remaining_usd": 37.24,
   "daemon": {
     "alive": true,
-    "heartbeat_age_sec": 61.3,
+    "heartbeat_age_sec": 80.8,
     "pid": 3220135,
     "mode": "shark_pack_only",
     "kill_file": false
