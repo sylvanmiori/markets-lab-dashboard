@@ -1,18 +1,18 @@
 {
-  "updated_at": "2026-09-05T06:29:40Z",
+  "updated_at": "2026-09-05T06:33:04Z",
   "starting_bankroll_usd": 200.0,
-  "equity_usd": 208.165,
-  "delta_vs_start_usd": 8.165,
-  "today_pnl_usd": 13.73,
+  "equity_usd": 207.99,
+  "delta_vs_start_usd": 7.99,
+  "today_pnl_usd": 13.555,
   "realized_lab_pnl_usd": 7.4,
-  "unrealized_lab_mtm_usd": 0.765,
+  "unrealized_lab_mtm_usd": 0.59,
   "equity_formula": "equity_usd = 200 + realized_lab_pnl + unrealized_lab_mtm (allowlisted series only)",
   "open_usd": 57.93,
   "max_open_usd": 50.0,
   "remaining_usd": -7.93,
   "daemon": {
     "alive": true,
-    "heartbeat_age_sec": 552.4,
+    "heartbeat_age_sec": 155.6,
     "pid": 3220135,
     "mode": "no remaining open room",
     "kill_file": false
@@ -26,13 +26,6 @@
     "KXAAAGASD"
   ],
   "resting_orders": [
-    {
-      "ticker": "KXHIGHLAX-26SEP05-B79.5",
-      "side": "buy_no",
-      "price_cents": 60,
-      "qty": 7.0,
-      "order_id_short": "01a06e49-1f28-76f7"
-    },
     {
       "ticker": "KXHIGHCHI-26SEP05-T83",
       "side": "buy_no",
@@ -60,10 +53,20 @@
       "ticker": "KXHIGHLAX-26SEP05-B79.5",
       "side": "buy_no",
       "price_cents": 60,
+      "qty": 7.0,
+      "ts": "2026-09-05T06:32:20.126465Z",
+      "pnl_usd": -0.035,
+      "pnl_status": "open",
+      "pnl_label": "open"
+    },
+    {
+      "ticker": "KXHIGHLAX-26SEP05-B79.5",
+      "side": "buy_no",
+      "price_cents": 60,
       "qty": 3.76,
       "ts": "2026-09-04T21:36:04.665052Z",
-      "pnl_usd": -0.0752,
-      "pnl_status": "lose",
+      "pnl_usd": -0.0188,
+      "pnl_status": "open",
       "pnl_label": "open"
     },
     {
@@ -72,8 +75,8 @@
       "price_cents": 60,
       "qty": 7.0,
       "ts": "2026-09-04T21:36:04.665052Z",
-      "pnl_usd": -0.14,
-      "pnl_status": "lose",
+      "pnl_usd": -0.035,
+      "pnl_status": "open",
       "pnl_label": "open"
     },
     {
@@ -82,8 +85,8 @@
       "price_cents": 60,
       "qty": 3.24,
       "ts": "2026-09-04T21:19:48.293256Z",
-      "pnl_usd": -0.0648,
-      "pnl_status": "lose",
+      "pnl_usd": -0.0162,
+      "pnl_status": "open",
       "pnl_label": "open"
     },
     {
@@ -243,16 +246,6 @@
       "qty": 10.47,
       "ts": "2026-09-04T15:16:31.231227Z",
       "pnl_usd": -1.047,
-      "pnl_status": "lose",
-      "pnl_label": "lose"
-    },
-    {
-      "ticker": "KXHIGHCHI-26SEP04-B93.5",
-      "side": "sell_no",
-      "price_cents": 54,
-      "qty": 2.09,
-      "ts": "2026-09-04T15:16:17.893729Z",
-      "pnl_usd": -0.229,
       "pnl_status": "lose",
       "pnl_label": "lose"
     }
