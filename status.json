@@ -1,18 +1,18 @@
 {
-  "updated_at": "2026-09-05T17:43:36Z",
+  "updated_at": "2026-09-05T17:46:53Z",
   "starting_bankroll_usd": 200.0,
-  "equity_usd": 197.87,
-  "delta_vs_start_usd": -2.13,
-  "today_pnl_usd": 3.435,
+  "equity_usd": 198.22,
+  "delta_vs_start_usd": -1.78,
+  "today_pnl_usd": 3.785,
   "realized_lab_pnl_usd": 1.37,
-  "unrealized_lab_mtm_usd": -3.5,
+  "unrealized_lab_mtm_usd": -3.15,
   "equity_formula": "equity_usd = 200 + realized_lab_pnl + unrealized_lab_mtm (allowlisted series only)",
   "open_usd": 9.1,
   "max_open_usd": 50.0,
   "remaining_usd": 40.9,
   "daemon": {
     "alive": true,
-    "heartbeat_age_sec": 79.0,
+    "heartbeat_age_sec": 97.2,
     "pid": 3220135,
     "mode": "shark_pack_only",
     "kill_file": false
@@ -33,7 +33,7 @@
       "price_cents": 71,
       "qty": 6.0,
       "ts": "2026-09-05T16:57:56.278094Z",
-      "pnl_usd": -0.06,
+      "pnl_usd": -0.09,
       "pnl_status": "lose",
       "pnl_label": "open"
     },
@@ -43,8 +43,8 @@
       "price_cents": 75,
       "qty": 3.02,
       "ts": "2026-09-05T11:15:47.602677Z",
-      "pnl_usd": -0.0453,
-      "pnl_status": "open",
+      "pnl_usd": -0.0604,
+      "pnl_status": "lose",
       "pnl_label": "open"
     },
     {
@@ -53,7 +53,7 @@
       "price_cents": 75,
       "qty": 3.98,
       "ts": "2026-09-05T11:15:43.973222Z",
-      "pnl_usd": -0.0597,
+      "pnl_usd": -0.0796,
       "pnl_status": "lose",
       "pnl_label": "open"
     },
@@ -63,7 +63,7 @@
       "price_cents": 75,
       "qty": 7.0,
       "ts": "2026-09-05T11:15:43.973222Z",
-      "pnl_usd": -0.105,
+      "pnl_usd": -0.14,
       "pnl_status": "lose",
       "pnl_label": "open"
     },
@@ -73,7 +73,7 @@
       "price_cents": 75,
       "qty": 5.0,
       "ts": "2026-09-05T11:15:43.973222Z",
-      "pnl_usd": -0.075,
+      "pnl_usd": -0.1,
       "pnl_status": "lose",
       "pnl_label": "open"
     },
@@ -183,7 +183,7 @@
       "price_cents": 75,
       "qty": 2.0,
       "ts": "2026-09-04T17:15:10.122495Z",
-      "pnl_usd": -0.03,
+      "pnl_usd": -0.04,
       "pnl_status": "open",
       "pnl_label": "open"
     },
