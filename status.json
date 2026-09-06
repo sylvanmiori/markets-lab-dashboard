@@ -1,18 +1,18 @@
 {
-  "updated_at": "2026-09-06T18:41:12Z",
+  "updated_at": "2026-09-06T18:44:55Z",
   "starting_bankroll_usd": 200.0,
-  "equity_usd": 203.0,
-  "delta_vs_start_usd": 3.0,
-  "today_pnl_usd": 10.59,
+  "equity_usd": 203.785,
+  "delta_vs_start_usd": 3.785,
+  "today_pnl_usd": 11.375,
   "realized_lab_pnl_usd": 7.03,
-  "unrealized_lab_mtm_usd": -4.03,
+  "unrealized_lab_mtm_usd": -3.245,
   "equity_formula": "equity_usd = 200 + realized_lab_pnl + unrealized_lab_mtm (allowlisted series only)",
   "open_usd": 63.18,
   "max_open_usd": 50.0,
   "remaining_usd": 0.0,
   "daemon": {
     "alive": true,
-    "heartbeat_age_sec": 82.5,
+    "heartbeat_age_sec": 124.3,
     "pid": 72952,
     "mode": "no remaining open room",
     "kill_file": false
@@ -125,7 +125,7 @@
       "price_cents": 71,
       "qty": 6.0,
       "ts": "2026-09-06T18:24:10.194717Z",
-      "pnl_usd": 0.36,
+      "pnl_usd": 0.48,
       "pnl_status": "win",
       "pnl_label": "open"
     },
@@ -165,7 +165,7 @@
       "price_cents": 75,
       "qty": 1.0,
       "ts": "2026-09-06T17:26:03.197107Z",
-      "pnl_usd": -0.21,
+      "pnl_usd": -0.22,
       "pnl_status": "lose",
       "pnl_label": "open"
     },
@@ -175,7 +175,7 @@
       "price_cents": 74,
       "qty": 2.0,
       "ts": "2026-09-06T17:24:47.537139Z",
-      "pnl_usd": -0.4,
+      "pnl_usd": -0.42,
       "pnl_status": "lose",
       "pnl_label": "open"
     },
@@ -185,7 +185,7 @@
       "price_cents": 75,
       "qty": 3.0,
       "ts": "2026-09-06T17:24:47.537139Z",
-      "pnl_usd": -0.63,
+      "pnl_usd": -0.66,
       "pnl_status": "lose",
       "pnl_label": "open"
     },
@@ -195,7 +195,7 @@
       "price_cents": 74,
       "qty": 2.0,
       "ts": "2026-09-06T17:24:41.405066Z",
-      "pnl_usd": -0.4,
+      "pnl_usd": -0.42,
       "pnl_status": "lose",
       "pnl_label": "open"
     },
@@ -255,7 +255,7 @@
       "price_cents": 71,
       "qty": 12.0,
       "ts": "2026-09-06T16:57:23.128156Z",
-      "pnl_usd": -0.24,
+      "pnl_usd": -0.48,
       "pnl_status": "lose",
       "pnl_label": "open"
     },
