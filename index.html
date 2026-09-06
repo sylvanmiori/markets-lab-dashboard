@@ -34,15 +34,15 @@
   .chip { background:#1b2430; border:1px solid var(--line); border-radius:999px; padding:4px 10px; font-size:12px; color:var(--accent); }
   #err { color:var(--bad); padding:0 24px; min-height:1.2em; }
   code { font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; font-size:12px; }
-  .eq-scrub {
+  .eq-tip {
     margin: 0 0 8px;
     min-height: 1.4em;
     font-size: 15px;
     font-variant-numeric: tabular-nums;
     color: var(--muted);
   }
-  .eq-scrub.active { color: var(--text); }
-  .eq-scrub strong { color: var(--accent); font-size: 18px; }
+  .eq-tip.active { color: var(--text); }
+  .eq-tip strong { color: var(--accent); font-size: 18px; }
   .chart-wrap {
     background:var(--card); border:1px solid var(--line); border-radius:12px; padding:12px; height:280px;
     touch-action: none; -webkit-user-select: none; user-select: none;
@@ -84,7 +84,7 @@
 <p class="formula tip" id="formula" title="How equity is built: bankroll plus realized PnL plus mark-to-market on allowlisted series only.">equity = 200 + realized_lab_pnl + unrealized_lab_mtm (allowlisted only)</p>
 <section>
   <h2 class="tip">Equity curve</h2>
-  <div class="eq-scrub" id="eqScrub">Drag across chart for time + equity</div>
+  <div class="eq-tip" id="eqTip">Scrub for Time + Equity $</div>
   <div class="chart-wrap tip"><canvas id="eqChart"></canvas></div>
   <h2 class="tip">Allowlist</h2>
   <div class="chips" id="allow"></div>
@@ -150,29 +150,74 @@ function cell(text, title){
   return `<td class="tip">${text}</td>`;
 }
 function row(cells){ return "<tr>"+cells.join("")+"</tr>"; }
-function setEqScrub(label, equity){
-  const el=$("eqScrub");
+function showEqTip(label, equity){
+  const el=$("eqTip");
   if(!el) return;
   if(label==null || equity==null || Number.isNaN(Number(equity))){
     el.classList.remove("active");
-    el.textContent="Drag across chart for time + equity";
+    el.textContent="Scrub for Time + Equity $";
     return;
   }
   el.classList.add("active");
-  el.innerHTML=`<span>${esc(String(label))}</span> · <strong>$${Number(equity).toFixed(2)}</strong>`;
+  el.innerHTML=`Time <span>${esc(String(label))}</span> · Equity <strong>$${Number(equity).toFixed(2)}</strong>`;
 }
-function scrubFromChart(c){
-  if(!c) return;
-  const act = (c.getActiveElements && c.getActiveElements()) || [];
-  if(!act.length){
-    const tipAct = c.tooltip && c.tooltip.getActiveElements ? c.tooltip.getActiveElements() : [];
-    if(!tipAct.length){ setEqScrub(null); return; }
-    const i=tipAct[0].index;
-    setEqScrub(c.data.labels[i], c.data.datasets[0].data[i]);
-    return;
+function applyScrub(c, ev){
+  if(!c || !c.data || !c.data.labels || !c.data.labels.length) return;
+  let i=null;
+  try{
+    const els=c.getElementsAtEventForMode(ev, "index", {intersect:false}, false);
+    if(els && els.length) i=els[0].index;
+  }catch(e){}
+  if(i==null && ev && ev.x!=null){
+    const pts=(c.getDatasetMeta(0).data||[]);
+    let best=0, bestD=1e15;
+    for(let k=0;k<pts.length;k++){
+      const d=Math.abs(pts[k].x-ev.x);
+      if(d<bestD){ bestD=d; best=k; }
+    }
+    i=best;
   }
-  const i=act[0].index;
-  setEqScrub(c.data.labels[i], c.data.datasets[0].data[i]);
+  if(i==null) return;
+  i=Math.max(0, Math.min(c.data.labels.length-1, i));
+  const meta=c.getDatasetMeta(0);
+  if(!meta || !meta.data || !meta.data[i]) return;
+  const pt=meta.data[i];
+  c.setActiveElements([{datasetIndex:0, index:i}]);
+  if(c.tooltip && c.tooltip.setActiveElements){
+    c.tooltip.setActiveElements([{datasetIndex:0, index:i}], {x:pt.x, y:pt.y});
+  }
+  showEqTip(c.data.labels[i], c.data.datasets[0].data[i]);
+  c.update("none");
+}
+function bindEqScrubHandlers(c){
+  const canvas=c.canvas;
+  if(!canvas || canvas._eqScrubBound) return;
+  canvas._eqScrubBound=true;
+  const toChartEvent=(e)=>{
+    let chartEvent={type:e.type, native:e, x:0, y:0};
+    try{
+      if(Chart.helpers && Chart.helpers.getRelativePosition){
+        const pos=Chart.helpers.getRelativePosition(e, c);
+        chartEvent.x=pos.x; chartEvent.y=pos.y;
+        return chartEvent;
+      }
+    }catch(err){}
+    const t=(e.touches && e.touches[0]) || (e.changedTouches && e.changedTouches[0]) || e;
+    const rect=canvas.getBoundingClientRect();
+    const scaleX=canvas.width/Math.max(rect.width,1);
+    const scaleY=canvas.height/Math.max(rect.height,1);
+    chartEvent.x=(t.clientX-rect.left)*scaleX;
+    chartEvent.y=(t.clientY-rect.top)*scaleY;
+    return chartEvent;
+  };
+  const onMove=(e)=>{
+    if(e.cancelable) e.preventDefault(); // stop page scroll stealing the scrub
+    applyScrub(c, toChartEvent(e));
+  };
+  canvas.addEventListener("touchstart", onMove, {passive:false});
+  canvas.addEventListener("touchmove", onMove, {passive:false});
+  canvas.addEventListener("mousemove", onMove, {passive:false});
+  canvas.addEventListener("mouseleave", ()=>showEqTip(null), {passive:true});
 }
 function upsertChart(points){
   const labels=(points||[]).map(p=>(p.t||"").slice(5,16).replace("T"," "));
@@ -182,54 +227,20 @@ function upsertChart(points){
   const crosshairPlugin = {
     id:"eqCrosshair",
     afterDraw(c){
-      const act = (c.getActiveElements && c.getActiveElements()) || [];
-      const tipAct = c.tooltip && c.tooltip.getActiveElements ? c.tooltip.getActiveElements() : [];
-      const use = act.length ? act : tipAct;
-      if(!use.length) return;
-      const x = use[0].element.x;
-      const yAxis = c.scales.y;
+      const act=(c.getActiveElements && c.getActiveElements())||[];
+      if(!act.length) return;
+      const x=act[0].element.x;
+      const yAxis=c.scales.y;
       if(x==null || !yAxis) return;
-      const g = c.ctx;
+      const g=c.ctx;
       g.save();
       g.beginPath();
       g.moveTo(x, yAxis.top);
       g.lineTo(x, yAxis.bottom);
-      g.lineWidth = 1;
-      g.strokeStyle = "rgba(110,168,254,.55)";
+      g.lineWidth=1;
+      g.strokeStyle="rgba(110,168,254,.55)";
       g.stroke();
       g.restore();
-    },
-    afterEvent(c, args){
-      const type = (args.event && args.event.type) || "";
-      if(!type.includes("touch") && type!=="mousemove" && type!=="click") return;
-      if(type==="touchend" || type==="mouseout") return;
-      const ev = args.event;
-      if(!ev || !c.data.labels.length) return;
-      // Nearest index by pixel — works when pointRadius is 0 on mobile
-      let i = null;
-      try {
-        const els = c.getElementsAtEventForMode(ev, "index", {intersect:false}, true);
-        if(els && els.length) i = els[0].index;
-      } catch(e) {}
-      if(i==null && ev.x!=null && c.scales.x){
-        const pts = (c.getDatasetMeta(0).data||[]);
-        let best=0, bestD=1e15;
-        for(let k=0;k<pts.length;k++){
-          const d=Math.abs(pts[k].x - ev.x);
-          if(d<bestD){ bestD=d; best=k; }
-        }
-        i=best;
-      }
-      if(i==null) return;
-      i = Math.max(0, Math.min(c.data.labels.length-1, i));
-      const meta = c.getDatasetMeta(0);
-      if(!meta || !meta.data || !meta.data[i]) return;
-      c.setActiveElements([{datasetIndex:0, index:i}]);
-      if(c.tooltip && c.tooltip.setActiveElements){
-        c.tooltip.setActiveElements([{datasetIndex:0, index:i}], {x: meta.data[i].x, y: meta.data[i].y});
-      }
-      setEqScrub(c.data.labels[i], c.data.datasets[0].data[i]);
-      args.changed = true;
     }
   };
   if(!chart){
@@ -240,7 +251,7 @@ function upsertChart(points){
         borderColor:"#6ea8fe", backgroundColor:"rgba(110,168,254,.15)",
         fill:true, tension:.25,
         pointRadius: coarse ? 0 : 1,
-        pointHoverRadius: coarse ? 5 : 5,
+        pointHoverRadius: 4,
         pointHitRadius: coarse ? 24 : 12,
         borderWidth:2
       }]},
@@ -248,32 +259,10 @@ function upsertChart(points){
         responsive:true, maintainAspectRatio:false,
         interaction:{mode:"index", intersect:false},
         events:["mousemove","mouseout","click","touchstart","touchmove","touchend"],
-        onHover(evt, items, c){
-          if(items && items.length){
-            const i=items[0].index;
-            setEqScrub(c.data.labels[i], c.data.datasets[0].data[i]);
-          } else if(evt && evt.type==="mouseout"){
-            setEqScrub(null);
-          }
-        },
         plugins:{
           legend:{display:false},
-          tooltip:{
-            enabled:true,
-            mode:"index",
-            intersect:false,
-            position:"nearest",
-            displayColors:false,
-            backgroundColor:"rgba(20,26,34,.96)",
-            titleColor:"#e7eef7",
-            bodyColor:"#6ea8fe",
-            padding:10,
-            caretPadding:6,
-            callbacks:{
-              title:(items)=> items.length ? String(items[0].label) : "",
-              label:(ctx)=> "Equity $"+Number(ctx.parsed.y).toFixed(2)
-            }
-          }
+          // Native canvas tooltip fails on iOS touchmove — HTML #eqTip is source of truth
+          tooltip:{ enabled:false }
         },
         scales:{
           x:{ticks:{color:"#8b9bb0", maxTicksLimit:8}, grid:{color:"#243041"}},
@@ -282,14 +271,17 @@ function upsertChart(points){
       },
       plugins:[crosshairPlugin]
     });
+    bindEqScrubHandlers(chart);
   } else {
     chart.data.labels=labels;
     chart.data.datasets[0].data=data;
     chart.data.datasets[0].pointRadius = coarse ? 0 : 1;
     chart.data.datasets[0].pointHitRadius = coarse ? 24 : 12;
     chart.update("none");
+    bindEqScrubHandlers(chart);
   }
 }
+
 async function tick(){
   try{
     const [rs, rh] = await Promise.all([
