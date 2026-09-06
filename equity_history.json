@@ -109,5 +109,11 @@
     "source": "lab_curve_v3",
     "definition": "lab_curve_v3",
     "note": "mark: Kalshi total \u2212 nonlab \u2212 $40 pre-lab cash"
+  },
+  {
+    "t": "2026-09-06T21:59:34Z",
+    "equity_usd": 153.4371,
+    "source": "lab_equity",
+    "definition": "lab_curve_v3"
   }
 ]
