@@ -231,7 +231,7 @@ function bindEqScrubHandlers(c){
 function upsertChart(points){
   const pts=(points||[]).filter(p=>p && p.equity_usd!=null && !Number.isNaN(Number(p.equity_usd)) && !p.marker);
   // Prefer kalshi-tagged points when any exist (drop pre-cutover synthetic ~200 curve)
-  const kalshi=pts.filter(p=>p.source==="lab_equity" || p.definition==="lab_equity_v2" || p.source==="kalshi_portfolio" || p.definition==="portfolio_equity_v1");
+  const kalshi=pts.filter(p=>p.source==="lab_curve_v3" || p.definition==="lab_curve_v3" || p.source==="lab_equity" || p.definition==="lab_equity_v2" || p.source==="kalshi_portfolio" || p.definition==="portfolio_equity_v1");
   const use=kalshi.length?kalshi:pts;
   const labels=use.map(p=>(p.t||"").slice(5,16).replace("T"," "));
   const data=use.map(p=>Number(p.equity_usd));
