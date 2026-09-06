@@ -1,18 +1,18 @@
 {
-  "updated_at": "2026-09-06T21:15:23Z",
+  "updated_at": "2026-09-06T21:19:04Z",
   "starting_bankroll_usd": 200.0,
-  "equity_usd": 200.4127,
-  "delta_vs_start_usd": 0.4127,
-  "today_pnl_usd": 8.0027,
+  "equity_usd": 198.8277,
+  "delta_vs_start_usd": -1.1723,
+  "today_pnl_usd": 6.4177,
   "realized_lab_pnl_usd": 10.1476,
-  "unrealized_lab_mtm_usd": -9.7349,
+  "unrealized_lab_mtm_usd": -11.3199,
   "equity_formula": "equity_usd = 200 + realized_lab_pnl + unrealized_lab_mtm (allowlisted series only)",
-  "open_usd": 154.1694,
+  "open_usd": 153.1694,
   "max_open_usd": 50.0,
   "remaining_usd": 0.0,
   "daemon": {
     "alive": true,
-    "heartbeat_age_sec": 151.4,
+    "heartbeat_age_sec": 191.4,
     "pid": 72952,
     "mode": "no remaining open room",
     "kill_file": false
@@ -25,15 +25,7 @@
     "KXFEDDECISION",
     "KXAAAGASD"
   ],
-  "resting_orders": [
-    {
-      "ticker": "KXHIGHNY-26SEP07-B83.5",
-      "side": "buy_no",
-      "price_cents": 98,
-      "qty": 50.0,
-      "order_id_short": "01a0779e-ccf8-7513"
-    }
-  ],
+  "resting_orders": [],
   "recent_fills": [
     {
       "ticker": "KXHIGHLAX-26SEP07-T83",
@@ -171,7 +163,7 @@
       "price_cents": 75,
       "qty": 1.0,
       "ts": "2026-09-06T17:26:03.197107Z",
-      "pnl_usd": -0.315,
+      "pnl_usd": -0.305,
       "pnl_status": "lose",
       "pnl_label": "open"
     },
@@ -181,7 +173,7 @@
       "price_cents": 74,
       "qty": 2.0,
       "ts": "2026-09-06T17:24:47.537139Z",
-      "pnl_usd": -0.61,
+      "pnl_usd": -0.59,
       "pnl_status": "lose",
       "pnl_label": "open"
     },
@@ -191,7 +183,7 @@
       "price_cents": 75,
       "qty": 3.0,
       "ts": "2026-09-06T17:24:47.537139Z",
-      "pnl_usd": -0.945,
+      "pnl_usd": -0.915,
       "pnl_status": "lose",
       "pnl_label": "open"
     },
@@ -201,7 +193,7 @@
       "price_cents": 74,
       "qty": 2.0,
       "ts": "2026-09-06T17:24:41.405066Z",
-      "pnl_usd": -0.61,
+      "pnl_usd": -0.59,
       "pnl_status": "lose",
       "pnl_label": "open"
     },
