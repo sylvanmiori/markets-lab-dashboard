@@ -1,11 +1,11 @@
 {
-  "updated_at": "2026-09-06T21:49:42Z",
+  "updated_at": "2026-09-06T21:55:47Z",
   "starting_bankroll_usd": 200.0,
-  "equity_usd": 191.2241,
-  "lab_equity_usd": 191.2241,
-  "portfolio_equity_usd": 219.3235,
+  "equity_usd": 187.1241,
+  "lab_equity_usd": 187.1241,
+  "portfolio_equity_usd": 215.2235,
   "portfolio_cash_usd": 54.0235,
-  "portfolio_positions_usd": 165.3,
+  "portfolio_positions_usd": 161.2,
   "nonlab_positions_usd": 28.0994,
   "nonlab_legs": [
     {
@@ -27,11 +27,11 @@
   "lab_deposit_usd": 200.0,
   "lab_deposit_id": "01a048a4-e740-7e02-bd42-dc6f4b8c35d2",
   "lab_deposit_ct": "2026-08-28T08:52:50-05:00",
-  "lab_synthetic_equity_usd": 192.8929,
-  "delta_vs_start_usd": -8.7759,
-  "today_pnl_usd": 0.0,
+  "lab_synthetic_equity_usd": 189.7629,
+  "delta_vs_start_usd": -12.8759,
+  "today_pnl_usd": -4.1,
   "realized_lab_pnl_usd": 10.1476,
-  "unrealized_lab_mtm_usd": -17.2547,
+  "unrealized_lab_mtm_usd": -20.3847,
   "equity_formula": "lab equity = (Kalshi cash + portfolio_value) \u2212 non-lab positions MTM; baseline $200 ACH deposit 2026-08-28 (not full account)",
   "equity_history_note": "lab_equity_v2: equity_usd is lab stake only \u2014 Kalshi account total minus personal non-lab positions (NFL/MLB/Senate etc). Baseline $200 deposit 2026-08-28. Earlier curve points used other definitions and are not comparable.",
   "equity_definition_changed_at": "2026-09-06T21:45:00Z",
@@ -40,7 +40,7 @@
   "remaining_usd": 0.0,
   "daemon": {
     "alive": false,
-    "heartbeat_age_sec": 2018.1,
+    "heartbeat_age_sec": 2387.8,
     "pid": 72952,
     "pid_alive": false,
     "mode": "KILL on \u2014 no new risk",
@@ -216,7 +216,7 @@
       "price_cents": 71,
       "qty": 6.0,
       "ts": "2026-09-06T18:24:10.194717Z",
-      "pnl_usd": 1.02,
+      "pnl_usd": 0.87,
       "pnl_status": "win",
       "pnl_label": "open"
     },
@@ -256,7 +256,7 @@
       "price_cents": 75,
       "qty": 1.0,
       "ts": "2026-09-06T17:26:03.197107Z",
-      "pnl_usd": -0.255,
+      "pnl_usd": -0.225,
       "pnl_status": "lose",
       "pnl_label": "open"
     },
@@ -266,7 +266,7 @@
       "price_cents": 74,
       "qty": 2.0,
       "ts": "2026-09-06T17:24:47.537139Z",
-      "pnl_usd": -0.49,
+      "pnl_usd": -0.43,
       "pnl_status": "lose",
       "pnl_label": "open"
     },
@@ -276,7 +276,7 @@
       "price_cents": 75,
       "qty": 3.0,
       "ts": "2026-09-06T17:24:47.537139Z",
-      "pnl_usd": -0.765,
+      "pnl_usd": -0.675,
       "pnl_status": "lose",
       "pnl_label": "open"
     },
@@ -286,7 +286,7 @@
       "price_cents": 74,
       "qty": 2.0,
       "ts": "2026-09-06T17:24:41.405066Z",
-      "pnl_usd": -0.49,
+      "pnl_usd": -0.43,
       "pnl_status": "lose",
       "pnl_label": "open"
     },
