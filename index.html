@@ -59,11 +59,11 @@
 </header>
 <div id="err"></div>
 <div class="grid">
-  <div class="card tip" title="Equity = starting $200 plus this lab's realized and unrealized gains or losses.">
-    <div class="label">Equity</div><div class="value" id="equity">—</div>
+  <div class="card tip" title="Kalshi portfolio equity = cash + marked positions (exchange truth).">
+    <div class="label">Kalshi equity</div><div class="value" id="equity">—</div>
   </div>
-  <div class="card tip" title="How far equity sits above or below the $200 starting bankroll.">
-    <div class="label">Δ vs $200</div><div class="value" id="delta">—</div>
+  <div class="card tip" title="Kalshi equity minus the $200 lab starting bankroll. Not a P&amp;L from the old lab formula.">
+    <div class="label">Δ vs $200 lab</div><div class="value" id="delta">—</div>
   </div>
   <div class="card tip" title="Today's profit or loss on allowlisted markets only.">
     <div class="label">Today PnL</div><div class="value" id="today">—</div>
@@ -81,10 +81,13 @@
     <div class="label">Daemon</div><div class="value" id="daemon" style="font-size:16px">—</div>
   </div>
 </div>
-<p class="formula tip" id="formula" title="How equity is built: bankroll plus realized PnL plus mark-to-market on allowlisted series only.">equity = 200 + realized_lab_pnl + unrealized_lab_mtm (allowlisted only)</p>
+<p class="formula tip" id="formula" title="Primary equity is Kalshi cash + portfolio value. Lab synthetic 200+PnL is debug-only and is not the chart.">equity = Kalshi cash + portfolio_value (exchange portfolio equity)</p>
+<div class="meta tip" id="cashPos" title="Breakdown of Kalshi cash and position mark.">cash — · positions —</div>
+<div class="meta tip" id="labSynth" title="Old lab formula kept for comparison only.">lab synthetic —</div>
 <section>
-  <h2 class="tip">Equity curve</h2>
-  <div class="eq-tip" id="eqTip">Scrub for Time + Equity $</div>
+  <h2 class="tip">Kalshi equity curve</h2>
+  <div class="eq-tip" id="eqTip">Scrub for Time + Kalshi equity $</div>
+  <p class="formula tip" id="histNote">Curve points after the portfolio switch are Kalshi cash+positions. Older points used a lab synthetic formula and are not comparable.</p>
   <div class="chart-wrap tip"><canvas id="eqChart"></canvas></div>
   <h2 class="tip">Allowlist</h2>
   <div class="chips" id="allow"></div>
@@ -155,11 +158,11 @@ function showEqTip(label, equity){
   if(!el) return;
   if(label==null || equity==null || Number.isNaN(Number(equity))){
     el.classList.remove("active");
-    el.textContent="Scrub for Time + Equity $";
+    el.textContent="Scrub for Time + Kalshi equity $";
     return;
   }
   el.classList.add("active");
-  el.innerHTML=`Time <span>${esc(String(label))}</span> · Equity <strong>$${Number(equity).toFixed(2)}</strong>`;
+  el.innerHTML=`Time <span>${esc(String(label))}</span> · Kalshi equity <strong>$${Number(equity).toFixed(2)}</strong>`;
 }
 function applyScrub(c, ev){
   if(!c || !c.data || !c.data.labels || !c.data.labels.length) return;
@@ -247,7 +250,7 @@ function upsertChart(points){
     chart=new Chart(ctx,{
       type:"line",
       data:{labels, datasets:[{
-        label:"Equity $", data,
+        label:"Kalshi equity $", data,
         borderColor:"#6ea8fe", backgroundColor:"rgba(110,168,254,.15)",
         fill:true, tension:.25,
         pointRadius: coarse ? 0 : 1,
@@ -294,13 +297,24 @@ async function tick(){
     if(rh.ok){ try{ hist=await rh.json(); }catch(e){ hist=[]; } }
     lastOk = Date.now();
     $("err").textContent = "";
-    $("equity").textContent = money(d.equity_usd);
+    $("equity").textContent = money(d.equity_usd ?? d.portfolio_equity_usd);
     $("delta").innerHTML = signed(d.delta_vs_start_usd);
     $("today").innerHTML = signed(d.today_pnl_usd);
     $("openUsd").textContent = money(d.open_usd);
     $("remainUsd").textContent = money(d.remaining_usd);
     $("maxUsd").textContent = money(d.max_open_usd);
     if(d.equity_formula) $("formula").textContent = d.equity_formula;
+    const cp = $("cashPos");
+    if(cp){
+      const c = d.portfolio_cash_usd, pv = d.portfolio_positions_usd;
+      cp.textContent = (c==null && pv==null) ? "cash — · positions —" : `cash ${money(c)} · positions ${money(pv)}`;
+    }
+    const ls = $("labSynth");
+    if(ls){
+      ls.textContent = d.lab_synthetic_equity_usd==null ? "lab synthetic — (debug only)" : `lab synthetic ${money(d.lab_synthetic_equity_usd)} (debug only — not equity)`;
+    }
+    const hn = $("histNote");
+    if(hn && d.equity_history_note) hn.textContent = d.equity_history_note;
     const dm = d.daemon||{};
     const age = dm.heartbeat_age_sec;
     const alive = !!dm.alive;
