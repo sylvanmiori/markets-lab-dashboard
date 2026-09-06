@@ -1,18 +1,18 @@
 {
-  "updated_at": "2026-09-06T19:58:00Z",
+  "updated_at": "2026-09-06T20:01:39Z",
   "starting_bankroll_usd": 200.0,
-  "equity_usd": 187.5641,
-  "delta_vs_start_usd": -12.4359,
-  "today_pnl_usd": -4.8459,
+  "equity_usd": 190.0541,
+  "delta_vs_start_usd": -9.9459,
+  "today_pnl_usd": -2.3559,
   "realized_lab_pnl_usd": 7.1876,
-  "unrealized_lab_mtm_usd": -19.6235,
+  "unrealized_lab_mtm_usd": -17.1335,
   "equity_formula": "equity_usd = 200 + realized_lab_pnl + unrealized_lab_mtm (allowlisted series only)",
   "open_usd": 61.2494,
   "max_open_usd": 50.0,
   "remaining_usd": 0.0,
   "daemon": {
     "alive": true,
-    "heartbeat_age_sec": 13.5,
+    "heartbeat_age_sec": 51.2,
     "pid": 72952,
     "mode": "no remaining open room",
     "kill_file": false
@@ -26,6 +26,13 @@
     "KXAAAGASD"
   ],
   "resting_orders": [
+    {
+      "ticker": "KXHIGHLAX-26SEP07-T83",
+      "side": "buy_yes",
+      "price_cents": 76,
+      "qty": 24.0,
+      "order_id_short": "01a0784e-8940-706d"
+    },
     {
       "ticker": "KXHIGHNY-26SEP07-B79.5",
       "side": "buy_no",
@@ -159,7 +166,7 @@
       "price_cents": 71,
       "qty": 6.0,
       "ts": "2026-09-06T18:24:10.194717Z",
-      "pnl_usd": 0.9,
+      "pnl_usd": 0.87,
       "pnl_status": "win",
       "pnl_label": "open"
     },
@@ -199,7 +206,7 @@
       "price_cents": 75,
       "qty": 1.0,
       "ts": "2026-09-06T17:26:03.197107Z",
-      "pnl_usd": -0.025,
+      "pnl_usd": -0.045,
       "pnl_status": "open",
       "pnl_label": "open"
     },
@@ -209,8 +216,8 @@
       "price_cents": 74,
       "qty": 2.0,
       "ts": "2026-09-06T17:24:47.537139Z",
-      "pnl_usd": -0.03,
-      "pnl_status": "open",
+      "pnl_usd": -0.07,
+      "pnl_status": "lose",
       "pnl_label": "open"
     },
     {
@@ -219,7 +226,7 @@
       "price_cents": 75,
       "qty": 3.0,
       "ts": "2026-09-06T17:24:47.537139Z",
-      "pnl_usd": -0.075,
+      "pnl_usd": -0.135,
       "pnl_status": "lose",
       "pnl_label": "open"
     },
@@ -229,8 +236,8 @@
       "price_cents": 74,
       "qty": 2.0,
       "ts": "2026-09-06T17:24:41.405066Z",
-      "pnl_usd": -0.03,
-      "pnl_status": "open",
+      "pnl_usd": -0.07,
+      "pnl_status": "lose",
       "pnl_label": "open"
     },
     {
@@ -279,7 +286,7 @@
       "price_cents": 96,
       "qty": 39.54,
       "ts": "2026-09-06T17:00:35.865432Z",
-      "pnl_usd": -0.5931,
+      "pnl_usd": -0.7908,
       "pnl_status": "lose",
       "pnl_label": "open"
     },
@@ -329,7 +336,7 @@
       "price_cents": 96,
       "qty": 3.0,
       "ts": "2026-09-06T16:53:32.476312Z",
-      "pnl_usd": -0.0069,
+      "pnl_usd": -0.0092,
       "pnl_status": "open",
       "pnl_label": "open"
     }
