@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-09-06T16:45:58Z",
+  "updated_at": "2026-09-06T16:49:23Z",
   "starting_bankroll_usd": 200.0,
-  "equity_usd": 200.63,
-  "delta_vs_start_usd": 0.63,
-  "today_pnl_usd": 8.22,
+  "equity_usd": 200.003,
+  "delta_vs_start_usd": 0.003,
+  "today_pnl_usd": 7.593,
   "realized_lab_pnl_usd": 0.0,
-  "unrealized_lab_mtm_usd": 0.63,
+  "unrealized_lab_mtm_usd": 0.003,
   "equity_formula": "equity_usd = 200 + realized_lab_pnl + unrealized_lab_mtm (allowlisted series only)",
-  "open_usd": 20.47,
+  "open_usd": 24.31,
   "max_open_usd": 50.0,
-  "remaining_usd": 29.53,
+  "remaining_usd": 21.19,
   "daemon": {
     "alive": true,
-    "heartbeat_age_sec": 32.8,
+    "heartbeat_age_sec": 50.8,
     "pid": 3220135,
-    "mode": "shark_pack_only",
+    "mode": "unknown",
     "kill_file": false
   },
   "allowlist": [
@@ -26,6 +26,27 @@
     "KXAAAGASD"
   ],
   "resting_orders": [
+    {
+      "ticker": "KXHIGHNY-26SEP07-B83.5",
+      "side": "buy_no",
+      "price_cents": 98,
+      "qty": 50.0,
+      "order_id_short": "01a0779e-ccf8-7513"
+    },
+    {
+      "ticker": "KXHIGHNY-26SEP06-B77.5",
+      "side": "buy_no",
+      "price_cents": 96,
+      "qty": 50.0,
+      "order_id_short": "01a0779e-c528-7acb"
+    },
+    {
+      "ticker": "KXHIGHLAX-26SEP07-B78.5",
+      "side": "buy_no",
+      "price_cents": 97,
+      "qty": 50.0,
+      "order_id_short": "01a0779e-c140-7b47"
+    },
     {
       "ticker": "KXHIGHNY-26SEP06-B75.5",
       "side": "buy_no",
@@ -72,11 +93,21 @@
       "ticker": "KXHIGHLAX-26SEP07-T83",
       "side": "buy_yes",
       "price_cents": 80,
-      "qty": 24.0,
+      "qty": 4.8,
       "order_id_short": "01a07788-b0d0-78d1"
     }
   ],
   "recent_fills": [
+    {
+      "ticker": "KXHIGHLAX-26SEP07-T83",
+      "side": "sell_no",
+      "price_cents": 20,
+      "qty": 19.2,
+      "ts": "2026-09-06T16:46:19.139276Z",
+      "pnl_usd": null,
+      "pnl_status": "flat",
+      "pnl_label": "uncertain"
+    },
     {
       "ticker": "KXHIGHLAX-26SEP06-B76.5",
       "side": "sell_no",
@@ -153,7 +184,7 @@
       "price_cents": 85,
       "qty": 33.0,
       "ts": "2026-09-06T16:32:53.359184Z",
-      "pnl_usd": -2.145,
+      "pnl_usd": -0.33,
       "pnl_status": "lose",
       "pnl_label": "open"
     },
@@ -266,17 +297,7 @@
       "pnl_usd": null,
       "pnl_status": "flat",
       "pnl_label": "uncertain"
-    },
-    {
-      "ticker": "KXHIGHCHI-26SEP04-B91.5",
-      "side": "sell_no",
-      "price_cents": 74,
-      "qty": 16.01,
-      "ts": "2026-09-04T18:07:56.134387Z",
-      "pnl_usd": -0.6404,
-      "pnl_status": "lose",
-      "pnl_label": "lose"
     }
   ],
-  "notes": "shark_pack_only"
+  "notes": ""
 }
