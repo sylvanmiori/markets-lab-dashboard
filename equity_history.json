@@ -27,5 +27,11 @@
     "equity_usd": 218.9135,
     "source": "kalshi_portfolio",
     "definition": "portfolio_equity_v1"
+  },
+  {
+    "t": "2026-09-06T21:37:18Z",
+    "equity_usd": 217.7035,
+    "source": "kalshi_portfolio",
+    "definition": "portfolio_equity_v1"
   }
 ]
