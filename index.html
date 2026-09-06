@@ -42,7 +42,7 @@
 <body>
 <header>
   <h1>Markets Lab</h1>
-  <div class="meta tip" title="Refreshes public status and equity every 20 seconds; this page never holds API keys.">poll status + equity · 20s · no secrets</div>
+  <div class="meta tip" title="Refreshes public status and equity every 20 seconds; this page never holds API keys.">poll status + equity · 20s · scrub chart · hard-refresh if stale</div>
   <div class="meta tip" id="fetchAge" title="When status.json was last written and when this page last fetched it successfully.">—</div>
 </header>
 <div id="err"></div>
@@ -141,21 +141,51 @@ function upsertChart(points){
   const labels=(points||[]).map(p=>(p.t||"").slice(5,16).replace("T"," "));
   const data=(points||[]).map(p=>Number(p.equity_usd));
   const ctx=$("eqChart").getContext("2d");
+  const coarse = window.matchMedia("(pointer: coarse)").matches;
+  const crosshairPlugin = {
+    id:"eqCrosshair",
+    afterDraw(c){
+      const act = c.tooltip && c.tooltip.getActiveElements ? c.tooltip.getActiveElements() : [];
+      if(!act || !act.length) return;
+      const x = act[0].element.x;
+      const yAxis = c.scales.y;
+      const xAxis = c.scales.x;
+      if(x==null || !yAxis) return;
+      const g = c.ctx;
+      g.save();
+      g.beginPath();
+      g.moveTo(x, yAxis.top);
+      g.lineTo(x, yAxis.bottom);
+      g.lineWidth = 1;
+      g.strokeStyle = "rgba(110,168,254,.45)";
+      g.stroke();
+      g.restore();
+    }
+  };
   if(!chart){
     chart=new Chart(ctx,{
       type:"line",
       data:{labels, datasets:[{
         label:"Equity $", data,
         borderColor:"#6ea8fe", backgroundColor:"rgba(110,168,254,.15)",
-        fill:true, tension:.25, pointRadius:2, pointHoverRadius:5, borderWidth:2
+        fill:true, tension:.25,
+        pointRadius: coarse ? 0 : 1,
+        pointHoverRadius: coarse ? 4 : 5,
+        pointHitRadius: coarse ? 18 : 10,
+        borderWidth:2
       }]},
       options:{
         responsive:true, maintainAspectRatio:false,
-        interaction:{mode:"nearest", intersect:false, axis:"x"},
+        // Thumb-scrub: follow nearest x across the chart, not only when finger hits a dot
+        interaction:{mode:"index", intersect:false},
+        events:["mousemove","mouseout","click","touchstart","touchmove","touchend"],
         plugins:{
           legend:{display:false},
           tooltip:{
             enabled:true,
+            mode:"index",
+            intersect:false,
+            position:"nearest",
             callbacks:{
               title:(items)=> items.length ? "Time "+items[0].label : "",
               label:(ctx)=> "Equity $"+Number(ctx.parsed.y).toFixed(2)
@@ -166,10 +196,15 @@ function upsertChart(points){
           x:{ticks:{color:"#8b9bb0", maxTicksLimit:8}, grid:{color:"#243041"}},
           y:{ticks:{color:"#8b9bb0"}, grid:{color:"#243041"}}
         }
-      }
+      },
+      plugins:[crosshairPlugin]
     });
   } else {
-    chart.data.labels=labels; chart.data.datasets[0].data=data; chart.update("none");
+    chart.data.labels=labels;
+    chart.data.datasets[0].data=data;
+    chart.data.datasets[0].pointRadius = coarse ? 0 : 1;
+    chart.data.datasets[0].pointHitRadius = coarse ? 18 : 10;
+    chart.update("none");
   }
 }
 async function tick(){
