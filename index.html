@@ -59,16 +59,22 @@
 </header>
 <div id="err"></div>
 <div class="grid">
-  <div class="card tip" title="Lab equity vs $200 ACH deposit (2026-08-28): (Kalshi cash + portfolio_value) minus personal/non-lab positions MTM. Not full account.">
-    <div class="label">Lab Equity</div><div class="value" id="equity">—</div>
+  <div class="card tip" title="Lab equity = Kalshi account total minus personal non-lab positions. Baseline $200 deposit 2026-08-28.">
+    <div class="label">Lab equity</div><div class="value" id="equity">—</div>
+  </div>
+  <div class="card tip" title="Full Kalshi account (cash + all positions), including personal NFL/MLB/Senate.">
+    <div class="label">Kalshi account</div><div class="value" id="acctTotal">—</div>
+  </div>
+  <div class="card tip" title="Personal non-lab positions excluded from lab equity.">
+    <div class="label">Non-lab excluded</div><div class="value" id="nonlab">—</div>
   </div>
   <div class="card tip" title="Available cash balance from Kalshi.">
     <div class="label">Cash</div><div class="value" id="cash">—</div>
   </div>
-  <div class="card tip" title="Full-account positions MTM from Kalshi (includes personal NFL/MLB/Senate). Lab equity subtracts non-lab.">
-    <div class="label">All Positions</div><div class="value" id="posMtm">—</div>
+  <div class="card tip" title="Marked value of all open positions (Kalshi portfolio_value).">
+    <div class="label">Positions MTM</div><div class="value" id="posMtm">—</div>
   </div>
-  <div class="card tip" title="Change in lab equity since CT midnight snapshot.">
+  <div class="card tip" title="Change in lab equity since CT midnight (lab_equity_v2).">
     <div class="label">Today PnL</div><div class="value" id="today">—</div>
   </div>
   <div class="card tip" title="Lab open exposure (allowlisted positions + resting entries) vs $50 max.">
@@ -77,20 +83,17 @@
   <div class="card tip" title="Hard ceiling on lab open USD.">
     <div class="label">Lab Room Left</div><div class="value" id="maxUsd">—</div>
   </div>
-  <div class="card tip" title="Personal/non-lab positions MTM subtracted from full Kalshi equity to get lab stake.">
-    <div class="label">Non-lab MTM</div><div class="value" id="nonlab">—</div>
-  </div>
-  <div class="card tip" title="Lab equity minus $200 ACH deposit baseline (2026-08-28).">
-    <div class="label">Δ vs $200</div><div class="value" id="delta">—</div>
+  <div class="card tip" title="Lab-only synthetic: $200 + realized + unrealized MTM on allowlisted series. Not account equity.">
+    <div class="label">Lab MTM (not equity)</div><div class="value" id="labMtm">—</div>
   </div>
   <div class="card tip" id="daemonCard" title="Background trader health.">
     <div class="label">Daemon</div><div class="value" id="daemon" style="font-size:16px">—</div>
   </div>
 </div>
-<p class="formula tip" id="formula" title="Lab equity = (cash + portfolio_value) − non-lab MTM; baseline $200 deposit.">lab equity = (cash + portfolio_value) − non-lab MTM · vs $200 deposit</p>
+<p class="formula tip" id="formula" title="Headline is lab equity vs $200. Full Kalshi account shown separately. Non-lab positions stripped.">lab equity = (Kalshi total − non-lab) · baseline $200 deposit · lab MTM is debug-only</p>
 <section>
-  <h2 class="tip">Lab equity curve (vs $200)</h2>
-  <div class="eq-tip" id="eqTip">Scrub for Time + Equity $</div>
+  <h2 class="tip">Lab equity curve</h2>
+  <div class="eq-tip" id="eqTip">Scrub for Time + Lab equity $</div>
   <div class="chart-wrap tip"><canvas id="eqChart"></canvas></div>
   <h2 class="tip">Allowlist</h2>
   <div class="chips" id="allow"></div>
@@ -161,11 +164,11 @@ function showEqTip(label, equity){
   if(!el) return;
   if(label==null || equity==null || Number.isNaN(Number(equity))){
     el.classList.remove("active");
-    el.textContent="Scrub for Time + Equity $";
+    el.textContent="Scrub for Time + Lab equity $";
     return;
   }
   el.classList.add("active");
-  el.innerHTML=`Time <span>${esc(String(label))}</span> · Equity <strong>$${Number(equity).toFixed(2)}</strong>`;
+  el.innerHTML=`Time <span>${esc(String(label))}</span> · Lab equity <strong>$${Number(equity).toFixed(2)}</strong>`;
 }
 function applyScrub(c, ev){
   if(!c || !c.data || !c.data.labels || !c.data.labels.length) return;
@@ -227,9 +230,9 @@ function bindEqScrubHandlers(c){
 }
 function upsertChart(points){
   const pts=(points||[]).filter(p=>p && p.equity_usd!=null && !Number.isNaN(Number(p.equity_usd)) && !p.marker);
-  const lab=pts.filter(p=>p.source==="lab_equity" || p.definition==="lab_equity_v2");
-  const kalshi=pts.filter(p=>p.source==="kalshi_portfolio" || p.definition==="portfolio_equity_v1");
-  const use=lab.length?lab:(kalshi.length?kalshi:pts);
+  // Prefer kalshi-tagged points when any exist (drop pre-cutover synthetic ~200 curve)
+  const kalshi=pts.filter(p=>p.source==="lab_equity" || p.definition==="lab_equity_v2" || p.source==="kalshi_portfolio" || p.definition==="portfolio_equity_v1");
+  const use=kalshi.length?kalshi:pts;
   const labels=use.map(p=>(p.t||"").slice(5,16).replace("T"," "));
   const data=use.map(p=>Number(p.equity_usd));
   const ctx=$("eqChart").getContext("2d");
@@ -304,17 +307,20 @@ async function tick(){
     if(rh.ok){ try{ hist=await rh.json(); }catch(e){ hist=[]; } }
     lastOk = Date.now();
     $("err").textContent = "";
-    $("equity").textContent = money(d.equity_usd);
+    $("equity").textContent = money(d.lab_equity_usd ?? d.equity_usd);
+    if($("acctTotal")) $("acctTotal").textContent = money(d.portfolio_equity_usd);
+    if($("nonlab")) $("nonlab").textContent = money(d.nonlab_positions_usd);
     $("cash").textContent = money(d.portfolio_cash_usd);
     $("posMtm").textContent = money(d.portfolio_positions_usd);
     $("today").innerHTML = signed(d.today_pnl_usd);
     $("openUsd").textContent = money(d.open_usd) + " / " + money(d.max_open_usd);
     $("maxUsd").textContent = money(d.remaining_usd) + " left";
-    if($("nonlab")) $("nonlab").textContent = money(d.nonlab_positions_usd);
-    if($("delta")) $("delta").innerHTML = signed(d.delta_vs_start_usd);
-    const foot = d.equity_formula || "lab equity = (cash + portfolio_value) − non-lab MTM";
-    $("formula").textContent = foot;
-    $("formula").title = foot + (d.equity_history_note ? (" · " + d.equity_history_note) : "");
+    $("labMtm").textContent = money(d.lab_synthetic_equity_usd);
+    const foot = d.equity_formula || "equity = Kalshi cash + portfolio_value";
+    const note = d.equity_history_note ? (" · " + d.equity_history_note) : "";
+    const labn = d.lab_mtm_note || "lab_synthetic is NOT equity";
+    $("formula").textContent = foot + " · " + labn;
+    $("formula").title = foot + note;
     const dm = d.daemon||{};
     const age = dm.heartbeat_age_sec;
     const alive = !!dm.alive;
