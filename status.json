@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-09-06T16:39:12Z",
+  "updated_at": "2026-09-06T16:42:34Z",
   "starting_bankroll_usd": 200.0,
-  "equity_usd": 199.765,
-  "delta_vs_start_usd": -0.235,
-  "today_pnl_usd": 7.355,
+  "equity_usd": 200.07,
+  "delta_vs_start_usd": 0.07,
+  "today_pnl_usd": 7.66,
   "realized_lab_pnl_usd": 0.0,
-  "unrealized_lab_mtm_usd": -0.235,
+  "unrealized_lab_mtm_usd": 0.07,
   "equity_formula": "equity_usd = 200 + realized_lab_pnl + unrealized_lab_mtm (allowlisted series only)",
-  "open_usd": 8.69,
+  "open_usd": 13.91,
   "max_open_usd": 50.0,
-  "remaining_usd": 41.31,
+  "remaining_usd": 22.13,
   "daemon": {
     "alive": true,
-    "heartbeat_age_sec": 170.9,
+    "heartbeat_age_sec": 4.5,
     "pid": 3220135,
-    "mode": "shark_pack_only",
+    "mode": "unknown",
     "kill_file": false
   },
   "allowlist": [
@@ -26,6 +26,41 @@
     "KXAAAGASD"
   ],
   "resting_orders": [
+    {
+      "ticker": "KXHIGHNY-26SEP06-B75.5",
+      "side": "buy_no",
+      "price_cents": 64,
+      "qty": 6.0,
+      "order_id_short": "01a07799-4eb8-7a47"
+    },
+    {
+      "ticker": "KXHIGHLAX-26SEP06-B78.5",
+      "side": "buy_no",
+      "price_cents": 66,
+      "qty": 6.0,
+      "order_id_short": "01a07799-46e8-7e0a"
+    },
+    {
+      "ticker": "KXHIGHNY-26SEP07-B77.5",
+      "side": "buy_no",
+      "price_cents": 61,
+      "qty": 6.0,
+      "order_id_short": "01a07799-4300-7775"
+    },
+    {
+      "ticker": "KXHIGHNY-26SEP07-T77",
+      "side": "buy_no",
+      "price_cents": 95,
+      "qty": 50.0,
+      "order_id_short": "01a07799-3b30-70a2"
+    },
+    {
+      "ticker": "KXHIGHLAX-26SEP07-B80.5",
+      "side": "buy_no",
+      "price_cents": 95,
+      "qty": 50.0,
+      "order_id_short": "01a07796-7828-7ee6"
+    },
     {
       "ticker": "KXHIGHCHI-26SEP07-B80.5",
       "side": "buy_no",
@@ -105,7 +140,7 @@
       "price_cents": 85,
       "qty": 33.0,
       "ts": "2026-09-06T16:32:53.359184Z",
-      "pnl_usd": -0.165,
+      "pnl_usd": -0.99,
       "pnl_status": "lose",
       "pnl_label": "open"
     },
@@ -250,5 +285,5 @@
       "pnl_label": "lose"
     }
   ],
-  "notes": "shark_pack_only"
+  "notes": ""
 }
