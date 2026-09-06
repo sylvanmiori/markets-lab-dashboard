@@ -1,18 +1,18 @@
 {
-  "updated_at": "2026-09-06T20:45:50Z",
+  "updated_at": "2026-09-06T20:49:30Z",
   "starting_bankroll_usd": 200.0,
-  "equity_usd": 195.8988,
-  "delta_vs_start_usd": -4.1012,
-  "today_pnl_usd": 3.4888,
-  "realized_lab_pnl_usd": 7.3876,
-  "unrealized_lab_mtm_usd": -11.4888,
+  "equity_usd": 195.8735,
+  "delta_vs_start_usd": -4.1265,
+  "today_pnl_usd": 3.4635,
+  "realized_lab_pnl_usd": 10.1476,
+  "unrealized_lab_mtm_usd": -14.2741,
   "equity_formula": "equity_usd = 200 + realized_lab_pnl + unrealized_lab_mtm (allowlisted series only)",
-  "open_usd": 60.9994,
+  "open_usd": 154.1694,
   "max_open_usd": 50.0,
   "remaining_usd": 0.0,
   "daemon": {
     "alive": true,
-    "heartbeat_age_sec": 0.9,
+    "heartbeat_age_sec": 43.3,
     "pid": 72952,
     "mode": "no remaining open room",
     "kill_file": false
@@ -27,146 +27,6 @@
   ],
   "resting_orders": [
     {
-      "ticker": "KXHIGHLAX-26SEP07-T83",
-      "side": "buy_yes",
-      "price_cents": 76,
-      "qty": 24.0,
-      "order_id_short": "01a07877-a898-7364"
-    },
-    {
-      "ticker": "KXHIGHLAX-26SEP07-T83",
-      "side": "buy_yes",
-      "price_cents": 76,
-      "qty": 24.0,
-      "order_id_short": "01a07874-e978-72e3"
-    },
-    {
-      "ticker": "KXHIGHLAX-26SEP07-T83",
-      "side": "buy_yes",
-      "price_cents": 76,
-      "qty": 24.0,
-      "order_id_short": "01a07872-2a58-72f7"
-    },
-    {
-      "ticker": "KXHIGHLAX-26SEP07-B80.5",
-      "side": "buy_no",
-      "price_cents": 91,
-      "qty": 50.0,
-      "order_id_short": "01a0786f-76f0-7366"
-    },
-    {
-      "ticker": "KXHIGHLAX-26SEP07-B80.5",
-      "side": "buy_no",
-      "price_cents": 91,
-      "qty": 45.0,
-      "order_id_short": "01a0786c-b7d0-79fc"
-    },
-    {
-      "ticker": "KXHIGHLAX-26SEP07-T83",
-      "side": "buy_yes",
-      "price_cents": 76,
-      "qty": 24.0,
-      "order_id_short": "01a0784e-8940-706d"
-    },
-    {
-      "ticker": "KXHIGHNY-26SEP07-B79.5",
-      "side": "buy_no",
-      "price_cents": 53,
-      "qty": 10.0,
-      "order_id_short": "01a0780c-9a58-77f9"
-    },
-    {
-      "ticker": "KXHIGHNY-26SEP07-B79.5",
-      "side": "buy_no",
-      "price_cents": 53,
-      "qty": 10.0,
-      "order_id_short": "01a07809-ead8-7dc7"
-    },
-    {
-      "ticker": "KXHIGHNY-26SEP07-B79.5",
-      "side": "buy_no",
-      "price_cents": 53,
-      "qty": 10.0,
-      "order_id_short": "01a077d8-5b58-75a4"
-    },
-    {
-      "ticker": "KXHIGHNY-26SEP07-B79.5",
-      "side": "buy_no",
-      "price_cents": 53,
-      "qty": 10.0,
-      "order_id_short": "01a077d5-9c38-7f49"
-    },
-    {
-      "ticker": "KXHIGHNY-26SEP07-B79.5",
-      "side": "buy_no",
-      "price_cents": 53,
-      "qty": 10.0,
-      "order_id_short": "01a077d2-dd18-7150"
-    },
-    {
-      "ticker": "KXHIGHNY-26SEP07-B79.5",
-      "side": "buy_no",
-      "price_cents": 53,
-      "qty": 10.0,
-      "order_id_short": "01a077d0-1df8-7882"
-    },
-    {
-      "ticker": "KXHIGHNY-26SEP07-B79.5",
-      "side": "buy_no",
-      "price_cents": 53,
-      "qty": 10.0,
-      "order_id_short": "01a077cd-6e78-7b54"
-    },
-    {
-      "ticker": "KXHIGHNY-26SEP07-B79.5",
-      "side": "buy_no",
-      "price_cents": 53,
-      "qty": 10.0,
-      "order_id_short": "01a077ca-af58-717a"
-    },
-    {
-      "ticker": "KXHIGHNY-26SEP07-B79.5",
-      "side": "buy_no",
-      "price_cents": 53,
-      "qty": 10.0,
-      "order_id_short": "01a077c7-f038-7094"
-    },
-    {
-      "ticker": "KXHIGHNY-26SEP07-B79.5",
-      "side": "buy_no",
-      "price_cents": 53,
-      "qty": 10.0,
-      "order_id_short": "01a077c5-3118-720c"
-    },
-    {
-      "ticker": "KXHIGHNY-26SEP07-B79.5",
-      "side": "buy_no",
-      "price_cents": 53,
-      "qty": 10.0,
-      "order_id_short": "01a077c2-6e10-7276"
-    },
-    {
-      "ticker": "KXHIGHNY-26SEP07-B79.5",
-      "side": "buy_no",
-      "price_cents": 53,
-      "qty": 10.0,
-      "order_id_short": "01a077bf-a338-70dd"
-    },
-    {
-      "ticker": "KXHIGHNY-26SEP07-B79.5",
-      "side": "buy_no",
-      "price_cents": 53,
-      "qty": 6.06,
-      "order_id_short": "01a077bc-e418-7da5"
-    },
-    {
-      "ticker": "KXHIGHNY-26SEP07-B79.5",
-      "side": "buy_no",
-      "price_cents": 54,
-      "qty": 10.0,
-      "order_id_short": "01a077b4-9ee8-7dcf"
-    },
-    {
       "ticker": "KXHIGHNY-26SEP07-B83.5",
       "side": "buy_no",
       "price_cents": 98,
@@ -175,6 +35,66 @@
     }
   ],
   "recent_fills": [
+    {
+      "ticker": "KXHIGHLAX-26SEP07-T83",
+      "side": "buy_yes",
+      "price_cents": 76,
+      "qty": 24.0,
+      "ts": "2026-09-06T20:46:15.815109Z",
+      "pnl_usd": -0.12,
+      "pnl_status": "lose",
+      "pnl_label": "open"
+    },
+    {
+      "ticker": "KXHIGHLAX-26SEP07-T83",
+      "side": "buy_yes",
+      "price_cents": 76,
+      "qty": 24.0,
+      "ts": "2026-09-06T20:46:15.815109Z",
+      "pnl_usd": -0.12,
+      "pnl_status": "lose",
+      "pnl_label": "open"
+    },
+    {
+      "ticker": "KXHIGHLAX-26SEP07-T83",
+      "side": "buy_yes",
+      "price_cents": 76,
+      "qty": 24.0,
+      "ts": "2026-09-06T20:46:15.815109Z",
+      "pnl_usd": -0.12,
+      "pnl_status": "lose",
+      "pnl_label": "open"
+    },
+    {
+      "ticker": "KXHIGHLAX-26SEP07-T83",
+      "side": "buy_yes",
+      "price_cents": 76,
+      "qty": 24.0,
+      "ts": "2026-09-06T20:46:15.815109Z",
+      "pnl_usd": -0.12,
+      "pnl_status": "lose",
+      "pnl_label": "open"
+    },
+    {
+      "ticker": "KXHIGHLAX-26SEP07-B80.5",
+      "side": "sell_no",
+      "price_cents": 91,
+      "qty": 45.0,
+      "ts": "2026-09-06T20:46:09.537638Z",
+      "pnl_usd": -1.8,
+      "pnl_status": "lose",
+      "pnl_label": "lose"
+    },
+    {
+      "ticker": "KXHIGHLAX-26SEP07-B80.5",
+      "side": "sell_no",
+      "price_cents": 91,
+      "qty": 50.0,
+      "ts": "2026-09-06T20:46:09.537638Z",
+      "pnl_usd": null,
+      "pnl_status": "flat",
+      "pnl_label": "uncertain"
+    },
     {
       "ticker": "KXHIGHLAX-26SEP07-B80.5",
       "side": "sell_no",
@@ -211,7 +131,7 @@
       "price_cents": 71,
       "qty": 6.0,
       "ts": "2026-09-06T18:24:10.194717Z",
-      "pnl_usd": 1.05,
+      "pnl_usd": 1.08,
       "pnl_status": "win",
       "pnl_label": "open"
     },
@@ -221,8 +141,8 @@
       "price_cents": 95,
       "qty": 50.0,
       "ts": "2026-09-06T18:09:20.523032Z",
-      "pnl_usd": -1.575,
-      "pnl_status": "lose",
+      "pnl_usd": null,
+      "pnl_status": "open",
       "pnl_label": "open"
     },
     {
@@ -231,8 +151,8 @@
       "price_cents": 95,
       "qty": 50.0,
       "ts": "2026-09-06T17:40:04.244982Z",
-      "pnl_usd": 0.25,
-      "pnl_status": "win",
+      "pnl_usd": -0.25,
+      "pnl_status": "lose",
       "pnl_label": "open"
     },
     {
@@ -251,7 +171,7 @@
       "price_cents": 75,
       "qty": 1.0,
       "ts": "2026-09-06T17:26:03.197107Z",
-      "pnl_usd": -0.18,
+      "pnl_usd": -0.17,
       "pnl_status": "lose",
       "pnl_label": "open"
     },
@@ -261,7 +181,7 @@
       "price_cents": 74,
       "qty": 2.0,
       "ts": "2026-09-06T17:24:47.537139Z",
-      "pnl_usd": -0.34,
+      "pnl_usd": -0.32,
       "pnl_status": "lose",
       "pnl_label": "open"
     },
@@ -271,7 +191,7 @@
       "price_cents": 75,
       "qty": 3.0,
       "ts": "2026-09-06T17:24:47.537139Z",
-      "pnl_usd": -0.54,
+      "pnl_usd": -0.51,
       "pnl_status": "lose",
       "pnl_label": "open"
     },
@@ -281,7 +201,7 @@
       "price_cents": 74,
       "qty": 2.0,
       "ts": "2026-09-06T17:24:41.405066Z",
-      "pnl_usd": -0.34,
+      "pnl_usd": -0.32,
       "pnl_status": "lose",
       "pnl_label": "open"
     },
@@ -314,66 +234,6 @@
       "pnl_usd": -0.4,
       "pnl_status": "lose",
       "pnl_label": "lose"
-    },
-    {
-      "ticker": "KXHIGHNY-26SEP07-B79.5",
-      "side": "sell_no",
-      "price_cents": 49,
-      "qty": 10.0,
-      "ts": "2026-09-06T17:02:49.307107Z",
-      "pnl_usd": null,
-      "pnl_status": "flat",
-      "pnl_label": "uncertain"
-    },
-    {
-      "ticker": "KXHIGHNY-26SEP06-B77.5",
-      "side": "buy_no",
-      "price_cents": 96,
-      "qty": 39.54,
-      "ts": "2026-09-06T17:00:35.865432Z",
-      "pnl_usd": -1.1862,
-      "pnl_status": "lose",
-      "pnl_label": "open"
-    },
-    {
-      "ticker": "KXHIGHNY-26SEP06-B73.5",
-      "side": "buy_no",
-      "price_cents": 71,
-      "qty": 12.0,
-      "ts": "2026-09-06T16:57:23.128156Z",
-      "pnl_usd": 3.42,
-      "pnl_status": "win",
-      "pnl_label": "open"
-    },
-    {
-      "ticker": "KXHIGHLAX-26SEP06-T76",
-      "side": "sell_no",
-      "price_cents": 80,
-      "qty": 33.0,
-      "ts": "2026-09-06T16:56:43.505527Z",
-      "pnl_usd": null,
-      "pnl_status": "flat",
-      "pnl_label": "uncertain"
-    },
-    {
-      "ticker": "KXHIGHLAX-26SEP06-T76",
-      "side": "sell_no",
-      "price_cents": 80,
-      "qty": 33.0,
-      "ts": "2026-09-06T16:56:26.631599Z",
-      "pnl_usd": -1.65,
-      "pnl_status": "lose",
-      "pnl_label": "lose"
-    },
-    {
-      "ticker": "KXHIGHLAX-26SEP07-B78.5",
-      "side": "buy_no",
-      "price_cents": 97,
-      "qty": 50.0,
-      "ts": "2026-09-06T16:55:45.744931Z",
-      "pnl_usd": 0.75,
-      "pnl_status": "win",
-      "pnl_label": "open"
     }
   ],
   "notes": "no remaining open room"
