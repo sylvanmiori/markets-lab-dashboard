@@ -1,24 +1,26 @@
 {
-  "updated_at": "2026-09-06T21:35:01Z",
+  "updated_at": "2026-09-06T21:35:36Z",
   "starting_bankroll_usd": 200.0,
-  "equity_usd": 217.1535,
-  "portfolio_equity_usd": 217.1535,
+  "equity_usd": 215.9035,
+  "portfolio_equity_usd": 215.9035,
   "portfolio_cash_usd": 54.0235,
-  "portfolio_positions_usd": 163.13,
-  "lab_synthetic_equity_usd": 190.4685,
-  "delta_vs_start_usd": 17.1535,
-  "today_pnl_usd": 0.0,
+  "portfolio_positions_usd": 161.88,
+  "lab_synthetic_equity_usd": 190.2985,
+  "delta_vs_start_usd": 15.9035,
+  "today_pnl_usd": -1.25,
   "realized_lab_pnl_usd": 10.1476,
-  "unrealized_lab_mtm_usd": -19.6791,
-  "equity_formula": "equity_usd = Kalshi cash + portfolio_value (exchange portfolio equity)",
-  "equity_history_note": "Points after portfolio_equity_v1 are Kalshi cash+positions; earlier curve used lab synthetic 200+PnL and is not comparable.",
+  "unrealized_lab_mtm_usd": -19.8491,
+  "equity_formula": "equity_usd = Kalshi portfolio equity: balance_dollars (cash) + portfolio_value/100 (positions MTM)",
+  "equity_history_note": "Before equity_definition_changed_at, equity_history points used lab_synthetic (200 + realized_lab_pnl + unrealized_lab_mtm, allowlisted only) and are NOT comparable to Kalshi app Equity. From portfolio_equity_v1 onward, equity_usd is true Kalshi portfolio equity (cash + positions MTM).",
+  "equity_definition_changed_at": "2026-09-06T21:35:00Z",
   "open_usd": 153.1694,
   "max_open_usd": 50.0,
   "remaining_usd": 0.0,
   "daemon": {
     "alive": false,
-    "heartbeat_age_sec": 1145.4,
+    "heartbeat_age_sec": 1177.3,
     "pid": 72952,
+    "pid_alive": false,
     "mode": "KILL on \u2014 no new risk",
     "kill_file": true
   },
@@ -128,7 +130,7 @@
       "price_cents": 71,
       "qty": 6.0,
       "ts": "2026-09-06T18:24:10.194717Z",
-      "pnl_usd": 1.08,
+      "pnl_usd": 1.05,
       "pnl_status": "win",
       "pnl_label": "open"
     },
@@ -233,5 +235,5 @@
       "pnl_label": "lose"
     }
   ],
-  "notes": "no remaining open room|sod_reset_on_portfolio_equity_v1"
+  "notes": "no remaining open room"
 }
