@@ -309,7 +309,10 @@ async function tick(){
     $("err").textContent = "";
     $("equity").textContent = money(d.lab_equity_usd ?? d.equity_usd);
     if($("acctTotal")) $("acctTotal").textContent = money(d.portfolio_equity_usd);
-    if($("nonlab")) $("nonlab").textContent = money(d.nonlab_positions_usd);
+    if($("nonlab")) {
+      const nl=d.nonlab_positions_usd, pc=d.pre_lab_cash_usd;
+      $("nonlab").textContent = (nl==null)? "—" : (money(nl) + (pc!=null? ` + ${money(pc)} pre-cash` : ""));
+    }
     $("cash").textContent = money(d.portfolio_cash_usd);
     $("posMtm").textContent = money(d.portfolio_positions_usd);
     $("today").innerHTML = signed(d.today_pnl_usd);
