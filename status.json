@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-06T12:10:37Z",
+  "updated_at": "2026-09-06T12:13:53Z",
   "starting_bankroll_usd": 200.0,
   "equity_usd": 201.68,
   "delta_vs_start_usd": 1.68,
@@ -7,12 +7,12 @@
   "realized_lab_pnl_usd": 0.28,
   "unrealized_lab_mtm_usd": 1.4,
   "equity_formula": "equity_usd = 200 + realized_lab_pnl + unrealized_lab_mtm (allowlisted series only)",
-  "open_usd": 9.1,
+  "open_usd": 5.6,
   "max_open_usd": 50.0,
-  "remaining_usd": 40.9,
+  "remaining_usd": 44.4,
   "daemon": {
     "alive": true,
-    "heartbeat_age_sec": 81.2,
+    "heartbeat_age_sec": 99.0,
     "pid": 3220135,
     "mode": "shark_pack_only",
     "kill_file": false
