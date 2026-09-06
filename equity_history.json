@@ -1,79 +1,113 @@
 [
   {
-    "t": "2026-09-06T21:34:00Z",
+    "t": "2026-09-03T23:53:16.64101Z",
+    "equity_usd": 200.0,
+    "source": "lab_curve_v3",
+    "definition": "lab_curve_v3",
+    "note": "first lab fill"
+  },
+  {
+    "t": "2026-09-03T23:53:16.64101Z",
     "equity_usd": null,
     "marker": "equity_definition_changed",
-    "note": "Switched from lab_synthetic (200+lab) to Kalshi portfolio equity"
+    "note": "lab_curve_v3: $200 start Sep3; excludes non-lab + $40 pre-lab cash"
   },
   {
-    "t": "2026-09-06T21:34:41Z",
-    "equity_usd": 215.7135,
-    "source": "kalshi_portfolio",
-    "definition": "portfolio_equity_v1"
+    "t": "2026-09-05T11:19:55.48835Z",
+    "equity_usd": 188.5715,
+    "source": "lab_curve_v3",
+    "definition": "lab_curve_v3",
+    "note": "settled KXHIGHNY-26SEP04-B84.5 pnl=-11.0"
   },
   {
-    "t": "2026-09-06T21:35:01Z",
-    "equity_usd": 217.1535,
-    "source": "kalshi_portfolio"
+    "t": "2026-09-05T11:19:55.488554Z",
+    "equity_usd": 189.8183,
+    "source": "lab_curve_v3",
+    "definition": "lab_curve_v3",
+    "note": "settled KXHIGHNY-26SEP04-B86.5 pnl=1.2"
   },
   {
-    "t": "2026-09-06T21:35:36Z",
-    "equity_usd": 215.9035,
-    "source": "kalshi_portfolio",
-    "definition": "portfolio_equity_v1"
+    "t": "2026-09-05T11:19:55.488554Z",
+    "equity_usd": 190.4416,
+    "source": "lab_curve_v3",
+    "definition": "lab_curve_v3",
+    "note": "settled KXHIGHNY-26SEP04-B82.5 pnl=0.6"
   },
   {
-    "t": "2026-09-06T21:36:25Z",
-    "equity_usd": 218.9135,
-    "source": "kalshi_portfolio",
-    "definition": "portfolio_equity_v1"
+    "t": "2026-09-05T12:09:45.488061Z",
+    "equity_usd": 190.7325,
+    "source": "lab_curve_v3",
+    "definition": "lab_curve_v3",
+    "note": "settled KXHIGHCHI-26SEP04-T96 pnl=0.28"
   },
   {
-    "t": "2026-09-06T21:37:18Z",
-    "equity_usd": 217.7035,
-    "source": "kalshi_portfolio",
-    "definition": "portfolio_equity_v1"
+    "t": "2026-09-05T12:09:45.488061Z",
+    "equity_usd": 181.6936,
+    "source": "lab_curve_v3",
+    "definition": "lab_curve_v3",
+    "note": "settled KXHIGHCHI-26SEP04-B95.5 pnl=-8.7"
   },
   {
-    "t": "2026-09-06T21:37:40Z",
-    "equity_usd": 217.0335,
-    "source": "kalshi_portfolio",
-    "definition": "portfolio_equity_v1"
+    "t": "2026-09-05T12:09:45.488061Z",
+    "equity_usd": 167.7509,
+    "source": "lab_curve_v3",
+    "definition": "lab_curve_v3",
+    "note": "settled KXHIGHCHI-26SEP04-B93.5 pnl=-13.42"
   },
   {
-    "t": "2026-09-06T21:41:34Z",
-    "equity_usd": 216.8535,
-    "source": "kalshi_portfolio",
-    "definition": "portfolio_equity_v1"
+    "t": "2026-09-05T12:09:45.488271Z",
+    "equity_usd": 168.582,
+    "source": "lab_curve_v3",
+    "definition": "lab_curve_v3",
+    "note": "settled KXHIGHCHI-26SEP04-B91.5 pnl=0.8"
   },
   {
-    "t": "2026-09-06T21:45:20Z",
-    "equity_usd": 218.1635,
-    "source": "kalshi_portfolio",
-    "definition": "portfolio_equity_v1"
+    "t": "2026-09-05T14:13:05.491561Z",
+    "equity_usd": 164.3743,
+    "source": "lab_curve_v3",
+    "definition": "lab_curve_v3",
+    "note": "settled KXHIGHLAX-26SEP04-B77.5 pnl=-4.05"
   },
   {
-    "t": "2026-09-06T21:47:58Z",
-    "equity_usd": 218.9135,
-    "source": "kalshi_portfolio",
-    "definition": "portfolio_equity_v1"
+    "t": "2026-09-05T14:13:05.491561Z",
+    "equity_usd": 160.0107,
+    "source": "lab_curve_v3",
+    "definition": "lab_curve_v3",
+    "note": "settled KXHIGHLAX-26SEP04-B75.5 pnl=-4.2"
   },
   {
-    "t": "2026-09-06T21:49:00Z",
-    "equity_usd": 217.3435,
-    "source": "kalshi_portfolio",
-    "definition": "portfolio_equity_v1"
+    "t": "2026-09-05T14:13:05.491844Z",
+    "equity_usd": 161.4652,
+    "source": "lab_curve_v3",
+    "definition": "lab_curve_v3",
+    "note": "settled KXHIGHLAX-26SEP04-T78 pnl=1.4"
   },
   {
-    "t": "2026-09-06T21:49:40Z",
-    "equity_usd": 191.2241,
-    "source": "lab_equity",
-    "definition": "lab_equity_v2"
+    "t": "2026-09-06T11:10:25.489999Z",
+    "equity_usd": 162.0886,
+    "source": "lab_curve_v3",
+    "definition": "lab_curve_v3",
+    "note": "settled KXHIGHNY-26SEP05-B79.5 pnl=0.6"
   },
   {
-    "t": "2026-09-06T21:55:47Z",
-    "equity_usd": 187.1241,
-    "source": "lab_equity",
-    "definition": "lab_equity_v2"
+    "t": "2026-09-06T12:10:15.488317Z",
+    "equity_usd": 158.9613,
+    "source": "lab_curve_v3",
+    "definition": "lab_curve_v3",
+    "note": "settled KXHIGHCHI-26SEP05-T83 pnl=-3.01"
+  },
+  {
+    "t": "2026-09-06T14:12:55.542933Z",
+    "equity_usd": 153.4341,
+    "source": "lab_curve_v3",
+    "definition": "lab_curve_v3",
+    "note": "settled KXHIGHLAX-26SEP05-B79.5 pnl=-5.32"
+  },
+  {
+    "t": "2026-09-06T21:58:26Z",
+    "equity_usd": 153.4341,
+    "source": "lab_curve_v3",
+    "definition": "lab_curve_v3",
+    "note": "mark: Kalshi total \u2212 nonlab \u2212 $40 pre-lab cash"
   }
 ]
