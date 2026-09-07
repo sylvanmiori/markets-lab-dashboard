@@ -1,11 +1,11 @@
 {
-  "updated_at": "2026-09-07T05:56:58Z",
+  "updated_at": "2026-09-07T06:00:39Z",
   "starting_bankroll_usd": 200.0,
-  "equity_usd": 161.9336,
-  "lab_equity_usd": 161.9336,
-  "portfolio_equity_usd": 229.6535,
+  "equity_usd": 162.1836,
+  "lab_equity_usd": 162.1836,
+  "portfolio_equity_usd": 229.9035,
   "portfolio_cash_usd": 157.9635,
-  "portfolio_positions_usd": 71.69,
+  "portfolio_positions_usd": 71.94,
   "nonlab_positions_usd": 27.7199,
   "nonlab_legs": [
     {
@@ -29,11 +29,11 @@
   "lab_deposit_ct": "2026-08-28T08:52:50-05:00",
   "pre_lab_cash_usd": 40.0,
   "lab_start_ts": "2026-09-03T23:53:16Z",
-  "lab_synthetic_equity_usd": 226.5837,
-  "delta_vs_start_usd": -38.0664,
-  "today_pnl_usd": -0.943,
+  "lab_synthetic_equity_usd": 233.5593,
+  "delta_vs_start_usd": -37.8164,
+  "today_pnl_usd": -0.693,
   "realized_lab_pnl_usd": 5.4076,
-  "unrealized_lab_mtm_usd": 21.1761,
+  "unrealized_lab_mtm_usd": 28.1517,
   "equity_formula": "lab equity = Kalshi total \u2212 non-lab positions \u2212 $40 pre-lab cash; baseline $200 from first fill 2026-09-03 (not full account)",
   "equity_history_note": "lab_curve_v3: curve starts 2026-09-03 at $200. equity_usd excludes personal non-lab positions and $40 pre-lab cash. Older points deleted as wrong.",
   "equity_definition_changed_at": "2026-09-03T23:53:16Z",
@@ -42,7 +42,7 @@
   "remaining_usd": 5.5106,
   "daemon": {
     "alive": true,
-    "heartbeat_age_sec": 376.7,
+    "heartbeat_age_sec": 594.4,
     "pid": 277098,
     "pid_alive": true,
     "mode": "shark_pack_only",
@@ -56,15 +56,7 @@
     "KXFEDDECISION",
     "KXAAAGASD"
   ],
-  "resting_orders": [
-    {
-      "ticker": "KXHIGHCHI-26SEP06-B79.5",
-      "side": "buy_yes",
-      "price_cents": 99,
-      "qty": 14.0,
-      "order_id_short": "01a078a7-5b88-7d4a"
-    }
-  ],
+  "resting_orders": [],
   "recent_fills": [
     {
       "ticker": "KXHIGHNY-26SEP07-B81.5",
@@ -232,7 +224,7 @@
       "price_cents": 50,
       "qty": 6.0,
       "ts": "2026-09-06T22:20:47.359276Z",
-      "pnl_usd": 0.45,
+      "pnl_usd": 0.42,
       "pnl_status": "win",
       "pnl_label": "open"
     },
