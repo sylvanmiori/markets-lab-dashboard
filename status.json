@@ -1,11 +1,11 @@
 {
-  "updated_at": "2026-09-07T08:16:10Z",
+  "updated_at": "2026-09-07T08:19:48Z",
   "starting_bankroll_usd": 200.0,
-  "equity_usd": 160.5501,
-  "lab_equity_usd": 160.5501,
-  "portfolio_equity_usd": 228.2435,
+  "equity_usd": 160.6401,
+  "lab_equity_usd": 160.6401,
+  "portfolio_equity_usd": 228.3335,
   "portfolio_cash_usd": 157.9635,
-  "portfolio_positions_usd": 70.28,
+  "portfolio_positions_usd": 70.37,
   "nonlab_positions_usd": 27.6934,
   "nonlab_legs": [
     {
@@ -30,8 +30,8 @@
   "pre_lab_cash_usd": 40.0,
   "lab_start_ts": "2026-09-03T23:53:16Z",
   "lab_synthetic_equity_usd": 213.6766,
-  "delta_vs_start_usd": -39.4499,
-  "today_pnl_usd": -2.3265,
+  "delta_vs_start_usd": -39.3599,
+  "today_pnl_usd": -2.2365,
   "realized_lab_pnl_usd": 5.4076,
   "unrealized_lab_mtm_usd": 8.269,
   "equity_formula": "lab equity = Kalshi total \u2212 non-lab positions \u2212 $40 pre-lab cash; baseline $200 from first fill 2026-09-03 (not full account)",
@@ -42,7 +42,7 @@
   "remaining_usd": 5.5106,
   "daemon": {
     "alive": true,
-    "heartbeat_age_sec": 326.3,
+    "heartbeat_age_sec": 546.2,
     "pid": 277098,
     "pid_alive": true,
     "mode": "shark_pack_only",
