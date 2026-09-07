@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-07T23:50:15Z",
+  "updated_at": "2026-09-07T23:51:30Z",
   "starting_bankroll_usd": 200.0,
   "equity_usd": 155.5718,
   "lab_equity_usd": 155.5718,
@@ -29,21 +29,21 @@
   "lab_deposit_ct": "2026-08-28T08:52:50-05:00",
   "pre_lab_cash_usd": 40.0,
   "lab_start_ts": "2026-09-03T23:53:16Z",
-  "lab_synthetic_equity_usd": 190.9045,
+  "lab_synthetic_equity_usd": 190.9992,
   "delta_vs_start_usd": -44.4282,
   "today_pnl_usd": -7.3048,
   "realized_lab_pnl_usd": 2.5931,
-  "unrealized_lab_mtm_usd": -11.6886,
+  "unrealized_lab_mtm_usd": -11.5939,
   "equity_formula": "lab equity = Kalshi total \u2212 non-lab positions \u2212 $40 pre-lab cash; baseline $200 from first fill 2026-09-03 (not full account)",
   "equity_history_note": "lab_curve_v3: curve starts 2026-09-03 at $200. equity_usd excludes personal non-lab positions and $40 pre-lab cash. Older points deleted as wrong.",
   "equity_definition_changed_at": "2026-09-03T23:53:16Z",
-  "open_usd": 37.1287,
+  "open_usd": 32.5787,
   "max_open_usd": 50.0,
-  "remaining_usd": 12.8713,
+  "remaining_usd": 17.4213,
   "daemon": {
     "alive": true,
-    "heartbeat_age_sec": 70.4,
-    "pid": 579702,
+    "heartbeat_age_sec": 120.2,
+    "pid": 11236,
     "pid_alive": true,
     "mode": "shark_pack_only",
     "kill_file": false
@@ -57,13 +57,6 @@
     "KXAAAGASD"
   ],
   "resting_orders": [
-    {
-      "ticker": "KXHIGHLAX-26SEP08-B86.5",
-      "side": "buy_no",
-      "price_cents": 65,
-      "qty": 7.0,
-      "order_id_short": "01a07e09-4d70-710c"
-    },
     {
       "ticker": "KXHIGHNY-26SEP08-B80.5",
       "side": "buy_no",
@@ -143,7 +136,7 @@
       "price_cents": 75,
       "qty": 7.0,
       "ts": "2026-09-07T22:39:14.282897Z",
-      "pnl_usd": -0.245,
+      "pnl_usd": -0.7,
       "pnl_status": "lose",
       "pnl_label": "open"
     },
@@ -163,8 +156,8 @@
       "price_cents": 65,
       "qty": 8.0,
       "ts": "2026-09-07T21:31:25.493174Z",
-      "pnl_usd": 0.065,
-      "pnl_status": "win",
+      "pnl_usd": 0.0,
+      "pnl_status": "open",
       "pnl_label": "open"
     },
     {
