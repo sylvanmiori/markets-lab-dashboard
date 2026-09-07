@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Markets Lab</title>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@3.0.0/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
 <style>
   :root { --bg:#0b0f14; --card:#141a22; --text:#e7eef7; --muted:#8b9bb0; --ok:#3dd68c; --bad:#ff6b6b; --line:#243041; --accent:#6ea8fe; }
   * { box-sizing: border-box; }
@@ -95,6 +96,7 @@
   <h2 class="tip">Lab equity curve</h2>
   <div class="eq-tip" id="eqTip">Scrub for Time + Lab equity $</div>
   <div class="chart-wrap tip"><canvas id="eqChart"></canvas></div>
+  <p class="formula tip" id="chartNote">Times shown in America/Chicago (CT). X-axis uses real elapsed time, not equal point spacing.</p>
   <h2 class="tip">Allowlist</h2>
   <div class="chips" id="allow"></div>
   <h2 class="tip">Resting orders</h2>
@@ -126,6 +128,27 @@
 const $ = (id) => document.getElementById(id);
 let lastOk = 0, chart;
 function money(n){ return (n==null||n==="")?"—":Number(n).toFixed(2); }
+function fmtCT(isoOrMs){
+  if(isoOrMs==null || isoOrMs==="") return "?";
+  const d = (typeof isoOrMs === "number") ? new Date(isoOrMs) : new Date(isoOrMs);
+  if(Number.isNaN(d.getTime())) return String(isoOrMs);
+  return new Intl.DateTimeFormat("en-US", {
+    timeZone: "America/Chicago",
+    month: "short", day: "numeric",
+    hour: "numeric", minute: "2-digit",
+    hour12: true
+  }).format(d) + " CT";
+}
+function fmtCTTick(value){
+  const d = new Date(value);
+  if(Number.isNaN(d.getTime())) return "";
+  return new Intl.DateTimeFormat("en-US", {
+    timeZone: "America/Chicago",
+    month: "short", day: "numeric",
+    hour: "numeric", minute: "2-digit",
+    hour12: true
+  }).format(d);
+}
 
 function pnlCell(f){
   const st = String(f.pnl_status||"flat");
@@ -171,10 +194,12 @@ function showEqTip(label, equity){
   el.innerHTML=`Time <span>${esc(String(label))}</span> · Lab equity <strong>$${Number(equity).toFixed(2)}</strong>`;
 }
 function applyScrub(c, ev){
-  if(!c || !c.data || !c.data.labels || !c.data.labels.length) return;
+  if(!c || !c.data || !c.data.datasets || !c.data.datasets[0]) return;
+  const data=c.data.datasets[0].data||[];
+  if(!data.length) return;
   let i=null;
   try{
-    const els=c.getElementsAtEventForMode(ev, "index", {intersect:false}, false);
+    const els=c.getElementsAtEventForMode(ev, "nearest", {intersect:false}, false);
     if(els && els.length) i=els[0].index;
   }catch(e){}
   if(i==null && ev && ev.x!=null){
@@ -187,7 +212,7 @@ function applyScrub(c, ev){
     i=best;
   }
   if(i==null) return;
-  i=Math.max(0, Math.min(c.data.labels.length-1, i));
+  i=Math.max(0, Math.min(data.length-1, i));
   const meta=c.getDatasetMeta(0);
   if(!meta || !meta.data || !meta.data[i]) return;
   const pt=meta.data[i];
@@ -195,7 +220,10 @@ function applyScrub(c, ev){
   if(c.tooltip && c.tooltip.setActiveElements){
     c.tooltip.setActiveElements([{datasetIndex:0, index:i}], {x:pt.x, y:pt.y});
   }
-  showEqTip(c.data.labels[i], c.data.datasets[0].data[i]);
+  const row=data[i];
+  const y=(row && typeof row==="object") ? row.y : row;
+  const t=(row && typeof row==="object") ? (row.t!=null?row.t:row.x) : null;
+  showEqTip(fmtCT(t), y);
   c.update("none");
 }
 function bindEqScrubHandlers(c){
@@ -220,7 +248,7 @@ function bindEqScrubHandlers(c){
     return chartEvent;
   };
   const onMove=(e)=>{
-    if(e.cancelable) e.preventDefault(); // stop page scroll stealing the scrub
+    if(e.cancelable) e.preventDefault();
     applyScrub(c, toChartEvent(e));
   };
   canvas.addEventListener("touchstart", onMove, {passive:false});
@@ -230,11 +258,13 @@ function bindEqScrubHandlers(c){
 }
 function upsertChart(points){
   const pts=(points||[]).filter(p=>p && p.equity_usd!=null && !Number.isNaN(Number(p.equity_usd)) && !p.marker);
-  // Prefer kalshi-tagged points when any exist (drop pre-cutover synthetic ~200 curve)
   const kalshi=pts.filter(p=>p.source==="lab_curve_v3" || p.definition==="lab_curve_v3" || p.source==="lab_equity" || p.definition==="lab_equity_v2" || p.source==="kalshi_portfolio" || p.definition==="portfolio_equity_v1");
   const use=kalshi.length?kalshi:pts;
-  const labels=use.map(p=>(p.t||"").slice(5,16).replace("T"," "));
-  const data=use.map(p=>Number(p.equity_usd));
+  const data=use.map(p=>{
+    const iso=p.t||p.ts||"";
+    const ms=Date.parse(iso);
+    return {x: Number.isFinite(ms)?ms:NaN, y:Number(p.equity_usd), t:iso};
+  }).filter(p=>Number.isFinite(p.x));
   const ctx=$("eqChart").getContext("2d");
   const coarse = window.matchMedia("(pointer: coarse)").matches || ("ontouchstart" in window);
   const crosshairPlugin = {
@@ -259,8 +289,9 @@ function upsertChart(points){
   if(!chart){
     chart=new Chart(ctx,{
       type:"line",
-      data:{labels, datasets:[{
+      data:{datasets:[{
         label:"Lab equity $", data,
+        parsing:false,
         borderColor:"#6ea8fe", backgroundColor:"rgba(110,168,254,.15)",
         fill:true, tension:.25,
         pointRadius: coarse ? 0 : 1,
@@ -270,15 +301,23 @@ function upsertChart(points){
       }]},
       options:{
         responsive:true, maintainAspectRatio:false,
-        interaction:{mode:"index", intersect:false},
+        interaction:{mode:"nearest", intersect:false, axis:"x"},
         events:["mousemove","mouseout","click","touchstart","touchmove","touchend"],
         plugins:{
           legend:{display:false},
-          // Native canvas tooltip fails on iOS touchmove — HTML #eqTip is source of truth
           tooltip:{ enabled:false }
         },
         scales:{
-          x:{ticks:{color:"#8b9bb0", maxTicksLimit:8}, grid:{color:"#243041"}},
+          x:{
+            type:"time",
+            title:{display:true, text:"Time (America/Chicago)", color:"#8b9bb0"},
+            ticks:{
+              color:"#8b9bb0",
+              maxTicksLimit:8,
+              callback:function(value){ return fmtCTTick(value); }
+            },
+            grid:{color:"#243041"}
+          },
           y:{ticks:{color:"#8b9bb0"}, grid:{color:"#243041"}}
         }
       },
@@ -286,8 +325,9 @@ function upsertChart(points){
     });
     bindEqScrubHandlers(chart);
   } else {
-    chart.data.labels=labels;
+    chart.data.labels=undefined;
     chart.data.datasets[0].data=data;
+    chart.data.datasets[0].parsing=false;
     chart.data.datasets[0].pointRadius = coarse ? 0 : 1;
     chart.data.datasets[0].pointHitRadius = coarse ? 24 : 12;
     chart.update("none");
@@ -351,7 +391,7 @@ async function tick(){
       cell(`<code>${esc((f.ts||"").slice(0,19))}</code>`, `Fill time ${(f.ts||"").slice(0,19) || "—"} UTC`)
     ])).join("") || row([cell("—","No recent fills"),cell("",""),cell("",""),cell("",""),cell("",""),cell("",""),cell("","")]);
     upsertChart(Array.isArray(hist)?hist:[]);
-    $("fetchAge").textContent = "updated "+(d.updated_at||"?")+" · fetched ok";
+    $("fetchAge").textContent = "updated "+(d.updated_at?fmtCT(d.updated_at):"?")+" · fetched ok";
   }catch(e){
     $("err").textContent = "fetch failed: "+e.message;
     if(lastOk) $("fetchAge").textContent = "last ok " + Math.round((Date.now()-lastOk)/1000) + "s ago";
