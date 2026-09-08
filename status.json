@@ -1,11 +1,11 @@
 {
-  "updated_at": "2026-09-08T01:01:30Z",
+  "updated_at": "2026-09-08T01:02:56Z",
   "starting_bankroll_usd": 200.0,
-  "equity_usd": 156.3504,
-  "lab_equity_usd": 156.3504,
-  "portfolio_equity_usd": 223.2583,
+  "equity_usd": 156.2304,
+  "lab_equity_usd": 156.2304,
+  "portfolio_equity_usd": 223.1383,
   "portfolio_cash_usd": 176.6183,
-  "portfolio_positions_usd": 46.64,
+  "portfolio_positions_usd": 46.52,
   "nonlab_positions_usd": 26.9079,
   "nonlab_legs": [
     {
@@ -29,11 +29,11 @@
   "lab_deposit_ct": "2026-08-28T08:52:50-05:00",
   "pre_lab_cash_usd": 40.0,
   "lab_start_ts": "2026-09-03T23:53:16Z",
-  "lab_synthetic_equity_usd": 191.8213,
-  "delta_vs_start_usd": -43.6496,
-  "today_pnl_usd": -6.5262,
+  "lab_synthetic_equity_usd": 191.7013,
+  "delta_vs_start_usd": -43.7696,
+  "today_pnl_usd": -6.6462,
   "realized_lab_pnl_usd": 2.7399,
-  "unrealized_lab_mtm_usd": -10.9186,
+  "unrealized_lab_mtm_usd": -11.0386,
   "equity_formula": "lab equity = Kalshi total \u2212 non-lab positions \u2212 $40 pre-lab cash; baseline $200 from first fill 2026-09-03 (not full account)",
   "equity_history_note": "lab_curve_v3: curve starts 2026-09-03 at $200. equity_usd excludes personal non-lab positions and $40 pre-lab cash. Older points deleted as wrong.",
   "equity_definition_changed_at": "2026-09-03T23:53:16Z",
@@ -42,8 +42,8 @@
   "remaining_usd": 15.7031,
   "daemon": {
     "alive": true,
-    "heartbeat_age_sec": 30.3,
-    "pid": 579702,
+    "heartbeat_age_sec": 84.5,
+    "pid": 11236,
     "pid_alive": true,
     "mode": "shark_pack_only",
     "kill_file": false
@@ -146,7 +146,7 @@
       "price_cents": 75,
       "qty": 7.0,
       "ts": "2026-09-07T22:39:14.282897Z",
-      "pnl_usd": -0.91,
+      "pnl_usd": -0.875,
       "pnl_status": "lose",
       "pnl_label": "open"
     },
@@ -166,7 +166,7 @@
       "price_cents": 65,
       "qty": 8.0,
       "ts": "2026-09-07T21:31:25.493174Z",
-      "pnl_usd": -0.03,
+      "pnl_usd": -0.025,
       "pnl_status": "open",
       "pnl_label": "open"
     },
