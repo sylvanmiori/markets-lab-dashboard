@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-08T02:20:24Z",
+  "updated_at": "2026-09-08T02:21:03Z",
   "starting_bankroll_usd": 200.0,
   "equity_usd": 155.8649,
   "lab_equity_usd": 155.8649,
@@ -42,8 +42,8 @@
   "remaining_usd": 19.9731,
   "daemon": {
     "alive": true,
-    "heartbeat_age_sec": 90.8,
-    "pid": 11236,
+    "heartbeat_age_sec": 93.3,
+    "pid": 579702,
     "pid_alive": true,
     "mode": "shark_pack_only",
     "kill_file": false
@@ -162,7 +162,7 @@
       "price_cents": 75,
       "qty": 7.0,
       "ts": "2026-09-07T22:39:14.282897Z",
-      "pnl_usd": -1.33,
+      "pnl_usd": -1.295,
       "pnl_status": "lose",
       "pnl_label": "open"
     },
@@ -182,7 +182,7 @@
       "price_cents": 65,
       "qty": 8.0,
       "ts": "2026-09-07T21:31:25.493174Z",
-      "pnl_usd": -0.09,
+      "pnl_usd": -0.085,
       "pnl_status": "lose",
       "pnl_label": "open"
     },
