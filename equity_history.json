@@ -2001,296 +2001,38 @@
     "definition": "lab_curve_v3"
   },
   {
-    "t": "2026-09-07T17:14:27Z",
-    "equity_usd": 160.4844,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3"
-  },
-  {
-    "t": "2026-09-07T17:18:11Z",
-    "equity_usd": 160.3144,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3"
-  },
-  {
-    "t": "2026-09-07T17:21:55Z",
-    "equity_usd": 159.4744,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3"
-  },
-  {
-    "t": "2026-09-07T17:25:42Z",
-    "equity_usd": 160.2844,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3"
-  },
-  {
-    "t": "2026-09-07T17:29:34Z",
-    "equity_usd": 161.2444,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3"
-  },
-  {
-    "t": "2026-09-07T17:33:21Z",
-    "equity_usd": 160.8244,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3"
-  },
-  {
-    "t": "2026-09-07T17:37:10Z",
+    "t": "2026-09-07T17:39:55Z",
     "equity_usd": 160.5644,
     "source": "lab_curve_v3",
     "definition": "lab_curve_v3"
   },
   {
-    "t": "2026-09-07T17:41:01Z",
-    "equity_usd": 160.7444,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3"
-  },
-  {
-    "t": "2026-09-07T17:44:47Z",
-    "equity_usd": 160.7344,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3"
-  },
-  {
-    "t": "2026-09-07T17:48:31Z",
-    "equity_usd": 160.7544,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3"
-  },
-  {
-    "t": "2026-09-07T17:52:17Z",
-    "equity_usd": 160.6644,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3"
-  },
-  {
-    "t": "2026-09-07T17:56:06Z",
-    "equity_usd": 160.6944,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3"
-  },
-  {
-    "t": "2026-09-07T17:59:52Z",
-    "equity_usd": 162.4744,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3"
-  },
-  {
-    "t": "2026-09-07T18:03:39Z",
-    "equity_usd": 161.2444,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3"
-  },
-  {
-    "t": "2026-09-07T18:07:22Z",
-    "equity_usd": 160.6944,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3"
-  },
-  {
-    "t": "2026-09-07T18:11:07Z",
-    "equity_usd": 157.8844,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3"
-  },
-  {
-    "t": "2026-09-07T18:15:03Z",
-    "equity_usd": 157.8844,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3"
-  },
-  {
-    "t": "2026-09-07T18:18:47Z",
-    "equity_usd": 157.3244,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3"
-  },
-  {
-    "t": "2026-09-07T18:22:37Z",
-    "equity_usd": 157.1244,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3"
-  },
-  {
-    "t": "2026-09-07T18:26:23Z",
-    "equity_usd": 157.2144,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3"
-  },
-  {
-    "t": "2026-09-07T18:30:07Z",
-    "equity_usd": 157.1244,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3"
-  },
-  {
-    "t": "2026-09-07T18:33:57Z",
-    "equity_usd": 157.3244,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3"
-  },
-  {
-    "t": "2026-09-07T18:37:46Z",
-    "equity_usd": 157.3344,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3"
-  },
-  {
-    "t": "2026-09-07T18:41:32Z",
-    "equity_usd": 157.4144,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3"
-  },
-  {
-    "t": "2026-09-07T18:45:24Z",
-    "equity_usd": 156.8744,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3"
-  },
-  {
-    "t": "2026-09-07T18:49:08Z",
-    "equity_usd": 157.0644,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3"
-  },
-  {
-    "t": "2026-09-07T18:52:57Z",
-    "equity_usd": 156.9544,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3"
-  },
-  {
-    "t": "2026-09-07T18:56:44Z",
-    "equity_usd": 156.8244,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3"
-  },
-  {
-    "t": "2026-09-07T19:00:32Z",
-    "equity_usd": 157.0944,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3"
-  },
-  {
-    "t": "2026-09-07T19:04:21Z",
-    "equity_usd": 156.9944,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3"
-  },
-  {
-    "t": "2026-09-07T19:08:07Z",
-    "equity_usd": 157.0844,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3"
-  },
-  {
-    "t": "2026-09-07T19:11:56Z",
-    "equity_usd": 156.8144,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3"
-  },
-  {
-    "t": "2026-09-07T19:15:46Z",
-    "equity_usd": 156.8044,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3"
-  },
-  {
-    "t": "2026-09-07T19:19:38Z",
-    "equity_usd": 156.5544,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3"
-  },
-  {
-    "t": "2026-09-07T19:23:30Z",
-    "equity_usd": 156.5544,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3"
-  },
-  {
-    "t": "2026-09-07T19:27:22Z",
-    "equity_usd": 156.4744,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3"
-  },
-  {
-    "t": "2026-09-07T19:31:15Z",
-    "equity_usd": 156.5544,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3"
-  },
-  {
-    "t": "2026-09-07T19:35:07Z",
-    "equity_usd": 156.4644,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3"
-  },
-  {
-    "t": "2026-09-07T19:39:02Z",
-    "equity_usd": 156.6544,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3"
-  },
-  {
-    "t": "2026-09-07T19:42:56Z",
-    "equity_usd": 156.6644,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3"
-  },
-  {
-    "t": "2026-09-07T19:46:46Z",
-    "equity_usd": 156.5044,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3"
-  },
-  {
-    "t": "2026-09-07T19:50:38Z",
-    "equity_usd": 156.5044,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3"
-  },
-  {
-    "t": "2026-09-07T19:54:32Z",
-    "equity_usd": 156.1344,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3"
-  },
-  {
-    "t": "2026-09-07T19:58:23Z",
-    "equity_usd": 156.2744,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3"
-  },
-  {
-    "t": "2026-09-07T20:02:19Z",
+    "t": "2026-09-07T20:04:04Z",
     "equity_usd": 156.2244,
     "source": "lab_curve_v3",
     "definition": "lab_curve_v3"
   },
   {
-    "t": "2026-09-07T20:06:17Z",
+    "t": "2026-09-07T20:07:39Z",
     "equity_usd": 156.4344,
     "source": "lab_curve_v3",
     "definition": "lab_curve_v3"
   },
   {
-    "t": "2026-09-07T20:10:14Z",
+    "t": "2026-09-07T20:08:35Z",
+    "equity_usd": 156.2444,
+    "source": "lab_curve_v3",
+    "definition": "lab_curve_v3"
+  },
+  {
+    "t": "2026-09-07T20:11:00Z",
     "equity_usd": 156.4844,
     "source": "lab_curve_v3",
     "definition": "lab_curve_v3"
   },
   {
-    "t": "2026-09-07T20:14:24Z",
+    "t": "2026-09-07T20:17:34Z",
     "equity_usd": 156.3962,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3"
-  },
-  {
-    "t": "2026-09-07T20:18:17Z",
-    "equity_usd": 156.3162,
     "source": "lab_curve_v3",
     "definition": "lab_curve_v3"
   },
@@ -2301,596 +2043,572 @@
     "definition": "lab_curve_v3"
   },
   {
-    "t": "2026-09-07T20:26:13Z",
+    "t": "2026-09-07T20:26:40Z",
     "equity_usd": 156.3062,
     "source": "lab_curve_v3",
     "definition": "lab_curve_v3"
   },
   {
-    "t": "2026-09-07T20:30:15Z",
-    "equity_usd": 156.6444,
+    "t": "2026-09-07T20:31:24Z",
+    "equity_usd": 155.7889,
     "source": "lab_curve_v3",
     "definition": "lab_curve_v3"
   },
   {
-    "t": "2026-09-07T20:34:13Z",
-    "equity_usd": 156.4744,
+    "t": "2026-09-07T20:35:27Z",
+    "equity_usd": 157.0344,
     "source": "lab_curve_v3",
     "definition": "lab_curve_v3"
   },
   {
-    "t": "2026-09-07T20:38:03Z",
-    "equity_usd": 157.0644,
+    "t": "2026-09-07T20:40:40Z",
+    "equity_usd": 156.7944,
     "source": "lab_curve_v3",
     "definition": "lab_curve_v3"
   },
   {
-    "t": "2026-09-07T20:42:02Z",
-    "equity_usd": 157.2644,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3"
-  },
-  {
-    "t": "2026-09-07T20:45:53Z",
+    "t": "2026-09-07T20:45:25Z",
     "equity_usd": 157.3544,
     "source": "lab_curve_v3",
     "definition": "lab_curve_v3"
   },
   {
-    "t": "2026-09-07T20:49:50Z",
+    "t": "2026-09-07T20:50:43Z",
     "equity_usd": 157.2844,
     "source": "lab_curve_v3",
     "definition": "lab_curve_v3"
   },
   {
-    "t": "2026-09-07T20:53:47Z",
-    "equity_usd": 156.8144,
+    "t": "2026-09-07T20:54:46Z",
+    "equity_usd": 156.8244,
     "source": "lab_curve_v3",
     "definition": "lab_curve_v3"
   },
   {
-    "t": "2026-09-07T20:57:47Z",
-    "equity_usd": 156.7644,
+    "t": "2026-09-07T21:00:25Z",
+    "equity_usd": 156.7744,
     "source": "lab_curve_v3",
     "definition": "lab_curve_v3"
   },
   {
-    "t": "2026-09-07T21:01:49Z",
-    "equity_usd": 156.8544,
+    "t": "2026-09-07T21:05:10Z",
+    "equity_usd": 156.5644,
     "source": "lab_curve_v3",
     "definition": "lab_curve_v3"
   },
   {
-    "t": "2026-09-07T21:05:55Z",
-    "equity_usd": 157.0844,
+    "t": "2026-09-07T21:10:30Z",
+    "equity_usd": 157.2844,
     "source": "lab_curve_v3",
     "definition": "lab_curve_v3"
   },
   {
-    "t": "2026-09-07T21:09:51Z",
+    "t": "2026-09-07T21:15:10Z",
     "equity_usd": 156.6844,
     "source": "lab_curve_v3",
     "definition": "lab_curve_v3"
   },
   {
-    "t": "2026-09-07T21:13:48Z",
-    "equity_usd": 156.6844,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3"
-  },
-  {
-    "t": "2026-09-07T21:17:42Z",
+    "t": "2026-09-07T21:20:07Z",
     "equity_usd": 156.6944,
     "source": "lab_curve_v3",
     "definition": "lab_curve_v3"
   },
   {
-    "t": "2026-09-07T21:21:38Z",
-    "equity_usd": 156.6944,
+    "t": "2026-09-07T21:24:47Z",
+    "equity_usd": 155.8089,
     "source": "lab_curve_v3",
     "definition": "lab_curve_v3"
   },
   {
-    "t": "2026-09-07T21:25:36Z",
-    "equity_usd": 156.6244,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3"
-  },
-  {
-    "t": "2026-09-07T21:29:29Z",
+    "t": "2026-09-07T21:29:32Z",
     "equity_usd": 156.5544,
     "source": "lab_curve_v3",
     "definition": "lab_curve_v3"
   },
   {
-    "t": "2026-09-07T21:33:25Z",
+    "t": "2026-09-07T21:34:00Z",
     "equity_usd": 156.9144,
     "source": "lab_curve_v3",
     "definition": "lab_curve_v3"
   },
   {
-    "t": "2026-09-07T21:37:16Z",
-    "equity_usd": 156.6009,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3"
-  },
-  {
-    "t": "2026-09-07T21:41:14Z",
+    "t": "2026-09-07T21:38:00Z",
     "equity_usd": 156.7274,
     "source": "lab_curve_v3",
     "definition": "lab_curve_v3"
   },
   {
-    "t": "2026-09-07T21:45:10Z",
+    "t": "2026-09-07T21:42:58Z",
+    "equity_usd": 156.7274,
+    "source": "lab_curve_v3",
+    "definition": "lab_curve_v3"
+  },
+  {
+    "t": "2026-09-07T21:47:28Z",
     "equity_usd": 157.2974,
     "source": "lab_curve_v3",
     "definition": "lab_curve_v3"
   },
   {
-    "t": "2026-09-07T21:49:05Z",
-    "equity_usd": 157.2974,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3"
-  },
-  {
-    "t": "2026-09-07T21:53:06Z",
+    "t": "2026-09-07T21:51:16Z",
     "equity_usd": 157.6404,
     "source": "lab_curve_v3",
     "definition": "lab_curve_v3"
   },
   {
-    "t": "2026-09-07T21:56:56Z",
+    "t": "2026-09-07T21:55:20Z",
     "equity_usd": 157.1604,
     "source": "lab_curve_v3",
     "definition": "lab_curve_v3"
   },
   {
-    "t": "2026-09-07T22:00:51Z",
+    "t": "2026-09-07T22:00:15Z",
+    "equity_usd": 157.1004,
+    "source": "lab_curve_v3",
+    "definition": "lab_curve_v3"
+  },
+  {
+    "t": "2026-09-07T22:05:25Z",
     "equity_usd": 157.1604,
     "source": "lab_curve_v3",
     "definition": "lab_curve_v3"
   },
   {
-    "t": "2026-09-07T22:04:44Z",
-    "equity_usd": 157.1604,
+    "t": "2026-09-07T22:10:16Z",
+    "equity_usd": 157.0104,
     "source": "lab_curve_v3",
     "definition": "lab_curve_v3"
   },
   {
-    "t": "2026-09-07T22:08:36Z",
-    "equity_usd": 156.9504,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3"
-  },
-  {
-    "t": "2026-09-07T22:12:34Z",
+    "t": "2026-09-07T22:14:17Z",
     "equity_usd": 156.6004,
     "source": "lab_curve_v3",
     "definition": "lab_curve_v3"
   },
   {
-    "t": "2026-09-07T22:16:27Z",
+    "t": "2026-09-07T22:19:10Z",
     "equity_usd": 156.6004,
     "source": "lab_curve_v3",
     "definition": "lab_curve_v3"
   },
   {
-    "t": "2026-09-07T22:20:17Z",
-    "equity_usd": 156.2174,
+    "t": "2026-09-07T22:23:20Z",
+    "equity_usd": 155.7274,
     "source": "lab_curve_v3",
     "definition": "lab_curve_v3"
   },
   {
-    "t": "2026-09-07T22:24:19Z",
+    "t": "2026-09-07T22:27:24Z",
+    "equity_usd": 155.7174,
+    "source": "lab_curve_v3",
+    "definition": "lab_curve_v3"
+  },
+  {
+    "t": "2026-09-07T22:31:59Z",
+    "equity_usd": 156.0974,
+    "source": "lab_curve_v3",
+    "definition": "lab_curve_v3"
+  },
+  {
+    "t": "2026-09-07T22:36:27Z",
     "equity_usd": 155.5874,
     "source": "lab_curve_v3",
     "definition": "lab_curve_v3"
   },
   {
-    "t": "2026-09-07T22:28:09Z",
-    "equity_usd": 155.5174,
+    "t": "2026-09-07T22:40:49Z",
+    "equity_usd": 156.0474,
     "source": "lab_curve_v3",
     "definition": "lab_curve_v3"
   },
   {
-    "t": "2026-09-07T22:32:12Z",
-    "equity_usd": 155.9174,
+    "t": "2026-09-07T22:45:21Z",
+    "equity_usd": 156.5574,
     "source": "lab_curve_v3",
     "definition": "lab_curve_v3"
   },
   {
-    "t": "2026-09-07T22:36:08Z",
-    "equity_usd": 155.5874,
+    "t": "2026-09-07T22:49:40Z",
+    "equity_usd": 156.0974,
     "source": "lab_curve_v3",
     "definition": "lab_curve_v3"
   },
   {
-    "t": "2026-09-07T22:40:07Z",
-    "equity_usd": 155.7474,
+    "t": "2026-09-07T22:53:44Z",
+    "equity_usd": 155.8774,
     "source": "lab_curve_v3",
     "definition": "lab_curve_v3"
   },
   {
-    "t": "2026-09-07T22:43:58Z",
-    "equity_usd": 156.3574,
+    "t": "2026-09-07T22:58:37Z",
+    "equity_usd": 155.6274,
     "source": "lab_curve_v3",
     "definition": "lab_curve_v3"
   },
   {
-    "t": "2026-09-07T22:47:48Z",
-    "equity_usd": 156.2174,
+    "t": "2026-09-07T23:02:16Z",
+    "equity_usd": 156.1504,
     "source": "lab_curve_v3",
     "definition": "lab_curve_v3"
   },
   {
-    "t": "2026-09-07T22:51:45Z",
-    "equity_usd": 155.9474,
+    "t": "2026-09-07T23:06:14Z",
+    "equity_usd": 155.5504,
     "source": "lab_curve_v3",
     "definition": "lab_curve_v3"
   },
   {
-    "t": "2026-09-07T22:55:46Z",
-    "equity_usd": 155.9474,
+    "t": "2026-09-07T23:10:22Z",
+    "equity_usd": 155.4604,
     "source": "lab_curve_v3",
     "definition": "lab_curve_v3"
   },
   {
-    "t": "2026-09-07T22:59:41Z",
-    "equity_usd": 156.0174,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3"
-  },
-  {
-    "t": "2026-09-07T23:03:29Z",
-    "equity_usd": 155.9504,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3"
-  },
-  {
-    "t": "2026-09-07T23:07:21Z",
-    "equity_usd": 155.7504,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3"
-  },
-  {
-    "t": "2026-09-07T23:11:15Z",
-    "equity_usd": 155.7804,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3"
-  },
-  {
-    "t": "2026-09-07T23:15:17Z",
+    "t": "2026-09-07T23:15:00Z",
     "equity_usd": 155.3304,
     "source": "lab_curve_v3",
     "definition": "lab_curve_v3"
   },
   {
     "t": "2026-09-07T23:19:05Z",
-    "equity_usd": 155.5018,
+    "equity_usd": 155.5618,
     "source": "lab_curve_v3",
     "definition": "lab_curve_v3"
   },
   {
-    "t": "2026-09-07T23:22:54Z",
+    "t": "2026-09-07T23:23:05Z",
+    "equity_usd": 156.1518,
+    "source": "lab_curve_v3",
+    "definition": "lab_curve_v3"
+  },
+  {
+    "t": "2026-09-07T23:27:10Z",
+    "equity_usd": 155.7518,
+    "source": "lab_curve_v3",
+    "definition": "lab_curve_v3"
+  },
+  {
+    "t": "2026-09-07T23:32:01Z",
+    "equity_usd": 155.8918,
+    "source": "lab_curve_v3",
+    "definition": "lab_curve_v3"
+  },
+  {
+    "t": "2026-09-07T23:36:01Z",
     "equity_usd": 156.2118,
     "source": "lab_curve_v3",
     "definition": "lab_curve_v3"
   },
   {
-    "t": "2026-09-07T23:26:49Z",
-    "equity_usd": 156.2418,
+    "t": "2026-09-07T23:39:47Z",
+    "equity_usd": 156.1318,
     "source": "lab_curve_v3",
     "definition": "lab_curve_v3"
   },
   {
-    "t": "2026-09-07T23:30:48Z",
-    "equity_usd": 155.8318,
+    "t": "2026-09-07T23:43:26Z",
+    "equity_usd": 155.3418,
     "source": "lab_curve_v3",
     "definition": "lab_curve_v3"
   },
   {
-    "t": "2026-09-07T23:34:35Z",
-    "equity_usd": 156.0218,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3"
-  },
-  {
-    "t": "2026-09-07T23:38:24Z",
-    "equity_usd": 156.2118,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3"
-  },
-  {
-    "t": "2026-09-07T23:42:18Z",
-    "equity_usd": 155.4618,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3"
-  },
-  {
-    "t": "2026-09-07T23:46:16Z",
+    "t": "2026-09-07T23:47:18Z",
     "equity_usd": 155.4018,
     "source": "lab_curve_v3",
     "definition": "lab_curve_v3"
   },
   {
-    "t": "2026-09-07T23:50:15Z",
+    "t": "2026-09-07T23:51:30Z",
     "equity_usd": 155.5718,
     "source": "lab_curve_v3",
     "definition": "lab_curve_v3"
   },
   {
-    "t": "2026-09-07T23:54:15Z",
-    "equity_usd": 155.5118,
+    "t": "2026-09-07T23:55:49Z",
+    "equity_usd": 155.5718,
     "source": "lab_curve_v3",
     "definition": "lab_curve_v3"
   },
   {
-    "t": "2026-09-07T23:58:05Z",
-    "equity_usd": 155.6418,
+    "t": "2026-09-07T23:59:44Z",
+    "equity_usd": 155.5818,
     "source": "lab_curve_v3",
     "definition": "lab_curve_v3"
   },
   {
-    "t": "2026-09-08T00:02:03Z",
-    "equity_usd": 155.7718,
+    "t": "2026-09-08T00:03:34Z",
+    "equity_usd": 155.8818,
     "source": "lab_curve_v3",
     "definition": "lab_curve_v3"
   },
   {
-    "t": "2026-09-08T00:05:55Z",
-    "equity_usd": 153.5418,
+    "t": "2026-09-08T00:07:12Z",
+    "equity_usd": 153.6018,
     "source": "lab_curve_v3",
     "definition": "lab_curve_v3"
   },
   {
-    "t": "2026-09-08T00:09:50Z",
+    "t": "2026-09-08T00:10:57Z",
     "equity_usd": 154.1018,
     "source": "lab_curve_v3",
     "definition": "lab_curve_v3"
   },
   {
-    "t": "2026-09-08T00:13:47Z",
-    "equity_usd": 153.9018,
+    "t": "2026-09-08T00:15:10Z",
+    "equity_usd": 154.1018,
     "source": "lab_curve_v3",
     "definition": "lab_curve_v3"
   },
   {
-    "t": "2026-09-08T00:17:55Z",
+    "t": "2026-09-08T00:19:38Z",
     "equity_usd": 154.5118,
     "source": "lab_curve_v3",
     "definition": "lab_curve_v3"
   },
   {
-    "t": "2026-09-08T00:21:53Z",
+    "t": "2026-09-08T00:23:29Z",
     "equity_usd": 154.6318,
     "source": "lab_curve_v3",
     "definition": "lab_curve_v3"
   },
   {
-    "t": "2026-09-08T00:25:48Z",
-    "equity_usd": 154.6318,
+    "t": "2026-09-08T00:27:17Z",
+    "equity_usd": 154.6218,
     "source": "lab_curve_v3",
     "definition": "lab_curve_v3"
   },
   {
-    "t": "2026-09-08T00:29:46Z",
-    "equity_usd": 154.8318,
+    "t": "2026-09-08T00:31:14Z",
+    "equity_usd": 154.8918,
     "source": "lab_curve_v3",
     "definition": "lab_curve_v3"
   },
   {
-    "t": "2026-09-08T00:33:53Z",
-    "equity_usd": 154.7118,
+    "t": "2026-09-08T00:35:35Z",
+    "equity_usd": 154.3118,
     "source": "lab_curve_v3",
     "definition": "lab_curve_v3"
   },
   {
-    "t": "2026-09-08T00:37:51Z",
+    "t": "2026-09-08T00:39:45Z",
     "equity_usd": 154.7318,
     "source": "lab_curve_v3",
     "definition": "lab_curve_v3"
   },
   {
-    "t": "2026-09-08T00:41:43Z",
-    "equity_usd": 156.6718,
+    "t": "2026-09-08T00:43:35Z",
+    "equity_usd": 156.7318,
     "source": "lab_curve_v3",
     "definition": "lab_curve_v3"
   },
   {
-    "t": "2026-09-08T00:45:36Z",
-    "equity_usd": 156.5918,
+    "t": "2026-09-08T00:47:48Z",
+    "equity_usd": 156.1418,
     "source": "lab_curve_v3",
     "definition": "lab_curve_v3"
   },
   {
-    "t": "2026-09-08T00:49:33Z",
-    "equity_usd": 156.0818,
+    "t": "2026-09-08T00:51:28Z",
+    "equity_usd": 156.0218,
     "source": "lab_curve_v3",
     "definition": "lab_curve_v3"
   },
   {
-    "t": "2026-09-08T00:53:22Z",
-    "equity_usd": 156.2004,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3"
-  },
-  {
-    "t": "2026-09-08T00:57:36Z",
+    "t": "2026-09-08T00:55:12Z",
     "equity_usd": 156.1404,
     "source": "lab_curve_v3",
     "definition": "lab_curve_v3"
   },
   {
-    "t": "2026-09-08T01:01:30Z",
-    "equity_usd": 156.3504,
+    "t": "2026-09-08T00:58:49Z",
+    "equity_usd": 156.1404,
     "source": "lab_curve_v3",
     "definition": "lab_curve_v3"
   },
   {
-    "t": "2026-09-08T01:05:53Z",
-    "equity_usd": 156.2104,
+    "t": "2026-09-08T01:02:56Z",
+    "equity_usd": 156.2304,
     "source": "lab_curve_v3",
     "definition": "lab_curve_v3"
   },
   {
-    "t": "2026-09-08T01:09:55Z",
-    "equity_usd": 156.0104,
+    "t": "2026-09-08T01:07:27Z",
+    "equity_usd": 155.8704,
     "source": "lab_curve_v3",
     "definition": "lab_curve_v3"
   },
   {
-    "t": "2026-09-08T01:13:53Z",
-    "equity_usd": 155.6704,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3"
-  },
-  {
-    "t": "2026-09-08T01:17:52Z",
-    "equity_usd": 156.0704,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3"
-  },
-  {
-    "t": "2026-09-08T01:21:46Z",
-    "equity_usd": 156.2504,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3"
-  },
-  {
-    "t": "2026-09-08T01:25:39Z",
-    "equity_usd": 156.1904,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3"
-  },
-  {
-    "t": "2026-09-08T01:29:35Z",
-    "equity_usd": 156.2504,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3"
-  },
-  {
-    "t": "2026-09-08T01:33:33Z",
-    "equity_usd": 156.4104,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3"
-  },
-  {
-    "t": "2026-09-08T01:37:26Z",
-    "equity_usd": 156.5404,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3"
-  },
-  {
-    "t": "2026-09-08T01:41:21Z",
+    "t": "2026-09-08T01:11:40Z",
     "equity_usd": 155.9404,
     "source": "lab_curve_v3",
     "definition": "lab_curve_v3"
   },
   {
-    "t": "2026-09-08T01:45:12Z",
+    "t": "2026-09-08T01:15:43Z",
+    "equity_usd": 155.8704,
+    "source": "lab_curve_v3",
+    "definition": "lab_curve_v3"
+  },
+  {
+    "t": "2026-09-08T01:19:20Z",
+    "equity_usd": 156.1304,
+    "source": "lab_curve_v3",
+    "definition": "lab_curve_v3"
+  },
+  {
+    "t": "2026-09-08T01:22:56Z",
+    "equity_usd": 156.2504,
+    "source": "lab_curve_v3",
+    "definition": "lab_curve_v3"
+  },
+  {
+    "t": "2026-09-08T01:26:28Z",
+    "equity_usd": 156.1904,
+    "source": "lab_curve_v3",
+    "definition": "lab_curve_v3"
+  },
+  {
+    "t": "2026-09-08T01:30:09Z",
+    "equity_usd": 156.4604,
+    "source": "lab_curve_v3",
+    "definition": "lab_curve_v3"
+  },
+  {
+    "t": "2026-09-08T01:33:43Z",
+    "equity_usd": 156.4104,
+    "source": "lab_curve_v3",
+    "definition": "lab_curve_v3"
+  },
+  {
+    "t": "2026-09-08T01:37:14Z",
+    "equity_usd": 156.4704,
+    "source": "lab_curve_v3",
+    "definition": "lab_curve_v3"
+  },
+  {
+    "t": "2026-09-08T01:41:02Z",
+    "equity_usd": 155.9404,
+    "source": "lab_curve_v3",
+    "definition": "lab_curve_v3"
+  },
+  {
+    "t": "2026-09-08T01:44:27Z",
     "equity_usd": 155.2404,
     "source": "lab_curve_v3",
     "definition": "lab_curve_v3"
   },
   {
-    "t": "2026-09-08T01:49:13Z",
-    "equity_usd": 155.1004,
+    "t": "2026-09-08T01:47:56Z",
+    "equity_usd": 155.0404,
     "source": "lab_curve_v3",
     "definition": "lab_curve_v3"
   },
   {
-    "t": "2026-09-08T01:53:06Z",
+    "t": "2026-09-08T01:51:31Z",
     "equity_usd": 155.5904,
     "source": "lab_curve_v3",
     "definition": "lab_curve_v3"
   },
   {
-    "t": "2026-09-08T01:57:11Z",
+    "t": "2026-09-08T01:55:01Z",
+    "equity_usd": 155.3504,
+    "source": "lab_curve_v3",
+    "definition": "lab_curve_v3"
+  },
+  {
+    "t": "2026-09-08T01:58:33Z",
     "equity_usd": 155.4104,
     "source": "lab_curve_v3",
     "definition": "lab_curve_v3"
   },
   {
-    "t": "2026-09-08T02:00:59Z",
-    "equity_usd": 155.2104,
+    "t": "2026-09-08T02:01:59Z",
+    "equity_usd": 155.0904,
     "source": "lab_curve_v3",
     "definition": "lab_curve_v3"
   },
   {
-    "t": "2026-09-08T02:04:53Z",
-    "equity_usd": 155.2104,
+    "t": "2026-09-08T02:05:36Z",
+    "equity_usd": 155.0904,
     "source": "lab_curve_v3",
     "definition": "lab_curve_v3"
   },
   {
-    "t": "2026-09-08T02:08:44Z",
-    "equity_usd": 155.7004,
+    "t": "2026-09-08T02:09:09Z",
+    "equity_usd": 156.0104,
     "source": "lab_curve_v3",
     "definition": "lab_curve_v3"
   },
   {
-    "t": "2026-09-08T02:12:41Z",
-    "equity_usd": 156.0304,
+    "t": "2026-09-08T02:12:51Z",
+    "equity_usd": 155.9104,
     "source": "lab_curve_v3",
     "definition": "lab_curve_v3"
   },
   {
-    "t": "2026-09-08T02:16:40Z",
+    "t": "2026-09-08T02:16:34Z",
     "equity_usd": 156.0404,
     "source": "lab_curve_v3",
     "definition": "lab_curve_v3"
   },
   {
-    "t": "2026-09-08T02:21:03Z",
+    "t": "2026-09-08T02:20:24Z",
     "equity_usd": 155.8649,
     "source": "lab_curve_v3",
     "definition": "lab_curve_v3"
   },
   {
-    "t": "2026-09-08T02:25:02Z",
+    "t": "2026-09-08T02:23:59Z",
     "equity_usd": 155.9449,
     "source": "lab_curve_v3",
     "definition": "lab_curve_v3"
   },
   {
-    "t": "2026-09-08T02:28:58Z",
+    "t": "2026-09-08T02:27:39Z",
     "equity_usd": 155.8249,
     "source": "lab_curve_v3",
     "definition": "lab_curve_v3"
   },
   {
-    "t": "2026-09-08T02:32:54Z",
+    "t": "2026-09-08T02:31:15Z",
     "equity_usd": 155.9449,
     "source": "lab_curve_v3",
     "definition": "lab_curve_v3"
   },
   {
-    "t": "2026-09-08T02:36:48Z",
+    "t": "2026-09-08T02:35:13Z",
+    "equity_usd": 155.9449,
+    "source": "lab_curve_v3",
+    "definition": "lab_curve_v3"
+  },
+  {
+    "t": "2026-09-08T02:38:51Z",
     "equity_usd": 155.8249,
     "source": "lab_curve_v3",
     "definition": "lab_curve_v3"
   },
   {
-    "t": "2026-09-08T02:40:49Z",
-    "equity_usd": 155.8249,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3"
-  },
-  {
-    "t": "2026-09-08T02:44:47Z",
+    "t": "2026-09-08T02:42:27Z",
     "equity_usd": 155.7049,
     "source": "lab_curve_v3",
     "definition": "lab_curve_v3"
   },
   {
-    "t": "2026-09-08T02:48:40Z",
-    "equity_usd": 155.8449,
+    "t": "2026-09-08T02:45:55Z",
+    "equity_usd": 155.7049,
     "source": "lab_curve_v3",
     "definition": "lab_curve_v3"
   },
   {
-    "t": "2026-09-08T02:52:32Z",
-    "equity_usd": 155.5749,
+    "t": "2026-09-08T02:49:29Z",
+    "equity_usd": 155.4549,
+    "source": "lab_curve_v3",
+    "definition": "lab_curve_v3"
+  },
+  {
+    "t": "2026-09-08T02:52:58Z",
+    "equity_usd": 155.6349,
     "source": "lab_curve_v3",
     "definition": "lab_curve_v3"
   },
@@ -2901,391 +2619,439 @@
     "definition": "lab_curve_v3"
   },
   {
-    "t": "2026-09-08T03:00:22Z",
+    "t": "2026-09-08T03:00:05Z",
     "equity_usd": 155.5249,
     "source": "lab_curve_v3",
     "definition": "lab_curve_v3"
   },
   {
-    "t": "2026-09-08T03:04:13Z",
+    "t": "2026-09-08T03:03:47Z",
     "equity_usd": 155.2649,
     "source": "lab_curve_v3",
     "definition": "lab_curve_v3"
   },
   {
-    "t": "2026-09-08T03:08:02Z",
+    "t": "2026-09-08T03:07:12Z",
     "equity_usd": 155.5049,
     "source": "lab_curve_v3",
     "definition": "lab_curve_v3"
   },
   {
-    "t": "2026-09-08T03:11:58Z",
-    "equity_usd": 155.4449,
+    "t": "2026-09-08T03:10:46Z",
+    "equity_usd": 155.3849,
     "source": "lab_curve_v3",
     "definition": "lab_curve_v3"
   },
   {
-    "t": "2026-09-08T03:15:52Z",
-    "equity_usd": 155.3949,
+    "t": "2026-09-08T03:14:13Z",
+    "equity_usd": 155.3249,
     "source": "lab_curve_v3",
     "definition": "lab_curve_v3"
   },
   {
-    "t": "2026-09-08T03:19:50Z",
+    "t": "2026-09-08T03:17:41Z",
+    "equity_usd": 155.3349,
+    "source": "lab_curve_v3",
+    "definition": "lab_curve_v3"
+  },
+  {
+    "t": "2026-09-08T03:21:12Z",
     "equity_usd": 155.5149,
     "source": "lab_curve_v3",
     "definition": "lab_curve_v3"
   },
   {
-    "t": "2026-09-08T03:23:44Z",
-    "equity_usd": 155.4549,
+    "t": "2026-09-08T03:24:46Z",
+    "equity_usd": 155.8549,
     "source": "lab_curve_v3",
     "definition": "lab_curve_v3"
   },
   {
-    "t": "2026-09-08T03:27:37Z",
-    "equity_usd": 155.2849,
+    "t": "2026-09-08T03:28:15Z",
+    "equity_usd": 155.1749,
     "source": "lab_curve_v3",
     "definition": "lab_curve_v3"
   },
   {
-    "t": "2026-09-08T03:31:33Z",
+    "t": "2026-09-08T03:31:44Z",
     "equity_usd": 155.1049,
     "source": "lab_curve_v3",
     "definition": "lab_curve_v3"
   },
   {
-    "t": "2026-09-08T03:35:28Z",
+    "t": "2026-09-08T03:35:16Z",
     "equity_usd": 155.1049,
     "source": "lab_curve_v3",
     "definition": "lab_curve_v3"
   },
   {
-    "t": "2026-09-08T03:39:22Z",
+    "t": "2026-09-08T03:38:39Z",
     "equity_usd": 155.3004,
     "source": "lab_curve_v3",
     "definition": "lab_curve_v3"
   },
   {
-    "t": "2026-09-08T03:43:19Z",
+    "t": "2026-09-08T03:42:04Z",
     "equity_usd": 155.1304,
     "source": "lab_curve_v3",
     "definition": "lab_curve_v3"
   },
   {
-    "t": "2026-09-08T03:47:14Z",
+    "t": "2026-09-08T03:45:35Z",
     "equity_usd": 154.9904,
     "source": "lab_curve_v3",
     "definition": "lab_curve_v3"
   },
   {
-    "t": "2026-09-08T03:51:06Z",
-    "equity_usd": 154.9104,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3"
-  },
-  {
-    "t": "2026-09-08T03:54:59Z",
-    "equity_usd": 154.4504,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3"
-  },
-  {
-    "t": "2026-09-08T03:58:51Z",
-    "equity_usd": 154.2704,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3"
-  },
-  {
-    "t": "2026-09-08T04:02:45Z",
-    "equity_usd": 154.8704,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3"
-  },
-  {
-    "t": "2026-09-08T04:06:37Z",
-    "equity_usd": 155.0204,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3"
-  },
-  {
-    "t": "2026-09-08T04:10:35Z",
-    "equity_usd": 155.1604,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3"
-  },
-  {
-    "t": "2026-09-08T04:14:31Z",
-    "equity_usd": 154.9404,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3"
-  },
-  {
-    "t": "2026-09-08T04:18:22Z",
-    "equity_usd": 154.4904,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3"
-  },
-  {
-    "t": "2026-09-08T04:22:14Z",
-    "equity_usd": 154.7704,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3"
-  },
-  {
-    "t": "2026-09-08T04:26:03Z",
-    "equity_usd": 154.7704,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3"
-  },
-  {
-    "t": "2026-09-08T04:29:59Z",
-    "equity_usd": 154.7004,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3"
-  },
-  {
-    "t": "2026-09-08T04:33:50Z",
-    "equity_usd": 154.9804,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3"
-  },
-  {
-    "t": "2026-09-08T04:37:39Z",
-    "equity_usd": 155.0404,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3"
-  },
-  {
-    "t": "2026-09-08T04:41:36Z",
-    "equity_usd": 154.5104,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3"
-  },
-  {
-    "t": "2026-09-08T04:45:31Z",
-    "equity_usd": 154.6104,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3"
-  },
-  {
-    "t": "2026-09-08T04:49:22Z",
-    "equity_usd": 154.4904,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3"
-  },
-  {
-    "t": "2026-09-08T04:53:13Z",
-    "equity_usd": 154.6404,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3"
-  },
-  {
-    "t": "2026-09-08T04:57:03Z",
-    "equity_usd": 154.6204,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3"
-  },
-  {
-    "t": "2026-09-08T05:00:54Z",
-    "equity_usd": 155.4804,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3"
-  },
-  {
-    "t": "2026-09-08T05:04:44Z",
-    "equity_usd": 155.8804,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3"
-  },
-  {
-    "t": "2026-09-08T05:08:32Z",
-    "equity_usd": 155.6604,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3"
-  },
-  {
-    "t": "2026-09-08T05:12:25Z",
-    "equity_usd": 156.4804,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3"
-  },
-  {
-    "t": "2026-09-08T05:16:18Z",
-    "equity_usd": 156.8704,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3"
-  },
-  {
-    "t": "2026-09-08T05:20:12Z",
-    "equity_usd": 156.3604,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3"
-  },
-  {
-    "t": "2026-09-08T05:24:04Z",
-    "equity_usd": 156.1604,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3"
-  },
-  {
-    "t": "2026-09-08T05:27:54Z",
-    "equity_usd": 155.8404,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3"
-  },
-  {
-    "t": "2026-09-08T05:31:44Z",
-    "equity_usd": 155.2004,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3"
-  },
-  {
-    "t": "2026-09-08T05:35:31Z",
-    "equity_usd": 155.2004,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3"
-  },
-  {
-    "t": "2026-09-08T05:39:24Z",
-    "equity_usd": 154.8004,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3"
-  },
-  {
-    "t": "2026-09-08T05:43:18Z",
-    "equity_usd": 154.7604,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3"
-  },
-  {
-    "t": "2026-09-08T05:47:07Z",
-    "equity_usd": 154.4904,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3"
-  },
-  {
-    "t": "2026-09-08T05:50:57Z",
-    "equity_usd": 154.6504,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3"
-  },
-  {
-    "t": "2026-09-08T05:54:54Z",
-    "equity_usd": 154.6504,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3"
-  },
-  {
-    "t": "2026-09-08T05:58:47Z",
-    "equity_usd": 154.6504,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3"
-  },
-  {
-    "t": "2026-09-08T06:02:37Z",
-    "equity_usd": 154.5304,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3"
-  },
-  {
-    "t": "2026-09-08T06:06:29Z",
-    "equity_usd": 154.3304,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3"
-  },
-  {
-    "t": "2026-09-08T06:10:17Z",
-    "equity_usd": 154.5104,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3"
-  },
-  {
-    "t": "2026-09-08T06:14:05Z",
-    "equity_usd": 155.1104,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3"
-  },
-  {
-    "t": "2026-09-08T06:17:54Z",
-    "equity_usd": 154.9004,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3"
-  },
-  {
-    "t": "2026-09-08T06:21:47Z",
-    "equity_usd": 155.0204,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3"
-  },
-  {
-    "t": "2026-09-08T06:25:39Z",
-    "equity_usd": 155.1604,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3"
-  },
-  {
-    "t": "2026-09-08T06:29:30Z",
-    "equity_usd": 155.2304,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3"
-  },
-  {
-    "t": "2026-09-08T06:33:23Z",
-    "equity_usd": 155.2204,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3"
-  },
-  {
-    "t": "2026-09-08T06:37:11Z",
-    "equity_usd": 154.8604,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3"
-  },
-  {
-    "t": "2026-09-08T06:40:59Z",
+    "t": "2026-09-08T03:49:08Z",
     "equity_usd": 154.8504,
     "source": "lab_curve_v3",
     "definition": "lab_curve_v3"
   },
   {
-    "t": "2026-09-08T06:44:51Z",
-    "equity_usd": 154.5804,
+    "t": "2026-09-08T03:52:43Z",
+    "equity_usd": 154.4504,
     "source": "lab_curve_v3",
     "definition": "lab_curve_v3"
   },
   {
-    "t": "2026-09-08T06:48:38Z",
+    "t": "2026-09-08T03:56:15Z",
+    "equity_usd": 154.3304,
+    "source": "lab_curve_v3",
+    "definition": "lab_curve_v3"
+  },
+  {
+    "t": "2026-09-08T03:59:43Z",
+    "equity_usd": 154.2104,
+    "source": "lab_curve_v3",
+    "definition": "lab_curve_v3"
+  },
+  {
+    "t": "2026-09-08T04:03:14Z",
+    "equity_usd": 154.6704,
+    "source": "lab_curve_v3",
+    "definition": "lab_curve_v3"
+  },
+  {
+    "t": "2026-09-08T04:06:44Z",
+    "equity_usd": 154.8804,
+    "source": "lab_curve_v3",
+    "definition": "lab_curve_v3"
+  },
+  {
+    "t": "2026-09-08T04:10:16Z",
+    "equity_usd": 155.1604,
+    "source": "lab_curve_v3",
+    "definition": "lab_curve_v3"
+  },
+  {
+    "t": "2026-09-08T04:13:51Z",
+    "equity_usd": 155.0604,
+    "source": "lab_curve_v3",
+    "definition": "lab_curve_v3"
+  },
+  {
+    "t": "2026-09-08T04:17:21Z",
+    "equity_usd": 154.8204,
+    "source": "lab_curve_v3",
+    "definition": "lab_curve_v3"
+  },
+  {
+    "t": "2026-09-08T04:20:50Z",
+    "equity_usd": 154.7704,
+    "source": "lab_curve_v3",
+    "definition": "lab_curve_v3"
+  },
+  {
+    "t": "2026-09-08T04:24:16Z",
+    "equity_usd": 154.7704,
+    "source": "lab_curve_v3",
+    "definition": "lab_curve_v3"
+  },
+  {
+    "t": "2026-09-08T04:27:42Z",
+    "equity_usd": 154.7004,
+    "source": "lab_curve_v3",
+    "definition": "lab_curve_v3"
+  },
+  {
+    "t": "2026-09-08T04:31:09Z",
+    "equity_usd": 154.7004,
+    "source": "lab_curve_v3",
+    "definition": "lab_curve_v3"
+  },
+  {
+    "t": "2026-09-08T04:34:39Z",
+    "equity_usd": 155.1204,
+    "source": "lab_curve_v3",
+    "definition": "lab_curve_v3"
+  },
+  {
+    "t": "2026-09-08T04:38:04Z",
+    "equity_usd": 155.0404,
+    "source": "lab_curve_v3",
+    "definition": "lab_curve_v3"
+  },
+  {
+    "t": "2026-09-08T04:41:34Z",
+    "equity_usd": 154.5104,
+    "source": "lab_curve_v3",
+    "definition": "lab_curve_v3"
+  },
+  {
+    "t": "2026-09-08T04:45:11Z",
+    "equity_usd": 154.6104,
+    "source": "lab_curve_v3",
+    "definition": "lab_curve_v3"
+  },
+  {
+    "t": "2026-09-08T04:48:35Z",
+    "equity_usd": 154.4904,
+    "source": "lab_curve_v3",
+    "definition": "lab_curve_v3"
+  },
+  {
+    "t": "2026-09-08T04:52:05Z",
+    "equity_usd": 154.4304,
+    "source": "lab_curve_v3",
+    "definition": "lab_curve_v3"
+  },
+  {
+    "t": "2026-09-08T04:55:28Z",
+    "equity_usd": 154.6904,
+    "source": "lab_curve_v3",
+    "definition": "lab_curve_v3"
+  },
+  {
+    "t": "2026-09-08T04:58:55Z",
+    "equity_usd": 154.6204,
+    "source": "lab_curve_v3",
+    "definition": "lab_curve_v3"
+  },
+  {
+    "t": "2026-09-08T05:02:32Z",
+    "equity_usd": 155.9404,
+    "source": "lab_curve_v3",
+    "definition": "lab_curve_v3"
+  },
+  {
+    "t": "2026-09-08T05:06:09Z",
+    "equity_usd": 155.3904,
+    "source": "lab_curve_v3",
+    "definition": "lab_curve_v3"
+  },
+  {
+    "t": "2026-09-08T05:09:37Z",
+    "equity_usd": 155.5804,
+    "source": "lab_curve_v3",
+    "definition": "lab_curve_v3"
+  },
+  {
+    "t": "2026-09-08T05:13:02Z",
+    "equity_usd": 156.4804,
+    "source": "lab_curve_v3",
+    "definition": "lab_curve_v3"
+  },
+  {
+    "t": "2026-09-08T05:16:29Z",
+    "equity_usd": 156.6804,
+    "source": "lab_curve_v3",
+    "definition": "lab_curve_v3"
+  },
+  {
+    "t": "2026-09-08T05:20:02Z",
+    "equity_usd": 156.2204,
+    "source": "lab_curve_v3",
+    "definition": "lab_curve_v3"
+  },
+  {
+    "t": "2026-09-08T05:23:33Z",
+    "equity_usd": 156.1604,
+    "source": "lab_curve_v3",
+    "definition": "lab_curve_v3"
+  },
+  {
+    "t": "2026-09-08T05:27:05Z",
+    "equity_usd": 155.9004,
+    "source": "lab_curve_v3",
+    "definition": "lab_curve_v3"
+  },
+  {
+    "t": "2026-09-08T05:30:33Z",
+    "equity_usd": 155.2604,
+    "source": "lab_curve_v3",
+    "definition": "lab_curve_v3"
+  },
+  {
+    "t": "2026-09-08T05:33:55Z",
+    "equity_usd": 155.2004,
+    "source": "lab_curve_v3",
+    "definition": "lab_curve_v3"
+  },
+  {
+    "t": "2026-09-08T05:37:21Z",
+    "equity_usd": 154.8004,
+    "source": "lab_curve_v3",
+    "definition": "lab_curve_v3"
+  },
+  {
+    "t": "2026-09-08T05:40:45Z",
+    "equity_usd": 154.7004,
+    "source": "lab_curve_v3",
+    "definition": "lab_curve_v3"
+  },
+  {
+    "t": "2026-09-08T05:44:12Z",
+    "equity_usd": 154.9704,
+    "source": "lab_curve_v3",
+    "definition": "lab_curve_v3"
+  },
+  {
+    "t": "2026-09-08T05:47:36Z",
+    "equity_usd": 154.4904,
+    "source": "lab_curve_v3",
+    "definition": "lab_curve_v3"
+  },
+  {
+    "t": "2026-09-08T05:51:06Z",
+    "equity_usd": 154.5304,
+    "source": "lab_curve_v3",
+    "definition": "lab_curve_v3"
+  },
+  {
+    "t": "2026-09-08T05:54:38Z",
     "equity_usd": 154.6504,
     "source": "lab_curve_v3",
     "definition": "lab_curve_v3"
   },
   {
-    "t": "2026-09-08T06:52:32Z",
+    "t": "2026-09-08T05:58:04Z",
+    "equity_usd": 154.6504,
+    "source": "lab_curve_v3",
+    "definition": "lab_curve_v3"
+  },
+  {
+    "t": "2026-09-08T06:01:32Z",
+    "equity_usd": 154.5304,
+    "source": "lab_curve_v3",
+    "definition": "lab_curve_v3"
+  },
+  {
+    "t": "2026-09-08T06:04:59Z",
+    "equity_usd": 154.2104,
+    "source": "lab_curve_v3",
+    "definition": "lab_curve_v3"
+  },
+  {
+    "t": "2026-09-08T06:08:27Z",
+    "equity_usd": 154.4504,
+    "source": "lab_curve_v3",
+    "definition": "lab_curve_v3"
+  },
+  {
+    "t": "2026-09-08T06:11:54Z",
+    "equity_usd": 154.9104,
+    "source": "lab_curve_v3",
+    "definition": "lab_curve_v3"
+  },
+  {
+    "t": "2026-09-08T06:15:24Z",
+    "equity_usd": 155.1704,
+    "source": "lab_curve_v3",
+    "definition": "lab_curve_v3"
+  },
+  {
+    "t": "2026-09-08T06:18:51Z",
+    "equity_usd": 154.9004,
+    "source": "lab_curve_v3",
+    "definition": "lab_curve_v3"
+  },
+  {
+    "t": "2026-09-08T06:22:17Z",
+    "equity_usd": 155.0204,
+    "source": "lab_curve_v3",
+    "definition": "lab_curve_v3"
+  },
+  {
+    "t": "2026-09-08T06:25:43Z",
+    "equity_usd": 155.1604,
+    "source": "lab_curve_v3",
+    "definition": "lab_curve_v3"
+  },
+  {
+    "t": "2026-09-08T06:29:11Z",
+    "equity_usd": 155.2304,
+    "source": "lab_curve_v3",
+    "definition": "lab_curve_v3"
+  },
+  {
+    "t": "2026-09-08T06:32:35Z",
+    "equity_usd": 155.2204,
+    "source": "lab_curve_v3",
+    "definition": "lab_curve_v3"
+  },
+  {
+    "t": "2026-09-08T06:35:59Z",
+    "equity_usd": 155.2804,
+    "source": "lab_curve_v3",
+    "definition": "lab_curve_v3"
+  },
+  {
+    "t": "2026-09-08T06:39:24Z",
+    "equity_usd": 154.8504,
+    "source": "lab_curve_v3",
+    "definition": "lab_curve_v3"
+  },
+  {
+    "t": "2026-09-08T06:42:50Z",
+    "equity_usd": 154.8504,
+    "source": "lab_curve_v3",
+    "definition": "lab_curve_v3"
+  },
+  {
+    "t": "2026-09-08T06:46:17Z",
+    "equity_usd": 154.4504,
+    "source": "lab_curve_v3",
+    "definition": "lab_curve_v3"
+  },
+  {
+    "t": "2026-09-08T06:49:41Z",
+    "equity_usd": 154.6504,
+    "source": "lab_curve_v3",
+    "definition": "lab_curve_v3"
+  },
+  {
+    "t": "2026-09-08T06:53:06Z",
     "equity_usd": 154.5204,
     "source": "lab_curve_v3",
     "definition": "lab_curve_v3"
   },
   {
-    "t": "2026-09-08T06:56:25Z",
-    "equity_usd": 154.5404,
+    "t": "2026-09-08T06:56:33Z",
+    "equity_usd": 154.7504,
     "source": "lab_curve_v3",
     "definition": "lab_curve_v3"
   },
   {
-    "t": "2026-09-08T07:00:19Z",
-    "equity_usd": 154.7304,
+    "t": "2026-09-08T06:59:58Z",
+    "equity_usd": 154.6704,
     "source": "lab_curve_v3",
     "definition": "lab_curve_v3"
   },
   {
-    "t": "2026-09-08T07:04:07Z",
-    "equity_usd": 154.1004,
+    "t": "2026-09-08T07:03:23Z",
+    "equity_usd": 154.2404,
     "source": "lab_curve_v3",
     "definition": "lab_curve_v3"
   },
   {
-    "t": "2026-09-08T07:07:57Z",
+    "t": "2026-09-08T07:06:49Z",
+    "equity_usd": 153.2604,
+    "source": "lab_curve_v3",
+    "definition": "lab_curve_v3"
+  },
+  {
+    "t": "2026-09-08T07:10:17Z",
     "equity_usd": 153.2604,
     "source": "lab_curve_v3",
     "definition": "lab_curve_v3"
