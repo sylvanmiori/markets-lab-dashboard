@@ -1,12 +1,12 @@
 {
-  "updated_at": "2026-09-09T23:07:08Z",
+  "updated_at": "2026-09-09T23:10:28Z",
   "starting_bankroll_usd": 200.0,
-  "equity_usd": 127.0723,
-  "lab_equity_usd": 127.0723,
-  "portfolio_equity_usd": 194.4657,
+  "equity_usd": 127.0458,
+  "lab_equity_usd": 127.0458,
+  "portfolio_equity_usd": 194.5657,
   "portfolio_cash_usd": 158.8457,
-  "portfolio_positions_usd": 35.62,
-  "nonlab_positions_usd": 27.3934,
+  "portfolio_positions_usd": 35.72,
+  "nonlab_positions_usd": 27.5199,
   "nonlab_legs": [
     {
       "ticker": "KXSB-27-HOU",
@@ -16,7 +16,7 @@
     {
       "ticker": "KXMLB-26-HOU",
       "qty": 253.0,
-      "mtm_usd": 8.855
+      "mtm_usd": 8.9815
     },
     {
       "ticker": "SENATETX-26-R",
@@ -29,11 +29,11 @@
   "lab_deposit_ct": "2026-08-28T08:52:50-05:00",
   "pre_lab_cash_usd": 40.0,
   "lab_start_ts": "2026-09-03T23:53:16Z",
-  "lab_synthetic_equity_usd": 182.9699,
-  "delta_vs_start_usd": -72.9277,
-  "today_pnl_usd": -12.3021,
+  "lab_synthetic_equity_usd": 182.8699,
+  "delta_vs_start_usd": -72.9542,
+  "today_pnl_usd": -12.3286,
   "realized_lab_pnl_usd": 1.109,
-  "unrealized_lab_mtm_usd": -18.1391,
+  "unrealized_lab_mtm_usd": -18.2391,
   "equity_formula": "lab equity = Kalshi total \u2212 non-lab positions \u2212 $40 pre-lab cash; baseline $200 from first fill 2026-09-03 (not full account)",
   "equity_history_note": "lab_curve_v3: curve starts 2026-09-03 at $200. equity_usd excludes personal non-lab positions and $40 pre-lab cash. Older points deleted as wrong.",
   "equity_definition_changed_at": "2026-09-03T23:53:16Z",
@@ -42,7 +42,7 @@
   "remaining_usd": 25.3884,
   "daemon": {
     "alive": true,
-    "heartbeat_age_sec": 45.8,
+    "heartbeat_age_sec": 67.0,
     "pid": 15974,
     "pid_alive": true,
     "mode": "shark_pack_only",
