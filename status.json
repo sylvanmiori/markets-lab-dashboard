@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-09T14:01:47Z",
+  "updated_at": "2026-09-09T14:05:08Z",
   "starting_bankroll_usd": 200.0,
   "equity_usd": 139.1814,
   "lab_equity_usd": 139.1814,
@@ -37,15 +37,15 @@
   "equity_formula": "lab equity = Kalshi total \u2212 non-lab positions \u2212 $40 pre-lab cash; baseline $200 from first fill 2026-09-03 (not full account)",
   "equity_history_note": "lab_curve_v3: curve starts 2026-09-03 at $200. equity_usd excludes personal non-lab positions and $40 pre-lab cash. Older points deleted as wrong.",
   "equity_definition_changed_at": "2026-09-03T23:53:16Z",
-  "open_usd": 19.63,
+  "open_usd": 24.23,
   "max_open_usd": 50.0,
-  "remaining_usd": 30.37,
+  "remaining_usd": 25.77,
   "daemon": {
     "alive": true,
-    "heartbeat_age_sec": 82.9,
+    "heartbeat_age_sec": 105.4,
     "pid": 15974,
     "pid_alive": true,
-    "mode": "shark_pack_only",
+    "mode": "unknown",
     "kill_file": false
   },
   "allowlist": [
@@ -56,7 +56,15 @@
     "KXFEDDECISION",
     "KXAAAGASD"
   ],
-  "resting_orders": [],
+  "resting_orders": [
+    {
+      "ticker": "KXHIGHLAX-26SEP10-T90",
+      "side": "buy_yes",
+      "price_cents": 54,
+      "qty": 10.0,
+      "order_id_short": "01a0867a-b5c0-7b52"
+    }
+  ],
   "recent_fills": [
     {
       "ticker": "KXHIGHCHI-26SEP09-B80.5",
@@ -259,5 +267,5 @@
       "pnl_label": "uncertain"
     }
   ],
-  "notes": "shark_pack_only"
+  "notes": ""
 }
