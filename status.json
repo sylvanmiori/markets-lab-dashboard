@@ -1,11 +1,11 @@
 {
-  "updated_at": "2026-09-09T13:04:21Z",
+  "updated_at": "2026-09-09T13:07:45Z",
   "starting_bankroll_usd": 200.0,
-  "equity_usd": 139.5244,
-  "lab_equity_usd": 139.5244,
-  "portfolio_equity_usd": 206.9383,
-  "portfolio_cash_usd": 168.3083,
-  "portfolio_positions_usd": 38.63,
+  "equity_usd": 139.5923,
+  "lab_equity_usd": 139.5923,
+  "portfolio_equity_usd": 207.0062,
+  "portfolio_cash_usd": 171.2362,
+  "portfolio_positions_usd": 35.77,
   "nonlab_positions_usd": 27.4139,
   "nonlab_legs": [
     {
@@ -29,20 +29,20 @@
   "lab_deposit_ct": "2026-08-28T08:52:50-05:00",
   "pre_lab_cash_usd": 40.0,
   "lab_start_ts": "2026-09-03T23:53:16Z",
-  "lab_synthetic_equity_usd": 203.85,
-  "delta_vs_start_usd": -60.4756,
-  "today_pnl_usd": 0.15,
-  "realized_lab_pnl_usd": 1.43,
-  "unrealized_lab_mtm_usd": 2.42,
+  "lab_synthetic_equity_usd": 204.0419,
+  "delta_vs_start_usd": -60.4077,
+  "today_pnl_usd": 0.2179,
+  "realized_lab_pnl_usd": 1.6922,
+  "unrealized_lab_mtm_usd": 2.3496,
   "equity_formula": "lab equity = Kalshi total \u2212 non-lab positions \u2212 $40 pre-lab cash; baseline $200 from first fill 2026-09-03 (not full account)",
   "equity_history_note": "lab_curve_v3: curve starts 2026-09-03 at $200. equity_usd excludes personal non-lab positions and $40 pre-lab cash. Older points deleted as wrong.",
   "equity_definition_changed_at": "2026-09-03T23:53:16Z",
-  "open_usd": 23.9,
+  "open_usd": 21.2343,
   "max_open_usd": 50.0,
-  "remaining_usd": 26.1,
+  "remaining_usd": 28.7657,
   "daemon": {
     "alive": true,
-    "heartbeat_age_sec": 55.5,
+    "heartbeat_age_sec": 80.6,
     "pid": 15974,
     "pid_alive": true,
     "mode": "shark_pack_only",
@@ -61,11 +61,21 @@
       "ticker": "KXHIGHCHI-26SEP09-B80.5",
       "side": "buy_no",
       "price_cents": 67,
-      "qty": 7.0,
+      "qty": 2.63,
       "order_id_short": "01a085e6-5d30-700f"
     }
   ],
   "recent_fills": [
+    {
+      "ticker": "KXHIGHCHI-26SEP09-B80.5",
+      "side": "buy_no",
+      "price_cents": 67,
+      "qty": 4.37,
+      "ts": "2026-09-09T13:05:34.673988Z",
+      "pnl_usd": -0.0219,
+      "pnl_status": "open",
+      "pnl_label": "open"
+    },
     {
       "ticker": "KXHIGHCHI-26SEP09-B80.5",
       "side": "buy_no",
@@ -254,16 +264,6 @@
       "ts": "2026-09-08T01:30:19.386849Z",
       "pnl_usd": -0.42,
       "pnl_status": "lose",
-      "pnl_label": "open"
-    },
-    {
-      "ticker": "KXHIGHNY-26SEP08-B80.5",
-      "side": "buy_no",
-      "price_cents": 58,
-      "qty": 3.67,
-      "ts": "2026-09-08T00:52:22.53595Z",
-      "pnl_usd": null,
-      "pnl_status": "open",
       "pnl_label": "open"
     }
   ],
