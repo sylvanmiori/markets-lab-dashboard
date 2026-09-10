@@ -1,22 +1,22 @@
 {
-  "updated_at": "2026-09-10T03:01:32Z",
+  "updated_at": "2026-09-10T03:04:52Z",
   "starting_bankroll_usd": 200.0,
-  "equity_usd": 101.5283,
-  "lab_equity_usd": 101.5283,
-  "portfolio_equity_usd": 201.1782,
+  "equity_usd": 93.2848,
+  "lab_equity_usd": 93.2848,
+  "portfolio_equity_usd": 197.1382,
   "portfolio_cash_usd": 125.2782,
-  "portfolio_positions_usd": 75.9,
-  "nonlab_positions_usd": 59.6499,
+  "portfolio_positions_usd": 71.86,
+  "nonlab_positions_usd": 63.8534,
   "nonlab_legs": [
     {
       "ticker": "KXNFLWINMARGIN-26SEP09NESEA-SEA1TO6",
       "qty": 38.0,
-      "mtm_usd": 13.3
+      "mtm_usd": 14.63
     },
     {
       "ticker": "KXNFLGAME-26SEP09NESEA-SEA",
       "qty": 31.0,
-      "mtm_usd": 19.995
+      "mtm_usd": 23.095
     },
     {
       "ticker": "KXSB-27-HOU",
@@ -26,12 +26,12 @@
     {
       "ticker": "KXMLB-26-HOU",
       "qty": 253.0,
-      "mtm_usd": 7.7165
+      "mtm_usd": 7.59
     },
     {
       "ticker": "SENATETX-26-R",
       "qty": 20.0,
-      "mtm_usd": 10.2
+      "mtm_usd": 10.1
     }
   ],
   "lab_deposit_usd": 200.0,
@@ -39,11 +39,11 @@
   "lab_deposit_ct": "2026-08-28T08:52:50-05:00",
   "pre_lab_cash_usd": 40.0,
   "lab_start_ts": "2026-09-03T23:53:16Z",
-  "lab_synthetic_equity_usd": 180.465,
-  "delta_vs_start_usd": -98.4717,
-  "today_pnl_usd": -37.8461,
+  "lab_synthetic_equity_usd": 180.565,
+  "delta_vs_start_usd": -106.7152,
+  "today_pnl_usd": -46.0896,
   "realized_lab_pnl_usd": 1.16,
-  "unrealized_lab_mtm_usd": -20.695,
+  "unrealized_lab_mtm_usd": -20.595,
   "equity_formula": "lab equity = Kalshi total \u2212 non-lab positions \u2212 $40 pre-lab cash; baseline $200 from first fill 2026-09-03 (not full account)",
   "equity_history_note": "lab_curve_v3: curve starts 2026-09-03 at $200. equity_usd excludes personal non-lab positions and $40 pre-lab cash. Older points deleted as wrong.",
   "equity_definition_changed_at": "2026-09-03T23:53:16Z",
@@ -52,7 +52,7 @@
   "remaining_usd": 21.5,
   "daemon": {
     "alive": true,
-    "heartbeat_age_sec": 66.7,
+    "heartbeat_age_sec": 270.2,
     "pid": 15974,
     "pid_alive": true,
     "mode": "shark_pack_only",
