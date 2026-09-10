@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-10T23:11:40Z",
+  "updated_at": "2026-09-10T23:15:05Z",
   "starting_bankroll_usd": 200.0,
   "equity_usd": 165.1908,
   "lab_equity_usd": 165.1908,
@@ -42,7 +42,7 @@
   "remaining_usd": 21.65,
   "daemon": {
     "alive": true,
-    "heartbeat_age_sec": 132.5,
+    "heartbeat_age_sec": 159.4,
     "pid": 15974,
     "pid_alive": true,
     "mode": "shark_pack_only",
