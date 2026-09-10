@@ -1,22 +1,22 @@
 {
-  "updated_at": "2026-09-10T02:44:38Z",
+  "updated_at": "2026-09-10T02:48:00Z",
   "starting_bankroll_usd": 200.0,
-  "equity_usd": 92.9548,
-  "lab_equity_usd": 92.9548,
-  "portfolio_equity_usd": 183.4682,
+  "equity_usd": 100.5248,
+  "lab_equity_usd": 100.5248,
+  "portfolio_equity_usd": 191.3282,
   "portfolio_cash_usd": 125.2782,
-  "portfolio_positions_usd": 58.19,
-  "nonlab_positions_usd": 50.5134,
+  "portfolio_positions_usd": 66.05,
+  "nonlab_positions_usd": 50.8034,
   "nonlab_legs": [
     {
       "ticker": "KXNFLWINMARGIN-26SEP09NESEA-SEA1TO6",
       "qty": 38.0,
-      "mtm_usd": 11.21
+      "mtm_usd": 10.26
     },
     {
       "ticker": "KXNFLGAME-26SEP09NESEA-SEA",
       "qty": 31.0,
-      "mtm_usd": 13.175
+      "mtm_usd": 14.415
     },
     {
       "ticker": "KXSB-27-HOU",
@@ -39,11 +39,11 @@
   "lab_deposit_ct": "2026-08-28T08:52:50-05:00",
   "pre_lab_cash_usd": 40.0,
   "lab_start_ts": "2026-09-03T23:53:16Z",
-  "lab_synthetic_equity_usd": 181.055,
-  "delta_vs_start_usd": -107.0452,
-  "today_pnl_usd": -46.4196,
+  "lab_synthetic_equity_usd": 181.16,
+  "delta_vs_start_usd": -99.4752,
+  "today_pnl_usd": -38.8496,
   "realized_lab_pnl_usd": 1.16,
-  "unrealized_lab_mtm_usd": -20.105,
+  "unrealized_lab_mtm_usd": -20.0,
   "equity_formula": "lab equity = Kalshi total \u2212 non-lab positions \u2212 $40 pre-lab cash; baseline $200 from first fill 2026-09-03 (not full account)",
   "equity_history_note": "lab_curve_v3: curve starts 2026-09-03 at $200. equity_usd excludes personal non-lab positions and $40 pre-lab cash. Older points deleted as wrong.",
   "equity_definition_changed_at": "2026-09-03T23:53:16Z",
@@ -52,7 +52,7 @@
   "remaining_usd": 21.5,
   "daemon": {
     "alive": true,
-    "heartbeat_age_sec": 135.0,
+    "heartbeat_age_sec": 154.3,
     "pid": 15974,
     "pid_alive": true,
     "mode": "shark_pack_only",
@@ -94,7 +94,7 @@
       "price_cents": 63,
       "qty": 1.02,
       "ts": "2026-09-09T23:18:37.996563Z",
-      "pnl_usd": -0.045,
+      "pnl_usd": -0.035,
       "pnl_status": "open",
       "pnl_label": "open"
     },
