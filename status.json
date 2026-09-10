@@ -1,12 +1,12 @@
 {
-  "updated_at": "2026-09-10T00:56:08Z",
+  "updated_at": "2026-09-10T00:59:34Z",
   "starting_bankroll_usd": 200.0,
-  "equity_usd": 97.5723,
-  "lab_equity_usd": 97.5723,
-  "portfolio_equity_usd": 185.1382,
+  "equity_usd": 96.9223,
+  "lab_equity_usd": 96.9223,
+  "portfolio_equity_usd": 183.2482,
   "portfolio_cash_usd": 125.2782,
-  "portfolio_positions_usd": 59.86,
-  "nonlab_positions_usd": 47.5659,
+  "portfolio_positions_usd": 57.97,
+  "nonlab_positions_usd": 46.3259,
   "nonlab_legs": [
     {
       "ticker": "KXNFLWINMARGIN-26SEP09NESEA-SEA1TO6",
@@ -16,7 +16,7 @@
     {
       "ticker": "KXNFLGAME-26SEP09NESEA-SEA",
       "qty": 31.0,
-      "mtm_usd": 14.725
+      "mtm_usd": 13.485
     },
     {
       "ticker": "KXSB-27-HOU",
@@ -39,11 +39,11 @@
   "lab_deposit_ct": "2026-08-28T08:52:50-05:00",
   "pre_lab_cash_usd": 40.0,
   "lab_start_ts": "2026-09-03T23:53:16Z",
-  "lab_synthetic_equity_usd": 181.4,
-  "delta_vs_start_usd": -102.4277,
-  "today_pnl_usd": -41.8021,
+  "lab_synthetic_equity_usd": 181.245,
+  "delta_vs_start_usd": -103.0777,
+  "today_pnl_usd": -42.4521,
   "realized_lab_pnl_usd": 1.16,
-  "unrealized_lab_mtm_usd": -19.76,
+  "unrealized_lab_mtm_usd": -19.915,
   "equity_formula": "lab equity = Kalshi total \u2212 non-lab positions \u2212 $40 pre-lab cash; baseline $200 from first fill 2026-09-03 (not full account)",
   "equity_history_note": "lab_curve_v3: curve starts 2026-09-03 at $200. equity_usd excludes personal non-lab positions and $40 pre-lab cash. Older points deleted as wrong.",
   "equity_definition_changed_at": "2026-09-03T23:53:16Z",
@@ -52,7 +52,7 @@
   "remaining_usd": 21.5,
   "daemon": {
     "alive": true,
-    "heartbeat_age_sec": 100.1,
+    "heartbeat_age_sec": 126.4,
     "pid": 15974,
     "pid_alive": true,
     "mode": "shark_pack_only",
