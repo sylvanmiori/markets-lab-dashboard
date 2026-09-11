@@ -1,11 +1,11 @@
 {
-  "updated_at": "2026-09-11T14:40:15Z",
+  "updated_at": "2026-09-11T14:43:37Z",
   "starting_bankroll_usd": 200.0,
-  "equity_usd": 166.8805,
-  "lab_equity_usd": 166.8805,
-  "portfolio_equity_usd": 234.4004,
+  "equity_usd": 166.8705,
+  "lab_equity_usd": 166.8705,
+  "portfolio_equity_usd": 234.3904,
   "portfolio_cash_usd": 193.3304,
-  "portfolio_positions_usd": 41.07,
+  "portfolio_positions_usd": 41.06,
   "nonlab_positions_usd": 27.5199,
   "nonlab_legs": [
     {
@@ -29,23 +29,23 @@
   "lab_deposit_ct": "2026-08-28T08:52:50-05:00",
   "pre_lab_cash_usd": 40.0,
   "lab_start_ts": "2026-09-03T23:53:16Z",
-  "lab_synthetic_equity_usd": 194.385,
-  "delta_vs_start_usd": -33.1195,
-  "today_pnl_usd": -2.3965,
+  "lab_synthetic_equity_usd": 194.205,
+  "delta_vs_start_usd": -33.1295,
+  "today_pnl_usd": -2.4065,
   "realized_lab_pnl_usd": 0.0,
-  "unrealized_lab_mtm_usd": -5.615,
+  "unrealized_lab_mtm_usd": -5.795,
   "equity_formula": "lab equity = Kalshi total \u2212 non-lab positions \u2212 $40 pre-lab cash; baseline $200 from first fill 2026-09-03 (not full account)",
   "equity_history_note": "lab_curve_v3: curve starts 2026-09-03 at $200. equity_usd excludes personal non-lab positions and $40 pre-lab cash. Older points deleted as wrong.",
   "equity_definition_changed_at": "2026-09-03T23:53:16Z",
-  "open_usd": 19.43,
+  "open_usd": 23.84,
   "max_open_usd": 50.0,
-  "remaining_usd": 30.57,
+  "remaining_usd": 26.16,
   "daemon": {
     "alive": true,
-    "heartbeat_age_sec": 50.1,
+    "heartbeat_age_sec": 72.6,
     "pid": 15974,
     "pid_alive": true,
-    "mode": "shark_pack_only",
+    "mode": "unknown",
     "kill_file": false
   },
   "allowlist": [
@@ -57,6 +57,13 @@
     "KXAAAGASD"
   ],
   "resting_orders": [
+    {
+      "ticker": "KXHIGHLAX-26SEP12-B83.5",
+      "side": "buy_no",
+      "price_cents": 63,
+      "qty": 7.0,
+      "order_id_short": "01a090eb-2648-77c0"
+    },
     {
       "ticker": "KXHIGHCHI-26SEP12-T84",
       "side": "buy_no",
@@ -267,5 +274,5 @@
       "pnl_label": "uncertain"
     }
   ],
-  "notes": "shark_pack_only"
+  "notes": ""
 }
