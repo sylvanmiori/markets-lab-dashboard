@@ -1,17 +1,17 @@
 {
-  "updated_at": "2026-09-11T02:40:00Z",
+  "updated_at": "2026-09-11T02:43:52Z",
   "starting_bankroll_usd": 200.0,
-  "equity_usd": 160.4652,
-  "lab_equity_usd": 160.4652,
-  "portfolio_equity_usd": 234.5004,
+  "equity_usd": 160.5539,
+  "lab_equity_usd": 160.5539,
+  "portfolio_equity_usd": 235.1804,
   "portfolio_cash_usd": 181.9604,
-  "portfolio_positions_usd": 52.54,
-  "nonlab_positions_usd": 34.0352,
+  "portfolio_positions_usd": 53.22,
+  "nonlab_positions_usd": 34.6265,
   "nonlab_legs": [
     {
       "ticker": "KXNFLGAME-26SEP10SFLAR-SF",
       "qty": 7.97,
-      "mtm_usd": 6.6948
+      "mtm_usd": 7.1331
     },
     {
       "ticker": "KXSB-27-HOU",
@@ -21,12 +21,12 @@
     {
       "ticker": "KXMLB-26-HOU",
       "qty": 253.0,
-      "mtm_usd": 8.602
+      "mtm_usd": 8.855
     },
     {
       "ticker": "SENATETX-26-R",
       "qty": 20.0,
-      "mtm_usd": 10.3
+      "mtm_usd": 10.2
     }
   ],
   "lab_deposit_usd": 200.0,
@@ -34,11 +34,11 @@
   "lab_deposit_ct": "2026-08-28T08:52:50-05:00",
   "pre_lab_cash_usd": 40.0,
   "lab_start_ts": "2026-09-03T23:53:16Z",
-  "lab_synthetic_equity_usd": 197.85,
-  "delta_vs_start_usd": -39.5348,
-  "today_pnl_usd": -3.3746,
+  "lab_synthetic_equity_usd": 195.415,
+  "delta_vs_start_usd": -39.4461,
+  "today_pnl_usd": -3.2859,
   "realized_lab_pnl_usd": 0.75,
-  "unrealized_lab_mtm_usd": -2.9,
+  "unrealized_lab_mtm_usd": -5.335,
   "equity_formula": "lab equity = Kalshi total \u2212 non-lab positions \u2212 $40 pre-lab cash; baseline $200 from first fill 2026-09-03 (not full account)",
   "equity_history_note": "lab_curve_v3: curve starts 2026-09-03 at $200. equity_usd excludes personal non-lab positions and $40 pre-lab cash. Older points deleted as wrong.",
   "equity_definition_changed_at": "2026-09-03T23:53:16Z",
@@ -47,7 +47,7 @@
   "remaining_usd": 21.65,
   "daemon": {
     "alive": true,
-    "heartbeat_age_sec": 135.6,
+    "heartbeat_age_sec": 32.6,
     "pid": 15974,
     "pid_alive": true,
     "mode": "shark_pack_only",
