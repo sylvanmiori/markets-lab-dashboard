@@ -1,11 +1,11 @@
 {
-  "updated_at": "2026-09-12T15:05:14Z",
+  "updated_at": "2026-09-12T15:08:49Z",
   "starting_bankroll_usd": 200.0,
-  "equity_usd": 159.305,
-  "lab_equity_usd": 159.305,
-  "portfolio_equity_usd": 227.7104,
+  "equity_usd": 160.105,
+  "lab_equity_usd": 160.105,
+  "portfolio_equity_usd": 228.5104,
   "portfolio_cash_usd": 193.1704,
-  "portfolio_positions_usd": 34.54,
+  "portfolio_positions_usd": 35.34,
   "nonlab_positions_usd": 28.4054,
   "nonlab_legs": [
     {
@@ -29,11 +29,11 @@
   "lab_deposit_ct": "2026-08-28T08:52:50-05:00",
   "pre_lab_cash_usd": 40.0,
   "lab_start_ts": "2026-09-03T23:53:16Z",
-  "lab_synthetic_equity_usd": 195.955,
-  "delta_vs_start_usd": -40.695,
-  "today_pnl_usd": -2.5225,
+  "lab_synthetic_equity_usd": 196.28,
+  "delta_vs_start_usd": -39.895,
+  "today_pnl_usd": -1.7225,
   "realized_lab_pnl_usd": -0.37,
-  "unrealized_lab_mtm_usd": -3.675,
+  "unrealized_lab_mtm_usd": -3.35,
   "equity_formula": "lab equity = Kalshi total \u2212 non-lab positions \u2212 $40 pre-lab cash; baseline $200 from first fill 2026-09-03 (not full account)",
   "equity_history_note": "lab_curve_v3: curve starts 2026-09-03 at $200. equity_usd excludes personal non-lab positions and $40 pre-lab cash. Older points deleted as wrong.",
   "equity_definition_changed_at": "2026-09-03T23:53:16Z",
@@ -42,10 +42,10 @@
   "remaining_usd": 32.35,
   "daemon": {
     "alive": true,
-    "heartbeat_age_sec": 78.9,
+    "heartbeat_age_sec": 132.8,
     "pid": 1934103,
     "pid_alive": true,
-    "mode": "unknown",
+    "mode": "shark_pack_only",
     "kill_file": false
   },
   "allowlist": [
@@ -86,7 +86,7 @@
       "price_cents": 55,
       "qty": 6.0,
       "ts": "2026-09-12T11:01:53.260854Z",
-      "pnl_usd": 0.3,
+      "pnl_usd": 0.27,
       "pnl_status": "win",
       "pnl_label": "open"
     },
@@ -186,7 +186,7 @@
       "price_cents": 93,
       "qty": 15.65,
       "ts": "2026-09-11T16:02:00.442464Z",
-      "pnl_usd": 0.7043,
+      "pnl_usd": 0.4695,
       "pnl_status": "win",
       "pnl_label": "open"
     },
@@ -281,5 +281,5 @@
       "pnl_label": "open"
     }
   ],
-  "notes": ""
+  "notes": "shark_pack_only"
 }
