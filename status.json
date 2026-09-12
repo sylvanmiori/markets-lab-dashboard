@@ -1,11 +1,11 @@
 {
-  "updated_at": "2026-09-12T15:12:35Z",
+  "updated_at": "2026-09-12T15:16:07Z",
   "starting_bankroll_usd": 200.0,
-  "equity_usd": 159.655,
-  "lab_equity_usd": 159.655,
-  "portfolio_equity_usd": 228.0604,
+  "equity_usd": 160.435,
+  "lab_equity_usd": 160.435,
+  "portfolio_equity_usd": 228.8404,
   "portfolio_cash_usd": 188.3704,
-  "portfolio_positions_usd": 39.69,
+  "portfolio_positions_usd": 40.47,
   "nonlab_positions_usd": 28.4054,
   "nonlab_legs": [
     {
@@ -29,11 +29,11 @@
   "lab_deposit_ct": "2026-08-28T08:52:50-05:00",
   "pre_lab_cash_usd": 40.0,
   "lab_start_ts": "2026-09-03T23:53:16Z",
-  "lab_synthetic_equity_usd": 196.07,
-  "delta_vs_start_usd": -40.345,
-  "today_pnl_usd": -2.1725,
+  "lab_synthetic_equity_usd": 196.045,
+  "delta_vs_start_usd": -39.565,
+  "today_pnl_usd": -1.3925,
   "realized_lab_pnl_usd": -0.37,
-  "unrealized_lab_mtm_usd": -3.56,
+  "unrealized_lab_mtm_usd": -3.585,
   "equity_formula": "lab equity = Kalshi total \u2212 non-lab positions \u2212 $40 pre-lab cash; baseline $200 from first fill 2026-09-03 (not full account)",
   "equity_history_note": "lab_curve_v3: curve starts 2026-09-03 at $200. equity_usd excludes personal non-lab positions and $40 pre-lab cash. Older points deleted as wrong.",
   "equity_definition_changed_at": "2026-09-03T23:53:16Z",
@@ -42,7 +42,7 @@
   "remaining_usd": 32.35,
   "daemon": {
     "alive": true,
-    "heartbeat_age_sec": 166.0,
+    "heartbeat_age_sec": 32.2,
     "pid": 1934103,
     "pid_alive": true,
     "mode": "shark_pack_only",
@@ -89,7 +89,7 @@
       "price_cents": 55,
       "qty": 6.0,
       "ts": "2026-09-12T11:01:53.260854Z",
-      "pnl_usd": 0.36,
+      "pnl_usd": 0.39,
       "pnl_status": "win",
       "pnl_label": "open"
     },
@@ -109,8 +109,8 @@
       "price_cents": 84,
       "qty": 3.0,
       "ts": "2026-09-11T19:42:05.45025Z",
-      "pnl_usd": 0.135,
-      "pnl_status": "win",
+      "pnl_usd": 0.0,
+      "pnl_status": "open",
       "pnl_label": "open"
     },
     {
@@ -189,7 +189,7 @@
       "price_cents": 93,
       "qty": 15.65,
       "ts": "2026-09-11T16:02:00.442464Z",
-      "pnl_usd": 0.4695,
+      "pnl_usd": 0.5478,
       "pnl_status": "win",
       "pnl_label": "open"
     },
