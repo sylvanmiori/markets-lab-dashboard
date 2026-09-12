@@ -1,11 +1,11 @@
 {
-  "updated_at": "2026-09-12T01:27:40Z",
+  "updated_at": "2026-09-12T01:31:17Z",
   "starting_bankroll_usd": 200.0,
-  "equity_usd": 161.2215,
-  "lab_equity_usd": 161.2215,
-  "portfolio_equity_usd": 229.3004,
+  "equity_usd": 160.4215,
+  "lab_equity_usd": 160.4215,
+  "portfolio_equity_usd": 228.5004,
   "portfolio_cash_usd": 190.4704,
-  "portfolio_positions_usd": 38.83,
+  "portfolio_positions_usd": 38.03,
   "nonlab_positions_usd": 28.0789,
   "nonlab_legs": [
     {
@@ -29,11 +29,11 @@
   "lab_deposit_ct": "2026-08-28T08:52:50-05:00",
   "pre_lab_cash_usd": 40.0,
   "lab_start_ts": "2026-09-03T23:53:16Z",
-  "lab_synthetic_equity_usd": 188.965,
-  "delta_vs_start_usd": -38.7785,
-  "today_pnl_usd": -8.0555,
+  "lab_synthetic_equity_usd": 189.1,
+  "delta_vs_start_usd": -39.5785,
+  "today_pnl_usd": -8.8555,
   "realized_lab_pnl_usd": 5.19,
-  "unrealized_lab_mtm_usd": -16.225,
+  "unrealized_lab_mtm_usd": -16.09,
   "equity_formula": "lab equity = Kalshi total \u2212 non-lab positions \u2212 $40 pre-lab cash; baseline $200 from first fill 2026-09-03 (not full account)",
   "equity_history_note": "lab_curve_v3: curve starts 2026-09-03 at $200. equity_usd excludes personal non-lab positions and $40 pre-lab cash. Older points deleted as wrong.",
   "equity_definition_changed_at": "2026-09-03T23:53:16Z",
@@ -42,7 +42,7 @@
   "remaining_usd": 23.92,
   "daemon": {
     "alive": true,
-    "heartbeat_age_sec": 2.6,
+    "heartbeat_age_sec": 32.4,
     "pid": 1934103,
     "pid_alive": true,
     "mode": "shark_pack_only",
@@ -74,8 +74,8 @@
       "price_cents": 84,
       "qty": 3.0,
       "ts": "2026-09-11T19:42:05.45025Z",
-      "pnl_usd": 0.03,
-      "pnl_status": "open",
+      "pnl_usd": 0.06,
+      "pnl_status": "win",
       "pnl_label": "open"
     },
     {
@@ -144,7 +144,7 @@
       "price_cents": 68,
       "qty": 7.0,
       "ts": "2026-09-11T16:13:38.531504Z",
-      "pnl_usd": -0.735,
+      "pnl_usd": -1.015,
       "pnl_status": "lose",
       "pnl_label": "open"
     },
