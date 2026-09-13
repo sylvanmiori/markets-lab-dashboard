@@ -1,15 +1,15 @@
 {
-  "updated_at": "2026-09-13T14:39:27Z",
-  "equity_history_updated_at": "2026-09-13T14:39:27Z",
-  "reconciliation_updated_at": "2026-09-13T14:36:02Z",
+  "updated_at": "2026-09-13T14:43:20Z",
+  "equity_history_updated_at": "2026-09-13T14:43:20Z",
+  "reconciliation_updated_at": "2026-09-13T14:42:02Z",
   "oldest_input_updated_at": "2026-09-08T12:03:13Z",
   "starting_bankroll_usd": 200.0,
-  "equity_usd": 149.4032,
-  "lab_equity_usd": 149.4032,
+  "equity_usd": 148.2126,
+  "lab_equity_usd": 148.2126,
   "portfolio_equity_usd": 220.2931,
   "portfolio_cash_usd": 185.2331,
   "portfolio_positions_usd": 35.06,
-  "nonlab_positions_usd": 30.8899,
+  "nonlab_positions_usd": 32.0805,
   "nonlab_legs": [
     {
       "ticker": "KXNFLGAME-26SEP13NYJTEN-TEN",
@@ -19,12 +19,12 @@
     {
       "ticker": "KXSB-27-HOU",
       "qty": 187.52,
-      "mtm_usd": 8.4384
+      "mtm_usd": 9.376
     },
     {
       "ticker": "KXMLB-26-HOU",
       "qty": 253.0,
-      "mtm_usd": 7.7165
+      "mtm_usd": 7.9695
     },
     {
       "ticker": "SENATETX-26-R",
@@ -38,8 +38,8 @@
   "pre_lab_cash_usd": 40.0,
   "lab_start_ts": "2026-09-03T23:53:16Z",
   "lab_synthetic_equity_usd": 195.86,
-  "delta_vs_start_usd": -50.5968,
-  "today_pnl_usd": -7.8123,
+  "delta_vs_start_usd": -51.7874,
+  "today_pnl_usd": -9.0029,
   "realized_lab_pnl_usd": -2.25,
   "unrealized_lab_mtm_usd": -1.89,
   "equity_formula": "lab equity = Kalshi total \u2212 non-lab positions \u2212 $40 pre-lab cash; baseline $200 from first fill 2026-09-03 (not full account)",
@@ -50,7 +50,7 @@
   "remaining_usd": 45.45,
   "daemon": {
     "alive": false,
-    "heartbeat_age_sec": 168.6,
+    "heartbeat_age_sec": 28.7,
     "pid": 2594721,
     "pid_alive": true,
     "mode": "KILL on \u2014 no new risk",
@@ -91,7 +91,7 @@
       "price_cents": 54,
       "qty": 7.0,
       "ts": "2026-09-13T03:39:25.568636Z",
-      "pnl_usd": -0.28,
+      "pnl_usd": -0.21,
       "pnl_status": "lose",
       "pnl_label": "open",
       "pnl_kind": "open_unrealized"
