@@ -1,21 +1,16 @@
 {
-  "updated_at": "2026-09-13T20:15:50Z",
-  "equity_history_updated_at": "2026-09-13T20:15:50Z",
-  "reconciliation_updated_at": "2026-09-13T20:15:02Z",
+  "updated_at": "2026-09-13T20:19:35Z",
+  "equity_history_updated_at": "2026-09-13T20:19:35Z",
+  "reconciliation_updated_at": "2026-09-13T20:18:02Z",
   "oldest_input_updated_at": "2026-09-08T12:03:13Z",
   "starting_bankroll_usd": 200.0,
-  "equity_usd": 150.5622,
-  "lab_equity_usd": 150.5622,
-  "portfolio_equity_usd": 216.1031,
+  "equity_usd": 150.5172,
+  "lab_equity_usd": 150.5172,
+  "portfolio_equity_usd": 216.0131,
   "portfolio_cash_usd": 188.8031,
-  "portfolio_positions_usd": 27.3,
-  "nonlab_positions_usd": 25.5409,
+  "portfolio_positions_usd": 27.21,
+  "nonlab_positions_usd": 25.4959,
   "nonlab_legs": [
-    {
-      "ticker": "KXNFLGAME-26SEP13NYJTEN-TEN",
-      "qty": 9.0,
-      "mtm_usd": 0.045
-    },
     {
       "ticker": "KXSB-27-HOU",
       "qty": 187.52,
@@ -38,8 +33,8 @@
   "pre_lab_cash_usd": 40.0,
   "lab_start_ts": "2026-09-03T23:53:16Z",
   "lab_synthetic_equity_usd": 196.77,
-  "delta_vs_start_usd": -49.4378,
-  "today_pnl_usd": -6.6533,
+  "delta_vs_start_usd": -49.4828,
+  "today_pnl_usd": -6.6983,
   "realized_lab_pnl_usd": -3.23,
   "unrealized_lab_mtm_usd": 0.0,
   "equity_formula": "lab equity = Kalshi total \u2212 non-lab positions \u2212 $40 pre-lab cash; baseline $200 from first fill 2026-09-03 (not full account)",
@@ -50,7 +45,7 @@
   "remaining_usd": 50.0,
   "daemon": {
     "alive": false,
-    "heartbeat_age_sec": 4.9,
+    "heartbeat_age_sec": 51.9,
     "pid": 2594721,
     "pid_alive": true,
     "mode": "KILL on \u2014 no new risk",
@@ -83,7 +78,7 @@
       "price_cents": 55,
       "qty": 8.0,
       "ts": "2026-09-13T05:33:55.778177Z",
-      "pnl_usd": -3.24,
+      "pnl_usd": -3.44,
       "pnl_status": "lose",
       "pnl_label": "open",
       "pnl_kind": "open_unrealized"
@@ -94,7 +89,7 @@
       "price_cents": 54,
       "qty": 7.0,
       "ts": "2026-09-13T03:39:25.568636Z",
-      "pnl_usd": -1.645,
+      "pnl_usd": -2.905,
       "pnl_status": "lose",
       "pnl_label": "open",
       "pnl_kind": "open_unrealized"
