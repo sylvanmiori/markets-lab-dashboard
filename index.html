@@ -5,14 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Markets Lab</title>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@3.0.0/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
 <style>
-  :root { --bg:#0b0f14; --card:#141a22; --text:#e7eef7; --muted:#8b9bb0; --ok:#3dd68c; --bad:#ff6b6b; --line:#243041; --accent:#6ea8fe; }
+  :root { --bg:#0b0f14; --card:#141a22; --text:#e7eef7; --muted:#8b9bb0; --ok:#3dd68c; --bad:#ff6b6b; --line:#243041; --accent:#6ea8fe; --warn:#e6c35c; }
   * { box-sizing: border-box; }
   body { margin:0; font:14px/1.45 ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,sans-serif; background:var(--bg); color:var(--text); }
   header { padding:20px 24px 8px; display:flex; gap:16px; align-items:baseline; flex-wrap:wrap; }
   h1 { font-size:18px; margin:0; letter-spacing:.02em; }
   .meta { color:var(--muted); font-size:12px; }
+  .ages { display:flex; flex-wrap:wrap; gap:8px 14px; padding:0 24px 8px; font-size:12px; color:var(--muted); }
+  .ages span { white-space:nowrap; }
+  .ages .warn { color:var(--warn); font-weight:600; }
   .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:12px; padding:12px 24px; }
   .card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:14px 16px; }
   .label { color:var(--muted); font-size:11px; text-transform:uppercase; letter-spacing:.06em; }
@@ -20,11 +22,11 @@
   .ok { color:var(--ok); } .bad { color:var(--bad); }
   .pnl-win { color:var(--ok); font-weight:600; }
   .pnl-lose { color:var(--bad); font-weight:600; }
-  .pnl-open, .pnl-flat { color:#e6c35c; font-weight:600; }
+  .pnl-open, .pnl-flat, .pnl-unreal { color:#e6c35c; font-weight:600; }
   .dot { display:inline-block; width:8px; height:8px; border-radius:50%; margin-right:6px; vertical-align:middle; }
   .dot-win { background:var(--ok); }
   .dot-lose { background:var(--bad); }
-  .dot-open, .dot-flat { background:#e6c35c; }
+  .dot-open, .dot-flat, .dot-unreal { background:#e6c35c; }
   section { padding:8px 24px 24px; }
   h2 { font-size:13px; color:var(--muted); text-transform:uppercase; letter-spacing:.06em; margin:16px 0 8px; }
   table { width:100%; border-collapse:collapse; background:var(--card); border:1px solid var(--line); border-radius:12px; overflow:hidden; }
@@ -34,20 +36,12 @@
   .chips { display:flex; flex-wrap:wrap; gap:6px; }
   .chip { background:#1b2430; border:1px solid var(--line); border-radius:999px; padding:4px 10px; font-size:12px; color:var(--accent); }
   #err { color:var(--bad); padding:0 24px; min-height:1.2em; }
+  #lagWarn { color:var(--warn); padding:0 24px 8px; min-height:1.2em; font-weight:600; }
   code { font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; font-size:12px; }
-  .eq-tip {
-    margin: 0 0 8px;
-    min-height: 1.4em;
-    font-size: 15px;
-    font-variant-numeric: tabular-nums;
-    color: var(--muted);
-  }
+  .eq-tip { margin: 0 0 8px; min-height: 1.4em; font-size: 15px; font-variant-numeric: tabular-nums; color: var(--muted); }
   .eq-tip.active { color: var(--text); }
   .eq-tip strong { color: var(--accent); font-size: 18px; }
-  .chart-wrap {
-    background:var(--card); border:1px solid var(--line); border-radius:12px; padding:12px; height:280px;
-    touch-action: none; -webkit-user-select: none; user-select: none;
-  }
+  .chart-wrap { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:12px; height:280px; touch-action: none; -webkit-user-select: none; user-select: none; }
   .formula { color:var(--muted); font-size:12px; margin:8px 24px 0; }
   .tip, [title] { cursor: help; }
 </style>
@@ -56,57 +50,53 @@
 <header>
   <h1>Markets Lab</h1>
   <div class="meta tip" title="Refreshes public status and equity every 20 seconds; this page never holds API keys.">poll · scrub shows $ · hard-refresh if stale</div>
-  <div class="meta tip" id="fetchAge" title="When status.json was last written and when this page last fetched it successfully.">—</div>
+  <div class="meta tip" id="fetchAge" title="When this page last fetched status successfully.">—</div>
 </header>
 <div id="err"></div>
+<div class="ages tip" id="agesBar" title="Separate freshness clocks. Chart lag vs status is warned below.">
+  <span id="ageStatus">status: —</span>
+  <span id="ageChart">chart: —</span>
+  <span id="ageOldest">oldest input: N/A</span>
+  <span id="ageRecon">reconciliation: N/A</span>
+</div>
+<div id="lagWarn"></div>
 <div class="grid">
-  <div class="card tip" title="Lab equity = Kalshi account total minus personal non-lab positions. Baseline $200 deposit 2026-08-28.">
-    <div class="label">Lab equity</div><div class="value" id="equity">—</div>
+  <div class="card tip" id="equityCard" title="lab_curve_v3: account-derived lab equity. Baseline $200.">
+    <div class="label">Lab equity (lab_curve_v3)</div><div class="value" id="equity">—</div>
   </div>
-  <div class="card tip" title="Full Kalshi account (cash + all positions), including personal NFL/MLB/Senate.">
-    <div class="label">Kalshi account</div><div class="value" id="acctTotal">—</div>
+  <div class="card tip" title="How far lab equity sits above or below the $200 starting bankroll.">
+    <div class="label">Δ vs $200</div><div class="value" id="delta">—</div>
   </div>
-  <div class="card tip" title="Personal non-lab positions excluded from lab equity.">
-    <div class="label">Non-lab excluded</div><div class="value" id="nonlab">—</div>
+  <div class="card tip" title="Secondary synthetic check: $200 + realized + unrealized from fill reconstruction (not the headline).">
+    <div class="label">Synthetic (secondary)</div><div class="value" id="synthetic" style="font-size:18px">—</div>
   </div>
-  <div class="card tip" title="Available cash balance from Kalshi.">
-    <div class="label">Cash</div><div class="value" id="cash">—</div>
-  </div>
-  <div class="card tip" title="Marked value of all open positions (Kalshi portfolio_value).">
-    <div class="label">Positions MTM</div><div class="value" id="posMtm">—</div>
-  </div>
-  <div class="card tip" title="Change in lab equity since CT midnight (lab_equity_v2).">
+  <div class="card tip" title="Today's profit or loss under the lab equity definition.">
     <div class="label">Today PnL</div><div class="value" id="today">—</div>
   </div>
-  <div class="card tip" title="Lab open exposure (allowlisted positions + resting entries) vs $50 max.">
-    <div class="label">Lab Open</div><div class="value" id="openUsd">—</div>
+  <div class="card tip" title="Open USD = money currently tied up in resting orders + positions for this lab.">
+    <div class="label">Open USD</div><div class="value" id="openUsd">—</div>
   </div>
-  <div class="card tip" title="Hard ceiling on lab open USD.">
-    <div class="label">Lab Room Left</div><div class="value" id="maxUsd">—</div>
+  <div class="card tip" title="How much open-risk room is left under the max open cap.">
+    <div class="label">Remaining Cap</div><div class="value" id="remainUsd">—</div>
   </div>
-  <div class="card tip" title="Lab-only synthetic: $200 + realized + unrealized MTM on allowlisted series. Not account equity.">
-    <div class="label">Lab MTM (not equity)</div><div class="value" id="labMtm">—</div>
+  <div class="card tip" title="Max Cap = the hard ceiling on open USD this lab is allowed to use.">
+    <div class="label">Max Cap</div><div class="value" id="maxUsd">—</div>
   </div>
   <div class="card tip" id="daemonCard" title="Background trader health.">
     <div class="label">Daemon</div><div class="value" id="daemon" style="font-size:16px">—</div>
   </div>
 </div>
-<p class="formula tip" id="formula" title="Headline is lab equity vs $200. Full Kalshi account shown separately. Non-lab positions stripped.">lab equity = (Kalshi total − non-lab) · baseline $200 deposit · lab MTM is debug-only</p>
+<p class="formula tip" id="formula" title="lab_curve_v3 headline. Synthetic fields are secondary.">lab_curve_v3: lab equity = Kalshi total − non-lab positions − $40 pre-lab cash · baseline $200</p>
 <section>
-  <h2 class="tip">Lab equity curve</h2>
-  <div class="eq-tip" id="eqTip">Scrub for Time + Lab equity $</div>
+  <h2 class="tip">Equity curve (lab_curve_v3)</h2>
+  <div class="eq-tip" id="eqTip">Scrub for Time + Equity $</div>
   <div class="chart-wrap tip"><canvas id="eqChart"></canvas></div>
-  <p class="formula tip" id="chartNote">Times shown in America/Chicago (CT). X-axis uses real elapsed time, not equal point spacing.</p>
   <h2 class="tip">Allowlist</h2>
   <div class="chips" id="allow"></div>
   <h2 class="tip">Resting orders</h2>
   <table>
     <thead><tr>
-      <th class="tip">Ticker</th>
-      <th class="tip">Side</th>
-      <th class="tip">Px¢</th>
-      <th class="tip">Qty</th>
-      <th class="tip">Oid</th>
+      <th class="tip">Ticker</th><th class="tip">Side</th><th class="tip">Px¢</th><th class="tip">Qty</th><th class="tip">Oid</th>
     </tr></thead>
     <tbody id="resting"></tbody>
   </table>
@@ -117,8 +107,11 @@
       <th class="tip">Side</th>
       <th class="tip">Px¢</th>
       <th class="tip">Qty</th>
-      <th title="Estimated dollars made or lost on this fill (matched round-trip or open mark).">P&amp;L $</th>
-      <th title="Green = made money, red = lost money, yellow = still open / flat / uncertain.">●</th>
+      <th title="Estimated dollars. Open marks are unrealized — not wins.">P&amp;L $</th>
+      <th title="Green=realized win, red=realized lose, yellow=open unrealized / flat / unmatched.">●</th>
+      <th class="tip">Kind</th>
+      <th class="tip">Fee</th>
+      <th class="tip">Strategy</th>
       <th class="tip">Ts</th>
     </tr></thead>
     <tbody id="fills"></tbody>
@@ -126,93 +119,92 @@
 </section>
 <script>
 const $ = (id) => document.getElementById(id);
+const LAG_WARN_MS = 60*60*1000; // 1h
+const GAP_BREAK_MS = 2*60*60*1000; // 2h chart gap
 let lastOk = 0, chart;
 function money(n){ return (n==null||n==="")?"—":Number(n).toFixed(2); }
-function fmtCT(isoOrMs){
-  if(isoOrMs==null || isoOrMs==="") return "?";
-  const d = (typeof isoOrMs === "number") ? new Date(isoOrMs) : new Date(isoOrMs);
-  if(Number.isNaN(d.getTime())) return String(isoOrMs);
-  return new Intl.DateTimeFormat("en-US", {
-    timeZone: "America/Chicago",
-    month: "short", day: "numeric",
-    hour: "numeric", minute: "2-digit",
-    hour12: true
-  }).format(d) + " CT";
+function parseTs(s){
+  if(s==null||s==="") return null;
+  if(typeof s==="number"){ const ms=s>1e12?s:s*1000; return new Date(ms); }
+  try{ return new Date(String(s).endsWith("Z")||String(s).includes("+")||String(s).includes("-",10)?s:s+"Z"); }catch(e){ return null; }
 }
-function fmtCTTick(value){
-  const d = new Date(value);
-  if(Number.isNaN(d.getTime())) return "";
-  return new Intl.DateTimeFormat("en-US", {
-    timeZone: "America/Chicago",
-    month: "short", day: "numeric",
-    hour: "numeric", minute: "2-digit",
-    hour12: true
-  }).format(d);
+function ageLabel(ts, now){
+  if(!ts || isNaN(ts.getTime())) return "N/A";
+  const sec=Math.max(0, Math.round((now-ts.getTime())/1000));
+  if(sec<90) return sec+"s";
+  if(sec<3600) return Math.round(sec/60)+"m";
+  if(sec<86400) return (sec/3600).toFixed(1)+"h";
+  return (sec/86400).toFixed(1)+"d";
 }
-
+function classifyFill(f){
+  const st=String(f.pnl_status||"");
+  const label=String(f.pnl_label||st||"");
+  const kind=String(f.pnl_kind||f.fill_kind||"");
+  if(kind==="settled"||label==="settled") return {kind:"settled", cls:st==="lose"?"pnl-lose":(st==="win"?"pnl-win":"pnl-flat"), tip:"Settled outcome."};
+  if(kind==="unmatched"||label==="unmatched") return {kind:"unmatched", cls:"pnl-flat", tip:"Unmatched / not enough info."};
+  if(label==="open"||st==="open"||kind==="open_unrealized") return {kind:"open unrealized", cls:"pnl-unreal", tip:"Still open — unrealized mark vs mid. Not a realized win."};
+  if(st==="win") return {kind:"realized", cls:"pnl-win", tip:"Closed realized — made money."};
+  if(st==="lose") return {kind:"realized", cls:"pnl-lose", tip:"Closed realized — lost money."};
+  return {kind: label||"flat", cls:"pnl-flat", tip:"Flat or uncertain."};
+}
 function pnlCell(f){
-  const st = String(f.pnl_status||"flat");
-  const label = String(f.pnl_label||st);
-  const v = f.pnl_usd;
-  const cls = st==="win"?"pnl-win":(st==="lose"?"pnl-lose":"pnl-open");
-  const tip = label==="open"
-    ? "Still open — paper P&L vs current mid."
-    : (st==="win" ? "Closed or marked up — made money on this lot."
-    : (st==="lose" ? "Closed or marked down — lost money on this lot."
-    : "Flat or not enough info to score this fill."));
-  const txt = (v==null||v==="") ? "—" : ((Number(v)>=0?"+":"")+Number(v).toFixed(2));
-  return cell(`<span class="${cls}">${txt}</span>`, tip);
+  const c=classifyFill(f);
+  const v=f.pnl_usd;
+  const txt=(v==null||v==="")?"—":((Number(v)>=0?"+":"")+Number(v).toFixed(2));
+  return cell(`<span class="${c.cls}">${txt}</span>`, c.tip);
 }
 function pnlDot(f){
-  const st = String(f.pnl_status||"flat");
-  const dcls = st==="win"?"dot-win":(st==="lose"?"dot-lose":"dot-open");
-  const tip = st==="win"?"Win":(st==="lose"?"Lose":(String(f.pnl_label||st)==="open"?"Still open":"Flat / uncertain"));
-  return cell(`<span class="dot ${dcls}"></span>`, tip);
+  const c=classifyFill(f);
+  const dcls=c.cls==="pnl-win"?"dot-win":(c.cls==="pnl-lose"?"dot-lose":"dot-unreal");
+  return cell(`<span class="dot ${dcls}"></span>`, c.tip);
 }
-
+function kindCell(f){ const c=classifyFill(f); return cell(esc(c.kind), c.tip); }
+function feeCell(f){
+  const v=f.fee_usd??f.fee_cost??f.fees_usd;
+  return cell(v==null||v===""?"—":money(v), "Fee on this fill when published.");
+}
+function stratCell(f){
+  const s=f.strategy_id||f.strategy||"";
+  return cell(s?`<code>${esc(s)}</code>`:"—", s?("Strategy "+s):"No strategy_id on this fill.");
+}
 function signed(n){
   if(n==null||n==="") return "—";
   const v=Number(n), cls=v>=0?"ok":"bad", s=(v>=0?"+":"")+v.toFixed(2);
   return `<span class="${cls}">${s}</span>`;
 }
-function esc(s){
-  return String(s??"").replace(/&/g,"&amp;").replace(/"/g,"&quot;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
-}
-function cell(text, title){
-  return `<td class="tip">${text}</td>`;
-}
+function esc(s){ return String(s??"").replace(/&/g,"&amp;").replace(/"/g,"&quot;").replace(/</g,"&lt;").replace(/>/g,"&gt;"); }
+function cell(text, title){ return `<td class="tip" title="${esc(title||"")}">${text}</td>`; }
 function row(cells){ return "<tr>"+cells.join("")+"</tr>"; }
 function showEqTip(label, equity){
   const el=$("eqTip");
   if(!el) return;
   if(label==null || equity==null || Number.isNaN(Number(equity))){
     el.classList.remove("active");
-    el.textContent="Scrub for Time + Lab equity $";
+    el.textContent="Scrub for Time + Equity $";
     return;
   }
   el.classList.add("active");
-  el.innerHTML=`Time <span>${esc(String(label))}</span> · Lab equity <strong>$${Number(equity).toFixed(2)}</strong>`;
+  el.innerHTML=`Time <span>${esc(String(label))}</span> · Equity <strong>$${Number(equity).toFixed(2)}</strong>`;
 }
 function applyScrub(c, ev){
-  if(!c || !c.data || !c.data.datasets || !c.data.datasets[0]) return;
-  const data=c.data.datasets[0].data||[];
-  if(!data.length) return;
+  if(!c || !c.data || !c.data.labels || !c.data.labels.length) return;
   let i=null;
   try{
-    const els=c.getElementsAtEventForMode(ev, "nearest", {intersect:false}, false);
+    const els=c.getElementsAtEventForMode(ev, "index", {intersect:false}, false);
     if(els && els.length) i=els[0].index;
   }catch(e){}
   if(i==null && ev && ev.x!=null){
     const pts=(c.getDatasetMeta(0).data||[]);
     let best=0, bestD=1e15;
     for(let k=0;k<pts.length;k++){
+      if(pts[k]==null||pts[k].x==null) continue;
       const d=Math.abs(pts[k].x-ev.x);
       if(d<bestD){ bestD=d; best=k; }
     }
     i=best;
   }
   if(i==null) return;
-  i=Math.max(0, Math.min(data.length-1, i));
+  i=Math.max(0, Math.min(c.data.labels.length-1, i));
   const meta=c.getDatasetMeta(0);
   if(!meta || !meta.data || !meta.data[i]) return;
   const pt=meta.data[i];
@@ -220,10 +212,9 @@ function applyScrub(c, ev){
   if(c.tooltip && c.tooltip.setActiveElements){
     c.tooltip.setActiveElements([{datasetIndex:0, index:i}], {x:pt.x, y:pt.y});
   }
-  const row=data[i];
-  const y=(row && typeof row==="object") ? row.y : row;
-  const t=(row && typeof row==="object") ? (row.t!=null?row.t:row.x) : null;
-  showEqTip(fmtCT(t), y);
+  const y=c.data.datasets[0].data[i];
+  if(y==null) showEqTip(c.data.labels[i]+" (gap)", null);
+  else showEqTip(c.data.labels[i], y);
   c.update("none");
 }
 function bindEqScrubHandlers(c){
@@ -256,15 +247,26 @@ function bindEqScrubHandlers(c){
   canvas.addEventListener("mousemove", onMove, {passive:false});
   canvas.addEventListener("mouseleave", ()=>showEqTip(null), {passive:true});
 }
+function buildChartSeries(points){
+  const pts=(points||[]).slice().sort((a,b)=>String(a.t).localeCompare(String(b.t)));
+  const labels=[], data=[], times=[];
+  let prev=null;
+  for(const p of pts){
+    const t=parseTs(p.t);
+    if(!t || isNaN(t.getTime())) continue;
+    if(prev && (t-prev)>GAP_BREAK_MS){
+      labels.push(""); data.push(null); times.push(null); // gap break
+    }
+    labels.push((p.t||"").slice(5,16).replace("T"," "));
+    data.push(Number(p.equity_usd));
+    times.push(t);
+    prev=t;
+  }
+  return {labels, data, times, newest: times.length?times[times.length-1]:null};
+}
 function upsertChart(points){
-  const pts=(points||[]).filter(p=>p && p.equity_usd!=null && !Number.isNaN(Number(p.equity_usd)) && !p.marker);
-  const kalshi=pts.filter(p=>p.source==="lab_curve_v3" || p.definition==="lab_curve_v3" || p.source==="lab_equity" || p.definition==="lab_equity_v2" || p.source==="kalshi_portfolio" || p.definition==="portfolio_equity_v1");
-  const use=kalshi.length?kalshi:pts;
-  const data=use.map(p=>{
-    const iso=p.t||p.ts||"";
-    const ms=Date.parse(iso);
-    return {x: Number.isFinite(ms)?ms:NaN, y:Number(p.equity_usd), t:iso};
-  }).filter(p=>Number.isFinite(p.x));
+  const series=buildChartSeries(points);
+  const {labels, data}=series;
   const ctx=$("eqChart").getContext("2d");
   const coarse = window.matchMedia("(pointer: coarse)").matches || ("ontouchstart" in window);
   const crosshairPlugin = {
@@ -276,24 +278,17 @@ function upsertChart(points){
       const yAxis=c.scales.y;
       if(x==null || !yAxis) return;
       const g=c.ctx;
-      g.save();
-      g.beginPath();
-      g.moveTo(x, yAxis.top);
-      g.lineTo(x, yAxis.bottom);
-      g.lineWidth=1;
-      g.strokeStyle="rgba(110,168,254,.55)";
-      g.stroke();
-      g.restore();
+      g.save(); g.beginPath(); g.moveTo(x, yAxis.top); g.lineTo(x, yAxis.bottom);
+      g.lineWidth=1; g.strokeStyle="rgba(110,168,254,.55)"; g.stroke(); g.restore();
     }
   };
   if(!chart){
     chart=new Chart(ctx,{
       type:"line",
-      data:{datasets:[{
-        label:"Lab equity $", data,
-        parsing:false,
+      data:{labels, datasets:[{
+        label:"Equity $", data,
         borderColor:"#6ea8fe", backgroundColor:"rgba(110,168,254,.15)",
-        fill:true, tension:.25,
+        fill:true, tension:.25, spanGaps:false,
         pointRadius: coarse ? 0 : 1,
         pointHoverRadius: 4,
         pointHitRadius: coarse ? 24 : 12,
@@ -301,23 +296,11 @@ function upsertChart(points){
       }]},
       options:{
         responsive:true, maintainAspectRatio:false,
-        interaction:{mode:"nearest", intersect:false, axis:"x"},
+        interaction:{mode:"index", intersect:false},
         events:["mousemove","mouseout","click","touchstart","touchmove","touchend"],
-        plugins:{
-          legend:{display:false},
-          tooltip:{ enabled:false }
-        },
+        plugins:{ legend:{display:false}, tooltip:{ enabled:false } },
         scales:{
-          x:{
-            type:"time",
-            title:{display:true, text:"Time (America/Chicago)", color:"#8b9bb0"},
-            ticks:{
-              color:"#8b9bb0",
-              maxTicksLimit:8,
-              callback:function(value){ return fmtCTTick(value); }
-            },
-            grid:{color:"#243041"}
-          },
+          x:{ticks:{color:"#8b9bb0", maxTicksLimit:8}, grid:{color:"#243041"}},
           y:{ticks:{color:"#8b9bb0"}, grid:{color:"#243041"}}
         }
       },
@@ -325,14 +308,33 @@ function upsertChart(points){
     });
     bindEqScrubHandlers(chart);
   } else {
-    chart.data.labels=undefined;
+    chart.data.labels=labels;
     chart.data.datasets[0].data=data;
-    chart.data.datasets[0].parsing=false;
+    chart.data.datasets[0].spanGaps=false;
     chart.data.datasets[0].pointRadius = coarse ? 0 : 1;
     chart.data.datasets[0].pointHitRadius = coarse ? 24 : 12;
     chart.update("none");
     bindEqScrubHandlers(chart);
   }
+  return series;
+}
+function updateAges(d, series, now){
+  const statusTs=parseTs(d.updated_at);
+  const chartTs=series.newest || parseTs(d.equity_history_updated_at);
+  const oldestTs=parseTs(d.oldest_input_updated_at || d.oldest_underlying_input_updated_at);
+  const reconTs=parseTs(d.reconciliation_updated_at || d.reconciliation_age_ts);
+  $("ageStatus").textContent = "status: "+ageLabel(statusTs, now)+(statusTs?"":" (N/A)");
+  $("ageChart").textContent = "chart: "+ageLabel(chartTs, now)+(chartTs?"":" (N/A)");
+  $("ageOldest").textContent = "oldest input: "+(oldestTs?ageLabel(oldestTs, now):"N/A");
+  $("ageRecon").textContent = "reconciliation: "+(reconTs?ageLabel(reconTs, now):"N/A");
+  let warn="";
+  if(statusTs && chartTs && (statusTs-chartTs)>LAG_WARN_MS){
+    warn="Chart lag: equity_history newest point is behind status.updated_at by >1h — do not treat the curve as current.";
+    $("ageChart").classList.add("warn");
+  } else {
+    $("ageChart").classList.remove("warn");
+  }
+  $("lagWarn").textContent=warn;
 }
 
 async function tick(){
@@ -347,32 +349,22 @@ async function tick(){
     if(rh.ok){ try{ hist=await rh.json(); }catch(e){ hist=[]; } }
     lastOk = Date.now();
     $("err").textContent = "";
-    $("equity").textContent = money(d.lab_equity_usd ?? d.equity_usd);
-    if($("acctTotal")) $("acctTotal").textContent = money(d.portfolio_equity_usd);
-    if($("nonlab")) {
-      const nl=d.nonlab_positions_usd, pc=d.pre_lab_cash_usd;
-      $("nonlab").textContent = (nl==null)? "—" : (money(nl) + (pc!=null? ` + ${money(pc)} pre-cash` : ""));
-    }
-    $("cash").textContent = money(d.portfolio_cash_usd);
-    $("posMtm").textContent = money(d.portfolio_positions_usd);
+    $("equity").textContent = money(d.equity_usd);
+    $("delta").innerHTML = signed(d.delta_vs_start_usd);
     $("today").innerHTML = signed(d.today_pnl_usd);
-    $("openUsd").textContent = money(d.open_usd) + " / " + money(d.max_open_usd);
-    $("maxUsd").textContent = money(d.remaining_usd) + " left";
-    $("labMtm").textContent = money(d.lab_synthetic_equity_usd);
-    const foot = d.equity_formula || "equity = Kalshi cash + portfolio_value";
-    const note = d.equity_history_note ? (" · " + d.equity_history_note) : "";
-    const labn = d.lab_mtm_note || "lab_synthetic is NOT equity";
-    $("formula").textContent = foot + " · " + labn;
-    $("formula").title = foot + note;
+    $("openUsd").textContent = money(d.open_usd);
+    $("remainUsd").textContent = money(d.remaining_usd);
+    $("maxUsd").textContent = money(d.max_open_usd);
+    const syn=d.lab_synthetic_equity_usd;
+    $("synthetic").textContent = syn==null?"—":money(syn);
+    if(d.equity_formula) $("formula").textContent = "lab_curve_v3 · "+d.equity_formula;
+    else $("formula").textContent = "lab_curve_v3: lab equity = Kalshi total − non-lab positions − $40 pre-lab cash · baseline $200";
     const dm = d.daemon||{};
     const age = dm.heartbeat_age_sec;
     const alive = !!dm.alive;
     const mode = dm.mode||"?";
     $("daemon").innerHTML = `<span class="${alive?"ok":"bad"}">${alive?"alive":"down"}</span> · ${esc(mode)} · hb ${age==null?"?":age+"s"}`;
-    const packNote = String(mode).toLowerCase().includes("shark_pack")
-      ? "Mode shark_pack_only: places curated pack bids only — not blind one-off bids."
-      : "Background trader health. If mode is shark_pack_only, it places curated pack bids only — not blind one-off bids.";
-    $("daemonCard").title = `${alive?"Alive":"Down"} · ${mode} · heartbeat ${age==null?"?":age+"s"}. ${packNote}`;
+    $("daemonCard").title = `${alive?"Alive":"Down"} · ${mode} · heartbeat ${age==null?"?":age+"s"}`;
     $("allow").innerHTML = (d.allowlist||[]).map(s=>`<span class="chip tip">${esc(s)}</span>`).join("") || "<span class=\"meta\">—</span>";
     $("resting").innerHTML = (d.resting_orders||[]).map(o=>row([
       cell(`<code>${esc(o.ticker||"")}</code>`, `Resting order on ${o.ticker||"—"}`),
@@ -388,10 +380,14 @@ async function tick(){
       cell(f.qty??"—", `Quantity ${f.qty??"—"}`),
       pnlCell(f),
       pnlDot(f),
+      kindCell(f),
+      feeCell(f),
+      stratCell(f),
       cell(`<code>${esc((f.ts||"").slice(0,19))}</code>`, `Fill time ${(f.ts||"").slice(0,19) || "—"} UTC`)
-    ])).join("") || row([cell("—","No recent fills"),cell("",""),cell("",""),cell("",""),cell("",""),cell("",""),cell("","")]);
-    upsertChart(Array.isArray(hist)?hist:[]);
-    $("fetchAge").textContent = "updated "+(d.updated_at?fmtCT(d.updated_at):"?")+" · fetched ok";
+    ])).join("") || row([cell("—","No recent fills"),cell("",""),cell("",""),cell("",""),cell("",""),cell("",""),cell("",""),cell("",""),cell("",""),cell("","")]);
+    const series=upsertChart(Array.isArray(hist)?hist:[]);
+    updateAges(d, series, Date.now());
+    $("fetchAge").textContent = "page fetch ok · status "+(d.updated_at||"?");
   }catch(e){
     $("err").textContent = "fetch failed: "+e.message;
     if(lastOk) $("fetchAge").textContent = "last ok " + Math.round((Date.now()-lastOk)/1000) + "s ago";
