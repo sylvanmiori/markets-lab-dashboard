@@ -1,12 +1,12 @@
 {
-  "updated_at": "2026-09-13T02:57:12Z",
+  "updated_at": "2026-09-13T03:00:55Z",
   "starting_bankroll_usd": 200.0,
-  "equity_usd": 157.0395,
-  "lab_equity_usd": 157.0395,
-  "portfolio_equity_usd": 223.8004,
+  "equity_usd": 157.946,
+  "lab_equity_usd": 157.946,
+  "portfolio_equity_usd": 224.5804,
   "portfolio_cash_usd": 182.6904,
-  "portfolio_positions_usd": 41.11,
-  "nonlab_positions_usd": 26.7609,
+  "portfolio_positions_usd": 41.89,
+  "nonlab_positions_usd": 26.6344,
   "nonlab_legs": [
     {
       "ticker": "KXSB-27-HOU",
@@ -16,7 +16,7 @@
     {
       "ticker": "KXMLB-26-HOU",
       "qty": 253.0,
-      "mtm_usd": 8.2225
+      "mtm_usd": 8.096
     },
     {
       "ticker": "SENATETX-26-R",
@@ -29,11 +29,11 @@
   "lab_deposit_ct": "2026-08-28T08:52:50-05:00",
   "pre_lab_cash_usd": 40.0,
   "lab_start_ts": "2026-09-03T23:53:16Z",
-  "lab_synthetic_equity_usd": 193.99,
-  "delta_vs_start_usd": -42.9605,
-  "today_pnl_usd": -4.788,
+  "lab_synthetic_equity_usd": 194.07,
+  "delta_vs_start_usd": -42.054,
+  "today_pnl_usd": -3.8815,
   "realized_lab_pnl_usd": 1.48,
-  "unrealized_lab_mtm_usd": -7.49,
+  "unrealized_lab_mtm_usd": -7.41,
   "equity_formula": "lab equity = Kalshi total \u2212 non-lab positions \u2212 $40 pre-lab cash; baseline $200 from first fill 2026-09-03 (not full account)",
   "equity_history_note": "lab_curve_v3: curve starts 2026-09-03 at $200. equity_usd excludes personal non-lab positions and $40 pre-lab cash. Older points deleted as wrong.",
   "equity_definition_changed_at": "2026-09-03T23:53:16Z",
@@ -41,12 +41,12 @@
   "max_open_usd": 50.0,
   "remaining_usd": 29.22,
   "daemon": {
-    "alive": true,
-    "heartbeat_age_sec": 145.0,
+    "alive": false,
+    "heartbeat_age_sec": 6.5,
     "pid": 1934103,
     "pid_alive": true,
-    "mode": "shark_pack_only",
-    "kill_file": false
+    "mode": "KILL on \u2014 no new risk",
+    "kill_file": true
   },
   "allowlist": [
     "KXHIGHCHI",
@@ -259,5 +259,5 @@
       "pnl_label": "open"
     }
   ],
-  "notes": "shark_pack_only"
+  "notes": "KILL set \u2014 entries skipped"
 }
