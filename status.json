@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-09-13T19:04:18Z",
-  "equity_history_updated_at": "2026-09-13T19:04:18Z",
-  "reconciliation_updated_at": "2026-09-13T19:03:02Z",
+  "updated_at": "2026-09-13T19:07:49Z",
+  "equity_history_updated_at": "2026-09-13T19:07:49Z",
+  "reconciliation_updated_at": "2026-09-13T19:06:02Z",
   "oldest_input_updated_at": "2026-09-08T12:03:13Z",
   "starting_bankroll_usd": 200.0,
   "equity_usd": 150.6357,
   "lab_equity_usd": 150.6357,
-  "portfolio_equity_usd": 216.7531,
+  "portfolio_equity_usd": 216.6631,
   "portfolio_cash_usd": 188.8031,
-  "portfolio_positions_usd": 27.95,
-  "nonlab_positions_usd": 26.1174,
+  "portfolio_positions_usd": 27.86,
+  "nonlab_positions_usd": 26.0274,
   "nonlab_legs": [
     {
       "ticker": "KXNFLGAME-26SEP13NYJTEN-TEN",
       "qty": 9.0,
-      "mtm_usd": 0.495
+      "mtm_usd": 0.405
     },
     {
       "ticker": "KXSB-27-HOU",
@@ -50,7 +50,7 @@
   "remaining_usd": 50.0,
   "daemon": {
     "alive": false,
-    "heartbeat_age_sec": 35.7,
+    "heartbeat_age_sec": 79.8,
     "pid": 2594721,
     "pid_alive": true,
     "mode": "KILL on \u2014 no new risk",
@@ -72,7 +72,7 @@
       "price_cents": 51,
       "qty": 7.0,
       "ts": "2026-09-13T16:16:20.831441Z",
-      "pnl_usd": 3.29,
+      "pnl_usd": 3.255,
       "pnl_status": "win",
       "pnl_label": "open",
       "pnl_kind": "open_unrealized"
@@ -83,7 +83,7 @@
       "price_cents": 55,
       "qty": 8.0,
       "ts": "2026-09-13T05:33:55.778177Z",
-      "pnl_usd": -2.92,
+      "pnl_usd": -3.08,
       "pnl_status": "lose",
       "pnl_label": "open",
       "pnl_kind": "open_unrealized"
@@ -94,7 +94,7 @@
       "price_cents": 54,
       "qty": 7.0,
       "ts": "2026-09-13T03:39:25.568636Z",
-      "pnl_usd": 1.785,
+      "pnl_usd": 1.75,
       "pnl_status": "win",
       "pnl_label": "open",
       "pnl_kind": "open_unrealized"
