@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-09-14T18:18:50Z",
-  "equity_history_updated_at": "2026-09-14T18:18:50Z",
-  "reconciliation_updated_at": "2026-09-14T18:18:02Z",
+  "updated_at": "2026-09-14T18:22:14Z",
+  "equity_history_updated_at": "2026-09-14T18:22:14Z",
+  "reconciliation_updated_at": "2026-09-14T18:21:02Z",
   "oldest_input_updated_at": "2026-09-08T12:03:13Z",
   "starting_bankroll_usd": 200.0,
   "equity_usd": 149.5124,
@@ -40,13 +40,13 @@
   "equity_formula": "lab equity = Kalshi total \u2212 non-lab positions \u2212 $40 pre-lab cash; baseline $200 from first fill 2026-09-03 (not full account)",
   "equity_history_note": "lab_curve_v3: curve starts 2026-09-03 at $200. equity_usd excludes personal non-lab positions and $40 pre-lab cash. Older points deleted as wrong.",
   "equity_definition_changed_at": "2026-09-03T23:53:16Z",
-  "open_usd": 0.0,
+  "open_usd": 1.2,
   "max_open_usd": 50.0,
-  "remaining_usd": 50.0,
+  "remaining_usd": 48.8,
   "daemon": {
     "alive": false,
-    "heartbeat_age_sec": 4.3,
-    "pid": 2594721,
+    "heartbeat_age_sec": 51.2,
+    "pid": 3449861,
     "pid_alive": true,
     "mode": "KILL on \u2014 no new risk",
     "kill_file": true
@@ -59,7 +59,15 @@
     "KXFEDDECISION",
     "KXAAAGASD"
   ],
-  "resting_orders": [],
+  "resting_orders": [
+    {
+      "ticker": "KXHIGHCHI-26SEP15-B86.5",
+      "side": "buy_no",
+      "price_cents": 94,
+      "qty": 20.0,
+      "order_id_short": "01a0a126-4538-7d9a"
+    }
+  ],
   "recent_fills": [
     {
       "ticker": "KXHIGHCHI-26SEP13-B76.5",
@@ -282,5 +290,5 @@
       "pnl_kind": "realized"
     }
   ],
-  "notes": "KILL set \u2014 entries skipped"
+  "notes": "KILL set \u2014 entries skipped (micro not placed)"
 }
