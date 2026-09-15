@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-09-15T06:11:34Z",
-  "equity_history_updated_at": "2026-09-15T06:11:34Z",
+  "updated_at": "2026-09-15T06:15:09Z",
+  "equity_history_updated_at": "2026-09-15T06:15:09Z",
   "reconciliation_updated_at": "2026-09-15T06:10:02Z",
   "oldest_input_updated_at": "2026-09-08T12:03:13Z",
   "starting_bankroll_usd": 200.0,
@@ -45,7 +45,7 @@
   "remaining_usd": 48.8,
   "daemon": {
     "alive": false,
-    "heartbeat_age_sec": 69.5,
+    "heartbeat_age_sec": 275.9,
     "pid": 3449861,
     "pid_alive": true,
     "mode": "KILL on \u2014 no new risk",
@@ -108,8 +108,8 @@
       "price_cents": 92,
       "qty": 20.0,
       "ts": "2026-09-12T19:02:10.765945Z",
-      "pnl_usd": null,
-      "pnl_status": "open",
+      "pnl_usd": -8.4,
+      "pnl_status": "lose",
       "pnl_label": "open",
       "pnl_kind": "open_unrealized"
     },
