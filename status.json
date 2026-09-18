@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-09-18T11:16:29Z",
-  "equity_history_updated_at": "2026-09-18T11:16:29Z",
-  "reconciliation_updated_at": "2026-09-18T11:15:38Z",
+  "updated_at": "2026-09-18T11:20:42Z",
+  "equity_history_updated_at": "2026-09-18T11:20:42Z",
+  "reconciliation_updated_at": "2026-09-18T11:19:01Z",
   "oldest_input_updated_at": "2026-09-08T12:03:13Z",
   "starting_bankroll_usd": 200.0,
   "equity_usd": 144.2206,
@@ -32,11 +32,11 @@
   "lab_deposit_ct": "2026-08-28T08:52:50-05:00",
   "pre_lab_cash_usd": 40.0,
   "lab_start_ts": "2026-09-03T23:53:16Z",
-  "lab_synthetic_equity_usd": 198.7,
+  "lab_synthetic_equity_usd": 198.9,
   "delta_vs_start_usd": -55.7794,
   "today_pnl_usd": -2.0405,
   "realized_lab_pnl_usd": 0.0,
-  "unrealized_lab_mtm_usd": -1.3,
+  "unrealized_lab_mtm_usd": -1.1,
   "equity_formula": "lab equity = Kalshi total \u2212 non-lab positions \u2212 $40 pre-lab cash; baseline $200 from first fill 2026-09-03 (not full account)",
   "equity_history_note": "lab_curve_v3: curve starts 2026-09-03 at $200. equity_usd excludes personal non-lab positions and $40 pre-lab cash. Older points deleted as wrong.",
   "equity_definition_changed_at": "2026-09-03T23:53:16Z",
@@ -45,7 +45,7 @@
   "remaining_usd": 48.4,
   "daemon": {
     "alive": false,
-    "heartbeat_age_sec": 3.9,
+    "heartbeat_age_sec": 64.7,
     "pid": 290618,
     "pid_alive": true,
     "mode": "KILL on \u2014 no new risk",
@@ -75,7 +75,7 @@
       "price_cents": 92,
       "qty": 0.74,
       "ts": "2026-09-18T02:45:01.441298Z",
-      "pnl_usd": 0.0481,
+      "pnl_usd": 0.0407,
       "pnl_status": "open",
       "pnl_label": "open",
       "pnl_kind": "open_unrealized"
@@ -86,7 +86,7 @@
       "price_cents": 92,
       "qty": 13.94,
       "ts": "2026-09-18T02:08:55.669811Z",
-      "pnl_usd": 0.9061,
+      "pnl_usd": 0.7667,
       "pnl_status": "win",
       "pnl_label": "open",
       "pnl_kind": "open_unrealized"
@@ -97,8 +97,8 @@
       "price_cents": 92,
       "qty": 0.88,
       "ts": "2026-09-18T01:21:36.398409Z",
-      "pnl_usd": 0.0572,
-      "pnl_status": "win",
+      "pnl_usd": 0.0484,
+      "pnl_status": "open",
       "pnl_label": "open",
       "pnl_kind": "open_unrealized"
     },
@@ -108,7 +108,7 @@
       "price_cents": 92,
       "qty": 4.44,
       "ts": "2026-09-18T00:44:11.646054Z",
-      "pnl_usd": 0.2886,
+      "pnl_usd": 0.2442,
       "pnl_status": "win",
       "pnl_label": "open",
       "pnl_kind": "open_unrealized"
@@ -290,5 +290,5 @@
       "pnl_kind": "unmatched"
     }
   ],
-  "notes": "KILL set \u2014 entries skipped (micro not placed)"
+  "notes": ""
 }
