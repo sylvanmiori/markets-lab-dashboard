@@ -27959,5 +27959,11 @@
     "equity_usd": 145.0366,
     "source": "lab_curve_v3",
     "definition": "lab_curve_v3"
+  },
+  {
+    "t": "2026-09-19T13:04:34Z",
+    "equity_usd": 145.0366,
+    "source": "lab_curve_v3",
+    "definition": "lab_curve_v3"
   }
 ]
