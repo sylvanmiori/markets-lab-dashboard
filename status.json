@@ -1,15 +1,15 @@
 {
-  "updated_at": "2026-09-19T15:39:17Z",
-  "equity_history_updated_at": "2026-09-19T15:39:17Z",
-  "reconciliation_updated_at": "2026-09-19T15:36:02Z",
+  "updated_at": "2026-09-19T15:43:28Z",
+  "equity_history_updated_at": "2026-09-19T15:43:28Z",
+  "reconciliation_updated_at": "2026-09-19T15:42:02Z",
   "oldest_input_updated_at": "2026-09-08T12:03:13Z",
   "starting_bankroll_usd": 200.0,
   "equity_usd": 145.2826,
   "lab_equity_usd": 145.2826,
-  "portfolio_equity_usd": 206.5443,
+  "portfolio_equity_usd": 206.3443,
   "portfolio_cash_usd": 183.8743,
-  "portfolio_positions_usd": 22.67,
-  "nonlab_positions_usd": 21.2617,
+  "portfolio_positions_usd": 22.47,
+  "nonlab_positions_usd": 21.0617,
   "nonlab_legs": [
     {
       "ticker": "KXSB-27-HOU",
@@ -24,7 +24,7 @@
     {
       "ticker": "SENATETX-26-R",
       "qty": 20.0,
-      "mtm_usd": 8.5
+      "mtm_usd": 8.3
     }
   ],
   "lab_deposit_usd": 200.0,
@@ -45,7 +45,7 @@
   "remaining_usd": 45.56,
   "daemon": {
     "alive": false,
-    "heartbeat_age_sec": 125.6,
+    "heartbeat_age_sec": 18.0,
     "pid": 290618,
     "pid_alive": true,
     "mode": "KILL on \u2014 no new risk",
