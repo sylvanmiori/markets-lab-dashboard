@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-09-19T14:15:11Z",
-  "equity_history_updated_at": "2026-09-19T14:15:11Z",
-  "reconciliation_updated_at": "2026-09-19T14:12:03Z",
+  "updated_at": "2026-09-19T14:18:47Z",
+  "equity_history_updated_at": "2026-09-19T14:18:47Z",
+  "reconciliation_updated_at": "2026-09-19T14:18:02Z",
   "oldest_input_updated_at": "2026-09-08T12:03:13Z",
   "starting_bankroll_usd": 200.0,
   "equity_usd": 145.0366,
@@ -45,7 +45,7 @@
   "remaining_usd": 45.56,
   "daemon": {
     "alive": false,
-    "heartbeat_age_sec": 151.5,
+    "heartbeat_age_sec": 12.7,
     "pid": 290618,
     "pid_alive": true,
     "mode": "KILL on \u2014 no new risk",
@@ -75,7 +75,7 @@
       "price_cents": 93,
       "qty": 5.0,
       "ts": "2026-09-18T16:55:33.200434Z",
-      "pnl_usd": 0.175,
+      "pnl_usd": 0.225,
       "pnl_status": "win",
       "pnl_label": "open",
       "pnl_kind": "open_unrealized"
@@ -290,5 +290,5 @@
       "pnl_kind": "unmatched"
     }
   ],
-  "notes": "KILL set \u2014 micro_trial only"
+  "notes": "KILL set \u2014 entries skipped (micro not placed)"
 }
