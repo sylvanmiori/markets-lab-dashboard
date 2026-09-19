@@ -1,26 +1,5 @@
 [
   {
-    "t": "2026-09-05T11:19:55.48835Z",
-    "equity_usd": 188.5715,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3",
-    "note": "settled KXHIGHNY-26SEP04-B84.5 pnl=-11.0"
-  },
-  {
-    "t": "2026-09-05T11:19:55.488554Z",
-    "equity_usd": 189.8183,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3",
-    "note": "settled KXHIGHNY-26SEP04-B86.5 pnl=1.2"
-  },
-  {
-    "t": "2026-09-05T11:19:55.488554Z",
-    "equity_usd": 190.4416,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3",
-    "note": "settled KXHIGHNY-26SEP04-B82.5 pnl=0.6"
-  },
-  {
     "t": "2026-09-05T12:09:45.488061Z",
     "equity_usd": 190.7325,
     "source": "lab_curve_v3",
@@ -27837,6 +27816,12 @@
   },
   {
     "t": "2026-09-19T11:19:01Z",
+    "equity_usd": 145.2366,
+    "source": "lab_curve_v3",
+    "definition": "lab_curve_v3"
+  },
+  {
+    "t": "2026-09-19T11:22:41Z",
     "equity_usd": 145.2366,
     "source": "lab_curve_v3",
     "definition": "lab_curve_v3"
