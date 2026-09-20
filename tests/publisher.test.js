@@ -19,8 +19,8 @@ describe('publisher integration', () => {
       opening_allocation_verified: true,
       deposits: [{ ts: '2026-08-28', amount_usd: 200, owner: 'lab' }],
       positions: [
-        { ticker: 'KXHIGHCHI-26SEP18-B76.5', qty: 20, mtm_usd: 0.96, strategy_id: 'WX_CHI' },
-        { ticker: 'KXSB-27-HOU', qty: 187.52, mtm_usd: 6.56 },
+        { ticker: 'KXHIGHCHI-26SEP18-B76.5', qty: 20, mtm_usd: 0.9593, strategy_id: 'WX_CHI' },
+        ...(before.nonlab_legs ?? []).map((p) => ({ ...p, owner: 'personal' })),
       ],
       fills: [],
       resting_orders: before.resting_orders,
