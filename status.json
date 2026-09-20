@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-09-20T22:11:47Z",
-  "equity_history_updated_at": "2026-09-20T22:11:47Z",
-  "reconciliation_updated_at": "2026-09-20T22:09:02Z",
+  "updated_at": "2026-09-20T22:15:19Z",
+  "equity_history_updated_at": "2026-09-20T22:15:19Z",
+  "reconciliation_updated_at": "2026-09-20T22:12:02Z",
   "oldest_input_updated_at": "2026-09-12T17:15:58Z",
   "starting_bankroll_usd": 200.0,
   "equity_usd": 132.5321,
@@ -45,7 +45,7 @@
   "remaining_usd": 44.36,
   "daemon": {
     "alive": false,
-    "heartbeat_age_sec": 139.0,
+    "heartbeat_age_sec": 167.9,
     "pid": 10435,
     "pid_alive": true,
     "mode": "KILL on \u2014 no new risk",
