@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-09-20T18:15:12Z",
-  "equity_history_updated_at": "2026-09-20T18:15:12Z",
-  "reconciliation_updated_at": "2026-09-20T18:12:02Z",
+  "updated_at": "2026-09-20T18:18:43Z",
+  "equity_history_updated_at": "2026-09-20T18:18:43Z",
+  "reconciliation_updated_at": "2026-09-20T18:18:02Z",
   "oldest_input_updated_at": "2026-09-12T17:15:58Z",
   "starting_bankroll_usd": 200.0,
-  "equity_usd": 133.9536,
-  "lab_equity_usd": 133.9536,
-  "portfolio_equity_usd": 199.5381,
+  "equity_usd": 134.6089,
+  "lab_equity_usd": 134.6089,
+  "portfolio_equity_usd": 200.3581,
   "portfolio_cash_usd": 173.8781,
-  "portfolio_positions_usd": 25.66,
-  "nonlab_positions_usd": 25.5845,
+  "portfolio_positions_usd": 26.48,
+  "nonlab_positions_usd": 25.7492,
   "nonlab_legs": [
     {
       "ticker": "KXNFLGAME-26SEP20CINHOU-HOU",
       "qty": 16.47,
-      "mtm_usd": 6.9997
+      "mtm_usd": 7.1644
     },
     {
       "ticker": "KXSB-27-HOU",
@@ -38,8 +38,8 @@
   "pre_lab_cash_usd": 40.0,
   "lab_start_ts": "2026-09-03T23:53:16Z",
   "lab_synthetic_equity_usd": 200.0,
-  "delta_vs_start_usd": -66.0464,
-  "today_pnl_usd": -10.83,
+  "delta_vs_start_usd": -65.3911,
+  "today_pnl_usd": -10.1747,
   "realized_lab_pnl_usd": 0.0,
   "unrealized_lab_mtm_usd": 0.0,
   "equity_formula": "lab equity = Kalshi total \u2212 non-lab positions \u2212 $40 pre-lab cash; baseline $200 from first fill 2026-09-03 (not full account)",
@@ -50,7 +50,7 @@
   "remaining_usd": 44.36,
   "daemon": {
     "alive": false,
-    "heartbeat_age_sec": 167.4,
+    "heartbeat_age_sec": 13.5,
     "pid": 10435,
     "pid_alive": true,
     "mode": "KILL on \u2014 no new risk",
