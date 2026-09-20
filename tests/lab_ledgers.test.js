@@ -51,8 +51,8 @@ describe('lab vs personal cash ledgers', () => {
       created_time: '2026-09-20T15:05:00Z',
     });
     const ledger = buildCashLedger({ fills: [nflBuy] });
-    const labEntries = ledger.filter((e) => e.owner === 'lab');
-    const personalEntries = ledger.filter((e) => e.owner === 'personal');
+    const labEntries = ledger.entries.filter((e) => e.owner === 'lab');
+    const personalEntries = ledger.entries.filter((e) => e.owner === 'personal');
     assert.equal(labEntries.length, 0);
     assert.equal(personalEntries.length, 1);
     assert.ok(personalEntries[0].amount_usd < 0);
@@ -70,7 +70,7 @@ describe('lab vs personal cash ledgers', () => {
       created_time: '2025-09-15T10:55:00Z',
     });
     const ledger = buildCashLedger({ fills: [wx] });
-    assert.equal(ledger[0].owner, 'lab');
+    assert.equal(ledger.entries[0].owner, 'lab');
   });
 });
 
@@ -109,8 +109,8 @@ describe('NFL contamination regression — 10:04 vs 10:07 CT', () => {
       ],
     });
 
-    const balBefore = cashBalances(ledgerBefore, { lab_opening_usd: 0, personal_opening_usd: 40 });
-    const balAfter = cashBalances(ledgerAfter, { lab_opening_usd: 0, personal_opening_usd: 40 });
+    const balBefore = cashBalances(ledgerBefore.entries, { lab_opening_usd: 0, personal_opening_usd: 40 });
+    const balAfter = cashBalances(ledgerAfter.entries, { lab_opening_usd: 0, personal_opening_usd: 40 });
 
     const splitBefore = splitPositionMarks([
       ...personalBefore,

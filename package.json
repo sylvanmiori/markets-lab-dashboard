@@ -1,6 +1,6 @@
 {
   "name": "markets-lab-dashboard",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "private": true,
   "description": "Markets Lab dashboard publisher — lab/personal ledgers and fill normalization",
   "type": "module",

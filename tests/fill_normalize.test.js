@@ -93,7 +93,15 @@ describe('SEP15 scalp — +$1 not −$1', () => {
     assert.equal(sell.pnl_status, 'win');
   });
 
-  it('wrong published complement rows corrected via inference', () => {
+  it('wrong published complement rows stay unresolved by default (Chief P1-1)', () => {
+    const unresolved = sep15.published_wrong.map((p) => normalizeFill(p));
+    for (const n of unresolved) {
+      assert.ok(['unverified', 'unknown'].includes(n.confidence));
+      assert.notEqual(n.confidence, 'inferred_complement');
+    }
+  });
+
+  it('wrong published complement rows corrected only when explicitly opted in', () => {
     const corrected = sep15.published_wrong.map((p) =>
       normalizeFill(p, { prefer_complement_correction: true })
     );

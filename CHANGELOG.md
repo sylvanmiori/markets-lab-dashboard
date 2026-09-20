@@ -1,5 +1,17 @@
 # Changelog
 
+## 1.1.1 — 2026-09-20 (Chief P1 remediation)
+
+### Chief review fixes (dashboard only — no live trading)
+
+- **P1-1:** Complement flip is opt-in only; `buy_no@74×6` stays −$4.44; already-normalized fills pass through unchanged; `unverified` rows block certified NAV.
+- **P1-2:** Parse Kalshi fixed-point fields (`count_fp`, `yes_price_dollars`, `no_price_dollars`); incomplete acquisition rejects publish.
+- **P1-3:** FIFO realized P&L keyed by `ticker|owner|side` — cross-ticker lots no longer match.
+- **P1-4:** `publishStatus` requires verified opening allocation + cash reconcile; blocked publish returns `equity_usd: null` (no synthetic $200).
+- **P1-5:** v3 bridge uses `portfolio_equity_usd` (probe: $225 → $185 legacy headline).
+- **P1-6:** Entry fees allocated into realized P&L; rebates preserve signed cash.
+- Fixture provenance documented in `tests/fixtures/FIXTURE_PROVENANCE.md`.
+
 ## 1.1.0 — 2026-09-20 (WP1 + WP2)
 
 ### WP1 — Lab vs personal cash ledger (`lab_curve_v4`)

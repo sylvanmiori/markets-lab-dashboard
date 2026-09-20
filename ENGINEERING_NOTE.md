@@ -1,8 +1,8 @@
 # Engineering note: consuming corrected NAV bridge (WP1)
 
 **Audience:** Markets consultant / Chief reconciliation replies  
-**Publisher version:** 1.1.0 (`lab_curve_v4`)  
-**Date:** 2026-09-20
+**Publisher version:** 1.1.1 (`lab_curve_v4`)  
+**Date:** 2026-09-20 (Chief P1 remediation)
 
 ## What changed
 
@@ -56,10 +56,30 @@ Regression fixture: `tests/fixtures/status_2026-09-20T150410Z.json` → `status_
 ## Fill normalization (WP2) — Markets checks
 
 - `recent_fills[].normalization_confidence`: `verified` | `inferred_complement` | `unverified` | `unknown`.
+- **Complement flip is opt-in only** (`prefer_complement_correction: true`). Default: published `buy_no@74` stays `buy_no` (cash −$4.44), not flipped to `buy_yes@26`.
+- `unverified` / `unknown` fills **block certified NAV** (`authoritative: false`).
+- Kalshi fixed-point API fields supported: `count_fp`, `yes_price_dollars`, `no_price_dollars`, `remaining_count_fp`.
 - `recent_fills[].ownership`: `lab` | `personal` | `unknown`.
-- SEP15: realized P&L should be **+$1.00** (not −$1).
+- SEP15 raw exchange path: realized P&L **+$1.00** (illustrative fixture — see `tests/fixtures/FIXTURE_PROVENANCE.md`).
 - SEP21 resting: `risk_usd` ≈ **$1.20** (not $18.80 literal NO notional).
+- Entry fees allocated into realized P&L on FIFO match; rebates preserve signed `fee_usd`.
 - Raw fields preserved in publisher output (`raw_side`, `raw_price_cents`); compare to exchange export.
+
+## Publication authority (Chief P1-4)
+
+`publishStatus` returns `authoritative: true` only when **all** hold:
+
+1. `opening_allocation_verified` (or explicit verified $200 lab deposit in `deposits[]`).
+2. `acquisition_complete` — no incomplete/unverified fills in the cash ledger.
+3. `cash_reconcile.reconciled` — `lab_cash_usd + personal_cash_usd === portfolio_cash_usd` (±$0.01).
+
+When blocked: `equity_usd` / `lab_equity_usd` are `null` (no synthetic $200 headline). Check `publish_blocked_reasons[]`.
+
+New fields: `authoritative`, `publish_blocked`, `publish_blocked_reasons`, `cash_reconcile`, `opening_allocation_verified`, `acquisition_complete`, `incomplete_fill_ids[]`.
+
+## v3 bridge (Chief P1-5)
+
+`legacy_headline_v3_usd` uses `portfolio_equity_usd` from the snapshot (not a misnamed `equity_usd` field). Probe: $225 equity, $0 personal marks, $40 pre-lab → **$185** legacy headline.
 
 ## Box publisher integration
 
@@ -70,7 +90,7 @@ const status = publishStatus(exchangeSnapshot);
 // status.nav_bridge_adjustments can be pre-filled for known one-off events
 ```
 
-Run tests: `npm test` (28 tests).
+Run tests: `npm test` (Chief P1 regression suite included).
 
 ## Not in scope (per constraints)
 
