@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-09-21T16:51:44Z",
-  "equity_history_updated_at": "2026-09-21T16:51:44Z",
-  "reconciliation_updated_at": "2026-09-21T16:48:03Z",
+  "updated_at": "2026-09-21T16:55:36Z",
+  "equity_history_updated_at": "2026-09-21T16:55:36Z",
+  "reconciliation_updated_at": "2026-09-21T16:54:06Z",
   "oldest_input_updated_at": "2026-09-13T05:33:55Z",
   "starting_bankroll_usd": 200,
   "equity_usd": null,
@@ -35,11 +35,11 @@
   "lab_deposit_ct": "2026-08-28T08:52:50-05:00",
   "pre_lab_cash_usd": 0,
   "lab_start_ts": "2026-09-03T23:53:16Z",
-  "lab_synthetic_equity_usd": 199.3,
+  "lab_synthetic_equity_usd": 199.5,
   "delta_vs_start_usd": null,
   "today_pnl_usd": -1.1865,
   "realized_lab_pnl_usd": 0,
-  "unrealized_lab_mtm_usd": -0.7,
+  "unrealized_lab_mtm_usd": -0.5,
   "equity_formula": null,
   "equity_history_note": "lab_curve_v4: lab cash ledger + lab position marks; baseline $200. Prior lab_curve_v3 points retained append-only.",
   "equity_definition_changed_at": "2026-09-03T23:53:16Z",
@@ -48,7 +48,7 @@
   "remaining_usd": 48.8,
   "daemon": {
     "alive": false,
-    "heartbeat_age_sec": 171.3,
+    "heartbeat_age_sec": 42.4,
     "pid": 1345581,
     "pid_alive": true,
     "mode": "KILL on — no new risk",
@@ -738,16 +738,16 @@
     "from_definition": "lab_curve_v3",
     "to_definition": "lab_curve_v4",
     "from_headline_usd": 174.0551,
-    "to_corrected_nav_usd": 127.903,
+    "to_corrected_nav_usd": 128.103,
     "adjustments": [],
-    "unexplained_residual_usd": -46.1521,
-    "bridged_at": "2026-09-21T16:51:45.317Z",
+    "unexplained_residual_usd": -45.9521,
+    "bridged_at": "2026-09-21T16:55:37.093Z",
     "note": "v3 headline superseded — personal cash purchases were charged to lab scoreboard. v4 uses owner cash ledgers."
   },
   "lab_cash_usd": 127.403,
   "personal_cash_usd": 48.9857,
   "personal_nav_usd": 65.7687,
-  "lab_positions_usd": 0.5,
+  "lab_positions_usd": 0.7,
   "personal_positions_usd": 16.783,
   "personal_legs": [
     {
@@ -776,9 +776,9 @@
     "reconciled": false
   },
   "position_reconcile": {
-    "owner_positions_sum_usd": 17.283,
+    "owner_positions_sum_usd": 17.483,
     "exchange_positions_usd": 18.16,
-    "positions_gap_usd": -0.877,
+    "positions_gap_usd": -0.677,
     "has_unknown_ownership": false,
     "missing_positions": true,
     "reconciled": false
@@ -788,6 +788,6 @@
   "incomplete_fill_ids": [],
   "unresolved_fill_count": 0,
   "cash_ledger_entries": 350,
-  "open_usd_v4_estimate": 0.5,
+  "open_usd_v4_estimate": 0.7,
   "publisher_sha": "9983814c28225efbbd7af096efaba99474948b35"
 }
