@@ -1,14 +1,14 @@
 {
-  "updated_at": "2026-09-21T18:30:18Z",
-  "equity_history_updated_at": "2026-09-21T18:30:18Z",
-  "reconciliation_updated_at": "2026-09-21T18:27:04Z",
+  "updated_at": "2026-09-21T18:34:10Z",
+  "equity_history_updated_at": "2026-09-21T18:34:10Z",
+  "reconciliation_updated_at": "2026-09-21T18:33:03Z",
   "oldest_input_updated_at": "2026-09-13T05:33:55Z",
   "starting_bankroll_usd": 200,
   "equity_usd": null,
   "lab_equity_usd": null,
-  "portfolio_equity_usd": 192.7581,
+  "portfolio_equity_usd": 192.3581,
   "portfolio_cash_usd": 172.6781,
-  "portfolio_positions_usd": 20.08,
+  "portfolio_positions_usd": 19.68,
   "nonlab_positions_usd": 19.08,
   "nonlab_legs": [
     {
@@ -35,11 +35,11 @@
   "lab_deposit_ct": "2026-08-28T08:52:50-05:00",
   "pre_lab_cash_usd": 0,
   "lab_start_ts": "2026-09-03T23:53:16Z",
-  "lab_synthetic_equity_usd": 199.6,
+  "lab_synthetic_equity_usd": 199.5,
   "delta_vs_start_usd": null,
-  "today_pnl_usd": -1.5635,
+  "today_pnl_usd": -1.9635,
   "realized_lab_pnl_usd": 0,
-  "unrealized_lab_mtm_usd": -0.4,
+  "unrealized_lab_mtm_usd": -0.5,
   "equity_formula": null,
   "equity_history_note": "lab_curve_v4: lab cash ledger + lab position marks; baseline $200. Prior lab_curve_v3 points retained append-only.",
   "equity_definition_changed_at": "2026-09-03T23:53:16Z",
@@ -48,7 +48,7 @@
   "remaining_usd": 48.8,
   "daemon": {
     "alive": false,
-    "heartbeat_age_sec": 146.1,
+    "heartbeat_age_sec": 19,
     "pid": 1345581,
     "pid_alive": true,
     "mode": "KILL on — no new risk",
@@ -732,21 +732,21 @@
     "owner_cash_mismatch"
   ],
   "equity_definition": null,
-  "legacy_headline_v3_usd": 173.6781,
+  "legacy_headline_v3_usd": 173.2781,
   "nav_bridge": {
     "from_definition": "lab_curve_v3",
     "to_definition": "lab_curve_v4",
-    "from_headline_usd": 173.6781,
-    "to_corrected_nav_usd": 128.403,
+    "from_headline_usd": 173.2781,
+    "to_corrected_nav_usd": 128.003,
     "adjustments": [],
     "unexplained_residual_usd": -45.2751,
-    "bridged_at": "2026-09-21T18:30:18.985Z",
+    "bridged_at": "2026-09-21T18:34:11.589Z",
     "note": "v3 headline superseded — personal cash purchases were charged to lab scoreboard. v4 uses owner cash ledgers."
   },
   "lab_cash_usd": 127.403,
   "personal_cash_usd": 45.0934,
   "personal_nav_usd": 64.1734,
-  "lab_positions_usd": 1,
+  "lab_positions_usd": 0.6,
   "personal_positions_usd": 19.08,
   "personal_legs": [
     {
@@ -775,8 +775,8 @@
     "reconciled": false
   },
   "position_reconcile": {
-    "owner_positions_sum_usd": 20.08,
-    "exchange_positions_usd": 20.08,
+    "owner_positions_sum_usd": 19.68,
+    "exchange_positions_usd": 19.68,
     "positions_gap_usd": 0,
     "has_unknown_ownership": false,
     "missing_positions": false,
@@ -787,6 +787,6 @@
   "incomplete_fill_ids": [],
   "unresolved_fill_count": 0,
   "cash_ledger_entries": 350,
-  "open_usd_v4_estimate": 1,
+  "open_usd_v4_estimate": 0.6,
   "publisher_sha": "9983814c28225efbbd7af096efaba99474948b35"
 }
