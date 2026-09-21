@@ -1,15 +1,15 @@
 {
-  "updated_at": "2026-09-21T19:53:10Z",
-  "equity_history_updated_at": "2026-09-21T19:53:10Z",
-  "reconciliation_updated_at": "2026-09-21T19:51:04Z",
+  "updated_at": "2026-09-21T19:57:06Z",
+  "equity_history_updated_at": "2026-09-21T19:57:06Z",
+  "reconciliation_updated_at": "2026-09-21T19:54:03Z",
   "oldest_input_updated_at": "2026-09-13T05:33:55Z",
   "starting_bankroll_usd": 200,
   "equity_usd": null,
   "lab_equity_usd": null,
-  "portfolio_equity_usd": 191.0381,
+  "portfolio_equity_usd": 191.3481,
   "portfolio_cash_usd": 172.6781,
-  "portfolio_positions_usd": 18.36,
-  "nonlab_positions_usd": 17.560000000000002,
+  "portfolio_positions_usd": 18.67,
+  "nonlab_positions_usd": 17.85,
   "nonlab_legs": [
     {
       "ticker": "KXSB-27-HOU",
@@ -20,13 +20,13 @@
     {
       "ticker": "KXMLB-26-HOU",
       "qty": 253,
-      "mtm_usd": 3.54,
+      "mtm_usd": 4.04,
       "owner": "personal"
     },
     {
       "ticker": "SENATETX-26-R",
       "qty": 20,
-      "mtm_usd": 8.4,
+      "mtm_usd": 8.19,
       "owner": "personal"
     }
   ],
@@ -35,11 +35,11 @@
   "lab_deposit_ct": "2026-08-28T08:52:50-05:00",
   "pre_lab_cash_usd": 0,
   "lab_start_ts": "2026-09-03T23:53:16Z",
-  "lab_synthetic_equity_usd": 199.2,
+  "lab_synthetic_equity_usd": 199.4,
   "delta_vs_start_usd": null,
-  "today_pnl_usd": -1.7635,
+  "today_pnl_usd": -1.7435,
   "realized_lab_pnl_usd": 0,
-  "unrealized_lab_mtm_usd": -0.8,
+  "unrealized_lab_mtm_usd": -0.6,
   "equity_formula": null,
   "equity_history_note": "lab_curve_v4: lab cash ledger + lab position marks; baseline $200. Prior lab_curve_v3 points retained append-only.",
   "equity_definition_changed_at": "2026-09-03T23:53:16Z",
@@ -48,7 +48,7 @@
   "remaining_usd": 48.8,
   "daemon": {
     "alive": false,
-    "heartbeat_age_sec": 83.3,
+    "heartbeat_age_sec": 131,
     "pid": 1345581,
     "pid_alive": true,
     "mode": "KILL on — no new risk",
@@ -725,29 +725,30 @@
       "pnl_kind": "open_unrealized"
     }
   ],
-  "notes": "KILL set — entries skipped|v4_blocked:owner_cash_mismatch",
+  "notes": "KILL set — entries skipped|v4_blocked:owner_cash_mismatch,position_mismatch",
   "authoritative": false,
   "publish_blocked": true,
   "publish_blocked_reasons": [
-    "owner_cash_mismatch"
+    "owner_cash_mismatch",
+    "position_mismatch"
   ],
   "equity_definition": null,
-  "legacy_headline_v3_usd": 173.4781,
+  "legacy_headline_v3_usd": 173.4981,
   "nav_bridge": {
     "from_definition": "lab_curve_v3",
     "to_definition": "lab_curve_v4",
-    "from_headline_usd": 173.4781,
+    "from_headline_usd": 173.4981,
     "to_corrected_nav_usd": 128.203,
     "adjustments": [],
-    "unexplained_residual_usd": -45.2751,
-    "bridged_at": "2026-09-21T19:53:11.020Z",
+    "unexplained_residual_usd": -45.2951,
+    "bridged_at": "2026-09-21T19:57:06.804Z",
     "note": "v3 headline superseded — personal cash purchases were charged to lab scoreboard. v4 uses owner cash ledgers."
   },
   "lab_cash_usd": 127.403,
   "personal_cash_usd": 45.0934,
-  "personal_nav_usd": 62.6534,
+  "personal_nav_usd": 62.9434,
   "lab_positions_usd": 0.8,
-  "personal_positions_usd": 17.56,
+  "personal_positions_usd": 17.85,
   "personal_legs": [
     {
       "ticker": "KXSB-27-HOU",
@@ -758,13 +759,13 @@
     {
       "ticker": "KXMLB-26-HOU",
       "qty": 253,
-      "mtm_usd": 3.54,
+      "mtm_usd": 4.04,
       "owner": "personal"
     },
     {
       "ticker": "SENATETX-26-R",
       "qty": 20,
-      "mtm_usd": 8.4,
+      "mtm_usd": 8.19,
       "owner": "personal"
     }
   ],
@@ -775,12 +776,12 @@
     "reconciled": false
   },
   "position_reconcile": {
-    "owner_positions_sum_usd": 18.36,
-    "exchange_positions_usd": 18.36,
-    "positions_gap_usd": 0,
+    "owner_positions_sum_usd": 18.65,
+    "exchange_positions_usd": 18.67,
+    "positions_gap_usd": -0.02,
     "has_unknown_ownership": false,
-    "missing_positions": false,
-    "reconciled": true
+    "missing_positions": true,
+    "reconciled": false
   },
   "opening_allocation_verified": true,
   "acquisition_complete": true,
