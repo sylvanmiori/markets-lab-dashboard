@@ -11,7 +11,7 @@ Publisher library: `lib/` — run `npm test` for WP1/WP2 regression suite (28 te
 **`equity_usd` = lab cash ledger + lab position marks**
 
 - Separate lab vs personal cash flows: deposits, withdrawals, transfers, purchases, sales, fees, settlements.
-- Lots attributed by owner (explicit → strategy_id → personal ticker patterns → allowlist). **Allowlist alone is insufficient.**
+- Lots attributed by owner (explicit → strategy_id → personal ticker patterns → allowlist → personal for any non-empty ticker). **Allowlist alone is insufficient.** Empty ticker → `unknown`.
 - Original **$200** lab allocation baseline preserved (`starting_bankroll_usd`).
 - Personal purchases (e.g. NFL) do **not** reduce lab headline.
 

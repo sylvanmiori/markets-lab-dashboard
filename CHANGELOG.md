@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.1.4 — 2026-09-21 (Gate 3 personal ownership)
+
+- **Gate 3:** `attributeOwner` defaults non-allowlist fills/positions with a ticker to **`personal`** instead of `unknown`, so hist fills are not skipped in the cash ledger. Empty ticker still → `unknown`.
+
 ## 1.1.3 — 2026-09-21 (Gate-3 complement poison)
 
 - **Gate-3:** Box `write_public_status.py` tracked in `box_publisher/` — side from `outcome_side`/`side`, never `max(yes,no)`. SEP21 buy YES@6×20 → $1.20 cash (not buy_no@94 / −$18.80).
@@ -28,7 +32,7 @@
 
 - **Stopped** computing lab headline as `(all cash + all marks − personal open marks − fixed $40)`.
 - Added separate **lab** and **personal** cash-flow ledgers: deposits, withdrawals, transfers, purchases, sales, fees, settlements.
-- Lot ownership attributed by **explicit owner → strategy_id → personal ticker patterns → allowlist** (allowlist alone is insufficient).
+- Lot ownership attributed by **explicit owner → strategy_id → personal ticker patterns → allowlist → personal** (allowlist alone is insufficient; empty ticker → `unknown`).
 - Headline equity is now `lab_curve_v4`: **lab cash ledger + lab position marks**, with original **$200** lab allocation baseline preserved.
 - Published **`nav_bridge`** object linking superseded `lab_curve_v3` headline to corrected v4 NAV — append-only; old history is **not** silently rewritten.
 - Regression fixture reproduces Sep 20 **10:04 vs 10:07 CT** NFL purchase contamination (~−$9.91 false lab loss).

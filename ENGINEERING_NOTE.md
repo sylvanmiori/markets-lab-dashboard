@@ -10,7 +10,7 @@
 |---|---|---|
 | Formula | `portfolio_equity − nonlab_marks − $40` | `lab_cash_ledger + lab_position_marks` |
 | Personal purchase | Cash drop charged to lab headline | Debits **personal** cash only |
-| Ownership | Allowlisted ticker prefix | Explicit owner → strategy_id → personal patterns |
+| Ownership | Allowlisted ticker prefix | Explicit owner → strategy_id → personal patterns → allowlist → **personal** (non-empty ticker) |
 | Baseline | $200 (unchanged semantics) | $200 lab deposit preserved |
 
 ## How Markets should read `status.json`
@@ -60,7 +60,7 @@ Regression fixture: `tests/fixtures/status_2026-09-20T150410Z.json` → `status_
 - **Never select side by `max(yes_price, no_price)`** — Kalshi always echoes both legs; the higher price is often the complement (SEP21: buy YES@6¢ also shows no@94¢). Box `write_public_status.py` and `kalshi_labels.py` must prefer `outcome_side` / `side` and the matching price field. Poisoned historical rows recover via `resolveFromExchangeOutcome` when raw `outcome_side` or bare `side` is present; otherwise fail-closed (`unverified`).
 - `unverified` / `unknown` fills **block certified NAV** (`authoritative: false`).
 - Kalshi fixed-point API fields supported: `count_fp`, `yes_price_dollars`, `no_price_dollars`, `remaining_count_fp`.
-- `recent_fills[].ownership`: `lab` | `personal` | `unknown`.
+- `recent_fills[].ownership`: `lab` | `personal` | `unknown`. Non-allowlist tickers with no explicit owner default to **`personal`** (gate3 hist-fill fix); only empty/missing ticker → `unknown`.
 - SEP15 raw exchange path: realized P&L **+$1.00** (illustrative fixture — see `tests/fixtures/FIXTURE_PROVENANCE.md`).
 - SEP21 resting: `risk_usd` ≈ **$1.20** (not $18.80 literal NO notional).
 - Entry fees allocated into realized P&L on FIFO match; rebates preserve signed `fee_usd`.
