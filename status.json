@@ -1,14 +1,14 @@
 {
-  "updated_at": "2026-09-21T13:58:38Z",
-  "equity_history_updated_at": "2026-09-21T13:58:38Z",
-  "reconciliation_updated_at": "2026-09-21T13:57:03Z",
+  "updated_at": "2026-09-21T14:02:21Z",
+  "equity_history_updated_at": "2026-09-21T14:02:21Z",
+  "reconciliation_updated_at": "2026-09-21T14:00:03Z",
   "oldest_input_updated_at": "2026-09-13T05:33:55Z",
   "starting_bankroll_usd": 200,
   "equity_usd": null,
   "lab_equity_usd": null,
-  "portfolio_equity_usd": 188.7681,
+  "portfolio_equity_usd": 189.0181,
   "portfolio_cash_usd": 172.6781,
-  "portfolio_positions_usd": 16.09,
+  "portfolio_positions_usd": 16.34,
   "nonlab_positions_usd": 16.6565,
   "nonlab_legs": [
     {
@@ -37,7 +37,7 @@
   "lab_start_ts": "2026-09-03T23:53:16Z",
   "lab_synthetic_equity_usd": 199.3,
   "delta_vs_start_usd": null,
-  "today_pnl_usd": -3.13,
+  "today_pnl_usd": -2.88,
   "realized_lab_pnl_usd": 0,
   "unrealized_lab_mtm_usd": -0.7,
   "equity_formula": null,
@@ -48,7 +48,7 @@
   "remaining_usd": 48.8,
   "daemon": {
     "alive": false,
-    "heartbeat_age_sec": 52.6,
+    "heartbeat_age_sec": 99.3,
     "pid": 1043244,
     "pid_alive": true,
     "mode": "KILL on — no new risk",
@@ -734,15 +734,15 @@
     "position_mismatch"
   ],
   "equity_definition": null,
-  "legacy_headline_v3_usd": 132.1116,
+  "legacy_headline_v3_usd": 132.3616,
   "nav_bridge": {
     "from_definition": "lab_curve_v3",
     "to_definition": "lab_curve_v4",
-    "from_headline_usd": 132.1116,
+    "from_headline_usd": 132.3616,
     "to_corrected_nav_usd": 200.5,
     "adjustments": [],
-    "unexplained_residual_usd": 68.3884,
-    "bridged_at": "2026-09-21T13:58:38.261Z",
+    "unexplained_residual_usd": 68.1384,
+    "bridged_at": "2026-09-21T14:02:21.391Z",
     "note": "v3 headline superseded — personal cash purchases were charged to lab scoreboard. v4 uses owner cash ledgers."
   },
   "lab_cash_usd": 200,
@@ -778,8 +778,8 @@
   },
   "position_reconcile": {
     "owner_positions_sum_usd": 17.1565,
-    "exchange_positions_usd": 16.09,
-    "positions_gap_usd": 1.0665,
+    "exchange_positions_usd": 16.34,
+    "positions_gap_usd": 0.8165,
     "has_unknown_ownership": false,
     "missing_positions": true,
     "reconciled": false
