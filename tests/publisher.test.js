@@ -38,6 +38,63 @@ describe('publisher integration', () => {
     assert.ok('cash_reconcile' in status);
   });
 
+  it('passes positions to ledger and uses snapshot personal_opening', () => {
+    const customOpening = 42.5;
+    const fillNotional = 1.20; // buy yes@6 × 20; fee deferred on open ticker
+    const exchangeCash = LAB_BASELINE_USD + customOpening - fillNotional;
+    const status = publishStatus({
+      portfolio_equity_usd: before.portfolio_equity_usd,
+      portfolio_cash_usd: exchangeCash,
+      portfolio_positions_usd: before.portfolio_positions_usd,
+      opening_allocation_verified: true,
+      personal_opening_usd: customOpening,
+      deposits: [{ ts: '2026-08-28', amount_usd: 200, owner: 'lab' }],
+      positions: [
+        { ticker: 'KXHIGHCHI-26SEP18-B76.5', qty: 20, mtm_usd: 0.9593, strategy_id: 'WX_CHI' },
+        ...(before.nonlab_legs ?? []).map((p) => ({ ...p, owner: 'personal' })),
+      ],
+      fills: [
+        {
+          fill_id: 'open-wx',
+          ticker: 'KXHIGHCHI-26SEP18-B76.5',
+          action: 'buy',
+          side: 'yes',
+          yes_price: 6,
+          count: 20,
+          fee_cost: 0.02,
+          strategy_id: 'WX_CHI',
+          created_time: '2026-09-18T10:00:00Z',
+        },
+      ],
+      resting_orders: before.resting_orders,
+      allowlist: before.allowlist,
+      nav_bridge_adjustments: [],
+    });
+
+    assert.equal(status.pre_lab_cash_usd, customOpening);
+    assert.equal(status.personal_cash_usd, customOpening);
+    assert.ok(status.cash_reconcile);
+    assert.ok(Math.abs(status.cash_reconcile.cash_gap_usd) <= 0.01);
+  });
+
+  it('falls back to pre_lab_cash_usd when personal_opening_usd absent', () => {
+    const exchangeCash = LAB_BASELINE_USD + PRE_LAB_PERSONAL_CASH_USD;
+    const status = publishStatus({
+      portfolio_equity_usd: before.portfolio_equity_usd,
+      portfolio_cash_usd: exchangeCash,
+      portfolio_positions_usd: before.portfolio_positions_usd,
+      opening_allocation_verified: true,
+      pre_lab_cash_usd: PRE_LAB_PERSONAL_CASH_USD,
+      deposits: [{ ts: '2026-08-28', amount_usd: 200, owner: 'lab' }],
+      positions: [
+        { ticker: 'KXHIGHCHI-26SEP18-B76.5', qty: 20, mtm_usd: 0.9593, strategy_id: 'WX_CHI' },
+      ],
+      fills: [],
+      allowlist: before.allowlist,
+    });
+    assert.equal(status.pre_lab_cash_usd, PRE_LAB_PERSONAL_CASH_USD);
+  });
+
   it('append-only equity history', () => {
     const hist = [{ t: '2026-09-01', equity_usd: 200, definition: 'lab_curve_v3' }];
     const h2 = appendEquityPoint(hist, 195, '2026-09-02');

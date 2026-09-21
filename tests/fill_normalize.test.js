@@ -10,6 +10,7 @@ import {
   cashDeltaUsd,
   inventoryDelta,
   blocksCertifiedNav,
+  signedFeeUsd,
 } from '../lib/fill_normalize.js';
 
 const __dir = dirname(fileURLToPath(import.meta.url));
@@ -228,6 +229,28 @@ describe('SEP21 resting order — $1.20 risk not $18.80', () => {
     assert.equal(n.side, 'buy_yes');
     assert.equal(n.price_cents, 6);
     assert.equal(n.risk_usd, 1.2);
+  });
+});
+
+describe('signedFeeUsd — fee_cost preference and positive fee_usd', () => {
+  it('prefers fee_cost over fee_usd', () => {
+    assert.equal(signedFeeUsd({ fee_cost: 0.05, fee_usd: 0.03 }), -0.05);
+  });
+
+  it('treats positive fee_usd as paid magnitude (negative outflow)', () => {
+    assert.equal(signedFeeUsd({ fee_usd: 0.02 }), -0.02);
+  });
+
+  it('preserves negative fee_usd (already signed paid)', () => {
+    assert.equal(signedFeeUsd({ fee_usd: -0.02 }), -0.02);
+  });
+
+  it('treats positive fees_usd as paid magnitude', () => {
+    assert.equal(signedFeeUsd({ fees_usd: 0.01 }), -0.01);
+  });
+
+  it('fee_cost rebate stays positive', () => {
+    assert.equal(signedFeeUsd({ fee_cost: -0.01 }), 0.01);
   });
 });
 

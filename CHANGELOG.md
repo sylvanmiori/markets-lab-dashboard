@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.1.5 — 2026-09-21 (Gate3 cash identity restore)
+
+- **Gate3 cash overlay:** Restore cash identity after cutover to clean main (`d1cef94c`). Fixes `cash_gap` regression from −$0.1817 to +$39.82.
+- `signedFeeUsd` prefers `fee_cost` over `fee_usd`; positive `fee_usd`/`fees_usd` treated as paid magnitude (negative outflow).
+- `buildCashLedger` defers fees on open-position tickers (fee not yet in `balance_dollars`); settlement prefers writer `amount_usd` gross.
+- `publishStatus` passes `positions` into ledger; `personal_opening_usd` / `pre_lab_cash_usd` from snapshot (not hard-coded constant alone).
+
 ## 1.1.4 — 2026-09-21 (Gate 3 personal ownership)
 
 - **Gate 3:** `attributeOwner` defaults non-allowlist fills/positions with a ticker to **`personal`** instead of `unknown`, so hist fills are not skipped in the cash ledger. Empty ticker still → `unknown`.
