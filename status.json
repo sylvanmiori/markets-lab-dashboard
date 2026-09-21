@@ -1,15 +1,15 @@
 {
-  "updated_at": "2026-09-21T17:47:21Z",
-  "equity_history_updated_at": "2026-09-21T17:47:21Z",
+  "updated_at": "2026-09-21T17:48:07Z",
+  "equity_history_updated_at": "2026-09-21T17:48:07Z",
   "reconciliation_updated_at": "2026-09-21T17:45:03Z",
   "oldest_input_updated_at": "2026-09-13T05:33:55Z",
   "starting_bankroll_usd": 200,
   "equity_usd": null,
   "lab_equity_usd": null,
-  "portfolio_equity_usd": 191.9581,
+  "portfolio_equity_usd": 192.1581,
   "portfolio_cash_usd": 172.6781,
-  "portfolio_positions_usd": 19.28,
-  "nonlab_positions_usd": 18.869999999999997,
+  "portfolio_positions_usd": 19.48,
+  "nonlab_positions_usd": 19.08,
   "nonlab_legs": [
     {
       "ticker": "KXSB-27-HOU",
@@ -26,7 +26,7 @@
     {
       "ticker": "SENATETX-26-R",
       "qty": 20,
-      "mtm_usd": 8.19,
+      "mtm_usd": 8.4,
       "owner": "personal"
     }
   ],
@@ -37,7 +37,7 @@
   "lab_start_ts": "2026-09-03T23:53:16Z",
   "lab_synthetic_equity_usd": 199.1,
   "delta_vs_start_usd": null,
-  "today_pnl_usd": -2.1535,
+  "today_pnl_usd": -1.9535,
   "realized_lab_pnl_usd": 0,
   "unrealized_lab_mtm_usd": -0.9,
   "equity_formula": null,
@@ -48,7 +48,7 @@
   "remaining_usd": 48.8,
   "daemon": {
     "alive": false,
-    "heartbeat_age_sec": 85.6,
+    "heartbeat_age_sec": 140.8,
     "pid": 1345581,
     "pid_alive": true,
     "mode": "KILL on — no new risk",
@@ -732,22 +732,22 @@
     "owner_cash_mismatch"
   ],
   "equity_definition": null,
-  "legacy_headline_v3_usd": 173.0881,
+  "legacy_headline_v3_usd": 173.0781,
   "nav_bridge": {
     "from_definition": "lab_curve_v3",
     "to_definition": "lab_curve_v4",
-    "from_headline_usd": 173.0881,
+    "from_headline_usd": 173.0781,
     "to_corrected_nav_usd": 127.803,
     "adjustments": [],
-    "unexplained_residual_usd": -45.2851,
-    "bridged_at": "2026-09-21T17:47:21.771Z",
+    "unexplained_residual_usd": -45.2751,
+    "bridged_at": "2026-09-21T17:48:08.532Z",
     "note": "v3 headline superseded — personal cash purchases were charged to lab scoreboard. v4 uses owner cash ledgers."
   },
   "lab_cash_usd": 127.403,
   "personal_cash_usd": 43.4808,
-  "personal_nav_usd": 62.3508,
+  "personal_nav_usd": 62.5608,
   "lab_positions_usd": 0.4,
-  "personal_positions_usd": 18.87,
+  "personal_positions_usd": 19.08,
   "personal_legs": [
     {
       "ticker": "KXSB-27-HOU",
@@ -764,7 +764,7 @@
     {
       "ticker": "SENATETX-26-R",
       "qty": 20,
-      "mtm_usd": 8.19,
+      "mtm_usd": 8.4,
       "owner": "personal"
     }
   ],
@@ -775,9 +775,9 @@
     "reconciled": false
   },
   "position_reconcile": {
-    "owner_positions_sum_usd": 19.27,
-    "exchange_positions_usd": 19.28,
-    "positions_gap_usd": -0.01,
+    "owner_positions_sum_usd": 19.48,
+    "exchange_positions_usd": 19.48,
+    "positions_gap_usd": 0,
     "has_unknown_ownership": false,
     "missing_positions": false,
     "reconciled": true
