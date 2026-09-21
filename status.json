@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-09-21T05:18:23Z",
-  "equity_history_updated_at": "2026-09-21T05:18:23Z",
-  "reconciliation_updated_at": "2026-09-21T05:10:03Z",
+  "updated_at": "2026-09-21T05:22:00Z",
+  "equity_history_updated_at": "2026-09-21T05:22:00Z",
+  "reconciliation_updated_at": "2026-09-21T05:20:03Z",
   "oldest_input_updated_at": "2026-09-13T05:33:55Z",
   "starting_bankroll_usd": 200,
   "equity_usd": null,
@@ -48,7 +48,7 @@
   "remaining_usd": 44.36,
   "daemon": {
     "alive": false,
-    "heartbeat_age_sec": 462,
+    "heartbeat_age_sec": 82.9,
     "pid": 979527,
     "pid_alive": true,
     "mode": "KILL on — no new risk",
@@ -735,7 +735,7 @@
       "pnl_kind": "unmatched"
     }
   ],
-  "notes": "KILL set — entries skipped; open_fail:UncertainStateError|v4_blocked:incomplete_acquisition,owner_cash_mismatch,position_mismatch",
+  "notes": "KILL set — entries skipped|v4_blocked:incomplete_acquisition,owner_cash_mismatch,position_mismatch",
   "authoritative": false,
   "publish_blocked": true,
   "publish_blocked_reasons": [
@@ -752,7 +752,7 @@
     "to_corrected_nav_usd": 201.3,
     "adjustments": [],
     "unexplained_residual_usd": 66.2584,
-    "bridged_at": "2026-09-21T05:18:23.261Z",
+    "bridged_at": "2026-09-21T05:22:00.334Z",
     "note": "v3 headline superseded — personal cash purchases were charged to lab scoreboard. v4 uses owner cash ledgers."
   },
   "lab_cash_usd": 200,
