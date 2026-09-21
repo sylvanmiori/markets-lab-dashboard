@@ -61,8 +61,14 @@
 </div>
 <div id="lagWarn"></div>
 <div class="grid">
-  <div class="card tip" id="equityCard" title="lab_curve_v3: account-derived lab equity. Baseline $200.">
-    <div class="label">Lab equity (lab_curve_v3)</div><div class="value" id="equity">—</div>
+  <div class="card tip" id="equityCard" title="lab_curve_v4: lab cash ledger + lab position marks. Baseline $200.">
+    <div class="label" id="equityLabel">Lab equity</div><div class="value" id="equity">—</div>
+  </div>
+  <div class="card tip" id="legacyCard" title="Superseded lab_curve_v3 headline — shown for bridge only." style="display:none">
+    <div class="label">Legacy v3 headline</div><div class="value" id="legacyV3" style="font-size:18px">—</div>
+  </div>
+  <div class="card tip" id="personalCard" title="Personal cash ledger + personal position marks." style="display:none">
+    <div class="label">Personal NAV</div><div class="value" id="personalNav" style="font-size:18px">—</div>
   </div>
   <div class="card tip" title="How far lab equity sits above or below the $200 starting bankroll.">
     <div class="label">Δ vs $200</div><div class="value" id="delta">—</div>
@@ -86,9 +92,10 @@
     <div class="label">Daemon</div><div class="value" id="daemon" style="font-size:16px">—</div>
   </div>
 </div>
-<p class="formula tip" id="formula" title="lab_curve_v3 headline. Synthetic fields are secondary.">lab_curve_v3: lab equity = Kalshi total − non-lab positions − $40 pre-lab cash · baseline $200</p>
+<p class="formula tip" id="formula" title="Headline equity definition.">lab equity · baseline $200</p>
+<p class="formula tip" id="bridgeNote" style="display:none;color:var(--warn)"></p>
 <section>
-  <h2 class="tip">Equity curve (lab_curve_v3)</h2>
+  <h2 class="tip" id="chartTitle">Equity curve</h2>
   <div class="eq-tip" id="eqTip">Scrub for Time + Equity $</div>
   <div class="chart-wrap tip"><canvas id="eqChart"></canvas></div>
   <h2 class="tip">Allowlist</h2>
@@ -96,7 +103,7 @@
   <h2 class="tip">Resting orders</h2>
   <table>
     <thead><tr>
-      <th class="tip">Ticker</th><th class="tip">Side</th><th class="tip">Px¢</th><th class="tip">Qty</th><th class="tip">Oid</th>
+      <th class="tip">Ticker</th><th class="tip">Side</th><th class="tip">Px¢</th><th class="tip">Qty</th><th class="tip">Risk$</th><th class="tip">Oid</th>
     </tr></thead>
     <tbody id="resting"></tbody>
   </table>
@@ -112,6 +119,8 @@
       <th class="tip">Kind</th>
       <th class="tip">Fee</th>
       <th class="tip">Strategy</th>
+      <th class="tip">Owner</th>
+      <th class="tip">Conf</th>
       <th class="tip">Ts</th>
     </tr></thead>
     <tbody id="fills"></tbody>
@@ -349,7 +358,24 @@ async function tick(){
     if(rh.ok){ try{ hist=await rh.json(); }catch(e){ hist=[]; } }
     lastOk = Date.now();
     $("err").textContent = "";
+    const def = d.equity_definition || (d.equity_formula && d.equity_formula.includes('v4') ? 'lab_curve_v4' : 'lab_curve_v3');
+    $("equityLabel").textContent = "Lab equity ("+def+")";
     $("equity").textContent = money(d.equity_usd);
+    $("chartTitle").textContent = "Equity curve ("+def+")";
+    if(d.legacy_headline_v3_usd!=null){
+      $("legacyCard").style.display="";
+      $("legacyV3").textContent = money(d.legacy_headline_v3_usd);
+    }
+    if(d.personal_nav_usd!=null){
+      $("personalCard").style.display="";
+      $("personalNav").textContent = money(d.personal_nav_usd);
+    }
+    const bridge = d.nav_bridge;
+    if(bridge){
+      const gap = bridge.to_corrected_nav_usd - bridge.from_headline_usd;
+      $("bridgeNote").style.display = gap > 0.5 ? "" : "none";
+      $("bridgeNote").textContent = "Bridge: v3 headline $"+money(bridge.from_headline_usd)+" → corrected v4 $"+money(bridge.to_corrected_nav_usd)+" (Δ "+(gap>=0?"+":"")+gap.toFixed(2)+"). v3 superseded — not rewritten.";
+    }
     $("delta").innerHTML = signed(d.delta_vs_start_usd);
     $("today").innerHTML = signed(d.today_pnl_usd);
     $("openUsd").textContent = money(d.open_usd);
@@ -357,8 +383,8 @@ async function tick(){
     $("maxUsd").textContent = money(d.max_open_usd);
     const syn=d.lab_synthetic_equity_usd;
     $("synthetic").textContent = syn==null?"—":money(syn);
-    if(d.equity_formula) $("formula").textContent = "lab_curve_v3 · "+d.equity_formula;
-    else $("formula").textContent = "lab_curve_v3: lab equity = Kalshi total − non-lab positions − $40 pre-lab cash · baseline $200";
+    if(d.equity_formula) $("formula").textContent = (d.equity_definition||"lab_curve")+" · "+d.equity_formula;
+    else $("formula").textContent = def+": lab equity · baseline $200";
     const dm = d.daemon||{};
     const age = dm.heartbeat_age_sec;
     const alive = !!dm.alive;
@@ -371,8 +397,9 @@ async function tick(){
       cell(esc(o.side||""), `Side: ${o.side||"—"}`),
       cell(o.price_cents??"—", `Limit price ${o.price_cents??"—"}¢`),
       cell(o.qty??"—", `Quantity ${o.qty??"—"}`),
+      cell(o.risk_usd!=null?money(o.risk_usd):"—", `Worst-case risk ${o.risk_usd??"—"}`),
       cell(`<code>${esc(o.order_id_short||"")}</code>`, `Order id ${o.order_id_short||"—"}`)
-    ])).join("") || row([cell("—","No resting orders"),cell("",""),cell("",""),cell("",""),cell("","")]);
+    ])).join("") || row([cell("—","No resting orders"),cell("",""),cell("",""),cell("",""),cell("",""),cell("","")]);
     $("fills").innerHTML = (d.recent_fills||[]).map(f=>row([
       cell(`<code>${esc(f.ticker||"")}</code>`, `Fill on ${f.ticker||"—"}`),
       cell(esc(f.side||""), `Side: ${f.side||"—"}`),
@@ -383,8 +410,10 @@ async function tick(){
       kindCell(f),
       feeCell(f),
       stratCell(f),
+      cell(esc(f.ownership||"—"), "Owner: lab / personal / unknown"),
+      cell(esc(f.normalization_confidence||"—"), "Fill normalization confidence"),
       cell(`<code>${esc((f.ts||"").slice(0,19))}</code>`, `Fill time ${(f.ts||"").slice(0,19) || "—"} UTC`)
-    ])).join("") || row([cell("—","No recent fills"),cell("",""),cell("",""),cell("",""),cell("",""),cell("",""),cell("",""),cell("",""),cell("",""),cell("","")]);
+    ])).join("") || row([cell("—","No recent fills"),cell("",""),cell("",""),cell("",""),cell("",""),cell("",""),cell("",""),cell("",""),cell("",""),cell("",""),cell("",""),cell("","")]);
     const series=upsertChart(Array.isArray(hist)?hist:[]);
     updateAges(d, series, Date.now());
     $("fetchAge").textContent = "page fetch ok · status "+(d.updated_at||"?");

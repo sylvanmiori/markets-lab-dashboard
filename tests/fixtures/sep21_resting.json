@@ -1,0 +1,18 @@
+{
+  "published": {
+    "ticker": "KXHIGHCHI-26SEP21-B67.5",
+    "side": "buy_no",
+    "price_cents": 94,
+    "qty": 20,
+    "order_id": "01a0bf20-a9c0-7007-0000",
+    "open_risk_usd": 1.2
+  },
+  "raw_exchange": {
+    "ticker": "KXHIGHCHI-26SEP21-B67.5",
+    "action": "buy",
+    "side": "yes",
+    "yes_price": 6,
+    "count": 20,
+    "order_id": "01a0bf20-a9c0-7007-0000"
+  }
+}

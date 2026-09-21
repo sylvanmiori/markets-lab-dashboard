@@ -1,0 +1,45 @@
+{
+  "fills": [
+    {
+      "fill_id": "sep15-buy-001",
+      "order_id": "ord-sep15-buy",
+      "ticker": "KXHIGHCHI-26SEP15-B86.5",
+      "action": "buy",
+      "side": "yes",
+      "yes_price": 6,
+      "count": 20,
+      "created_time": "2025-09-15T10:55:08.973743Z",
+      "strategy_id": "WX_CHI_D1_NBM_BIASCORR_v0",
+      "fee_cost": 0
+    },
+    {
+      "fill_id": "sep15-sell-001",
+      "order_id": "ord-sep15-sell",
+      "ticker": "KXHIGHCHI-26SEP15-B86.5",
+      "action": "sell",
+      "side": "yes",
+      "yes_price": 11,
+      "count": 20,
+      "created_time": "2025-09-15T12:20:22.616963Z",
+      "strategy_id": "WX_CHI_D1_NBM_BIASCORR_v0",
+      "fee_cost": 0
+    }
+  ],
+  "published_wrong": [
+    {
+      "ticker": "KXHIGHCHI-26SEP15-B86.5",
+      "side": "buy_no",
+      "price_cents": 94,
+      "qty": 20,
+      "ts": "2025-09-15T10:55:08.973743Z"
+    },
+    {
+      "ticker": "KXHIGHCHI-26SEP15-B86.5",
+      "side": "sell_no",
+      "price_cents": 89,
+      "qty": 20,
+      "ts": "2025-09-15T12:20:22.616963Z",
+      "pnl_usd": -1
+    }
+  ]
+}
