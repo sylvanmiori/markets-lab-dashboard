@@ -31,7 +31,12 @@ describe('ownership attribution', () => {
 
   it('allowlist alone insufficient for ambiguous ticker', () => {
     assert.equal(attributeOwner({ ticker: 'KXHIGHCHI-26SEP20-B73.5' }), 'lab');
-    assert.equal(attributeOwner({ ticker: 'RANDOM-XYZ' }), 'unknown');
+    assert.equal(attributeOwner({ ticker: 'RANDOM-XYZ' }), 'personal');
+  });
+
+  it('empty ticker → unknown (gate3: hist fills must not skip)', () => {
+    assert.equal(attributeOwner({ ticker: '' }), 'unknown');
+    assert.equal(attributeOwner({}), 'unknown');
   });
 
   it('explicit owner wins', () => {

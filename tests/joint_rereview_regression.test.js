@@ -32,14 +32,14 @@ describe('D1 P1 — cash equality alone must NOT certify NAV', () => {
     assert.ok(status.publish_blocked_reasons.includes('position_mismatch'));
   });
 
-  it('unknown-owner $10 position blocks certification (not personal dump)', () => {
+  it('empty-ticker position blocks certification (unknown ownership, not personal dump)', () => {
     const status = publishStatus({
       ...OPENING,
       portfolio_equity_usd: 250,
       portfolio_cash_usd: LAB_BASELINE_USD + PRE_LAB_PERSONAL_CASH_USD,
       portfolio_positions_usd: 10,
       fills: [],
-      positions: [{ ticker: 'RANDOM-UNKNOWN', qty: 10, mtm_usd: 10 }],
+      positions: [{ ticker: '', qty: 10, mtm_usd: 10 }],
     });
 
     assert.equal(status.personal_positions_usd, 0);
