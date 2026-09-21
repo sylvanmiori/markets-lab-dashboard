@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-09-21T03:08:18Z",
-  "equity_history_updated_at": "2026-09-21T03:08:18Z",
-  "reconciliation_updated_at": "2026-09-21T03:00:02Z",
+  "updated_at": "2026-09-21T03:11:51Z",
+  "equity_history_updated_at": "2026-09-21T03:11:51Z",
+  "reconciliation_updated_at": "2026-09-21T03:10:02Z",
   "oldest_input_updated_at": "2026-09-12T17:15:58Z",
   "starting_bankroll_usd": 200,
   "equity_usd": null,
@@ -9,7 +9,7 @@
   "portfolio_equity_usd": 191.9981,
   "portfolio_cash_usd": 173.8781,
   "portfolio_positions_usd": 18.12,
-  "nonlab_positions_usd": 16.7095,
+  "nonlab_positions_usd": 16.836,
   "nonlab_legs": [
     {
       "ticker": "KXSB-27-HOU",
@@ -20,7 +20,7 @@
     {
       "ticker": "KXMLB-26-HOU",
       "qty": 253,
-      "mtm_usd": 3.9215,
+      "mtm_usd": 4.048,
       "owner": "personal"
     },
     {
@@ -37,7 +37,7 @@
   "lab_start_ts": "2026-09-03T23:53:16Z",
   "lab_synthetic_equity_usd": 200,
   "delta_vs_start_usd": null,
-  "today_pnl_usd": -9.495,
+  "today_pnl_usd": -9.6215,
   "realized_lab_pnl_usd": 0,
   "unrealized_lab_mtm_usd": 0,
   "equity_formula": null,
@@ -48,7 +48,7 @@
   "remaining_usd": 44.36,
   "daemon": {
     "alive": false,
-    "heartbeat_age_sec": 463.2,
+    "heartbeat_age_sec": 79,
     "pid": 10435,
     "pid_alive": true,
     "mode": "KILL on — no new risk",
@@ -753,22 +753,22 @@
     "position_mismatch"
   ],
   "equity_definition": null,
-  "legacy_headline_v3_usd": 135.2886,
+  "legacy_headline_v3_usd": 135.1621,
   "nav_bridge": {
     "from_definition": "lab_curve_v3",
     "to_definition": "lab_curve_v4",
-    "from_headline_usd": 135.2886,
+    "from_headline_usd": 135.1621,
     "to_corrected_nav_usd": 200,
     "adjustments": [],
-    "unexplained_residual_usd": 64.7114,
-    "bridged_at": "2026-09-21T03:08:18.247Z",
+    "unexplained_residual_usd": 64.8379,
+    "bridged_at": "2026-09-21T03:11:51.954Z",
     "note": "v3 headline superseded — personal cash purchases were charged to lab scoreboard. v4 uses owner cash ledgers."
   },
   "lab_cash_usd": 200,
   "personal_cash_usd": 40,
-  "personal_nav_usd": 56.7095,
+  "personal_nav_usd": 56.836,
   "lab_positions_usd": 0,
-  "personal_positions_usd": 16.7095,
+  "personal_positions_usd": 16.836,
   "personal_legs": [
     {
       "ticker": "KXSB-27-HOU",
@@ -779,7 +779,7 @@
     {
       "ticker": "KXMLB-26-HOU",
       "qty": 253,
-      "mtm_usd": 3.9215,
+      "mtm_usd": 4.048,
       "owner": "personal"
     },
     {
@@ -796,9 +796,9 @@
     "reconciled": false
   },
   "position_reconcile": {
-    "owner_positions_sum_usd": 16.7095,
+    "owner_positions_sum_usd": 16.836,
     "exchange_positions_usd": 18.12,
-    "positions_gap_usd": -1.4105,
+    "positions_gap_usd": -1.284,
     "has_unknown_ownership": false,
     "missing_positions": true,
     "reconciled": false
