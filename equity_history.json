@@ -1810,5 +1810,11 @@
     "to_corrected_nav_usd": 200,
     "adjustments": [],
     "note": "v3 headline superseded — personal cash purchases were charged to lab scoreboard. v4 uses owner cash ledgers."
+  },
+  {
+    "t": "2026-09-21T03:08:18Z",
+    "equity_usd": 135.2886,
+    "source": "lab_curve_v3",
+    "definition": "lab_curve_v3"
   }
 ]
