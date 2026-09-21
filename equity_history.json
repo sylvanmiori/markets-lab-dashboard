@@ -1800,5 +1800,15 @@
     "equity_usd": 135.2886,
     "source": "lab_curve_v3",
     "definition": "lab_curve_v3"
+  },
+  {
+    "t": "2026-09-21T03:02:28Z",
+    "marker": "nav_bridge",
+    "from_definition": "lab_curve_v3",
+    "to_definition": "lab_curve_v4",
+    "from_headline_usd": 135.2886,
+    "to_corrected_nav_usd": 200,
+    "adjustments": [],
+    "note": "v3 headline superseded — personal cash purchases were charged to lab scoreboard. v4 uses owner cash ledgers."
   }
 ]
