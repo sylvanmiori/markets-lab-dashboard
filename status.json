@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-09-21T17:37:26Z",
-  "equity_history_updated_at": "2026-09-21T17:37:26Z",
+  "updated_at": "2026-09-21T17:39:45Z",
+  "equity_history_updated_at": "2026-09-21T17:39:45Z",
   "reconciliation_updated_at": "2026-09-21T17:36:04Z",
   "oldest_input_updated_at": "2026-09-13T05:33:55Z",
   "starting_bankroll_usd": 200,
@@ -9,24 +9,24 @@
   "portfolio_equity_usd": 192.1581,
   "portfolio_cash_usd": 172.6781,
   "portfolio_positions_usd": 19.48,
-  "nonlab_positions_usd": 30.337000000000003,
+  "nonlab_positions_usd": 19.0856,
   "nonlab_legs": [
     {
       "ticker": "KXSB-27-HOU",
       "qty": 187.52,
-      "mtm_usd": 9.376,
+      "mtm_usd": 5.6256,
       "owner": "personal"
     },
     {
       "ticker": "KXMLB-26-HOU",
       "qty": 253,
-      "mtm_usd": 9.361,
+      "mtm_usd": 5.06,
       "owner": "personal"
     },
     {
       "ticker": "SENATETX-26-R",
       "qty": 20,
-      "mtm_usd": 11.6,
+      "mtm_usd": 8.4,
       "owner": "personal"
     }
   ],
@@ -37,7 +37,7 @@
   "lab_start_ts": "2026-09-03T23:53:16Z",
   "lab_synthetic_equity_usd": 199.3,
   "delta_vs_start_usd": null,
-  "today_pnl_usd": -13.4205,
+  "today_pnl_usd": -2.1691,
   "realized_lab_pnl_usd": 0,
   "unrealized_lab_mtm_usd": -0.7,
   "equity_formula": null,
@@ -48,7 +48,7 @@
   "remaining_usd": 48.8,
   "daemon": {
     "alive": false,
-    "heartbeat_age_sec": 39.8,
+    "heartbeat_age_sec": 174.2,
     "pid": 1345581,
     "pid_alive": true,
     "mode": "KILL on — no new risk",
@@ -725,69 +725,68 @@
       "pnl_kind": "open_unrealized"
     }
   ],
-  "notes": "KILL set — entries skipped|v4_blocked:owner_cash_mismatch,position_mismatch",
+  "notes": "KILL set — entries skipped|v4_blocked:owner_cash_mismatch",
   "authoritative": false,
   "publish_blocked": true,
   "publish_blocked_reasons": [
-    "owner_cash_mismatch",
-    "position_mismatch"
+    "owner_cash_mismatch"
   ],
   "equity_definition": null,
-  "legacy_headline_v3_usd": 161.8211,
+  "legacy_headline_v3_usd": 173.0725,
   "nav_bridge": {
     "from_definition": "lab_curve_v3",
     "to_definition": "lab_curve_v4",
-    "from_headline_usd": 161.8211,
-    "to_corrected_nav_usd": 128.603,
+    "from_headline_usd": 173.0725,
+    "to_corrected_nav_usd": 127.803,
     "adjustments": [],
-    "unexplained_residual_usd": -33.2181,
-    "bridged_at": "2026-09-21T17:37:26.834Z",
+    "unexplained_residual_usd": -45.2695,
+    "bridged_at": "2026-09-21T17:39:46.414Z",
     "note": "v3 headline superseded — personal cash purchases were charged to lab scoreboard. v4 uses owner cash ledgers."
   },
   "lab_cash_usd": 127.403,
-  "personal_cash_usd": 41.2011,
-  "personal_nav_usd": 71.5381,
-  "lab_positions_usd": 1.2,
-  "personal_positions_usd": 30.337,
+  "personal_cash_usd": 43.4808,
+  "personal_nav_usd": 62.5664,
+  "lab_positions_usd": 0.4,
+  "personal_positions_usd": 19.0856,
   "personal_legs": [
     {
       "ticker": "KXSB-27-HOU",
       "qty": 187.52,
-      "mtm_usd": 9.376,
+      "mtm_usd": 5.6256,
       "owner": "personal"
     },
     {
       "ticker": "KXMLB-26-HOU",
       "qty": 253,
-      "mtm_usd": 9.361,
+      "mtm_usd": 5.06,
       "owner": "personal"
     },
     {
       "ticker": "SENATETX-26-R",
       "qty": 20,
-      "mtm_usd": 11.6,
+      "mtm_usd": 8.4,
       "owner": "personal"
     }
   ],
   "cash_reconcile": {
-    "owner_cash_sum_usd": 168.6041,
+    "owner_cash_sum_usd": 170.8838,
     "exchange_cash_usd": 172.6781,
-    "cash_gap_usd": -4.074,
+    "cash_gap_usd": -1.7943,
     "reconciled": false
   },
   "position_reconcile": {
-    "owner_positions_sum_usd": 31.537,
+    "owner_positions_sum_usd": 19.4856,
     "exchange_positions_usd": 19.48,
-    "positions_gap_usd": 12.057,
+    "positions_gap_usd": 0.0056,
     "has_unknown_ownership": false,
-    "missing_positions": true,
-    "reconciled": false
+    "missing_positions": false,
+    "reconciled": true
   },
   "opening_allocation_verified": true,
   "acquisition_complete": true,
   "incomplete_fill_ids": [],
   "unresolved_fill_count": 0,
   "cash_ledger_entries": 350,
-  "open_usd_v4_estimate": 1.2,
+  "open_usd_v4_estimate": 0.4,
   "publisher_sha": "9983814c28225efbbd7af096efaba99474948b35"
 }
