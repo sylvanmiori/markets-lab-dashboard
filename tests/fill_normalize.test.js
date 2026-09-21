@@ -9,6 +9,7 @@ import {
   matchRealizedPnl,
   cashDeltaUsd,
   inventoryDelta,
+  blocksCertifiedNav,
 } from '../lib/fill_normalize.js';
 
 const __dir = dirname(fileURLToPath(import.meta.url));
@@ -117,6 +118,100 @@ describe('SEP15 scalp — +$1 not −$1', () => {
     assert.ok(n.raw);
     assert.equal(n.raw.yes_price, 6);
     assert.equal(n.strategy_id, 'WX_CHI_D1_NBM_BIASCORR_v0');
+  });
+});
+
+describe('Gate-3 SEP21 complement poison — buy_yes@6 not buy_no@94', () => {
+  const sep21ExchangeFill = {
+    fill_id: '01a0bf20',
+    ticker: 'KXHIGHCHI-26SEP21-B67.5',
+    action: 'buy',
+    side: 'yes',
+    outcome_side: 'yes',
+    yes_price_dollars: '0.0600',
+    no_price_dollars: '0.9400',
+    count_fp: '20',
+    ts: '2026-09-20T23:33:21Z',
+  };
+
+  it('raw exchange fill → buy_yes@6 cash −$1.20', () => {
+    const n = normalizeFill(sep21ExchangeFill);
+    assert.equal(n.side, 'buy_yes');
+    assert.equal(n.price_cents, 6);
+    assert.ok(Math.abs(n.cash_delta_usd - (-1.20)) < 1e-9);
+    assert.equal(n.confidence, 'verified');
+    assert.equal(n.inventory_delta_yes, 20);
+  });
+
+  it('poisoned published buy_no@94 recovers when outcome_side=yes present', () => {
+    const poisoned = {
+      side: 'buy_no',
+      price_cents: 94,
+      qty: 20,
+      ticker: 'KXHIGHCHI-26SEP21-B67.5',
+      action: 'buy',
+      outcome_side: 'yes',
+      yes_price_dollars: '0.0600',
+      no_price_dollars: '0.9400',
+      fill_id: 'poisoned-1',
+      ts: '2026-09-20T23:33:21Z',
+    };
+    const n = normalizeFill(poisoned);
+    assert.equal(n.side, 'buy_yes');
+    assert.equal(n.price_cents, 6);
+    assert.ok(Math.abs(n.cash_delta_usd - (-1.20)) < 1e-9);
+    assert.equal(n.confidence, 'verified');
+    assert.ok(!blocksCertifiedNav(n));
+  });
+
+  it('poisoned row without outcome_side stays fail-closed', () => {
+    const poisoned = {
+      side: 'buy_no',
+      price_cents: 94,
+      qty: 20,
+      ticker: 'KXHIGHCHI-26SEP21-B67.5',
+      fill_id: 'poisoned-2',
+      ts: '2026-09-20T23:33:21Z',
+    };
+    const n = normalizeFill(poisoned);
+    assert.equal(n.side, 'buy_no');
+    assert.equal(n.price_cents, 94);
+    assert.equal(n.confidence, 'unverified');
+    assert.ok(blocksCertifiedNav(n));
+  });
+
+  it('genuine buy_no@74 unchanged', () => {
+    const n = normalizeFill({
+      action: 'buy',
+      side: 'no',
+      outcome_side: 'no',
+      no_price_dollars: '0.74',
+      yes_price_dollars: '0.26',
+      count_fp: '6',
+      fill_id: 'genuine-no',
+      ticker: 'KXHIGHCHI-26SEP20-B73.5',
+      ts: '2026-09-20T12:00:00Z',
+    });
+    assert.equal(n.side, 'buy_no');
+    assert.equal(n.price_cents, 74);
+    assert.ok(Math.abs(n.cash_delta_usd - (-4.44)) < 1e-9);
+  });
+
+  it('sell_yes OK with complement echo', () => {
+    const n = normalizeFill({
+      action: 'sell',
+      side: 'yes',
+      outcome_side: 'yes',
+      yes_price_dollars: '0.11',
+      no_price_dollars: '0.89',
+      count_fp: '20',
+      fill_id: 'sell-yes',
+      ticker: 'KXHIGHCHI-26SEP15-B86.5',
+      ts: '2025-09-15T11:00:00Z',
+    });
+    assert.equal(n.side, 'sell_yes');
+    assert.equal(n.price_cents, 11);
+    assert.ok(Math.abs(n.cash_delta_usd - 2.20) < 1e-9);
   });
 });
 
