@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.1.2 — 2026-09-21 (DASH_RECON_LIE)
+
+- **DASH_RECON_LIE:** `publishStatus` no longer publishes resting+MTM sum as authoritative `open_usd`; returns `null` fail-closed unless `recon_open_usd` / `total_open_worst_case_usd` is in the snapshot. Inflated heuristic moved to `open_usd_v4_estimate`.
+- Box merge contract documented in `ENGINEERING_NOTE.md`: Pages `open_usd` = Python recon; never `v4.open_usd ?? base.open_usd`.
+
 ## 1.1.1 — 2026-09-20 (Chief P1 remediation)
 
 ### Chief review fixes (dashboard only — no live trading)

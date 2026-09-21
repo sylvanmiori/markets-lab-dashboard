@@ -1,7 +1,7 @@
 # Engineering note: consuming corrected NAV bridge (WP1)
 
 **Audience:** Markets consultant / Chief reconciliation replies  
-**Publisher version:** 1.1.1 (`lab_curve_v4`)  
+**Publisher version:** 1.1.2 (`lab_curve_v4`)  
 **Date:** 2026-09-20 (Chief P1 remediation)
 
 ## What changed
@@ -91,6 +91,38 @@ const status = publishStatus(exchangeSnapshot);
 ```
 
 Run tests: `npm test` (Chief P1 regression suite included).
+
+## Open exposure (`open_usd`) — DASH_RECON_LIE contract
+
+**Incident (2026-09-20):** Box `apply_v4_cutover.mjs` merged `open_usd: v4.open_usd ?? base.open_usd`. Publisher `open_usd` was `sum(resting.risk_usd) + sum(|lab mtm|)` (~$23), overwriting Python recon `total_open_worst_case_usd` (~$5.64) → DASH_RECON_LIE alert.
+
+### Field ownership
+
+| Field | Source | Use |
+|---|---|---|
+| `open_usd` | Python recon (`total_open_worst_case_usd` / lab_hourly) | **Authoritative** exposure on Pages/status |
+| `open_usd_v4_estimate` | Publisher heuristic (resting risk + \|lab MTM\|) | Debug/diagnostic only — never headline exposure |
+| `remaining_usd` | `max_open_usd − open_usd` (recon-backed) | Capacity left |
+
+### Box merge contract (required)
+
+```javascript
+const merged = {
+  ...base,
+  // ... v4 equity fields from publishStatus ...
+  open_usd: base.open_usd,                              // Python recon — never overwrite
+  open_usd_v4_estimate: v4.open_usd_v4_estimate ?? null,
+  remaining_usd: base.remaining_usd ?? (
+    base.max_open_usd != null && base.open_usd != null
+      ? Math.max(0, Number(base.max_open_usd) - Number(base.open_usd))
+      : base.remaining_usd
+  ),
+};
+```
+
+**Never:** `open_usd: v4.open_usd ?? base.open_usd` — the v4 publisher does not compute recon worst-case; `publishStatus` returns `open_usd: null` unless `recon_open_usd` / `total_open_worst_case_usd` is passed in the snapshot.
+
+Regression: `tests/dash_recon_lie_regression.test.js`.
 
 ## Not in scope (per constraints)
 
