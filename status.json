@@ -1,14 +1,14 @@
 {
-  "updated_at": "2026-09-21T04:30:19Z",
-  "equity_history_updated_at": "2026-09-21T04:30:19Z",
-  "reconciliation_updated_at": "2026-09-21T04:20:03Z",
-  "oldest_input_updated_at": "2026-09-13T03:39:25Z",
+  "updated_at": "2026-09-21T04:34:01Z",
+  "equity_history_updated_at": "2026-09-21T04:34:01Z",
+  "reconciliation_updated_at": "2026-09-21T04:30:03Z",
+  "oldest_input_updated_at": "2026-09-13T05:33:55Z",
   "starting_bankroll_usd": 200,
   "equity_usd": null,
   "lab_equity_usd": null,
-  "portfolio_equity_usd": 191.6281,
-  "portfolio_cash_usd": 173.0981,
-  "portfolio_positions_usd": 18.53,
+  "portfolio_equity_usd": 191.6981,
+  "portfolio_cash_usd": 172.6781,
+  "portfolio_positions_usd": 19.02,
   "nonlab_positions_usd": 16.4565,
   "nonlab_legs": [
     {
@@ -35,11 +35,11 @@
   "lab_deposit_ct": "2026-08-28T08:52:50-05:00",
   "pre_lab_cash_usd": 40,
   "lab_start_ts": "2026-09-03T23:53:16Z",
-  "lab_synthetic_equity_usd": 200.065,
+  "lab_synthetic_equity_usd": 200.1,
   "delta_vs_start_usd": null,
-  "today_pnl_usd": -9.612,
+  "today_pnl_usd": -9.542,
   "realized_lab_pnl_usd": 0,
-  "unrealized_lab_mtm_usd": 0.065,
+  "unrealized_lab_mtm_usd": 0.1,
   "equity_formula": null,
   "equity_history_note": "lab_curve_v4: lab cash ledger + lab position marks; baseline $200. Prior lab_curve_v3 points retained append-only.",
   "equity_definition_changed_at": "2026-09-03T23:53:16Z",
@@ -48,7 +48,7 @@
   "remaining_usd": 44.36,
   "daemon": {
     "alive": false,
-    "heartbeat_age_sec": 575,
+    "heartbeat_age_sec": 199.9,
     "pid": 979527,
     "pid_alive": true,
     "mode": "KILL on — no new risk",
@@ -64,15 +64,6 @@
   ],
   "resting_orders": [
     {
-      "ticker": "KXHIGHCHI-26SEP21-B67.5",
-      "side": "buy_no",
-      "price_cents": 94,
-      "qty": 7,
-      "risk_usd": 6.58,
-      "order_id_short": "01a0bf20-a9c0-7007",
-      "normalization_source": "published_as_is"
-    },
-    {
       "ticker": "KXHIGHCHI-26SEP20-B73.5",
       "side": "buy_no",
       "price_cents": 74,
@@ -83,6 +74,28 @@
     }
   ],
   "recent_fills": [
+    {
+      "fill_id": "0723b7d5-1061-840d-ad5a-a61cacbd54c2",
+      "order_id": "unknown",
+      "ticker": "KXHIGHCHI-26SEP21-B67.5",
+      "side": "buy_no",
+      "price_cents": 94,
+      "qty": 7,
+      "ts": "2026-09-21T04:33:21.392983Z",
+      "strategy_id": null,
+      "ownership": "lab",
+      "fee_usd": null,
+      "inventory_delta_yes": 0,
+      "inventory_delta_no": 7,
+      "cash_delta_usd": -6.58,
+      "normalization_confidence": "unverified",
+      "raw_side": "buy_no",
+      "raw_price_cents": 94,
+      "pnl_usd": null,
+      "pnl_status": "open",
+      "pnl_label": "open",
+      "pnl_kind": "open_unrealized"
+    },
     {
       "fill_id": "0723b7af-d401-8101-ecfd-4416737039be",
       "order_id": "unknown",
@@ -720,28 +733,6 @@
       "pnl_status": "flat",
       "pnl_label": "uncertain",
       "pnl_kind": "unmatched"
-    },
-    {
-      "fill_id": "0722cd8d-b951-815b-6551-d80e77a87b4a",
-      "order_id": "unknown",
-      "ticker": "KXHIGHLAX-26SEP12-B81.5",
-      "side": "buy_no",
-      "price_cents": 74,
-      "qty": 5,
-      "ts": "2026-09-12T16:18:32.58188Z",
-      "strategy_id": null,
-      "ownership": "lab",
-      "fee_usd": null,
-      "inventory_delta_yes": 0,
-      "inventory_delta_no": 5,
-      "cash_delta_usd": -3.7,
-      "normalization_confidence": "unverified",
-      "raw_side": "buy_no",
-      "raw_price_cents": 74,
-      "pnl_usd": null,
-      "pnl_status": "open",
-      "pnl_label": "open",
-      "pnl_kind": "open_unrealized"
     }
   ],
   "notes": "KILL set — entries skipped; open_fail:UncertainStateError|v4_blocked:incomplete_acquisition,owner_cash_mismatch,position_mismatch",
@@ -753,21 +744,21 @@
     "position_mismatch"
   ],
   "equity_definition": null,
-  "legacy_headline_v3_usd": 135.1716,
+  "legacy_headline_v3_usd": 135.2416,
   "nav_bridge": {
     "from_definition": "lab_curve_v3",
     "to_definition": "lab_curve_v4",
-    "from_headline_usd": 135.1716,
-    "to_corrected_nav_usd": 200.845,
+    "from_headline_usd": 135.2416,
+    "to_corrected_nav_usd": 201.3,
     "adjustments": [],
-    "unexplained_residual_usd": 65.6734,
-    "bridged_at": "2026-09-21T04:30:20.072Z",
+    "unexplained_residual_usd": 66.0584,
+    "bridged_at": "2026-09-21T04:34:01.558Z",
     "note": "v3 headline superseded — personal cash purchases were charged to lab scoreboard. v4 uses owner cash ledgers."
   },
   "lab_cash_usd": 200,
   "personal_cash_usd": 40,
   "personal_nav_usd": 56.4565,
-  "lab_positions_usd": 0.845,
+  "lab_positions_usd": 1.3,
   "personal_positions_usd": 16.4565,
   "personal_legs": [
     {
@@ -791,14 +782,14 @@
   ],
   "cash_reconcile": {
     "owner_cash_sum_usd": 240,
-    "exchange_cash_usd": 173.0981,
-    "cash_gap_usd": 66.9019,
+    "exchange_cash_usd": 172.6781,
+    "cash_gap_usd": 67.3219,
     "reconciled": false
   },
   "position_reconcile": {
-    "owner_positions_sum_usd": 17.3015,
-    "exchange_positions_usd": 18.53,
-    "positions_gap_usd": -1.2285,
+    "owner_positions_sum_usd": 17.7565,
+    "exchange_positions_usd": 19.02,
+    "positions_gap_usd": -1.2635,
     "has_unknown_ownership": false,
     "missing_positions": true,
     "reconciled": false
@@ -806,6 +797,7 @@
   "opening_allocation_verified": true,
   "acquisition_complete": false,
   "incomplete_fill_ids": [
+    "0723b7d5-1061-840d-ad5a-a61cacbd54c2",
     "0723b7af-d401-8101-ecfd-4416737039be",
     "0723b7a5-a421-965d-284d-1eba1df8335a",
     "0723b70e-69e1-8509-5188-b1eb8f298fb2",
@@ -1004,11 +996,10 @@
     "0721a9de-3ff9-89ef-b370-0dd654f9715a",
     "0721a9c4-6d19-a65f-a803-db29f8bdc2aa",
     "0721a9cd-1ac1-8346-84a6-b753d52e30a9",
-    "0721a9b5-0e19-af53-e187-3ac887bdf7fa",
-    "0721b885-eb81-8541-9c76-3a5764977dbc"
+    "0721a9b5-0e19-af53-e187-3ac887bdf7fa"
   ],
   "unresolved_fill_count": 200,
   "cash_ledger_entries": 1,
-  "open_usd_v4_estimate": 11.87,
+  "open_usd_v4_estimate": 5.74,
   "publisher_sha": "9983814c28225efbbd7af096efaba99474948b35"
 }
