@@ -5,7 +5,7 @@
   "description": "Markets Lab dashboard publisher — lab/personal ledgers and fill normalization",
   "type": "module",
   "scripts": {
-    "test": "node --test tests/**/*.test.js"
+    "test": "node --test tests/**/*.test.js && python3 -m unittest discover -s tests -p 'test_*.py' -v"
   },
   "engines": {
     "node": ">=18"

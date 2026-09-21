@@ -57,6 +57,7 @@ Regression fixture: `tests/fixtures/status_2026-09-20T150410Z.json` → `status_
 
 - `recent_fills[].normalization_confidence`: `verified` | `inferred_complement` | `unverified` | `unknown`.
 - **Complement flip is opt-in only** (`prefer_complement_correction: true`). Default: published `buy_no@74` stays `buy_no` (cash −$4.44), not flipped to `buy_yes@26`.
+- **Never select side by `max(yes_price, no_price)`** — Kalshi always echoes both legs; the higher price is often the complement (SEP21: buy YES@6¢ also shows no@94¢). Box `write_public_status.py` and `kalshi_labels.py` must prefer `outcome_side` / `side` and the matching price field. Poisoned historical rows recover via `resolveFromExchangeOutcome` when raw `outcome_side` or bare `side` is present; otherwise fail-closed (`unverified`).
 - `unverified` / `unknown` fills **block certified NAV** (`authoritative: false`).
 - Kalshi fixed-point API fields supported: `count_fp`, `yes_price_dollars`, `no_price_dollars`, `remaining_count_fp`.
 - `recent_fills[].ownership`: `lab` | `personal` | `unknown`.
@@ -80,6 +81,19 @@ New fields: `authoritative`, `publish_blocked`, `publish_blocked_reasons`, `cash
 ## v3 bridge (Chief P1-5)
 
 `legacy_headline_v3_usd` uses `portfolio_equity_usd` from the snapshot (not a misnamed `equity_usd` field). Probe: $225 equity, $0 personal marks, $40 pre-lab → **$185** legacy headline.
+
+## Box publisher — side labeling (Gate-3)
+
+**Incident (2026-09-21):** Box `write_public_status.py` used `if no_c > yes_c: label buy_no`, turning SEP21 buy YES@6¢×20 ($1.20 cash) into `buy_no@94` (−$18.80). Kalshi echoes both prices on every fill/order.
+
+| Rule | Required behavior |
+|---|---|
+| Side source | `outcome_side` → `side` (yes/no) — never `max(yes_c, no_c)` |
+| Price | `yes_price_dollars` for YES leg, `no_price_dollars` for NO leg |
+| Recovery | `fill_normalize.resolveFromExchangeOutcome` when poisoned row retains raw `outcome_side` |
+| Fail-closed | No `outcome_side` / bare `side` → `unverified`, blocks certified NAV |
+
+Canonical implementation: `box_publisher/kalshi_labels.py` (`label_fill`, `label_resting_order`). Regression: `tests/test_kalshi_labels.py`, `tests/fill_normalize.test.js` (Gate-3 block).
 
 ## Box publisher integration
 

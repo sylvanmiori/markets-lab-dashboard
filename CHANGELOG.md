@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.1.3 — 2026-09-21 (Gate-3 complement poison)
+
+- **Gate-3:** Box `write_public_status.py` tracked in `box_publisher/` — side from `outcome_side`/`side`, never `max(yes,no)`. SEP21 buy YES@6×20 → $1.20 cash (not buy_no@94 / −$18.80).
+- `kalshi_labels.py` extracted for regression tests; `resolveFromExchangeOutcome` recovers poisoned rows when raw `outcome_side` present.
+
 ## 1.1.2 — 2026-09-21 (DASH_RECON_LIE)
 
 - **DASH_RECON_LIE:** `publishStatus` no longer publishes resting+MTM sum as authoritative `open_usd`; returns `null` fail-closed unless `recon_open_usd` / `total_open_worst_case_usd` is in the snapshot. Inflated heuristic moved to `open_usd_v4_estimate`.
