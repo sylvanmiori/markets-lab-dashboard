@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-09-22T01:45:37Z",
-  "equity_history_updated_at": "2026-09-22T01:45:37Z",
-  "reconciliation_updated_at": "2026-09-22T01:42:03Z",
+  "updated_at": "2026-09-22T01:49:30Z",
+  "equity_history_updated_at": "2026-09-22T01:49:30Z",
+  "reconciliation_updated_at": "2026-09-22T01:48:03Z",
   "oldest_input_updated_at": "2026-09-13T05:33:55Z",
   "starting_bankroll_usd": 200,
   "equity_usd": null,
   "lab_equity_usd": null,
-  "portfolio_equity_usd": 190.6981,
+  "portfolio_equity_usd": 188.6181,
   "portfolio_cash_usd": 172.6781,
-  "portfolio_positions_usd": 18.02,
-  "nonlab_positions_usd": 17.810000000000002,
+  "portfolio_positions_usd": 15.94,
+  "nonlab_positions_usd": 15.73,
   "nonlab_legs": [
     {
       "ticker": "KXSB-27-HOU",
       "qty": 187.52,
-      "mtm_usd": 5.62,
+      "mtm_usd": 3.75,
       "owner": "personal"
     },
     {
@@ -26,7 +26,7 @@
     {
       "ticker": "SENATETX-26-R",
       "qty": 20,
-      "mtm_usd": 8.4,
+      "mtm_usd": 8.19,
       "owner": "personal"
     }
   ],
@@ -48,7 +48,7 @@
   "remaining_usd": 48.8,
   "daemon": {
     "alive": false,
-    "heartbeat_age_sec": 155.1,
+    "heartbeat_age_sec": 37.7,
     "pid": 1345581,
     "pid_alive": true,
     "mode": "KILL on — no new risk",
@@ -740,19 +740,19 @@
     "to_corrected_nav_usd": 127.603,
     "adjustments": [],
     "unexplained_residual_usd": -45.2851,
-    "bridged_at": "2026-09-22T01:45:37.667Z",
+    "bridged_at": "2026-09-22T01:49:30.888Z",
     "note": "v3 headline superseded — personal cash purchases were charged to lab scoreboard. v4 uses owner cash ledgers."
   },
   "lab_cash_usd": 127.403,
   "personal_cash_usd": 45.0934,
-  "personal_nav_usd": 62.9034,
+  "personal_nav_usd": 60.8234,
   "lab_positions_usd": 0.2,
-  "personal_positions_usd": 17.81,
+  "personal_positions_usd": 15.73,
   "personal_legs": [
     {
       "ticker": "KXSB-27-HOU",
       "qty": 187.52,
-      "mtm_usd": 5.62,
+      "mtm_usd": 3.75,
       "owner": "personal"
     },
     {
@@ -764,7 +764,7 @@
     {
       "ticker": "SENATETX-26-R",
       "qty": 20,
-      "mtm_usd": 8.4,
+      "mtm_usd": 8.19,
       "owner": "personal"
     }
   ],
@@ -775,8 +775,8 @@
     "reconciled": false
   },
   "position_reconcile": {
-    "owner_positions_sum_usd": 18.01,
-    "exchange_positions_usd": 18.02,
+    "owner_positions_sum_usd": 15.93,
+    "exchange_positions_usd": 15.94,
     "positions_gap_usd": -0.01,
     "has_unknown_ownership": false,
     "missing_positions": false,
