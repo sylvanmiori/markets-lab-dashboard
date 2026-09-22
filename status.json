@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-09-22T04:55:46Z",
-  "equity_history_updated_at": "2026-09-22T04:55:46Z",
+  "updated_at": "2026-09-22T05:00:17Z",
+  "equity_history_updated_at": "2026-09-22T05:00:17Z",
   "reconciliation_updated_at": "2026-09-22T04:50:07Z",
   "oldest_input_updated_at": "2026-09-13T05:33:55Z",
   "starting_bankroll_usd": 200,
@@ -37,7 +37,7 @@
   "lab_start_ts": "2026-09-03T23:53:16Z",
   "lab_synthetic_equity_usd": 198.9,
   "delta_vs_start_usd": null,
-  "today_pnl_usd": -2.3635,
+  "today_pnl_usd": 0,
   "realized_lab_pnl_usd": 0,
   "unrealized_lab_mtm_usd": -1.1,
   "equity_formula": null,
@@ -48,7 +48,7 @@
   "remaining_usd": 48.8,
   "daemon": {
     "alive": false,
-    "heartbeat_age_sec": 289.6,
+    "heartbeat_age_sec": 523.5,
     "pid": 1345581,
     "pid_alive": true,
     "mode": "KILL on — no new risk",
@@ -740,7 +740,7 @@
     "to_corrected_nav_usd": 127.603,
     "adjustments": [],
     "unexplained_residual_usd": -45.2751,
-    "bridged_at": "2026-09-22T04:55:47.510Z",
+    "bridged_at": "2026-09-22T05:00:18.560Z",
     "note": "v3 headline superseded — personal cash purchases were charged to lab scoreboard. v4 uses owner cash ledgers."
   },
   "lab_cash_usd": 127.403,
