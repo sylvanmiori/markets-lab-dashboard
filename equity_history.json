@@ -1,19 +1,5 @@
 [
   {
-    "t": "2026-09-10T12:09:33.703028Z",
-    "equity_usd": 4.333,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3",
-    "note": "KXHIGHCHI-26SEP09-T80 settled pnl=-4.55"
-  },
-  {
-    "t": "2026-09-10T12:09:33.703153Z",
-    "equity_usd": 4.813,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3",
-    "note": "KXHIGHCHI-26SEP09-B80.5 settled pnl=0.48"
-  },
-  {
     "t": "2026-09-10T14:09:23.703205Z",
     "equity_usd": -0.067,
     "source": "lab_curve_v3",
@@ -9027,6 +9013,12 @@
   },
   {
     "t": "2026-09-24T12:05:52Z",
+    "equity_usd": 132.6781,
+    "source": "lab_curve_v3",
+    "definition": "lab_curve_v3"
+  },
+  {
+    "t": "2026-09-24T12:09:40Z",
     "equity_usd": 132.6781,
     "source": "lab_curve_v3",
     "definition": "lab_curve_v3"
