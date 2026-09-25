@@ -135,6 +135,85 @@ describe('NFL contamination regression — 10:04 vs 10:07 CT', () => {
   });
 });
 
+describe('Gate3 cash identity — open-fee deferral and settlement amount_usd', () => {
+  const openFill = normalizeFill({
+    fill_id: 'open-fee-1',
+    ticker: 'KXHIGHCHI-OPEN',
+    action: 'buy',
+    side: 'yes',
+    yes_price: 50,
+    count: 10,
+    fee_cost: 0.05,
+    created_time: '2026-09-21T10:00:00Z',
+  });
+
+  const settledFill = normalizeFill({
+    fill_id: 'settled-fee-1',
+    ticker: 'KXHIGHCHI-SETTLED',
+    action: 'buy',
+    side: 'yes',
+    yes_price: 50,
+    count: 10,
+    fee_cost: 0.05,
+    created_time: '2026-09-21T09:00:00Z',
+  });
+
+  it('defers fee on open ticker (strips fee from cash_delta)', () => {
+    const ledger = buildCashLedger({
+      fills: [openFill],
+      positions: [{ ticker: 'KXHIGHCHI-OPEN', qty: 10, owner: 'lab' }],
+    });
+    const entry = ledger.entries.find((e) => e.fill_id === 'open-fee-1');
+    assert.ok(entry);
+    assert.ok(Math.abs(entry.amount_usd - (-5.0)) < 1e-9);
+    assert.equal(entry.note, 'open_fee_deferred:-0.05');
+  });
+
+  it('keeps fee in cash_delta for settled (zero-qty) ticker', () => {
+    const ledger = buildCashLedger({
+      fills: [settledFill],
+      positions: [{ ticker: 'KXHIGHCHI-SETTLED', qty: 0, owner: 'lab' }],
+    });
+    const entry = ledger.entries.find((e) => e.fill_id === 'settled-fee-1');
+    assert.ok(entry);
+    assert.ok(Math.abs(entry.amount_usd - (-5.05)) < 1e-9);
+    assert.equal(entry.note, null);
+  });
+
+  it('settlement prefers amount_usd gross over revenue/payout', () => {
+    const ledger = buildCashLedger({
+      settlements: [{
+        ticker: 'KXHIGHCHI-SETTLED',
+        ts: '2026-09-21T12:00:00Z',
+        amount_usd: 10,
+        revenue_usd: 9.95,
+        payout_usd: 9.90,
+        fee_cost: 0.05,
+        strategy_id: 'WX_CHI',
+        market_result: 'yes',
+      }],
+    });
+    const entry = ledger.entries.find((e) => e.type === 'settlement');
+    assert.ok(entry);
+    assert.equal(entry.amount_usd, 10);
+  });
+
+  it('settlement falls back to revenue/payout when amount_usd absent', () => {
+    const ledger = buildCashLedger({
+      settlements: [{
+        ticker: 'KXHIGHCHI-SETTLED',
+        ts: '2026-09-21T12:00:00Z',
+        revenue_usd: 9.95,
+        strategy_id: 'WX_CHI',
+        market_result: 'yes',
+      }],
+    });
+    const entry = ledger.entries.find((e) => e.type === 'settlement');
+    assert.ok(entry);
+    assert.equal(entry.amount_usd, 9.95);
+  });
+});
+
 describe('NAV bridge', () => {
   it('bridges v3 headline to v4 corrected NAV with explicit adjustments', () => {
     const v3 = computeLabHeadlineV3(after);
