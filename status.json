@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-09-26T05:14:06Z",
-  "equity_history_updated_at": "2026-09-26T05:14:06Z",
+  "updated_at": "2026-09-26T05:18:14Z",
+  "equity_history_updated_at": "2026-09-26T05:18:14Z",
   "reconciliation_updated_at": "2026-09-26T05:10:02Z",
   "oldest_input_updated_at": "2026-09-13T05:33:55Z",
   "starting_bankroll_usd": 200,
@@ -48,7 +48,7 @@
   "remaining_usd": 50,
   "daemon": {
     "alive": false,
-    "heartbeat_age_sec": 171.1,
+    "heartbeat_age_sec": 427.7,
     "pid": 589440,
     "pid_alive": true,
     "mode": "KILL on — no new risk",
@@ -740,7 +740,7 @@
     "to_corrected_nav_usd": 127.403,
     "adjustments": [],
     "unexplained_residual_usd": -45.2751,
-    "bridged_at": "2026-09-26T05:14:06.625Z",
+    "bridged_at": "2026-09-26T05:18:15.029Z",
     "note": "v3 headline superseded — personal cash purchases were charged to lab scoreboard. v4 uses owner cash ledgers."
   },
   "lab_cash_usd": 127.403,
