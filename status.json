@@ -1,15 +1,15 @@
 {
-  "updated_at": "2026-09-28T23:08:55Z",
-  "equity_history_updated_at": "2026-09-28T23:08:55Z",
-  "reconciliation_updated_at": "2026-09-28T23:06:05Z",
+  "updated_at": "2026-09-28T23:13:38Z",
+  "equity_history_updated_at": "2026-09-28T23:13:38Z",
+  "reconciliation_updated_at": "2026-09-28T23:09:04Z",
   "oldest_input_updated_at": "2026-09-13T05:33:55Z",
   "starting_bankroll_usd": 200,
   "equity_usd": null,
   "lab_equity_usd": null,
-  "portfolio_equity_usd": 194.9981,
+  "portfolio_equity_usd": 194.7481,
   "portfolio_cash_usd": 172.6781,
-  "portfolio_positions_usd": 22.32,
-  "nonlab_positions_usd": 22.31,
+  "portfolio_positions_usd": 22.07,
+  "nonlab_positions_usd": 22.06,
   "nonlab_legs": [
     {
       "ticker": "KXSB-27-HOU",
@@ -20,7 +20,7 @@
     {
       "ticker": "KXMLB-26-HOU",
       "qty": 253,
-      "mtm_usd": 10.37,
+      "mtm_usd": 10.12,
       "owner": "personal"
     },
     {
@@ -48,7 +48,7 @@
   "remaining_usd": 50,
   "daemon": {
     "alive": false,
-    "heartbeat_age_sec": 76,
+    "heartbeat_age_sec": 177.2,
     "pid": 11833,
     "pid_alive": true,
     "mode": "KILL on — no new risk",
@@ -740,14 +740,14 @@
     "to_corrected_nav_usd": 127.403,
     "adjustments": [],
     "unexplained_residual_usd": -45.2851,
-    "bridged_at": "2026-09-28T23:08:56.344Z",
+    "bridged_at": "2026-09-28T23:13:38.939Z",
     "note": "v3 headline superseded — personal cash purchases were charged to lab scoreboard. v4 uses owner cash ledgers."
   },
   "lab_cash_usd": 127.403,
   "personal_cash_usd": 45.0934,
-  "personal_nav_usd": 67.4034,
+  "personal_nav_usd": 67.1534,
   "lab_positions_usd": 0,
-  "personal_positions_usd": 22.31,
+  "personal_positions_usd": 22.06,
   "personal_legs": [
     {
       "ticker": "KXSB-27-HOU",
@@ -758,7 +758,7 @@
     {
       "ticker": "KXMLB-26-HOU",
       "qty": 253,
-      "mtm_usd": 10.37,
+      "mtm_usd": 10.12,
       "owner": "personal"
     },
     {
@@ -775,8 +775,8 @@
     "reconciled": false
   },
   "position_reconcile": {
-    "owner_positions_sum_usd": 22.31,
-    "exchange_positions_usd": 22.32,
+    "owner_positions_sum_usd": 22.06,
+    "exchange_positions_usd": 22.07,
     "positions_gap_usd": -0.01,
     "has_unknown_ownership": false,
     "missing_positions": false,
