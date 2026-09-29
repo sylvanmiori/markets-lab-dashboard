@@ -1,26 +1,26 @@
 {
-  "updated_at": "2026-09-29T15:59:59Z",
-  "equity_history_updated_at": "2026-09-29T15:59:59Z",
-  "reconciliation_updated_at": "2026-09-29T15:57:04Z",
+  "updated_at": "2026-09-29T20:06:42Z",
+  "equity_history_updated_at": "2026-09-29T20:06:42Z",
+  "reconciliation_updated_at": "2026-09-29T20:03:04Z",
   "oldest_input_updated_at": "2026-09-13T05:33:55Z",
   "starting_bankroll_usd": 200,
   "equity_usd": null,
   "lab_equity_usd": null,
-  "portfolio_equity_usd": 192.1081,
+  "portfolio_equity_usd": 192.7181,
   "portfolio_cash_usd": 172.6781,
-  "portfolio_positions_usd": 19.43,
-  "nonlab_positions_usd": 19.42,
+  "portfolio_positions_usd": 20.04,
+  "nonlab_positions_usd": 20.03,
   "nonlab_legs": [
     {
       "ticker": "KXSB-27-HOU",
       "qty": 187.52,
-      "mtm_usd": 1.87,
+      "mtm_usd": 3.75,
       "owner": "personal"
     },
     {
       "ticker": "KXMLB-26-HOU",
       "qty": 253,
-      "mtm_usd": 9.36,
+      "mtm_usd": 8.09,
       "owner": "personal"
     },
     {
@@ -48,8 +48,8 @@
   "remaining_usd": 50,
   "daemon": {
     "alive": false,
-    "heartbeat_age_sec": 32.3,
-    "pid": 11833,
+    "heartbeat_age_sec": 138.6,
+    "pid": 8375,
     "pid_alive": true,
     "mode": "KILL on — no new risk",
     "kill_file": true
@@ -740,25 +740,25 @@
     "to_corrected_nav_usd": 127.403,
     "adjustments": [],
     "unexplained_residual_usd": -45.2851,
-    "bridged_at": "2026-09-29T16:00:00.078Z",
+    "bridged_at": "2026-09-29T20:06:43.070Z",
     "note": "v3 headline superseded — personal cash purchases were charged to lab scoreboard. v4 uses owner cash ledgers."
   },
   "lab_cash_usd": 127.403,
   "personal_cash_usd": 45.0934,
-  "personal_nav_usd": 64.5134,
+  "personal_nav_usd": 65.1234,
   "lab_positions_usd": 0,
-  "personal_positions_usd": 19.42,
+  "personal_positions_usd": 20.03,
   "personal_legs": [
     {
       "ticker": "KXSB-27-HOU",
       "qty": 187.52,
-      "mtm_usd": 1.87,
+      "mtm_usd": 3.75,
       "owner": "personal"
     },
     {
       "ticker": "KXMLB-26-HOU",
       "qty": 253,
-      "mtm_usd": 9.36,
+      "mtm_usd": 8.09,
       "owner": "personal"
     },
     {
@@ -775,8 +775,8 @@
     "reconciled": false
   },
   "position_reconcile": {
-    "owner_positions_sum_usd": 19.42,
-    "exchange_positions_usd": 19.43,
+    "owner_positions_sum_usd": 20.03,
+    "exchange_positions_usd": 20.04,
     "positions_gap_usd": -0.01,
     "has_unknown_ownership": false,
     "missing_positions": false,
