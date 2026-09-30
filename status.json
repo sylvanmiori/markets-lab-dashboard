@@ -1,32 +1,32 @@
 {
-  "updated_at": "2026-09-30T15:32:20Z",
-  "equity_history_updated_at": "2026-09-30T15:32:20Z",
-  "reconciliation_updated_at": "2026-09-30T15:30:05Z",
+  "updated_at": "2026-09-30T15:36:39Z",
+  "equity_history_updated_at": "2026-09-30T15:36:39Z",
+  "reconciliation_updated_at": "2026-09-30T15:33:03Z",
   "oldest_input_updated_at": "2026-09-13T05:33:55Z",
   "starting_bankroll_usd": 200,
   "equity_usd": null,
   "lab_equity_usd": null,
-  "portfolio_equity_usd": 187.4081,
+  "portfolio_equity_usd": 188.7281,
   "portfolio_cash_usd": 172.6781,
-  "portfolio_positions_usd": 14.73,
-  "nonlab_positions_usd": 14.73,
+  "portfolio_positions_usd": 16.05,
+  "nonlab_positions_usd": 16.05,
   "nonlab_legs": [
     {
       "ticker": "KXSB-27-HOU",
       "qty": 187.52,
-      "mtm_usd": 1.87,
+      "mtm_usd": 3.75,
       "owner": "personal"
     },
     {
       "ticker": "KXMLB-26-HOU",
       "qty": 253,
-      "mtm_usd": 5.06,
+      "mtm_usd": 4.3,
       "owner": "personal"
     },
     {
       "ticker": "SENATETX-26-R",
       "qty": 20,
-      "mtm_usd": 7.8,
+      "mtm_usd": 8,
       "owner": "personal"
     }
   ],
@@ -48,7 +48,7 @@
   "remaining_usd": 50,
   "daemon": {
     "alive": false,
-    "heartbeat_age_sec": 59.6,
+    "heartbeat_age_sec": 141.9,
     "pid": 8375,
     "pid_alive": true,
     "mode": "KILL on — no new risk",
@@ -740,31 +740,31 @@
     "to_corrected_nav_usd": 127.403,
     "adjustments": [],
     "unexplained_residual_usd": -45.2751,
-    "bridged_at": "2026-09-30T15:32:21.199Z",
+    "bridged_at": "2026-09-30T15:36:39.913Z",
     "note": "v3 headline superseded — personal cash purchases were charged to lab scoreboard. v4 uses owner cash ledgers."
   },
   "lab_cash_usd": 127.403,
   "personal_cash_usd": 45.0934,
-  "personal_nav_usd": 59.8234,
+  "personal_nav_usd": 61.1434,
   "lab_positions_usd": 0,
-  "personal_positions_usd": 14.73,
+  "personal_positions_usd": 16.05,
   "personal_legs": [
     {
       "ticker": "KXSB-27-HOU",
       "qty": 187.52,
-      "mtm_usd": 1.87,
+      "mtm_usd": 3.75,
       "owner": "personal"
     },
     {
       "ticker": "KXMLB-26-HOU",
       "qty": 253,
-      "mtm_usd": 5.06,
+      "mtm_usd": 4.3,
       "owner": "personal"
     },
     {
       "ticker": "SENATETX-26-R",
       "qty": 20,
-      "mtm_usd": 7.8,
+      "mtm_usd": 8,
       "owner": "personal"
     }
   ],
@@ -775,8 +775,8 @@
     "reconciled": false
   },
   "position_reconcile": {
-    "owner_positions_sum_usd": 14.73,
-    "exchange_positions_usd": 14.73,
+    "owner_positions_sum_usd": 16.05,
+    "exchange_positions_usd": 16.05,
     "positions_gap_usd": 0,
     "has_unknown_ownership": false,
     "missing_positions": false,
