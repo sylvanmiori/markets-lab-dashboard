@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-10-01T05:25:27Z",
-  "equity_history_updated_at": "2026-10-01T05:25:27Z",
+  "updated_at": "2026-10-01T05:30:05Z",
+  "equity_history_updated_at": "2026-10-01T05:30:05Z",
   "reconciliation_updated_at": "2026-10-01T05:20:02Z",
   "oldest_input_updated_at": "2026-09-13T05:33:55Z",
   "starting_bankroll_usd": 200,
   "equity_usd": null,
   "lab_equity_usd": null,
-  "portfolio_equity_usd": 182.3481,
+  "portfolio_equity_usd": 184.2281,
   "portfolio_cash_usd": 172.6781,
-  "portfolio_positions_usd": 9.67,
-  "nonlab_positions_usd": 9.67,
+  "portfolio_positions_usd": 11.55,
+  "nonlab_positions_usd": 11.55,
   "nonlab_legs": [
     {
       "ticker": "KXSB-27-HOU",
       "qty": 187.52,
-      "mtm_usd": 1.87,
+      "mtm_usd": 3.75,
       "owner": "personal"
     },
     {
@@ -42,7 +42,7 @@
   "remaining_usd": 50,
   "daemon": {
     "alive": false,
-    "heartbeat_age_sec": 244,
+    "heartbeat_age_sec": 509.4,
     "pid": 8375,
     "pid_alive": true,
     "mode": "KILL on — no new risk",
@@ -734,19 +734,19 @@
     "to_corrected_nav_usd": 127.403,
     "adjustments": [],
     "unexplained_residual_usd": -45.2751,
-    "bridged_at": "2026-10-01T05:25:28.284Z",
+    "bridged_at": "2026-10-01T05:30:06.099Z",
     "note": "v3 headline superseded — personal cash purchases were charged to lab scoreboard. v4 uses owner cash ledgers."
   },
   "lab_cash_usd": 127.403,
   "personal_cash_usd": 44.4544,
-  "personal_nav_usd": 54.1244,
+  "personal_nav_usd": 56.0044,
   "lab_positions_usd": 0,
-  "personal_positions_usd": 9.67,
+  "personal_positions_usd": 11.55,
   "personal_legs": [
     {
       "ticker": "KXSB-27-HOU",
       "qty": 187.52,
-      "mtm_usd": 1.87,
+      "mtm_usd": 3.75,
       "owner": "personal"
     },
     {
@@ -763,8 +763,8 @@
     "reconciled": false
   },
   "position_reconcile": {
-    "owner_positions_sum_usd": 9.67,
-    "exchange_positions_usd": 9.67,
+    "owner_positions_sum_usd": 11.55,
+    "exchange_positions_usd": 11.55,
     "positions_gap_usd": 0,
     "has_unknown_ownership": false,
     "missing_positions": false,
