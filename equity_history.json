@@ -1,53 +1,5 @@
 [
   {
-    "t": "2026-09-21T13:05:27Z",
-    "equity_usd": 134.4416,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3"
-  },
-  {
-    "t": "2026-09-21T13:09:10Z",
-    "equity_usd": 134.6416,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3"
-  },
-  {
-    "t": "2026-09-21T13:12:59Z",
-    "equity_usd": 134.6416,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3"
-  },
-  {
-    "t": "2026-09-21T13:16:54Z",
-    "equity_usd": 134.0416,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3"
-  },
-  {
-    "t": "2026-09-21T13:20:37Z",
-    "equity_usd": 134.0416,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3"
-  },
-  {
-    "t": "2026-09-21T13:24:28Z",
-    "equity_usd": 134.2416,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3"
-  },
-  {
-    "t": "2026-09-21T13:28:16Z",
-    "equity_usd": 134.2416,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3"
-  },
-  {
-    "t": "2026-09-21T13:32:04Z",
-    "equity_usd": 132.3616,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3"
-  },
-  {
     "t": "2026-09-21T13:35:58Z",
     "equity_usd": 132.3616,
     "source": "lab_curve_v3",
@@ -22951,6 +22903,24 @@
   },
   {
     "t": "2026-10-05T13:03:37Z",
+    "equity_usd": 132.6881,
+    "source": "lab_curve_v3",
+    "definition": "lab_curve_v3"
+  },
+  {
+    "t": "2026-10-05T13:25:12Z",
+    "equity_usd": 132.6881,
+    "source": "lab_curve_v3",
+    "definition": "lab_curve_v3"
+  },
+  {
+    "t": "2026-10-05T13:30:14Z",
+    "equity_usd": 132.6881,
+    "source": "lab_curve_v3",
+    "definition": "lab_curve_v3"
+  },
+  {
+    "t": "2026-10-05T13:35:33Z",
     "equity_usd": 132.6881,
     "source": "lab_curve_v3",
     "definition": "lab_curve_v3"
