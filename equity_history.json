@@ -1,29 +1,5 @@
 [
   {
-    "t": "2026-09-21T12:50:11Z",
-    "equity_usd": 134.4416,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3"
-  },
-  {
-    "t": "2026-09-21T12:54:03Z",
-    "equity_usd": 134.4416,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3"
-  },
-  {
-    "t": "2026-09-21T12:57:45Z",
-    "equity_usd": 134.4416,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3"
-  },
-  {
-    "t": "2026-09-21T13:01:34Z",
-    "equity_usd": 134.4416,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3"
-  },
-  {
     "t": "2026-09-21T13:05:27Z",
     "equity_usd": 134.4416,
     "source": "lab_curve_v3",
@@ -22963,6 +22939,18 @@
   },
   {
     "t": "2026-10-05T12:49:24Z",
+    "equity_usd": 132.6881,
+    "source": "lab_curve_v3",
+    "definition": "lab_curve_v3"
+  },
+  {
+    "t": "2026-10-05T12:58:11Z",
+    "equity_usd": 132.6881,
+    "source": "lab_curve_v3",
+    "definition": "lab_curve_v3"
+  },
+  {
+    "t": "2026-10-05T13:03:37Z",
     "equity_usd": 132.6881,
     "source": "lab_curve_v3",
     "definition": "lab_curve_v3"
