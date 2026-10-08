@@ -1,11 +1,5 @@
 [
   {
-    "t": "2026-09-24T03:16:12Z",
-    "equity_usd": 133.1881,
-    "source": "lab_curve_v3",
-    "definition": "lab_curve_v3"
-  },
-  {
     "t": "2026-09-24T03:20:01Z",
     "equity_usd": 132.6781,
     "source": "lab_curve_v3",
@@ -23083,6 +23077,12 @@
   },
   {
     "t": "2026-10-08T03:15:47Z",
+    "equity_usd": 132.6781,
+    "source": "lab_curve_v3",
+    "definition": "lab_curve_v3"
+  },
+  {
+    "t": "2026-10-08T03:19:25Z",
     "equity_usd": 132.6781,
     "source": "lab_curve_v3",
     "definition": "lab_curve_v3"
