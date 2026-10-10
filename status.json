@@ -1,15 +1,15 @@
 {
-  "updated_at": "2026-10-10T07:24:48Z",
-  "equity_history_updated_at": "2026-10-10T07:24:48Z",
+  "updated_at": "2026-10-10T07:28:06Z",
+  "equity_history_updated_at": "2026-10-10T07:28:06Z",
   "reconciliation_updated_at": "2026-10-10T07:20:02Z",
   "oldest_input_updated_at": "2026-09-13T05:33:55Z",
   "starting_bankroll_usd": 200,
   "equity_usd": null,
   "lab_equity_usd": null,
-  "portfolio_equity_usd": 181.9481,
+  "portfolio_equity_usd": 184.0281,
   "portfolio_cash_usd": 172.6781,
-  "portfolio_positions_usd": 9.27,
-  "nonlab_positions_usd": 11.15,
+  "portfolio_positions_usd": 11.35,
+  "nonlab_positions_usd": 11.35,
   "nonlab_legs": [
     {
       "ticker": "KXSB-27-HOU",
@@ -20,7 +20,7 @@
     {
       "ticker": "SENATETX-26-R",
       "qty": 20,
-      "mtm_usd": 7.4,
+      "mtm_usd": 7.6,
       "owner": "personal"
     }
   ],
@@ -31,7 +31,7 @@
   "lab_start_ts": "2026-09-03T23:53:16Z",
   "lab_synthetic_equity_usd": 200,
   "delta_vs_start_usd": null,
-  "today_pnl_usd": -1.88,
+  "today_pnl_usd": 0,
   "realized_lab_pnl_usd": 0,
   "unrealized_lab_mtm_usd": 0,
   "equity_formula": null,
@@ -42,7 +42,7 @@
   "remaining_usd": 50,
   "daemon": {
     "alive": false,
-    "heartbeat_age_sec": 270.8,
+    "heartbeat_age_sec": 469.8,
     "pid": 7476,
     "pid_alive": true,
     "mode": "KILL on — no new risk",
@@ -719,30 +719,29 @@
       "pnl_kind": "open_unrealized"
     }
   ],
-  "notes": "KILL set — entries skipped|v4_blocked:owner_cash_mismatch,position_mismatch",
+  "notes": "KILL set — entries skipped|v4_blocked:owner_cash_mismatch",
   "authoritative": false,
   "publish_blocked": true,
   "publish_blocked_reasons": [
-    "owner_cash_mismatch",
-    "position_mismatch"
+    "owner_cash_mismatch"
   ],
   "equity_definition": null,
-  "legacy_headline_v3_usd": 170.7981,
+  "legacy_headline_v3_usd": 172.6781,
   "nav_bridge": {
     "from_definition": "lab_curve_v3",
     "to_definition": "lab_curve_v4",
-    "from_headline_usd": 170.7981,
+    "from_headline_usd": 172.6781,
     "to_corrected_nav_usd": 127.403,
     "adjustments": [],
-    "unexplained_residual_usd": -43.3951,
-    "bridged_at": "2026-10-10T07:24:48.553Z",
+    "unexplained_residual_usd": -45.2751,
+    "bridged_at": "2026-10-10T07:28:07.381Z",
     "note": "v3 headline superseded — personal cash purchases were charged to lab scoreboard. v4 uses owner cash ledgers."
   },
   "lab_cash_usd": 127.403,
   "personal_cash_usd": 44.4544,
-  "personal_nav_usd": 55.6044,
+  "personal_nav_usd": 55.8044,
   "lab_positions_usd": 0,
-  "personal_positions_usd": 11.15,
+  "personal_positions_usd": 11.35,
   "personal_legs": [
     {
       "ticker": "KXSB-27-HOU",
@@ -753,7 +752,7 @@
     {
       "ticker": "SENATETX-26-R",
       "qty": 20,
-      "mtm_usd": 7.4,
+      "mtm_usd": 7.6,
       "owner": "personal"
     }
   ],
@@ -764,12 +763,12 @@
     "reconciled": false
   },
   "position_reconcile": {
-    "owner_positions_sum_usd": 11.15,
-    "exchange_positions_usd": 9.27,
-    "positions_gap_usd": 1.88,
+    "owner_positions_sum_usd": 11.35,
+    "exchange_positions_usd": 11.35,
+    "positions_gap_usd": 0,
     "has_unknown_ownership": false,
-    "missing_positions": true,
-    "reconciled": false
+    "missing_positions": false,
+    "reconciled": true
   },
   "opening_allocation_verified": true,
   "acquisition_complete": true,
@@ -781,7 +780,7 @@
   "recon_status": "blocked",
   "recon_as_of": "2026-10-10T07:20:02Z",
   "cash_gap_usd": -0.8207,
-  "positions_gap_usd": 1.88,
-  "equity_gap_usd": -43.3951,
+  "positions_gap_usd": 0,
+  "equity_gap_usd": -45.2751,
   "residual_null_reason": null
 }
